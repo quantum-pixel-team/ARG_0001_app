@@ -1,0 +1,65 @@
+
+
+services:
+  app:
+    build:
+      context: ../..
+      dockerfile: ecm-docker/ecm-local-app/Dockerfile
+    volumes:
+      - ../../dist/e-commerce-app:/usr/share/nginx/html
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - ecm
+  postgres:
+    image: 'postgres:16.1-alpine'
+    container_name: ecm-db
+    environment:
+      POSTGRES_DB: e-commerce
+      POSTGRES_PASSWORD: ecm
+      POSTGRES_USER: ecm
+    ports:
+      - '5432:5432'
+    networks:
+      - ecm
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  api:
+    image: indritvaka/ecm-api:latest
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      SWAGGER_ENABLED: true
+      DATABASE_URL: jdbc:postgresql://postgres/e-commerce
+    ports:
+      - "8080:8080"
+      - "8000:8000"
+      - "3128:3128"
+    networks:
+      - ecm
+    depends_on:
+      postgres:
+        condition: service_started
+
+  py:
+    container_name: ecm_db_initialize
+    build:
+      context: ../../../..
+      dockerfile: ecm-docker/ecm-local-app/DbInitialize
+    env_file:
+      - .env
+    networks:
+      - ecm
+    depends_on:
+      api:
+        condition: service_healthy
+
+
+
+volumes:
+  pgdata:
+
+networks:
+  ecm:
+    driver: bridge
