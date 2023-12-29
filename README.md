@@ -30,6 +30,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Running the `Production` Version in Containers
 
+1. Go to ecm-docker/dev or pord
+2. Open terminal in that location
+3. Run FE and BE in container `docker compose up --build app api`
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
