@@ -1,0 +1,39 @@
+<table class="table table-light">
+  <thead>
+  <tr>
+    <td>Id</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Email</td>
+    <td>Delete</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <td>
+      <label>{{ user?.id }}</label>
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="user.firstName" />
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="user.lastName" />
+    </td>
+    <td>
+      <input type="email" [(ngModel)]="user.email" />
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteUser(user)">
+        <i class="bi bi-trash-fill"></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+  <tfoot>
+  <tr>
+    <td colspan="6">
+      <button class="btn btn-success" (click)="addNewUser()">Add</button>
+    </td>
+  </tr>
+  </tfoot>
+</table>
