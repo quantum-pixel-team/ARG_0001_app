@@ -8,7 +8,7 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HomeComponent } from './home/home.component';
 import { UserTableComponent } from './features/user/components/user-table/user-table.component';
-import {HttpClientModule} from "@angular/common/http";
+import { HttpClientModule} from "@angular/common/http";
 import { UserContainerComponent } from './features/user/components/user-container/user-container.component';
 import { UserHeaderComponent } from './features/user/components/user-header/user-header.component';
 import { ServerErrorComponent } from './shared/components/server-error/server-error.component';
