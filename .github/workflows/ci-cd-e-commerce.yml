@@ -23,4 +23,26 @@ jobs:
       SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
       GITHUB_REQ_TOKE: ${{secrets.GITHUB_TOKEN}}
 
+  cd:
+    needs: ci
+    uses: quantum-pixel-team/ci-cd-templates/.github/workflows/common-cd.yml@feature/ec-45-cd-app
+    with:
+      environment: "dev"
+      docker-file-path: "Dockerfile"
+      tag: "blou5/e-commerce:latest-1"
+      local-path: "ecm-docker/dev"
+      remote-path: "/home/luka_buziu22_gmail_com/docker-compose-file"
+      artifact-path: "dist/e-commerce-app"
+      deploy-script: "
+            cd docker-compose-file &&
+             docker compose pull &&
+            docker compose up -d  "
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      HOST: ${{secrets.HOST}}
+      SSH_USER: ${{secrets.SSH_USER}}
+      SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+
+
 

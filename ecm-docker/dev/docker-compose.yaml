@@ -2,9 +2,7 @@
 
 services:
   app:
-    build:
-      context: ../..
-      dockerfile: Dockerfile
+    image: blou5/e-commerce:latest-1
     ports:
       - "80:80"
       - "443:443"
