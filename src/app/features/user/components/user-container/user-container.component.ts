@@ -5,7 +5,7 @@ import {User} from "../../interfaces/user.interfaces";
 @Component({
   selector: 'app-user-container',
   templateUrl: './user-container.component.html',
-  styleUrls: ['./user-container.component.css']
+  styleUrls: ['./user-container.component.scss']
 })
 export class UserContainerComponent implements OnInit {
 
