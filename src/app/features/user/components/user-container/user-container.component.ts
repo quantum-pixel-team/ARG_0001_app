@@ -1,7 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserHttpService} from "../../services/user-http.service";
 import {User} from "../../interfaces/user.interfaces";
-import {UserTableComponent} from "../user-table/user-table.component";
 
 @Component({
   selector: 'app-user-container',
@@ -11,24 +10,24 @@ import {UserTableComponent} from "../user-table/user-table.component";
 export class UserContainerComponent implements OnInit {
 
   users: User[] = []
+  deletedUsers: User[] = []
+  updatedUsers: User[] = []
+  createdUsers: User[] = []
   public error: string | undefined
-  @ViewChild(UserTableComponent) userTable!: UserTableComponent;
+
 
   constructor(private service: UserHttpService) {
   }
 
   public discard() {
     this.fetchUsers();
+    this.deletedUsers = []
   }
 
   public save() {
-    this.service.saveUsers(this.userTable.users).subscribe({
-      next: value => {
-        console.log("succeed: " + value);
-        this.fetchUsers();
-      },
-      error: err => console.error(err)
-    });
+    this.saveDeletedUsers()
+    this.saveUpdatedUsers()
+    this.saveCreatedUsers()
 
   }
 
@@ -39,9 +38,64 @@ export class UserContainerComponent implements OnInit {
   private fetchUsers() {
     this.service.fetchUsers()
       .subscribe({
-          next: value => this.users = value,
+          next: value => {
+            this.users = value
+            this.createdUsers = []
+            this.deletedUsers = []
+            this.updatedUsers = []
+          },
           error: err => this.error = err.message
         }
       )
+  }
+
+  addDeletedUser(deletedUser: User) {
+    this.users = this.users.filter(el => el.id !== deletedUser.id);
+    this.deletedUsers.push(deletedUser);
+  }
+
+  updatedUser(updatedUser: User) {
+    this.updatedUsers = this.updatedUsers.filter(u => u.id !== updatedUser.id);
+
+    this.updatedUsers.push(updatedUser);
+  }
+
+  addNewUser(createdUser: User) {
+    this.createdUsers.push(createdUser)
+  }
+
+  private saveUpdatedUsers() {
+    if (this.updatedUsers.length === 0) return;
+    console.log(this.updatedUsers)
+    this.service.updateUsers(this.updatedUsers).subscribe({
+      next: value => {
+        console.log("succeed: " + value);
+        this.fetchUsers();
+      },
+      error: err => this.error = err.message
+    });
+  }
+
+  private saveCreatedUsers() {
+    if (this.createdUsers.length === 0) return
+    console.log(this.createdUsers)
+    this.service.createUsers(this.createdUsers).subscribe({
+      next: value => {
+        console.log("succeed: " + value);
+        this.fetchUsers();
+      },
+      error: err => this.error = err.message
+    });
+  }
+
+  private saveDeletedUsers() {
+    if (this.deletedUsers.length === 0) return
+    this.service.deleteUsers(this.deletedUsers).subscribe({
+      next: value => {
+        console.log("succeed: " + value);
+        this.fetchUsers();
+      },
+      error: err => this.error = err.message
+    });
   }
 }

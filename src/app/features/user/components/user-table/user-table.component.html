@@ -14,13 +14,32 @@
       <label>{{ user?.id }}</label>
     </td>
     <td>
-      <input type="text" [(ngModel)]="user.firstName" />
+      <input type="text" [(ngModel)]="user.firstName" (ngModelChange)="updateUsersList(user)"/>
     </td>
     <td>
-      <input type="text" [(ngModel)]="user.lastName" />
+      <input type="text" [(ngModel)]="user.lastName" (ngModelChange)="updateUsersList(user)"/>
     </td>
     <td>
-      <input type="email" [(ngModel)]="user.email" />
+      <input type="email" [(ngModel)]="user.email" (ngModelChange)="updateUsersList(user)"/>
+    </td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteUser(user)">
+        <i class="bi bi-trash-fill"></i>
+      </button>
+    </td>
+  </tr>
+  <tr *ngFor="let user of createdUsers">
+    <td>
+      <label>{{ user?.id }}</label>
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="user.firstName" (ngModelChange)="updateUsersList(user)"/>
+    </td>
+    <td>
+      <input type="text" [(ngModel)]="user.lastName" (ngModelChange)="updateUsersList(user)"/>
+    </td>
+    <td>
+      <input type="email" [(ngModel)]="user.email" (ngModelChange)="updateUsersList(user)"/>
     </td>
     <td>
       <button class="btn btn-danger" (click)="deleteUser(user)">

@@ -12,18 +12,19 @@ export class UserHttpService {
   }
 
   public fetchUsers(): Observable<User[]> {
-    return this.http.get<any>('http://localhost:8080/users');
+    return this.http.get<any>('http://localhost:8080/api/v1/users');
   }
 
-  public saveUsers(users: User[]) {
-    return this.http.put<any>('http://localhost:8080/users', users);
+  public updateUsers(users: User[]) {
+    return this.http.put<any>('http://localhost:8080/api/v1/users', users);
   }
 
-  deleteUser(user: User) {
-    return  this.http.delete('http://localhost:8080/users/' + user.id);
+
+  public createUsers(users:User[]) {
+    return this.http.post<any>('http://localhost:8080/api/v1/users', users);
   }
 
-  saveUser(user: User) {
-    return this.http.put<any>('http://localhost:8080/user', user);
+  public deleteUsers(deletedUsers: User[]) {
+    return this.http.delete(`http://localhost:8080/api/v1/users/${deletedUsers.map(el=>el.id)}`);
   }
 }
