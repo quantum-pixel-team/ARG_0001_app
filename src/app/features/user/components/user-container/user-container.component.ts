@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserHttpService} from "../../services/user-http.service";
 import {User} from "../../interfaces/user.interfaces";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-user-container',
@@ -16,19 +17,20 @@ export class UserContainerComponent implements OnInit {
   public error: string | undefined
 
 
-  constructor(private service: UserHttpService) {
+  constructor(private service: UserHttpService, private _snackBar: MatSnackBar) {
   }
 
   public discard() {
     this.fetchUsers();
     this.deletedUsers = []
+    this._snackBar.open("User discarded successfully", "X",{duration: 3_000})
   }
 
   public save() {
     this.saveDeletedUsers()
     this.saveUpdatedUsers()
     this.saveCreatedUsers()
-
+    this.savedSuccessfullyMessage()
   }
 
   ngOnInit() {
@@ -68,8 +70,7 @@ export class UserContainerComponent implements OnInit {
     if (this.updatedUsers.length === 0) return;
     console.log(this.updatedUsers)
     this.service.updateUsers(this.updatedUsers).subscribe({
-      next: value => {
-        console.log("succeed: " + value);
+      next: () => {
         this.fetchUsers();
       },
       error: err => this.error = err.message
@@ -80,8 +81,7 @@ export class UserContainerComponent implements OnInit {
     if (this.createdUsers.length === 0) return
     console.log(this.createdUsers)
     this.service.createUsers(this.createdUsers).subscribe({
-      next: value => {
-        console.log("succeed: " + value);
+      next: () => {
         this.fetchUsers();
       },
       error: err => this.error = err.message
@@ -97,5 +97,9 @@ export class UserContainerComponent implements OnInit {
       },
       error: err => this.error = err.message
     });
+  }
+
+  private savedSuccessfullyMessage() {
+    this._snackBar.open("User saved successfully", "X",{duration: 3_000})
   }
 }

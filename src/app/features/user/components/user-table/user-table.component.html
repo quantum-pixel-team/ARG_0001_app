@@ -23,8 +23,8 @@
       <input type="email" [(ngModel)]="user.email" (ngModelChange)="updateUsersList(user)"/>
     </td>
     <td>
-      <button class="btn btn-danger" (click)="deleteUser(user)">
-        <i class="bi bi-trash-fill"></i>
+      <button mat-icon-button color="warn" (click)="deleteUser(user)">
+        <mat-icon>delete</mat-icon>
       </button>
     </td>
   </tr>
@@ -51,7 +51,7 @@
   <tfoot>
   <tr>
     <td colspan="6">
-      <button class="btn btn-success" (click)="addNewUser()">Add</button>
+      <button mat-raised-button color="primary" (click)="addNewUser()">Add</button>
     </td>
   </tr>
   </tfoot>
