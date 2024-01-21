@@ -23,7 +23,7 @@ export class UserContainerComponent implements OnInit {
   public discard() {
     this.fetchUsers();
     this.deletedUsers = []
-    this._snackBar.open("User discarded successfully", "X",{duration: 3_000})
+    this._snackBar.open("User discarded successfully", "X", {duration: 3_000})
   }
 
   public save() {
@@ -53,7 +53,10 @@ export class UserContainerComponent implements OnInit {
 
   addDeletedUser(deletedUser: User) {
     this.users = this.users.filter(el => el.id !== deletedUser.id);
-    this.deletedUsers.push(deletedUser);
+    this.createdUsers = this.createdUsers.filter(el => el !== deletedUser);
+    this.updatedUsers = this.updatedUsers.filter(el => el.id !== deletedUser.id);
+    if (deletedUser.id)
+      this.deletedUsers.push(deletedUser);
   }
 
   updatedUser(updatedUser: User) {
@@ -100,6 +103,6 @@ export class UserContainerComponent implements OnInit {
   }
 
   private savedSuccessfullyMessage() {
-    this._snackBar.open("User saved successfully", "X",{duration: 3_000})
+    this._snackBar.open("User saved successfully", "X", {duration: 3_000})
   }
 }

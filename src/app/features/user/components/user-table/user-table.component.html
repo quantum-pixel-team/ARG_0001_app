@@ -1,58 +1,57 @@
-<table class="table table-light">
-  <thead>
-  <tr>
-    <td>Id</td>
-    <td>First Name</td>
-    <td>Last Name</td>
-    <td>Email</td>
-    <td>Delete</td>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let user of users">
-    <td>
-      <label>{{ user?.id }}</label>
+
+<table mat-table [dataSource]="users.concat(createdUsers)" class="mat-elevation-z8 my-2">
+
+  <!-- Id Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- First Name Column -->
+  <ng-container matColumnDef="firstName">
+    <th  mat-header-cell *matHeaderCellDef> First Name </th>
+    <td mat-cell *matCellDef="let user">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput [(ngModel)]="user.firstName">
+      </mat-form-field>
     </td>
-    <td>
-      <input type="text" [(ngModel)]="user.firstName" (ngModelChange)="updateUsersList(user)"/>
+  </ng-container>
+
+  <!-- Last Name Column -->
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef> Last Name </th>
+    <td mat-cell *matCellDef="let user">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input type="text" matInput [(ngModel)]="user.lastName">
+      </mat-form-field>
     </td>
-    <td>
-      <input type="text" [(ngModel)]="user.lastName" (ngModelChange)="updateUsersList(user)"/>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef> Email </th>
+    <td mat-cell *matCellDef="let user">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input type="email" matInput [(ngModel)]="user.email" placeholder="Ex. pat@example.com">
+      </mat-form-field>
     </td>
-    <td>
-      <input type="email" [(ngModel)]="user.email" (ngModelChange)="updateUsersList(user)"/>
-    </td>
-    <td>
-      <button mat-icon-button color="warn" (click)="deleteUser(user)">
+  </ng-container>
+  <!-- Delete Column -->
+  <ng-container matColumnDef="delete">
+    <th mat-header-cell *matHeaderCellDef> Delete </th>
+    <td mat-cell *matCellDef="let user">
+      <button mat-icon-button (click)="deleteUser(user)">
         <mat-icon>delete</mat-icon>
-      </button>
-    </td>
-  </tr>
-  <tr *ngFor="let user of createdUsers">
-    <td>
-      <label>{{ user?.id }}</label>
-    </td>
-    <td>
-      <input type="text" [(ngModel)]="user.firstName" (ngModelChange)="updateUsersList(user)"/>
-    </td>
-    <td>
-      <input type="text" [(ngModel)]="user.lastName" (ngModelChange)="updateUsersList(user)"/>
-    </td>
-    <td>
-      <input type="email" [(ngModel)]="user.email" (ngModelChange)="updateUsersList(user)"/>
-    </td>
-    <td>
-      <button class="btn btn-danger" (click)="deleteUser(user)">
-        <i class="bi bi-trash-fill"></i>
-      </button>
-    </td>
-  </tr>
-  </tbody>
-  <tfoot>
-  <tr>
-    <td colspan="6">
-      <button mat-raised-button color="primary" (click)="addNewUser()">Add</button>
-    </td>
-  </tr>
-  </tfoot>
+      </button></td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
 </table>
+
+<div  mat-dialog-actions align="end" class="m-2">
+  <button mat-raised-button color="primary" mat-dialog-actions align="end" (click)="addNewUser()">Add</button>
+</div>

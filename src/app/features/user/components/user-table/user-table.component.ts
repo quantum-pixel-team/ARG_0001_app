@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {User} from "../../interfaces/user.interfaces";
-import {ThemePalette} from "@angular/material/core";
 
 @Component({
   selector: 'app-user-table',
@@ -17,9 +16,7 @@ export class UserTableComponent  {
 
 
 
-  color: ThemePalette = 'accent';
-  checked = false;
-  disabled = false;
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'delete'];
   public addNewUser() {
     let user = {
       id: undefined,

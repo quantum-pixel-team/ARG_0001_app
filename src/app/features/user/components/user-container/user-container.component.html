@@ -1,4 +1,8 @@
-<app-server-error *ngIf="error" [error]="error" ></app-server-error>
+
+
+<app-server-error
+  *ngIf="error"
+  [error]="error"></app-server-error>
 <ecm-user-header (save)="save()"
                  (discard)="discard()"
 ></ecm-user-header>
