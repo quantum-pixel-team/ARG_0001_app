@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserContainerComponent } from './user-container.component';
+import {UserHeaderComponent} from "../user-header/user-header.component";
+import {UserTableComponent} from "../user-table/user-table.component";
+import {ServerErrorComponent} from "../../../../shared/components/server-error/server-error.component";
+import {HttpClientTestingModule} from "@angular/common/http/testing";
 
 describe('UserContainerComponent', () => {
   let component: UserContainerComponent;
@@ -8,7 +12,8 @@ describe('UserContainerComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [UserContainerComponent]
+      declarations: [UserContainerComponent,UserHeaderComponent,UserTableComponent,ServerErrorComponent],
+      imports: [HttpClientTestingModule]
     });
     fixture = TestBed.createComponent(UserContainerComponent);
     component = fixture.componentInstance;
