@@ -1,4 +1,4 @@
-name: E-Commerce-app-cd-cd
+name: E-Commerce-app-cd
 
 on:
   push:
@@ -10,10 +10,17 @@ on:
     paths:
       - "src/**"
   workflow_dispatch:
+    inputs:
+      sync:
+        description: "File synchronization"
+        required: true
+        default: "delta"
 
 jobs:
-  test-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "Starting Workflow"
+  ci:
+    uses: quantum-pixel-team/ci-cd-templates/.github/workflows/app-ci-angular.yml@master
+    secrets:
+      SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+      GITHUB_REQ_TOKE: ${{secrets.GITHUB_TOKEN}}
+
+

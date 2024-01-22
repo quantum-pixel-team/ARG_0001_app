@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import {UserHttpService} from "../features/user/services/user-http.service";
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
