@@ -1,5 +1,5 @@
 ##### Stage 1
-FROM node:lts as node
+FROM node:lts AS node
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install

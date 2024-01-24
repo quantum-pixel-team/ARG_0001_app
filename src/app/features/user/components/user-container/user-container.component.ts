@@ -94,8 +94,7 @@ export class UserContainerComponent implements OnInit {
   private saveDeletedUsers() {
     if (this.deletedUsers.length === 0) return
     this.service.deleteUsers(this.deletedUsers).subscribe({
-      next: value => {
-        console.log("succeed: " + value);
+      next: () => {
         this.fetchUsers();
       },
       error: err => this.error = err.message

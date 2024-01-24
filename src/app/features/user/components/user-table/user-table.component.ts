@@ -18,7 +18,7 @@ export class UserTableComponent  {
 
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'delete'];
   public addNewUser() {
-    let user = {
+    const user = {
       id: undefined,
       firstName: '',
       lastName: '',
