@@ -1,41 +1,39 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {UserHttpService} from "../../services/user-http.service";
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {User} from "../../interfaces/user.interfaces";
 
 @Component({
   selector: 'app-user-table',
   templateUrl: './user-table.component.html',
-  styleUrls: ['./user-table.component.css']
+  styleUrls: ['./user-table.component.scss']
 })
-export class UserTableComponent implements OnInit {
+export class UserTableComponent  {
 
   @Input() users: User[] = [];
+  @Output() deletedUser = new EventEmitter<User>()
+  @Output() updatedUser = new EventEmitter<User>()
+  @Output() newUser = new EventEmitter<User>()
+  @Input() createdUsers: User[] = [];
 
-  constructor(private service: UserHttpService) {
-  }
 
-  ngOnInit() {
-    this.fetchUsers();
-  }
 
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'email', 'delete'];
   public addNewUser() {
-    this.users.push({
+    const user = {
       id: undefined,
       firstName: '',
       lastName: '',
       email: undefined
-    });
+    };
+    this.newUser.emit(user);
   }
 
   deleteUser(user: User) {
-    this.users = this.users.filter(el=> el.id !== user.id);
+    this.deletedUser.emit(user);
   }
 
-
-  private fetchUsers() {
-    this.service.fetchUsers().subscribe({
-      next: value => this.users = value,
-      error: err => console.error(err)
-    });
+  updateUsersList(updatedUser: User) {
+    if(updatedUser.id)
+    this.updatedUser.emit(updatedUser)
   }
+
 }

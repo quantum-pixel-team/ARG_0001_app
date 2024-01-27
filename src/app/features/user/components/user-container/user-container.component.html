@@ -1,7 +1,15 @@
-<app-server-error *ngIf="error" [error]="error" ></app-server-error>
-<ecm-user-header (save)="save()"
+
+
+<app-server-error
+  *ngIf="error"
+  [error]="error"></app-server-error>
+<app-user-header (save)="save()"
                  (discard)="discard()"
-></ecm-user-header>
+></app-user-header>
 <app-user-table
   [users]="users"
+  [createdUsers]="createdUsers"
+  (deletedUser)="addDeletedUser($event)"
+  (updatedUser)="updatedUser($event)"
+  (newUser)="addNewUser($event)"
 ></app-user-table>

@@ -1,9 +1,9 @@
-<div class="justify-content-end d-flex gap-2">
+<div class="justify-content-end d-flex gap-2 my-2">
 
-  <button class="btn btn-success" (click)="saveUsers()">
-    <i class="bi bi-floppy-fill "></i> Save
+  <button mat-raised-button color="primary" (click)="saveUsers()">
+    <mat-icon>save</mat-icon> Save
   </button>
-  <button class="btn  btn-warning " (click)="discardChanges()">
-    <i class="bi bi-trash"></i> Discard
+  <button mat-raised-button color="accent" (click)="discardChanges()">
+   <mat-icon>cancel</mat-icon>  Discard
   </button>
 </div>
