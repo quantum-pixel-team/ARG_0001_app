@@ -2,11 +2,11 @@ name: E-Commerce-app-cd
 
 on:
   push:
-    branches: [ "master" ]
+    branches: ["master"]
     paths:
       - "src/**"
   pull_request:
-    branches: [ "master" ]
+    branches: ["master"]
     paths:
       - "src/**"
   workflow_dispatch:
@@ -34,15 +34,12 @@ jobs:
       remote-path: "/home/luka_buziu22_gmail_com/docker-compose-file"
       artifact-path: "dist/e-commerce-app"
       deploy-script: "
-            cd docker-compose-file &&
-             docker compose pull &&
-            docker compose up -d  "
+        cd docker-compose-file &&
+        docker compose pull &&
+        docker compose up -d  "
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       HOST: ${{secrets.HOST}}
       SSH_USER: ${{secrets.SSH_USER}}
       SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
-
-
-

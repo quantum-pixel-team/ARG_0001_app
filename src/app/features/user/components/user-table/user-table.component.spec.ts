@@ -1,10 +1,10 @@
-import {ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import {UserTableComponent} from './user-table.component';
+import { UserTableComponent } from './user-table.component';
 
-import {HttpClientTestingModule} from "@angular/common/http/testing";
-import {MatFormFieldModule} from "@angular/material/form-field";
-import {MatTableModule} from "@angular/material/table";
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
 
 describe('UserTableComponent', () => {
   let component: UserTableComponent;
@@ -13,11 +13,7 @@ describe('UserTableComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [UserTableComponent],
-      imports: [
-        HttpClientTestingModule,
-        MatFormFieldModule,
-        MatTableModule
-      ]
+      imports: [HttpClientTestingModule, MatFormFieldModule, MatTableModule],
     });
     fixture = TestBed.createComponent(UserTableComponent);
     component = fixture.componentInstance;

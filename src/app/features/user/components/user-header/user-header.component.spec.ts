@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UserHeaderComponent } from './user-header.component';
-import {MatIconModule} from "@angular/material/icon";
+import { MatIconModule } from '@angular/material/icon';
 
 describe('UserHeaderComponent', () => {
   let component: UserHeaderComponent;
@@ -10,9 +10,7 @@ describe('UserHeaderComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [UserHeaderComponent],
-      imports: [
-        MatIconModule
-      ]
+      imports: [MatIconModule],
     });
     fixture = TestBed.createComponent(UserHeaderComponent);
     component = fixture.componentInstance;

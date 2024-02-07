@@ -8,7 +8,7 @@ describe('ServerErrorComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ServerErrorComponent]
+      declarations: [ServerErrorComponent],
     });
     fixture = TestBed.createComponent(ServerErrorComponent);
     component = fixture.componentInstance;
