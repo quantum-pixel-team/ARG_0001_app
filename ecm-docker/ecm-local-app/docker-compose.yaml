@@ -43,7 +43,7 @@ services:
   py:
     container_name: ecm_db_initialize
     build:
-      context: ../../../..
+      context: ../..
       dockerfile: ecm-docker/ecm-local-app/DbInitialize
     env_file:
       - .env

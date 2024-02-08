@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +11,6 @@ import { UserContainerComponent } from './features/user/components/user-containe
 import { UserHeaderComponent } from './features/user/components/user-header/user-header.component';
 import { ServerErrorComponent } from './shared/components/server-error/server-error.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -29,6 +27,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTabBody } from '@angular/material/tabs';
 import { MatSidenavContainer } from '@angular/material/sidenav';
 import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
+import { CoreModule } from './core/core.module';
+import {NgIf, NgSwitch} from "@angular/common";
+
+const app_modules = [CoreModule];
 
 @NgModule({
   declarations: [
@@ -42,11 +44,10 @@ import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
     ServerErrorComponent,
   ],
   imports: [
-    BrowserModule,
+    ...app_modules,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    BrowserAnimationsModule,
     MatSnackBarModule,
     MatCardModule,
     MatRadioModule,
@@ -66,6 +67,8 @@ import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
     MatSidenavContainer,
     MatDialogContent,
     MatDialogActions,
+    NgSwitch,
+    NgIf,
   ],
   providers: [],
   bootstrap: [AppComponent],
