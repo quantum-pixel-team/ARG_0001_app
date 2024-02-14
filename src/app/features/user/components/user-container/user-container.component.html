@@ -1,11 +1,5 @@
-
-
-<app-server-error
-  *ngIf="error"
-  [error]="error"></app-server-error>
-<app-user-header (save)="save()"
-                 (discard)="discard()"
-></app-user-header>
+<app-server-error *ngIf="error" [error]="error"></app-server-error>
+<app-user-header (save)="save()" (discard)="discard()"></app-user-header>
 <app-user-table
   [users]="users"
   [createdUsers]="createdUsers"
