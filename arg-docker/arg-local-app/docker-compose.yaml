@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: ../..
-      dockerfile: ecm-docker/ecm-local-app/Dockerfile
+      dockerfile: ../arg-local-app/Dockerfile
     volumes:
       - ../../dist/e-commerce-app:/usr/share/nginx/html
     ports:
@@ -44,7 +44,7 @@ services:
     container_name: ecm_db_initialize
     build:
       context: ../..
-      dockerfile: ecm-docker/ecm-local-app/DbInitialize
+      dockerfile: ../arg-local-app/DbInitialize
     env_file:
       - .env
     networks:
