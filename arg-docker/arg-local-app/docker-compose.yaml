@@ -2,14 +2,14 @@ services:
   app:
     build:
       context: ../..
-      dockerfile: ../arg-local-app/Dockerfile
+      dockerfile: arg-docker/arg-local-app/Dockerfile
     volumes:
       - ../../dist/e-commerce-app:/usr/share/nginx/html
     ports:
       - "80:80"
       - "443:443"
     networks:
-      - ecm
+      - arg
   postgres:
     image: "postgres:16.1-alpine"
     container_name: ecm-db
@@ -20,7 +20,7 @@ services:
     ports:
       - "5432:5432"
     networks:
-      - ecm
+      - arg
     volumes:
       - pgdata:/var/lib/postgresql/data
 
@@ -35,7 +35,7 @@ services:
       - "8000:8000"
       - "3128:3128"
     networks:
-      - ecm
+      - arg
     depends_on:
       postgres:
         condition: service_started
@@ -44,11 +44,11 @@ services:
     container_name: ecm_db_initialize
     build:
       context: ../..
-      dockerfile: ../arg-local-app/DbInitialize
+      dockerfile: arg-docker/arg-local-app/DbInitialize
     env_file:
       - .env
     networks:
-      - ecm
+      - arg
     depends_on:
       api:
         condition: service_healthy
@@ -57,5 +57,5 @@ volumes:
   pgdata:
 
 networks:
-  ecm:
+  arg:
     driver: bridge
