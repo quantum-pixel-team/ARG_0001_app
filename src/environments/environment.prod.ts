@@ -1,6 +1,6 @@
 import { Environment } from './environment.model';
 
 export const environment: Environment = {
-  api: 'http://34.125.53.34:8080',
+  api: 'http://62.171.153.17:8080',
   envName: 'dev',
 };

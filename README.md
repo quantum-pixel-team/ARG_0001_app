@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Run api server from docker locally
 Navigate to ecm-docker/ecm-local-app
 ```shell
-cd ecm-docker/ecm-local-app
+cd arg-docker/arg-local-app
 ```
 (**Only ONCE**) create a copy of .env file-example . This file is used for credentials, some default credentials for local development are provided
 ```shell
