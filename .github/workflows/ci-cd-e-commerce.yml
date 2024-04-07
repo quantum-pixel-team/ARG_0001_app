@@ -30,13 +30,13 @@ jobs:
       environment: "dev"
       docker-file-path: "Dockerfile"
       tag: "blou5/e-commerce:latest-1"
-      local-path: "ecm-docker/dev"
-      remote-path: "/home/luka_buziu22_gmail_com/docker-compose-file"
+      local-path: "arg-docker/dev"
+      remote-path: "/home/arg/app"
       artifact-path: "dist/e-commerce-app"
       deploy-script: "
-        cd docker-compose-file &&
-        docker compose pull &&
-        docker compose up -d  "
+         cd /home/arg/app &&
+               docker compose pull &&
+              docker compose up -d  "
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
