@@ -1,4 +1,4 @@
-name: E-Commerce-app-cd
+name: aragosta-app-cd
 
 on:
   push:

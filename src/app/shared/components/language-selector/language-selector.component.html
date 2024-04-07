@@ -1,0 +1,19 @@
+<mat-form-field color="primary" class="container">
+  <mat-icon
+    role="img"
+    class="lang-icon mat-icon notranslate material-icons mat-ligature-font mat-icon-no-color"
+    aria-hidden="true"
+    data-mat-icon-type="font"
+    >language
+  </mat-icon>
+  <mat-select
+    id="language"
+    (selectionChange)="onLanguageChange($event.value)"
+    [ngClass]="{ 'white-color': whiteColor }"
+    [(ngModel)]="selectedLanguage"
+  >
+    <mat-option *ngFor="let lang of languages" [value]="lang">
+      {{ lang.name }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

@@ -1,0 +1,72 @@
+@import "../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+
+.sidenav-container {
+  height: 100%;
+  font-size: larger;
+}
+
+.mat-toolbar {
+  padding-left: 20px;
+  padding-top: 10px;
+  height: 85px;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.transparent {
+  background-color: transparent !important;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar a {
+  text-decoration: none;
+  padding: 0 10px;
+  color: white;
+  height: 100%;
+  box-sizing: border-box;
+}
+.mat-nav-list a {
+  text-decoration: none;
+}
+
+.nav-bar-buttons-container a {
+  padding-top: 20px;
+}
+
+.nav-bar-buttons-container a.active.border-bottom {
+  border-bottom: 3px solid white;
+}
+
+.nav-bar-buttons-container a.active.highlight-color {
+  color: $primary;
+}
+
+.nav-bar-buttons-container {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.main-logo {
+  height: 57px;
+}

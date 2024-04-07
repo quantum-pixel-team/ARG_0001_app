@@ -22,8 +22,6 @@ export class UserHttpService {
   }
 
   public deleteUsers(deletedUsers: User[]) {
-    return this.http.delete(
-      `users/${deletedUsers.map((el) => el.id)}`,
-    );
+    return this.http.delete(`users/${deletedUsers.map((el) => el.id)}`);
   }
 }

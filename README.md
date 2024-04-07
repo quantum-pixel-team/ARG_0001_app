@@ -2,21 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
-
-
 ## Run api server from docker locally
+
 Navigate to ecm-docker/ecm-local-app
+
 ```shell
 cd ecm-docker/ecm-local-app
 ```
+
 (**Only ONCE**) create a copy of .env file-example . This file is used for credentials, some default credentials for local development are provided
+
 ```shell
 cp ./.env-example .env
 ```
+
 Run api using code bellow
+
 ```shell
 docker compose up api
 ```
+
 (Optional) to add mock data run
 
 ```shell
@@ -30,12 +35,16 @@ Install the Angular CLI
 ```sh
 npm install -g @angular/cli
 ```
+
 Run command bellow at the root of this project to download all dependencies
+
 ```shell
 npm install
 ```
+
 To start the app run
-``` shell
+
+```shell
 ng serve -o
 ```
 
@@ -46,12 +55,16 @@ ng serve -o
 ```sh
 npm install -g @angular/cli
 ```
+
 Run command bellow at the root of this project
+
 ```shell
 npm install
 ```
+
 Run
-``` shell
+
+```shell
 npm start:dev
 ```
 
