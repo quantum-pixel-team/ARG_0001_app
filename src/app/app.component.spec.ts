@@ -1,16 +1,26 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 describe('AppComponent', () => {
+  @Component({
+    selector: 'app-main-nav',
+    template: '<p>Mock Product Editor Component</p>',
+  })
+  class MockMainNavComponent {}
   beforeEach(() =>
     TestBed.configureTestingModule({
-      declarations: [AppComponent],
+      declarations: [AppComponent, MockMainNavComponent],
       imports: [
-        RouterTestingModule,
+        RouterModule.forRoot([]),
+        BrowserAnimationsModule,
+        CommonModule,
         MatCardModule,
         MatToolbarModule,
         MatIconModule,
