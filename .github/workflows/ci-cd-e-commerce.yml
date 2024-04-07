@@ -34,9 +34,9 @@ jobs:
       remote-path: "/home/arg/app"
       artifact-path: "dist/e-commerce-app"
       deploy-script: "
-         cd /home/arg/app &&
-               docker compose pull &&
-              docker compose up -d  "
+        cd /home/arg/app &&
+        docker compose pull &&
+        docker compose up -d  "
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
