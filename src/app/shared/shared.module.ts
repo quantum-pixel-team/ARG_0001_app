@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconButton } from '@angular/material/button';
 
 @NgModule({
@@ -20,7 +20,7 @@ import { MatIconButton } from '@angular/material/button';
     LanguageSelectorComponent,
     ServerErrorComponent,
   ],
-  exports: [MainNavComponent],
+  exports: [MainNavComponent, ServerErrorComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -34,6 +34,7 @@ import { MatIconButton } from '@angular/material/button';
     NgOptimizedImage,
     MatIconButton,
     RouterLink,
+    RouterLinkActive,
   ],
 })
 export class SharedModule {}
