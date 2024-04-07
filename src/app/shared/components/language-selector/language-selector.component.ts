@@ -23,7 +23,6 @@ export class LanguageSelectorComponent {
   @Output() languageChanged = new EventEmitter<Language>();
 
   onLanguageChange(selectedLanguage: Language) {
-    console.log(selectedLanguage);
     this.languageChanged.emit(selectedLanguage);
   }
 }
