@@ -32,7 +32,7 @@ jobs:
       tag: "blou5/e-commerce:latest-1"
       local-path: "arg-docker/dev"
       remote-path: "/home/arg/app"
-      artifact-path: "dist/e-commerce-app"
+      artifact-path: "dist/aragosta-app"
       deploy-script: "
         cd /home/arg/app &&
         docker compose pull &&
