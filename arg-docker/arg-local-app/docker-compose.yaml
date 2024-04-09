@@ -4,32 +4,32 @@ services:
       context: ../..
       dockerfile: arg-docker/arg-local-app/Dockerfile
     volumes:
-      - ../../dist/e-commerce-app:/usr/share/nginx/html
+      - ../../dist/aragosta-app:/usr/share/nginx/html
     ports:
       - "80:80"
       - "443:443"
     networks:
       - arg
   postgres:
-    image: "postgres:16.1-alpine"
-    container_name: ecm-db
+    image: 'postgres:16.1-alpine'
+    container_name: arg-db
     environment:
-      POSTGRES_DB: e-commerce
-      POSTGRES_PASSWORD: ecm
-      POSTGRES_USER: ecm
+      POSTGRES_DB: arg
+      POSTGRES_PASSWORD: arg
+      POSTGRES_USER: arg
     ports:
-      - "5432:5432"
+      - '5432:5432'
     networks:
       - arg
     volumes:
       - pgdata:/var/lib/postgresql/data
 
   api:
-    image: indritvaka/ecm-api:latest
+    image: blou5/arg-api:latest
     environment:
       SPRING_PROFILES_ACTIVE: local
       SWAGGER_ENABLED: true
-      DATABASE_URL: jdbc:postgresql://postgres/e-commerce
+      DATABASE_URL: jdbc:postgresql://postgres/arg
     ports:
       - "8080:8080"
       - "8000:8000"
@@ -41,7 +41,7 @@ services:
         condition: service_started
 
   py:
-    container_name: ecm_db_initialize
+    container_name: arg_db_initialize
     build:
       context: ../..
       dockerfile: arg-docker/arg-local-app/DbInitialize

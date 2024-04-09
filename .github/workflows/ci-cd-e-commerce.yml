@@ -29,7 +29,7 @@ jobs:
     with:
       environment: "dev"
       docker-file-path: "Dockerfile"
-      tag: "blou5/e-commerce:latest-1"
+      tag: "blou5/arg-app:latest"
       local-path: "arg-docker/dev"
       remote-path: "/home/arg/app"
       artifact-path: "dist/aragosta-app"
