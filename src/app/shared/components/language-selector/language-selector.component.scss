@@ -1,0 +1,30 @@
+mat-form-field {
+  border: 0;
+}
+
+.lang-icon {
+  padding-right: 10px;
+}
+
+.white-color * {
+  color: white !important;
+}
+.white-color.mat-mdc-select-arrow {
+  color: white !important;
+}
+.mat-mdc-text-field-wrapper {
+  background: none !important;
+}
+
+.mdc-line-ripple {
+  display: none;
+}
+
+.mat-mdc-form-field-infix {
+  display: flex;
+  width: fit-content !important;
+}
+
+.mat-mdc-select-value {
+  padding: 0 10px;
+}

@@ -8,8 +8,8 @@ print(folder_path)
 print("Connecting to database...")
 conn = psycopg2.connect(database="e-commerce",
                         host='postgres',
-                        user="ecm",
-                        password="ecm",
+                        user="arg",
+                        password="arg",
                         port=5432)
 cur = conn.cursor()
 

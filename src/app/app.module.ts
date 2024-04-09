@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './features/user/components/user/user.component';
-import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
 import { UserTableComponent } from './features/user/components/user-table/user-table.component';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,23 +24,31 @@ import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTabBody } from '@angular/material/tabs';
-import { MatSidenavContainer } from '@angular/material/sidenav';
+import {
+  MatSidenavContainer,
+  MatSidenavModule,
+} from '@angular/material/sidenav';
 import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
 import { CoreModule } from './core/core.module';
-import {NgIf, NgSwitch} from "@angular/common";
+import { AsyncPipe, NgIf, NgSwitch } from '@angular/common';
+import { LanguageSelectorComponent } from './shared/components/language-selector/language-selector.component';
+import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
+import { MainNavComponent } from './shared/components/main-nav/main-nav.component';
+import { MatListModule } from '@angular/material/list';
+import { MatButtonToggle } from '@angular/material/button-toggle';
+import { MatSelectModule } from '@angular/material/select';
+import { SharedModule } from './shared/shared.module';
 
-const app_modules = [CoreModule];
+const app_modules = [CoreModule, SharedModule];
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    ToolbarComponent,
     HomeComponent,
     UserTableComponent,
     UserContainerComponent,
     UserHeaderComponent,
-    ServerErrorComponent,
   ],
   imports: [
     ...app_modules,

@@ -26,7 +26,7 @@ module.exports = function (config) {
       suppressAll: true, // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require("path").join(__dirname, "./coverage/e-commerce-app"),
+      dir: require("path").join(__dirname, "./coverage/aragosta-app"),
       subdir: ".",
       reporters: [{ type: "html" }, { type: "text-summary" }],
     },

@@ -1,0 +1,96 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [ngClass]="{ hidden: (isHandset$ | async) === false }"
+    [opened]="(isHandset$ | async) === false"
+    position="end"
+  >
+    <mat-toolbar color="primary">Menu</mat-toolbar>
+    <mat-nav-list>
+      <ng-container *ngFor="let link of navigationLinks">
+        <a
+          [routerLink]="link.routerLink"
+          color="primary"
+          routerLinkActive="active"
+          mat-list-item
+          [ngClass]="{
+            'highlight-color': !hasScrolled && isHomePage,
+            'border-bottom': hasScrolled || !isHomePage
+          }"
+          >{{ link.label }}</a
+        >
+      </ng-container>
+      <app-language-selector
+        (languageChanged)="onLanguageChange($event)"
+      ></app-language-selector>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar
+      color="primary"
+      class="mat-toolbar"
+      [class.transparent]="!hasScrolled && isHomePage"
+      [class.mat-elevation-z6]="hasScrolled"
+    >
+      <a routerLink="home">
+        <ng-container *ngIf="hasScrolled || !isHomePage; else notScrolled">
+          <img
+            ngSrc="assets/icone/logo/white-logo.svg"
+            alt="aragosta logo"
+            class="main-logo"
+            height="70"
+            width="200"
+          />
+        </ng-container>
+        <ng-template #notScrolled>
+          <img
+            ngSrc="assets/icone/logo/main-arg-logo.svg"
+            alt="aragosta logo"
+            class="main-logo"
+            height="70"
+            width="200"
+          />
+        </ng-template>
+      </a>
+      <span class="spacer"></span>
+
+      @if (isHandset$ | async) {
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+      }
+
+      <div
+        class="nav-bar-buttons-container"
+        *ngIf="(isHandset$ | async) === false"
+      >
+        <ng-container *ngFor="let link of navigationLinks">
+          <a
+            [routerLink]="link.routerLink"
+            color="primary"
+            routerLinkActive="active"
+            [ngClass]="{
+              'highlight-color': !hasScrolled && isHomePage,
+              'border-bottom': hasScrolled || !isHomePage
+            }"
+            >{{ link.label }}</a
+          >
+        </ng-container>
+        <app-language-selector
+          (languageChanged)="onLanguageChange($event)"
+          [whiteColor]="true"
+        ></app-language-selector>
+      </div>
+    </mat-toolbar>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

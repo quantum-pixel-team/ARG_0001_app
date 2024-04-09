@@ -1,12 +1,12 @@
 services:
   app:
-    image: blou5/e-commerce:latest-1
+    image: blou5/arg-app:latest
     ports:
       - "80:80"
       - "443:443"
     networks:
-      - ecm
+      - arg
 
 networks:
-  ecm:
+  arg:
     driver: bridge

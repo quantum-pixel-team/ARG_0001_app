@@ -1,17 +1,26 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
-import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 describe('AppComponent', () => {
+  @Component({
+    selector: 'app-main-nav',
+    template: '<p>Mock Product Editor Component</p>',
+  })
+  class MockMainNavComponent {}
   beforeEach(() =>
     TestBed.configureTestingModule({
-      declarations: [AppComponent, ToolbarComponent],
+      declarations: [AppComponent, MockMainNavComponent],
       imports: [
-        RouterTestingModule,
+        RouterModule.forRoot([]),
+        BrowserAnimationsModule,
+        CommonModule,
         MatCardModule,
         MatToolbarModule,
         MatIconModule,
@@ -25,9 +34,9 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'e-commerce-app'`, () => {
+  it(`should have as title 'aragosta-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('e-commerce-app');
+    expect(app.title).toEqual('aragosta-app');
   });
 });

@@ -2,21 +2,26 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.10.
 
-
-
 ## Run api server from docker locally
-Navigate to ecm-docker/ecm-local-app
+
+Navigate to arg-docker/arg-local-app
+
 ```shell
 cd arg-docker/arg-local-app
 ```
+
 (**Only ONCE**) create a copy of .env file-example . This file is used for credentials, some default credentials for local development are provided
+
 ```shell
 cp ./.env-example .env
 ```
+
 Run api using code bellow
+
 ```shell
 docker compose up api
 ```
+
 (Optional) to add mock data run
 
 ```shell
@@ -30,12 +35,16 @@ Install the Angular CLI
 ```sh
 npm install -g @angular/cli
 ```
+
 Run command bellow at the root of this project to download all dependencies
+
 ```shell
 npm install
 ```
+
 To start the app run
-``` shell
+
+```shell
 ng serve -o
 ```
 
@@ -46,12 +55,16 @@ ng serve -o
 ```sh
 npm install -g @angular/cli
 ```
+
 Run command bellow at the root of this project
+
 ```shell
 npm install
 ```
+
 Run
-``` shell
+
+```shell
 npm start:dev
 ```
 
@@ -63,7 +76,7 @@ npm start:dev
 
 2. Run `npm install` at the root of this project
 3. Build the application using: `ng build --watch --delete-output-path false`
-4. Go to ecm-docker/ecm-local
+4. Go to arg-docker/arg-local-app
 5. To run the application in container first you will need to build the app, and then start it
    1. Build `docker compose build api app`
    2. Start: `docker compose up api app`
@@ -71,7 +84,7 @@ npm start:dev
 
 ## Running the `Production` Version in Containers
 
-1. Go to ecm-docker/dev or pord
+1. Go to arg-docker/dev or pord
 2. Open terminal in that location
 3. Run FE and BE in container `docker compose up --build app api`
 

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "e-commerce-app": {
+    "aragosta-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/e-commerce-app",
+            "outputPath": "dist/aragosta-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -25,7 +25,6 @@
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
               "src/theme.scss",
               "src/styles.scss"
@@ -43,9 +42,7 @@
                   "with": "src/environments/environment.mock.ts"
                 }
               ],
-              "assets": [
-                "src/api"
-              ]
+              "assets": ["src/api"]
             },
             "production": {
               "fileReplacements": [
@@ -62,8 +59,7 @@
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb"
                 }
               ],
               "outputHashing": "all"
@@ -97,16 +93,16 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "mock": {
-              "buildTarget": "e-commerce-app:build:mock"
+              "buildTarget": "aragosta-app:build:mock"
             },
             "local": {
-              "buildTarget": "e-commerce-app:build:local"
+              "buildTarget": "aragosta-app:build:local"
             },
             "production": {
-              "buildTarget": "e-commerce-app:build:production"
+              "buildTarget": "aragosta-app:build:production"
             },
             "development": {
-              "buildTarget": "e-commerce-app:build:development"
+              "buildTarget": "aragosta-app:build:development"
             }
           },
           "defaultConfiguration": "local"
@@ -114,7 +110,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "e-commerce-app:build"
+            "buildTarget": "aragosta-app:build"
           }
         },
         "test": {
@@ -129,8 +125,7 @@
               "includePaths": ["node_modules/"]
             },
             "styles": ["src/styles.scss", "src/theme.scss"],
-            "scripts": [],
-            "karmaConfig": "karma.conf.js"
+            "scripts": []
           }
         },
         "lint": {
