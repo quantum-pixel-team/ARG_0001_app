@@ -25,7 +25,7 @@ $primary: map-get($light-theme, primary, 500);
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 10;
 }
 
 .hidden {
@@ -53,6 +53,7 @@ mat-toolbar {
     justify-content: center;
     height: 100%;
     align-items: center;
+    align-content: center;
 
     a {
       font-size: larger;
@@ -72,6 +73,7 @@ mat-toolbar {
 
     .main-logo {
       height: 100%;
+      max-width: 200px;
     }
   }
 }

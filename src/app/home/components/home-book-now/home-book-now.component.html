@@ -1,0 +1,102 @@
+<div class="book-now-container">
+  <div
+    class="book-now-card"
+    [ngClass]="{
+      mobile: (isMobileWidth$ | async),
+      xxsmall: (isXXSmallWidth$ | async)
+    }"
+  >
+    <div class="input-field-container">
+      <div class="check-in">
+        <button type="button" (click)="checkin.open()" class="check-in-label">
+          Check-in
+        </button>
+        <mat-form-field appearance="outline">
+          <mat-label>Check-in</mat-label>
+          <input
+            matInput
+            [min]="currentDate"
+            [matDatepicker]="checkin"
+            [(ngModel)]="checkinDate"
+            (ngModelChange)="onCheckinDateChanged()"
+          />
+          <mat-datepicker-toggle matIconSuffix [for]="checkin">
+            <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker
+            [touchUi]="isMobileWidth$ | async"
+            #checkin
+          ></mat-datepicker>
+        </mat-form-field>
+        <div class="check-in-date-label">
+          {{ checkinDate | date: "dd/MM/yyyy" }}
+        </div>
+      </div>
+      <div class="vl"></div>
+      <div class="check-out">
+        <button type="button" (click)="checkout.open()" class="check-out-label">
+          Check-out
+        </button>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Check-out</mat-label>
+          <input
+            matInput
+            [min]="addDays(checkinDate, 1)"
+            [matDatepicker]="checkout"
+            [(ngModel)]="checkoutDate"
+          />
+          <mat-datepicker-toggle matIconSuffix [for]="checkout">
+            <mat-icon matDatepickerToggleIcon>event_available</mat-icon>
+          </mat-datepicker-toggle>
+          <mat-datepicker
+            [touchUi]="isMobileWidth$ | async"
+            #checkout
+          ></mat-datepicker>
+        </mat-form-field>
+        <div class="check-out-date-label">
+          <div *ngIf="checkoutDate === undefined">dd/MM/yyyy</div>
+          {{ checkoutDate | date: "dd/MM/yyyy" }}
+        </div>
+      </div>
+      <div class="vl"></div>
+      <div class="select-options">
+        <button [matMenuTriggerFor]="menu">
+          <div class="option-persons-container">
+            <div class="option-persons-label">Persons</div>
+            <div class="option-persons-number">{{ children + adults }}</div>
+            <mat-icon class="option-persons-drop-down"
+              >arrow_drop_down</mat-icon
+            >
+            <mat-icon class="option-persons-icon">person</mat-icon>
+          </div>
+          <div class="rooms">{{ rooms }} Room</div>
+        </button>
+        <mat-menu #menu="matMenu">
+          <mat-card-content
+            class="options-container"
+            (click)="$event.stopPropagation()"
+          >
+            <app-book-now-option-row
+              (quantityChange)="onQuantityChange($event, 'adults')"
+              label="Adults"
+            ></app-book-now-option-row>
+            <mat-divider></mat-divider>
+            <app-book-now-option-row
+              (quantityChange)="onQuantityChange($event, 'children')"
+              label="Children"
+            ></app-book-now-option-row>
+            <mat-divider></mat-divider>
+            <app-book-now-option-row
+              (quantityChange)="onQuantityChange($event, 'rooms')"
+              label="Rooms"
+            ></app-book-now-option-row>
+          </mat-card-content>
+        </mat-menu>
+      </div>
+    </div>
+    <button type="submit" class="submit" mat-flat-button color="primary">
+      BOOK NOW
+    </button>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="options-row-container">
+  <label [for]="label">{{ label }}</label>
+  <button
+    mat-icon-button
+    color="primary"
+    class="option-remove"
+    [disabled]="quantity <= 0"
+    (click)="decrementQuantity()"
+  >
+    <mat-icon>remove_circle</mat-icon>
+  </button>
+  <input
+    [(ngModel)]="quantity"
+    min="1"
+    type="number"
+    [id]="label"
+    class="option-adults"
+  />
+  <button
+    mat-icon-button
+    color="primary"
+    class="option-plus"
+    (click)="incrementQuantity()"
+  >
+    <mat-icon>add_circle</mat-icon>
+  </button>
+</div>
