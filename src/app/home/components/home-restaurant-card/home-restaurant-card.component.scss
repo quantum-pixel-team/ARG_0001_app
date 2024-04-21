@@ -1,0 +1,72 @@
+@import "../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+
+$reference-width: 1980px;
+$card-reference-height: 150px;
+
+mat-card {
+  min-height: 80px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  border-radius: 11px;
+  font-size: clamp(14px, 24px, 2vw);
+
+  .border {
+    position: absolute;
+    border: solid calc(6px * (100vw / $reference-width)) $primary;
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+  }
+
+  mat-card-header {
+    display: grid;
+    padding: 16px 5px 16px 10px;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    align-items: center;
+    column-gap: calc(20px * (100vw / $reference-width));
+
+    .card-title {
+      grid-area: 1 / 2;
+      font-size: clamp(14px, 24px, 1.7vw);
+
+      color: $primary;
+    }
+
+    img {
+      grid-area: 1 / 1;
+      margin: 0;
+      height: calc(100px * (100vw / $reference-width));
+      width: calc(100px * (100vw / $reference-width));
+    }
+  }
+
+  mat-card-actions {
+    padding: 0;
+
+    button {
+      height: 100%;
+      width: 100%;
+      border-radius: 0 10px 10px 0;
+      border: none;
+    }
+  }
+}
+
+.mobile {
+  mat-card-header {
+    .card-title {
+      font-size: clamp(14px, 24px, 2vw);
+    }
+  }
+}
+.x-small {
+  mat-card-header {
+    .card-title {
+      font-size: 18px;
+    }
+  }
+}
