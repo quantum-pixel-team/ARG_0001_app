@@ -1,0 +1,120 @@
+@import "../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+
+$reference-width: 1980px;
+$card-reference-height: 150px;
+.headline-1 {
+  font-size: clamp(24px, 96px, 5vw);
+  color: $primary;
+  margin: 20px auto clamp(20px, 190px, 5vw) auto;
+  width: fit-content;
+  border-bottom: solid 3px $primary;
+  padding: 0 calc(50px * (100vw / $reference-width));
+}
+
+.home-restaurant {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 30px;
+  margin-left: auto;
+  width: 97%;
+
+  .menu-container {
+    position: relative;
+
+    h1,
+    h2 {
+      font-size: clamp(20px, 48px, 4vw);
+      color: $primary;
+      border-bottom: solid 1px $primary;
+      padding: 10px 20px;
+      margin: 0 auto calc(50px * (100vw / $reference-width)) auto;
+      width: fit-content;
+    }
+
+    h2 {
+      margin-top: calc(50px * (100vw / $reference-width));
+    }
+
+    .restaurant-menu-card-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: calc(30px * (100vw / $reference-width));
+    }
+  }
+
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+
+    .restaurant-menu-icon-container {
+      height: calc($card-reference-height * (100vw / $reference-width));
+      width: calc($card-reference-height * (100vw / $reference-width));
+      margin-right: - calc(
+          $card-reference-height/2 * (100vw / $reference-width)
+        );
+      border-radius: 20px;
+      padding: 0;
+
+      mat-icon {
+        transform-origin: center;
+        margin: 0;
+        font-size: calc(120px * (100vw / $reference-width));
+        height: auto;
+        width: 100%;
+      }
+    }
+
+    img {
+      width: calc(
+        100% - calc($card-reference-height / 2 * (100vw / $reference-width))
+      );
+      border-radius: 20px 0 0 20px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .view-more {
+    border-radius: 5px;
+    border: solid calc(4px * (100vw / $reference-width)) $primary;
+    width: fit-content;
+    margin: 30px 0 0 auto;
+    font-size: clamp(14px, 24px, 3vw);
+
+    mat-icon {
+      transform: scale(1.5);
+      margin: 5px;
+    }
+
+    .view-more-button {
+      padding: clamp(15px, 30px, 3vw) clamp(10px, 20px, 3vw);
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.home-restaurant.mobile {
+  margin: 0 auto;
+  width: 94%;
+  overflow: scroll;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  .image-container {
+    display: none;
+  }
+
+  .view-more {
+    margin: 20px auto;
+  }
+}
+.home-restaurant.x-small {
+  .menu-container .restaurant-menu-card-container {
+    grid-template-columns: 1fr;
+  }
+}

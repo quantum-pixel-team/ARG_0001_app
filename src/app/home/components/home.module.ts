@@ -9,16 +9,27 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
-import { AsyncPipe, DatePipe, NgClass, NgIf } from '@angular/common';
+import {
+  AsyncPipe,
+  DatePipe,
+  NgClass,
+  NgForOf,
+  NgIf,
+  NgOptimizedImage,
+} from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { BookNowOptionRowComponent } from './book-now-option-row/book-now-option-row.component';
-import { MatCardContent } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+import { HomeRestaurantComponent } from './home-restaurant/home-restaurant.component';
+import { HomeRestaurantCardComponent } from './home-restaurant-card/home-restaurant-card.component';
 
 @NgModule({
   declarations: [
     HomeContainerComponent,
     HomeBookNowComponent,
     BookNowOptionRowComponent,
+    HomeRestaurantComponent,
+    HomeRestaurantCardComponent,
   ],
   providers: [provideNativeDateAdapter()],
   imports: [
@@ -35,7 +46,9 @@ import { MatCardContent } from '@angular/material/card';
     NgIf,
     AsyncPipe,
     NgClass,
-    MatCardContent,
+    MatCardModule,
+    NgForOf,
+    NgOptimizedImage,
   ],
 })
 export class HomeModule {}
