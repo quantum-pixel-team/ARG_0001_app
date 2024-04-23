@@ -36,23 +36,19 @@
       [class.transparent]="!hasScrolled && isHomePage"
       [class.mat-elevation-z6]="hasScrolled"
     >
-      <a routerLink="home">
+      <a class="home-link" routerLink="home">
         <ng-container *ngIf="hasScrolled || !isHomePage; else notScrolled">
           <img
-            ngSrc="assets/icone/logo/white-logo.svg"
+            src="assets/icone/logo/white-logo.svg"
             alt="aragosta logo"
             class="main-logo"
-            height="70"
-            width="200"
           />
         </ng-container>
         <ng-template #notScrolled>
           <img
-            ngSrc="assets/icone/logo/main-arg-logo.svg"
+            src="assets/icone/logo/main-arg-logo.svg"
             alt="aragosta logo"
             class="main-logo"
-            height="70"
-            width="200"
           />
         </ng-template>
       </a>
@@ -78,6 +74,7 @@
             [routerLink]="link.routerLink"
             color="primary"
             routerLinkActive="active"
+            class="router-link"
             [ngClass]="{
               'highlight-color': !hasScrolled && isHomePage,
               'border-bottom': hasScrolled || !isHomePage

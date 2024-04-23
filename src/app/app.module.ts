@@ -24,24 +24,15 @@ import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTabBody } from '@angular/material/tabs';
-import {
-  MatSidenavContainer,
-  MatSidenavModule,
-} from '@angular/material/sidenav';
+import { MatSidenavContainer } from '@angular/material/sidenav';
 import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
 import { CoreModule } from './core/core.module';
-import { AsyncPipe, NgIf, NgSwitch } from '@angular/common';
-import { LanguageSelectorComponent } from './shared/components/language-selector/language-selector.component';
-import { MatMenu, MatMenuItem, MatMenuTrigger } from '@angular/material/menu';
-import { MainNavComponent } from './shared/components/main-nav/main-nav.component';
-import { MatListModule } from '@angular/material/list';
-import { MatButtonToggle } from '@angular/material/button-toggle';
-import { MatSelectModule } from '@angular/material/select';
+import { NgIf, NgSwitch } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import {HomeWelcomeComponent} from "./home/components/home-welcome/home-welcome.component";
 import {WelcomHomeComponent} from "./home/components/welcom-home/welcom-home.component";
 
-const app_modules = [CoreModule, SharedModule];
+const app_modules = [CoreModule, SharedModule, HomeModule];
 
 @NgModule({
   declarations: [

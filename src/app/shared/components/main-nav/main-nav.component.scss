@@ -4,12 +4,10 @@ $primary: map-get($light-theme, primary, 500);
 
 .sidenav-container {
   height: 100%;
-  font-size: larger;
 }
 
 .mat-toolbar {
   padding-left: 20px;
-  padding-top: 10px;
   height: 85px;
   transition:
     background-color 0.3s ease,
@@ -27,7 +25,7 @@ $primary: map-get($light-theme, primary, 500);
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 10;
 }
 
 .hidden {
@@ -38,35 +36,44 @@ $primary: map-get($light-theme, primary, 500);
   flex: 1 1 auto;
 }
 
-mat-toolbar a {
-  text-decoration: none;
-  padding: 0 10px;
-  color: white;
-  height: 100%;
-  box-sizing: border-box;
-}
-.mat-nav-list a {
-  text-decoration: none;
-}
+mat-toolbar {
+  a {
+    text-decoration: none;
+    padding: 0 10px;
+    color: white;
+    height: 100%;
+  }
 
-.nav-bar-buttons-container a {
-  padding-top: 20px;
-}
+  .mat-nav-list a {
+    text-decoration: none;
+  }
 
-.nav-bar-buttons-container a.active.border-bottom {
-  border-bottom: 3px solid white;
-}
+  .nav-bar-buttons-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    align-content: center;
 
-.nav-bar-buttons-container a.active.highlight-color {
-  color: $primary;
-}
+    a {
+      font-size: larger;
+      align-content: center;
+    }
 
-.nav-bar-buttons-container {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-}
+    a.active.border-bottom {
+      border-bottom: 3px solid white;
+    }
 
-.main-logo {
-  height: 57px;
+    a.active.highlight-color {
+      color: $primary;
+    }
+  }
+  .home-link {
+    padding: 10px 0;
+
+    .main-logo {
+      height: 100%;
+      max-width: 200px;
+    }
+  }
 }
