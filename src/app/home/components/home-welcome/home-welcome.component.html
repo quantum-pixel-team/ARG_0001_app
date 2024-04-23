@@ -1,0 +1,9 @@
+<div class="container">
+  <img class="home-image" src="assets/home-image.svg"  alt="image"/>
+  <h1 [ngClass]="{
+  'text-overlay ':(isHandset$ | async) === false,
+  'text-overlay-mobile':(isHandset$ | async) === true
+  }">
+    Aragosta  <br> Hotel & Restaurant
+  </h1>
+</div>

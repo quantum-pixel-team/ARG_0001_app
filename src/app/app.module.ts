@@ -38,6 +38,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatButtonToggle } from '@angular/material/button-toggle';
 import { MatSelectModule } from '@angular/material/select';
 import { SharedModule } from './shared/shared.module';
+import {HomeWelcomeComponent} from "./home/components/home-welcome/home-welcome.component";
+import {WelcomHomeComponent} from "./home/components/welcom-home/welcom-home.component";
 
 const app_modules = [CoreModule, SharedModule];
 
@@ -76,6 +78,8 @@ const app_modules = [CoreModule, SharedModule];
     MatDialogActions,
     NgSwitch,
     NgIf,
+    HomeWelcomeComponent,
+    WelcomHomeComponent
   ],
   providers: [],
   bootstrap: [AppComponent],

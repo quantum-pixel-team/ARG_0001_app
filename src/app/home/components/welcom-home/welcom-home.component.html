@@ -1,0 +1,30 @@
+<div class="welcome-home-container">
+  <div [ngClass]="{
+  'welcome-container':(isHandset$ | async) === false,
+  'welcome-mobile-container':(isHandset$ | async) === true}">
+    <h2 class="welcome-title">Welcome to </h2>
+    <h2 class="title">Aragosta Hotel & Restaurant</h2>
+    <p class="para">
+      Aragosta Hotel & Restaurant is located in Durres, right next to a private beach.
+      Rooms are modernly furnished and air-conditioned,
+      while some offer a view of the sea. The hotel also features a restaurant and
+      wine bar with a sun terrace. Free WiFi and parking are also available.
+    </p>
+  </div>
+
+  <div [ngClass]="{
+  'two':(isHandset$ | async) === false,
+  'two-after':(isHandset$ | async) === true
+  }">
+    <img src="assets/img.png" alt="some">
+  </div>
+
+
+  <div [ngClass]="{
+  'three':(isHandset$ | async) === false,
+  'three-after':(isHandset$ | async) === true}">
+    <img src="assets/img_1.png" alt="some">
+  </div>
+
+
+</div>
