@@ -22,6 +22,8 @@ import { BookNowOptionRowComponent } from './book-now-option-row/book-now-option
 import { MatCardModule } from '@angular/material/card';
 import { HomeRestaurantComponent } from './home-restaurant/home-restaurant.component';
 import { HomeRestaurantCardComponent } from './home-restaurant-card/home-restaurant-card.component';
+import { HomeWelcomeComponent } from './home-welcome/home-welcome.component';
+import { WelcomHomeComponent } from './welcom-home/welcom-home.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +51,8 @@ import { HomeRestaurantCardComponent } from './home-restaurant-card/home-restaur
     MatCardModule,
     NgForOf,
     NgOptimizedImage,
+    HomeWelcomeComponent,
+    WelcomHomeComponent,
   ],
 })
 export class HomeModule {}
