@@ -29,8 +29,8 @@ import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
 import { CoreModule } from './core/core.module';
 import { NgIf, NgSwitch } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
-import { HomeWelcomeComponent } from './home/components/home-welcome/home-welcome.component';
-import { WelcomHomeComponent } from './home/components/welcom-home/welcom-home.component';
+import { HomeImageComponent } from './home/components/home-image/home-image.component';
+import { WelcomePageComponent } from './home/components/welcome-page/welcome-page.component';
 import { HomeModule } from './home/components/home.module';
 
 const app_modules = [CoreModule, SharedModule, HomeModule];
@@ -39,7 +39,6 @@ const app_modules = [CoreModule, SharedModule, HomeModule];
   declarations: [
     AppComponent,
     UserComponent,
-    // HomeComponent,
     UserTableComponent,
     UserContainerComponent,
     UserHeaderComponent,
@@ -70,8 +69,8 @@ const app_modules = [CoreModule, SharedModule, HomeModule];
     MatDialogActions,
     NgSwitch,
     NgIf,
-    HomeWelcomeComponent,
-    WelcomHomeComponent,
+    HomeImageComponent,
+    WelcomePageComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -5,17 +5,17 @@ import { map, shareReplay } from 'rxjs/operators';
 import { AsyncPipe, NgClass, NgOptimizedImage } from '@angular/common';
 
 @Component({
-  selector: 'app-home-welcome',
+  selector: 'app-welcome-page',
   standalone: true,
   imports: [AsyncPipe, NgClass, NgOptimizedImage],
-  templateUrl: './home-welcome.component.html',
-  styleUrl: './home-welcome.component.scss',
+  templateUrl: './welcome-page.component.html',
+  styleUrl: './welcome-page.component.scss',
 })
-export class HomeWelcomeComponent {
+export class WelcomePageComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(['(max-width: 1000px)'])
+    .observe([Breakpoints.XSmall, '(max-width: 1000px)'])
     .pipe(
       map((result) => result.matches),
       shareReplay(),
