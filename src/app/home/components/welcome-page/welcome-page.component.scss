@@ -1,3 +1,7 @@
+@import "../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+
 .welcome-home-container {
   margin: 5.2% 3.1% 5.2%;
   display: grid;
@@ -16,7 +20,7 @@
     grid-row: 1/2;
     font-size: clamp(1vw, 2vw, 3vw);
     text-align: justify;
-    color: #de4a1c;
+    color: $primary;
 
     .title {
       font-size: clamp(2.4vw, 3.4vw, 4.4vw);
@@ -41,7 +45,7 @@
         flex: 1;
         margin-left: 1rem;
         height: 3px;
-        background-color: #de4a1c;
+        background-color: $primary;
       }
     }
 
