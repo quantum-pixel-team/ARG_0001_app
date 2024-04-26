@@ -1,0 +1,18 @@
+<div class="container" [ngClass]="{
+mobile:(isMobileWidth$ | async),
+'x-small': (xSmallWidth$ | async)
+}">
+  <div class="image-container">
+    <div>
+      <img class="mat-elevation-z18" src="https://th.bing.com/th/id/OIG3.x2shDNKepXVqoiJUIIHY?pid=ImgGn"
+           alt="conference room image">
+    </div>
+  </div>
+  <div class="conference-text-container">
+    <h1>CONFERENCE ROOM</h1>
+    <p>A conference or meeting room is also available, as well as audio and video equipment.
+      Laundry and ironing service can be arranged.
+      The private beach is fitted with parasols and sun loungers.</p>
+    <a routerLink="">LEARN MORE</a>
+  </div>
+</div>

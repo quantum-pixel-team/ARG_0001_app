@@ -1,0 +1,66 @@
+@import "../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+$primary-100: map-get($light-theme, primary, 100);
+
+$reference-width: 1980px;
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  margin: calc(100px * (100vw / $reference-width)) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: clamp(220px, 45vw, 850px);
+  background: $primary;
+  background: linear-gradient(90deg, $primary 0%, $primary 32%, $primary-100 32%, $primary-100 100%);
+  color: $primary;
+
+  .image-container {
+    height: 100%;
+
+    div {
+      margin: calc(120px * (100vw / $reference-width)) auto 0 auto;
+      height: clamp(150px, 70%, 600px);
+      width: calc(800px * (100vw / $reference-width));
+      //width: clamp(175px, 35vw, 800px);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .conference-text-container {
+    padding: calc(120px * (100vw / $reference-width)) calc(100px * (100vw / $reference-width));
+
+    h1 {
+      font-size: clamp(16px, 3.3vw, 64px);
+    }
+
+    p {
+      font-size: clamp(12px, 2.6vw, 40px);
+    }
+
+    a {
+      font-size: clamp(12px, 2.5vw, 36px);
+      border-bottom: solid $primary 3px;
+      text-decoration: none;
+      color: $primary;
+    }
+  }
+}
+
+.container.mobile {
+  .conference-text-container {
+    padding: calc(25px * (100vw / $reference-width));
+
+    a {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
