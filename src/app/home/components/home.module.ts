@@ -24,6 +24,7 @@ import { HomeRestaurantComponent } from './home-restaurant/home-restaurant.compo
 import { HomeRestaurantCardComponent } from './home-restaurant-card/home-restaurant-card.component';
 import { HomeImageComponent } from './home-image/home-image.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import {HomeLocationComponent} from "./home-location/home-location.component";
 
 @NgModule({
   declarations: [
@@ -32,27 +33,29 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     BookNowOptionRowComponent,
     HomeRestaurantComponent,
     HomeRestaurantCardComponent,
+    HomeLocationComponent,
+    WelcomePageComponent,
+    HomeImageComponent
   ],
   providers: [provideNativeDateAdapter()],
-  imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    FormsModule,
-    MatButtonModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    DatePipe,
-    MatMenuModule,
-    MatDividerModule,
-    NgIf,
-    AsyncPipe,
-    NgClass,
-    MatCardModule,
-    NgForOf,
-    NgOptimizedImage,
-    HomeImageComponent,
-    WelcomePageComponent,
-  ],
+    imports: [
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        FormsModule,
+        MatButtonModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        DatePipe,
+        MatMenuModule,
+        MatDividerModule,
+        NgIf,
+        AsyncPipe,
+        NgClass,
+        MatCardModule,
+        NgForOf,
+        NgOptimizedImage,
+
+    ],
 })
 export class HomeModule {}
