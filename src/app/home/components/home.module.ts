@@ -24,6 +24,8 @@ import { HomeRestaurantComponent } from './home-restaurant/home-restaurant.compo
 import { HomeRestaurantCardComponent } from './home-restaurant-card/home-restaurant-card.component';
 import {HomeConferenceComponent} from "./home-conference/home-conference.component";
 import {RouterLink} from "@angular/router";
+import { HomeImageComponent } from './home-image/home-image.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import {RouterLink} from "@angular/router";
     MatCardModule,
     NgForOf,
     NgOptimizedImage,
+    HomeImageComponent,
+    WelcomePageComponent,
     RouterLink,
   ],
 })

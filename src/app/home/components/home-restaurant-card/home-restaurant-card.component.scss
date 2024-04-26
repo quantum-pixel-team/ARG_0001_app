@@ -32,7 +32,8 @@ mat-card {
     .card-title {
       grid-area: 1 / 2;
       font-size: clamp(14px, 24px, 1.7vw);
-
+      font-family: "Hero New", serif;
+      font-weight: 300;
       color: $primary;
     }
 

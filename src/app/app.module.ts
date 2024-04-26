@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './features/user/components/user/user.component';
+
 import { UserTableComponent } from './features/user/components/user-table/user-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserContainerComponent } from './features/user/components/user-container/user-container.component';
 import { UserHeaderComponent } from './features/user/components/user-header/user-header.component';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -27,6 +29,8 @@ import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
 import { CoreModule } from './core/core.module';
 import { NgIf, NgSwitch } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
+import { HomeImageComponent } from './home/components/home-image/home-image.component';
+import { WelcomePageComponent } from './home/components/welcome-page/welcome-page.component';
 import { HomeModule } from './home/components/home.module';
 
 const app_modules = [CoreModule, SharedModule, HomeModule];
@@ -65,6 +69,8 @@ const app_modules = [CoreModule, SharedModule, HomeModule];
     MatDialogActions,
     NgSwitch,
     NgIf,
+    HomeImageComponent,
+    WelcomePageComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -6,11 +6,12 @@ $primary-100: map-get($light-theme, primary, 100);
 $primary-50: map-get($light-theme, primary, 50);
 $primary-font-size: clamp(12px, 2rem, 3vw);
 $label-font-size: clamp(12px, 20px, 3vw);
+$reference-width: 1980px;
 
 .book-now-container {
   position: relative;
   width: 100%;
-  margin-top: -100px;
+  margin-top: - calc(100px * (100vw / $reference-width));
 
   .book-now-card {
     display: grid;
