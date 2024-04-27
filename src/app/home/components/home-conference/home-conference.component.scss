@@ -14,7 +14,13 @@ $reference-width: 1980px;
   grid-template-columns: 1fr 1fr;
   height: clamp(220px, 47vw, 850px);
   background: $primary;
-  background: linear-gradient(90deg, $primary 0%, $primary 32%, $primary-100 32%, $primary-100 100%);
+  background: linear-gradient(
+    90deg,
+    $primary 0%,
+    $primary 32%,
+    $primary-100 32%,
+    $primary-100 100%
+  );
   color: $primary;
 
   .image-container {
@@ -34,7 +40,8 @@ $reference-width: 1980px;
   }
 
   .conference-text-container {
-    padding: calc(100px * (100vw / $reference-width)) calc(30px * (100vw / $reference-width));
+    padding: calc(100px * (100vw / $reference-width))
+      calc(30px * (100vw / $reference-width));
 
     h1 {
       font-size: clamp(15px, 3.3vw, 64px);

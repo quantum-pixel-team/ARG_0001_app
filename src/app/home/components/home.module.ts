@@ -22,8 +22,8 @@ import { BookNowOptionRowComponent } from './book-now-option-row/book-now-option
 import { MatCardModule } from '@angular/material/card';
 import { HomeRestaurantComponent } from './home-restaurant/home-restaurant.component';
 import { HomeRestaurantCardComponent } from './home-restaurant-card/home-restaurant-card.component';
-import {HomeConferenceComponent} from "./home-conference/home-conference.component";
-import {RouterLink} from "@angular/router";
+import { HomeConferenceComponent } from './home-conference/home-conference.component';
+import { RouterLink } from '@angular/router';
 import { HomeImageComponent } from './home-image/home-image.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
