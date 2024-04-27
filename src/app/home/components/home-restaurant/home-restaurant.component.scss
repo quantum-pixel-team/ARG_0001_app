@@ -6,7 +6,6 @@ $reference-width: 1980px;
 $card-reference-height: 150px;
 .headline-1 {
   font-size: clamp(24px, 96px, 5vw);
-  font-family: "Hero New", serif;
   font-weight: 700;
   color: $primary;
   margin: 20px auto clamp(20px, 190px, 5vw) auto;
@@ -43,7 +42,7 @@ $card-reference-height: 150px;
 
     .restaurant-menu-card-container {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: calc(30px * (100vw / $reference-width));
     }
   }
@@ -121,6 +120,6 @@ $card-reference-height: 150px;
 }
 .home-restaurant.x-small {
   .menu-container .restaurant-menu-card-container {
-    grid-template-columns: 1fr;
+    //grid-template-columns: 1fr;
   }
 }

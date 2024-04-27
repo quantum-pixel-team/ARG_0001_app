@@ -40,8 +40,8 @@ mat-card {
     img {
       grid-area: 1 / 1;
       margin: 0;
-      height: calc(100px * (100vw / $reference-width));
-      width: calc(100px * (100vw / $reference-width));
+      height: clamp(50px, calc(100px * (100vw / $reference-width)), 110px);
+      width: clamp(50px, calc(100px * (100vw / $reference-width)), 110px);
     }
   }
 
@@ -64,10 +64,12 @@ mat-card {
     }
   }
 }
-.x-small {
+
+mat-card.x-small {
   mat-card-header {
     .card-title {
       font-size: 18px;
     }
+
   }
 }

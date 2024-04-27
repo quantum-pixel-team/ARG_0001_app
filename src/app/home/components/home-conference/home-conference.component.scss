@@ -12,7 +12,7 @@ $reference-width: 1980px;
   margin: calc(100px * (100vw / $reference-width)) 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: clamp(220px, 45vw, 850px);
+  height: clamp(220px, 47vw, 850px);
   background: $primary;
   background: linear-gradient(90deg, $primary 0%, $primary 32%, $primary-100 32%, $primary-100 100%);
   color: $primary;
@@ -24,7 +24,6 @@ $reference-width: 1980px;
       margin: calc(120px * (100vw / $reference-width)) auto 0 auto;
       height: clamp(150px, 70%, 600px);
       width: calc(800px * (100vw / $reference-width));
-      //width: clamp(175px, 35vw, 800px);
 
       img {
         width: 100%;
@@ -35,10 +34,10 @@ $reference-width: 1980px;
   }
 
   .conference-text-container {
-    padding: calc(120px * (100vw / $reference-width)) calc(100px * (100vw / $reference-width));
+    padding: calc(100px * (100vw / $reference-width)) calc(30px * (100vw / $reference-width));
 
     h1 {
-      font-size: clamp(16px, 3.3vw, 64px);
+      font-size: clamp(15px, 3.3vw, 64px);
     }
 
     p {
