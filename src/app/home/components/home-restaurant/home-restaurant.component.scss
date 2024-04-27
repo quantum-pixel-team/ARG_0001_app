@@ -42,7 +42,7 @@ $card-reference-height: 150px;
 
     .restaurant-menu-card-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: calc(30px * (100vw / $reference-width));
     }
   }
@@ -120,6 +120,6 @@ $card-reference-height: 150px;
 }
 .home-restaurant.x-small {
   .menu-container .restaurant-menu-card-container {
-    //grid-template-columns: 1fr;
+    grid-template-columns: 1fr;
   }
 }
