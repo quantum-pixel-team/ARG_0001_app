@@ -1,25 +1,29 @@
-<div class="card">
-  <div class="image-container"></div>
-  <div class="content">
-    <h2>Title</h2>
-    <hr>
+<mat-card color="primary" class="card">
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <div class="card-content">
 
-    <div class="feature">
-      <mat-icon>check</mat-icon>
-      feature 1
+        <mat-card-title>Title</mat-card-title>
+        <mat-card-content>
+            <hr>
+            <div class="feature">
+                <mat-icon>check</mat-icon>
+                feature 1
+            </div>
+            <div class="feature">
+                <mat-icon>check</mat-icon>
+                feature 1
+            </div>
+            <div class="feature">
+                <mat-icon>check</mat-icon>
+                feature 1
+            </div>
+            <div class="feature">
+                <mat-icon>check</mat-icon>
+                feature 1
+            </div>
+        </mat-card-content>
     </div>
-    <div class="feature">
-      <mat-icon>check</mat-icon>
-      feature 1
-    </div>
-    <div class="feature">
-      <mat-icon>check</mat-icon>
-      feature 1
-    </div>
-    <div class="feature">
-      <mat-icon>check</mat-icon>
-      feature 1
-    </div>
-  </div>
-  <button mat-flat-button color="primary">Book Room</button>
-</div>
+    <mat-card-actions>
+        <button mat-flat-button color="primary">Book Room</button>
+    </mat-card-actions>
+</mat-card>
