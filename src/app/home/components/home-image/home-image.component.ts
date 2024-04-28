@@ -1,8 +1,7 @@
-import {Component, inject} from '@angular/core';
-import {Observable} from 'rxjs';
-import {BreakpointObserver} from '@angular/cdk/layout';
-import {map, shareReplay} from 'rxjs/operators';
-
+import { Component, inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home-image',
