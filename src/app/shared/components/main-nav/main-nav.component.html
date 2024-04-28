@@ -36,17 +36,21 @@
       [class.transparent]="!hasScrolled && isHomePage"
       [class.mat-elevation-z6]="hasScrolled"
     >
-      <a class="home-link" routerLink="home">
+      <a
+        class="home-link"
+        routerLink="home"
+        [ngClass]="{ center: isHandset$ | async }"
+      >
         <ng-container *ngIf="hasScrolled || !isHomePage; else notScrolled">
           <img
-            src="assets/icone/logo/white-logo.svg"
+            src="assets/icone/logo/white-logo.png"
             alt="aragosta logo"
             class="main-logo"
           />
         </ng-container>
         <ng-template #notScrolled>
           <img
-            src="assets/icone/logo/main-arg-logo.svg"
+            src="assets/icone/logo/main-arg-logo.png"
             alt="aragosta logo"
             class="main-logo"
           />

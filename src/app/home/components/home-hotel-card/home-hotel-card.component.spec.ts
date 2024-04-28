@@ -8,10 +8,9 @@ describe('HomeHotelCardComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeHotelCardComponent]
-    })
-    .compileComponents();
-    
+      imports: [HomeHotelCardComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(HomeHotelCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

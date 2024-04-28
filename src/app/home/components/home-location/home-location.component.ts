@@ -1,10 +1,8 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-home-location',
   templateUrl: './home-location.component.html',
-  styleUrl: './home-location.component.scss'
+  styleUrl: './home-location.component.scss',
 })
-export class HomeLocationComponent {
-
-}
+export class HomeLocationComponent {}

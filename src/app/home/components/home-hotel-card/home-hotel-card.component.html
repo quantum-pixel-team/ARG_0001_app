@@ -1,29 +1,20 @@
-<mat-card color="primary" class="card">
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <div class="card-content">
-
-        <mat-card-title>Title</mat-card-title>
-        <mat-card-content>
-            <hr>
-            <div class="feature">
-                <mat-icon>check</mat-icon>
-                feature 1
-            </div>
-            <div class="feature">
-                <mat-icon>check</mat-icon>
-                feature 1
-            </div>
-            <div class="feature">
-                <mat-icon>check</mat-icon>
-                feature 1
-            </div>
-            <div class="feature">
-                <mat-icon>check</mat-icon>
-                feature 1
-            </div>
-        </mat-card-content>
-    </div>
+<mat-card color="primary" class="hotel-room">
+  <img
+    mat-card-image
+    [src]="room?.featureImageUrl"
+    alt="Photo of a hotel room"
+  />
+  <div class="room-details">
+    <mat-card-title>{{ room?.name }}</mat-card-title>
+    <hr />
+    <mat-card-content class="facilities">
+      <div class="facility" *ngFor="let facility of room?.facilities">
+        <mat-icon>check</mat-icon>
+        {{ facility }}
+      </div>
+    </mat-card-content>
     <mat-card-actions>
-        <button mat-flat-button color="primary">Book Room</button>
+      <button mat-flat-button color="primary">Book Room</button>
     </mat-card-actions>
+  </div>
 </mat-card>

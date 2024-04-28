@@ -1,49 +1,63 @@
 $primary: #d34418;
+$reference-width: 1920px;
 
-.card {
-  max-height: 1143px;
+.hotel-room {
   height: 100%;
   width: 100%;
-  border-radius: 30px;
-  font-size: clamp(14px, 24px, 2vw);
-  text-align: center;
-  color: $primary;
-
+  border-radius: clamp(15px, calc(30px * (100vw / $reference-width)), 30px);
+  font-size: clamp(15px, 24px, 2vw);
+  $border-size: clamp(1px, calc(5px * (100vw / $reference-width)), 2px);
 
   img {
-    height: 510px;
+    height: 44%;
     object-fit: cover;
   }
 
-  .card-content {
+  .room-details {
     width: 85%;
     margin: 0 auto;
-    height: 470px;
+    height: 56%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 
     mat-card-title {
-      font-size: 60px;
+      padding-top: 10px;
+      text-align: center;
+      font-size: clamp(20px, 36px, 2vw);
     }
-    mat-card-content {
+
+    hr {
+      width: 100%;
+      border: $border-size $primary solid;
+      margin: 0 auto;
+    }
+
+    .facilities {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      height: 100%;
+      justify-content: space-evenly;
+      height: 54%;
+      padding: 0;
 
+      .facility {
+        height: 44px;
 
-      hr {
-        width: 100%;
-        border: 2px $primary solid;
-        margin: 0 auto;
-      }
-
-      .feature {
-        font-size: 24px;
+        mat-icon {
+          font-size: clamp(25px, 2.2vw, 40px);
+          transform-origin: center;
+          font-weight: 800;
+          height: auto;
+          width: auto;
+          margin-right: 10px;
+        }
       }
     }
   }
 
   button {
-    padding: 30px;
+    padding: clamp(13px, 3vw, 35px);
     margin: 0 auto;
+    border-radius: 5px;
   }
 }

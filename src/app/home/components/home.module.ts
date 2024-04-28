@@ -4,7 +4,7 @@ import { HomeContainerComponent } from './home-container/home-container.componen
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { provideNativeDateAdapter } from '@angular/material/core';
+import { MatRipple, provideNativeDateAdapter } from '@angular/material/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -26,9 +26,9 @@ import { HomeConferenceComponent } from './home-conference/home-conference.compo
 import { RouterLink } from '@angular/router';
 import { HomeImageComponent } from './home-image/home-image.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
-import {HomeLocationComponent} from "./home-location/home-location.component";
-import {HomeHotelComponent} from "./home-hotel/home-hotel.component";
-import {HomeHotelCardComponent} from "./home-hotel-card/home-hotel-card.component";
+import { HomeLocationComponent } from './home-location/home-location.component';
+import { HomeHotelComponent } from './home-hotel/home-hotel.component';
+import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,8 @@ import {HomeHotelCardComponent} from "./home-hotel-card/home-hotel-card.componen
     MatCardModule,
     NgForOf,
     NgOptimizedImage,
-RouterLink,
+    RouterLink,
+    MatRipple,
   ],
 })
 export class HomeModule {}

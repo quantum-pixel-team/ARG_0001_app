@@ -58,7 +58,6 @@ mat-toolbar {
     a {
       font-size: larger;
       align-content: center;
-      font-family: "Hero New", serif;
     }
 
     a.active.border-bottom {
@@ -69,12 +68,24 @@ mat-toolbar {
       color: $primary;
     }
   }
+
   .home-link {
     padding: 10px 0;
 
     .main-logo {
       height: 100%;
       max-width: 200px;
+    }
+  }
+}
+
+mat-toolbar {
+  a.center {
+    width: 100%;
+
+    img {
+      margin: 0 auto;
+      display: block;
     }
   }
 }
