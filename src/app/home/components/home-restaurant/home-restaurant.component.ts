@@ -32,7 +32,7 @@ export class HomeRestaurantComponent implements OnInit {
     );
 
   xSmallWidth$: Observable<boolean> = this.breakpointObserver
-    .observe(['(max-width: 400px)'])
+    .observe(['(max-width: 480px)'])
     .pipe(
       map((result) => result.matches),
       shareReplay(),

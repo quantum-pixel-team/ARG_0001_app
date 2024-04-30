@@ -1,3 +1,7 @@
+@import "../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+
 .home-image {
   margin-top: -230px;
   filter: brightness(0.5);
