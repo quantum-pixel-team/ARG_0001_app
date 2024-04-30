@@ -40,7 +40,7 @@ import { HomeLocationComponent } from './home-location/home-location.component';
     WelcomePageComponent,
     HomeImageComponent,
     HomeConferenceComponent,
-    HomeServiceComponent
+    HomeServiceComponent,
   ],
   providers: [provideNativeDateAdapter()],
   imports: [
