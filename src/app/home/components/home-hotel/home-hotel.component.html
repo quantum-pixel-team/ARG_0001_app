@@ -1,0 +1,44 @@
+<div class="container" [ngClass]="{ 'x-small': isXSmallWidth$ | async }">
+  <div class="header">
+    <div></div>
+    <h1>HOTEL</h1>
+    <div></div>
+  </div>
+  <div class="card-container">
+    <button
+      class="navigate navigate-before"
+      matRipple
+      [matRippleCentered]="false"
+      [matRippleDisabled]="false"
+      [matRippleUnbounded]="true"
+      [matRippleRadius]="100"
+      [matRippleColor]="'primary'"
+    >
+      <mat-icon color="primary">navigate_before</mat-icon>
+    </button>
+    <app-home-hotel-card
+      [room]="getRoomOnLeft()"
+      class="background-card room-on-left"
+    ></app-home-hotel-card>
+    <app-home-hotel-card
+      [room]="getRoomOnFocus()"
+      class="shadowed-element room-on-focus"
+    ></app-home-hotel-card>
+    <app-home-hotel-card
+      [room]="getRoomOnRight()"
+      class="background-card room-on-right"
+    ></app-home-hotel-card>
+    <button
+      class="navigate navigate-next"
+      matRipple
+      [matRippleCentered]="false"
+      [matRippleDisabled]="false"
+      [matRippleUnbounded]="true"
+      [matRippleRadius]="100"
+      [matRippleColor]="'primary'"
+      aria-label="Example icon button with a vertical three dot icon"
+    >
+      <mat-icon color="primary">navigate_next</mat-icon>
+    </button>
+  </div>
+</div>

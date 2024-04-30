@@ -30,6 +30,9 @@ html,
 body {
   height: 100%;
 }
+h1 {
+  font-size: clamp(24px, 5vw, 96px);
+}
 body {
   margin: 0;
   font-family: "Hero New", serif, "Helvetica Neue", sans-serif;
