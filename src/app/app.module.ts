@@ -29,8 +29,6 @@ import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
 import { CoreModule } from './core/core.module';
 import { NgIf, NgSwitch } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
-import { HomeImageComponent } from './home/components/home-image/home-image.component';
-import { WelcomePageComponent } from './home/components/welcome-page/welcome-page.component';
 import { HomeModule } from './home/components/home.module';
 
 const app_modules = [CoreModule, SharedModule, HomeModule];
@@ -69,8 +67,6 @@ const app_modules = [CoreModule, SharedModule, HomeModule];
     MatDialogActions,
     NgSwitch,
     NgIf,
-    HomeImageComponent,
-    WelcomePageComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

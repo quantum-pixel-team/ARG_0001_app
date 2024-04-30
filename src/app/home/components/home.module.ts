@@ -24,6 +24,7 @@ import { HomeRestaurantComponent } from './home-restaurant/home-restaurant.compo
 import { HomeRestaurantCardComponent } from './home-restaurant-card/home-restaurant-card.component';
 import { HomeImageComponent } from './home-image/home-image.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { HomeServiceComponent } from './home-service/home-service.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,9 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     BookNowOptionRowComponent,
     HomeRestaurantComponent,
     HomeRestaurantCardComponent,
+    HomeServiceComponent,
+    HomeImageComponent,
+    WelcomePageComponent,
   ],
   providers: [provideNativeDateAdapter()],
   imports: [
@@ -51,8 +55,6 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
     MatCardModule,
     NgForOf,
     NgOptimizedImage,
-    HomeImageComponent,
-    WelcomePageComponent,
   ],
 })
 export class HomeModule {}
