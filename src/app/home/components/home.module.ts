@@ -26,6 +26,7 @@ import { HomeConferenceComponent } from './home-conference/home-conference.compo
 import { RouterLink } from '@angular/router';
 import { HomeImageComponent } from './home-image/home-image.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { HomeServiceComponent } from './home-service/home-service.component';
 import { HomeLocationComponent } from './home-location/home-location.component';
 import { HomeHotelComponent } from './home-hotel/home-hotel.component';
 import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.component';
@@ -41,6 +42,7 @@ import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.compon
     WelcomePageComponent,
     HomeImageComponent,
     HomeConferenceComponent,
+    HomeServiceComponent,
     HomeHotelComponent,
     HomeHotelCardComponent,
   ],

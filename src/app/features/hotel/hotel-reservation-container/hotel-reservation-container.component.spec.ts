@@ -8,7 +8,7 @@ describe('HotelReservationContainerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HotelReservationContainerComponent],
+      declarations: [HotelReservationContainerComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HotelReservationContainerComponent);

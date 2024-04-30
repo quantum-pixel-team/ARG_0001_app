@@ -1,0 +1,95 @@
+@import "../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+$reference-width: 1980px;
+$card-reference-height: 500px;
+
+.service-container {
+  width: 100%;
+  height: calc($card-reference-height * (100vw / $reference-width));
+
+  background-color: $primary;
+  display: grid;
+  grid-template-columns: repeat(6, 1.2fr);
+  grid-template-rows: repeat(2, 1.2fr);
+  grid-auto-flow: column;
+  justify-items: center;
+  align-items: end;
+
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100px * (140vw / $reference-width));
+    height: calc(100px * (35vw / $card-reference-height));
+    background-color: white;
+    border-radius: 50% 50% 50% 0;
+    margin: 0;
+  }
+
+  mat-icon {
+    color: $primary;
+    transform-origin: center;
+    font-size: clamp(1.5rem, 3.5vw, 5rem);
+    height: auto;
+    width: 100%;
+  }
+
+  .container {
+    justify-items: center;
+    align-items: center;
+  }
+
+  .title {
+    align-self: start;
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 0;
+    width: calc(110px * (120vw / $reference-width));
+    height: calc(100px * (20vw / $card-reference-height));
+    font-size: clamp(0.7rem, 2vw, 2rem);
+  }
+}
+
+.service-container.mobile {
+  grid-auto-flow: dense;
+  align-items: center;
+  justify-content: start;
+  column-gap: 1.5%;
+  row-gap: 4%;
+
+  padding: 0 4% 3% 4%;
+
+  .container {
+    justify-self: end;
+  }
+
+  .icons {
+    border-radius: 50% 50% 0 50%;
+    width: calc(120px * (140vw / $reference-width));
+    height: calc(120px * (35vw / $card-reference-height));
+    justify-self: end;
+    align-self: end;
+  }
+
+  .icons.revers {
+    justify-self: start;
+    align-self: end;
+    border-radius: 50% 50% 50% 0;
+  }
+
+  .title {
+    width: 100%;
+    height: auto;
+    font-size: clamp(0.5rem, 2vw, 2rem);
+    align-self: end;
+    justify-self: start;
+  }
+
+  .title.revers {
+    margin-right: 0;
+    text-align: right;
+    justify-self: end;
+    align-self: end;
+  }
+}

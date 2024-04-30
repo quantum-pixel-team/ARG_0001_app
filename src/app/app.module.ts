@@ -30,8 +30,22 @@ import { CoreModule } from './core/core.module';
 import { NgIf, NgSwitch } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/components/home.module';
+import { HotelModule } from './features/hotel/hotel.module';
+import { RestaurantModule } from './features/restaurant/restaurant.module';
+import { ConferenceModule } from './features/conference/conference.module';
+import { EventsModule } from './features/events/events.module';
+import { ContactUsModule } from './features/contact-us/contact-us.module';
 
-const app_modules = [CoreModule, SharedModule, HomeModule];
+const app_modules = [
+  CoreModule,
+  SharedModule,
+  HomeModule,
+  HotelModule,
+  RestaurantModule,
+  ConferenceModule,
+  EventsModule,
+  ContactUsModule,
+];
 
 @NgModule({
   declarations: [
