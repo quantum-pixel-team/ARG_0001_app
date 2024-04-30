@@ -47,6 +47,7 @@ $primary: #d34418;
 
     .navigate {
       display: flex;
+      display: none; // TODO Temporarily disabled, to be enabled when animation is added
       align-items: center;
       border: none;
       background: transparent;
