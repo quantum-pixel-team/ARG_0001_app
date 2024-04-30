@@ -27,6 +27,8 @@ import { RouterLink } from '@angular/router';
 import { HomeImageComponent } from './home-image/home-image.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { HomeLocationComponent } from './home-location/home-location.component';
+import { HomeEventsComponent } from './home-events/home-events.component';
+import { HomeEventsCardComponent } from './home-events-card/home-events-card.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { HomeLocationComponent } from './home-location/home-location.component';
     WelcomePageComponent,
     HomeImageComponent,
     HomeConferenceComponent,
+    HomeEventsComponent,
+    HomeEventsCardComponent,
   ],
   providers: [provideNativeDateAdapter()],
   imports: [
@@ -58,7 +62,6 @@ import { HomeLocationComponent } from './home-location/home-location.component';
     MatCardModule,
     NgForOf,
     NgOptimizedImage,
-
     RouterLink,
   ],
 })

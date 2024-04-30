@@ -1,0 +1,46 @@
+@import "../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+
+.events-container {
+  margin: 0 auto;
+  height: 1250px;
+  padding: 200px 85px 0 85px;
+  background: $primary;
+  background: linear-gradient(
+      0deg,
+      $primary 0%,
+      $primary 20%,
+      red 20%,
+      red 100%
+  );
+
+  h2 {
+    display: flex;
+    align-items: center;
+    background: purple;
+    margin: 0;
+
+    &:after {
+      content: "";
+      flex: 1;
+      margin-left: 1rem;
+      height: 3px;
+      background-color: red;
+    }
+  }
+
+  .events-list {
+    padding: 140px 0;
+    height: 980px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+    overflow: scroll;
+    background: #c93f15;
+
+    app-home-event-card {
+      //height: 664px;
+    }
+  }
+}
