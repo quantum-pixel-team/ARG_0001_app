@@ -42,7 +42,7 @@
                   "with": "src/environments/environment.mock.ts"
                 }
               ],
-              "assets": ["src/api"]
+              "assets": ["src/favicon.ico", "src/assets", "src/api"]
             },
             "production": {
               "fileReplacements": [

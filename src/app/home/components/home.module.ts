@@ -31,7 +31,6 @@ import { HomeLocationComponent } from './home-location/home-location.component';
 import { HomeHotelComponent } from './home-hotel/home-hotel.component';
 import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.component';
 import { HomeEventsComponent } from './home-events/home-events.component';
-import { HomeEventsCardComponent } from './home-events-card/home-events-card.component';
 
 @NgModule({
   declarations: [
@@ -47,8 +46,6 @@ import { HomeEventsCardComponent } from './home-events-card/home-events-card.com
     HomeServiceComponent,
     HomeHotelComponent,
     HomeHotelCardComponent,
-    HomeEventsComponent,
-    HomeEventsCardComponent,
   ],
   providers: [provideNativeDateAdapter()],
   imports: [
@@ -70,6 +67,8 @@ import { HomeEventsCardComponent } from './home-events-card/home-events-card.com
     NgOptimizedImage,
     RouterLink,
     MatRipple,
+    HomeEventsComponent,
   ],
+  exports: [],
 })
 export class HomeModule {}

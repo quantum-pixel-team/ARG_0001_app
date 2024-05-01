@@ -1,12 +1,19 @@
-<br/>
-<br/>
-<br/>
-<hr/>
-
 <div class="events-container">
   <h2>EVENTS</h2>
 
-  <div class="events-list">
-    <app-home-events-card *ngFor="let event of events" [event]="event"></app-home-events-card>
-  </div>
+  <div class="spacer"></div>
+
+  <swiper-container
+    class="events-swiper"
+    init="false"
+    navigation="{{ isDesktopWidth$ | async }}"
+    pagination="{{ isDesktopWidth$ | async }}"
+  >
+    <swiper-slide *ngFor="let event of events">
+      <app-home-events-card
+        [event]="event"
+        [isDesktopWidth$]="isDesktopWidth$"
+      ></app-home-events-card>
+    </swiper-slide>
+  </swiper-container>
 </div>

@@ -1,24 +1,25 @@
 @import "../../../../theme.scss";
 
 $primary: map-get($light-theme, primary, 500);
+$reference-width: 1920px;
 
 .events-container {
+  color: $primary;
   margin: 0 auto;
-  height: 1250px;
-  padding: 200px 85px 0 85px;
+  padding: calc(140px * (100vw / $reference-width))
+    calc(85px * (100vw / $reference-width));
   background: $primary;
   background: linear-gradient(
-      0deg,
-      $primary 0%,
-      $primary 20%,
-      red 20%,
-      red 100%
+    0deg,
+    $primary 0%,
+    $primary 25%,
+    transparent 25%,
+    transparent 100%
   );
 
   h2 {
     display: flex;
     align-items: center;
-    background: purple;
     margin: 0;
 
     &:after {
@@ -26,21 +27,19 @@ $primary: map-get($light-theme, primary, 500);
       flex: 1;
       margin-left: 1rem;
       height: 3px;
-      background-color: red;
+      background-color: $primary;
     }
   }
+}
 
-  .events-list {
-    padding: 140px 0;
-    height: 980px;
-    display: flex;
-    justify-content: space-evenly;
-    gap: 20px;
-    overflow: scroll;
-    background: #c93f15;
+.spacer {
+  margin-top: calc(140px * (100vw / $reference-width));
+}
 
-    app-home-event-card {
-      //height: 664px;
-    }
-  }
+swiper-container {
+  width: 100%;
+}
+app-home-events-card {
+  display: block;
+  border-radius: 40px;
 }

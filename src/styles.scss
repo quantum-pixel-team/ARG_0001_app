@@ -1,7 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-@import "./theme.scss";
-
-$primary: map-get($light-theme, primary, 500);
 
 @font-face {
   font-family: "Inria_Serif";
@@ -30,7 +27,6 @@ $primary: map-get($light-theme, primary, 500);
 *::before,
 *::after {
   box-sizing: border-box;
-  color: $primary;
 }
 html,
 body {

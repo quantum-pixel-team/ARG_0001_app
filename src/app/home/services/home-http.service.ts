@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { MenuItem } from '../interfaces/menu-item';
 import { HotelRoom } from '../interfaces/hotel-room';
+import { HttpClient } from '@angular/common/http';
+import { Event } from '../interfaces/event';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeHttpService {
+  constructor(private http: HttpClient) {}
+
   getTopMenu(): MenuItem[] {
     return [
       {
@@ -90,5 +94,9 @@ export class HomeHttpService {
         featureImageUrl: 'assets/double-room-1.png',
       },
     ];
+  }
+
+  fetchTopEvents() {
+    return this.http.get<Event[]>('events');
   }
 }

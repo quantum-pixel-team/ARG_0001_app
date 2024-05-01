@@ -1,5 +1,5 @@
 export interface Event {
-  name: string,
-  description: string,
-  featureImageUrl: string
+  name: string;
+  description: string;
+  featureImageUrl: string;
 }

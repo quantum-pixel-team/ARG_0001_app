@@ -1,13 +1,24 @@
+$reference-width: 1920px;
+
 .event {
-  //max-width: 540px;
+  width: 100%;
   border-radius: 30px;
+
   h3 {
     width: 100%;
+    font-size: clamp(16px, 3vw, 48px);
     text-align: center;
   }
 
   img {
-    height: 470px;
+    min-height: 170px;
+    max-height: 500px;
+    height: clamp(170px, 25vw, 500px);
     object-fit: cover;
+  }
+}
+.event.mobile {
+  img {
+    height: clamp(170px, 38vw, 500px);
   }
 }
