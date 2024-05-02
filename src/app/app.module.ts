@@ -35,6 +35,7 @@ import { RestaurantModule } from './features/restaurant/restaurant.module';
 import { ConferenceModule } from './features/conference/conference.module';
 import { EventsModule } from './features/events/events.module';
 import { ContactUsModule } from './features/contact-us/contact-us.module';
+import { IonicModule } from '@ionic/angular';
 
 const app_modules = [
   CoreModule,
@@ -81,6 +82,7 @@ const app_modules = [
     MatDialogActions,
     NgSwitch,
     NgIf,
+    IonicModule.forRoot({}),
   ],
   providers: [],
   bootstrap: [AppComponent],
