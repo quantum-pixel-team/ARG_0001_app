@@ -48,6 +48,12 @@ To start the app run
 ng serve -o
 ```
 
+### Run app using mock data
+
+```shell
+npm start:mock
+```
+
 ## Running the Project Locally using dev api
 
 1. Install the Angular CLI

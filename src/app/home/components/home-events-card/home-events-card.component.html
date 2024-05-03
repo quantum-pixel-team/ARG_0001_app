@@ -1,0 +1,14 @@
+<mat-card
+  class="event"
+  [ngClass]="{ mobile: (isDesktopWidth$ | async) === false }"
+>
+  <img
+    mat-card-image
+    [src]="event?.featureImageUrl"
+    loading="lazy"
+    alt="Photo of {{ event?.name }}}"
+  />
+  <mat-card-header>
+    <h3>{{ event?.name }}</h3>
+  </mat-card-header>
+</mat-card>

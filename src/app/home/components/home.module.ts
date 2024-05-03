@@ -30,6 +30,7 @@ import { HomeServiceComponent } from './home-service/home-service.component';
 import { HomeLocationComponent } from './home-location/home-location.component';
 import { HomeHotelComponent } from './home-hotel/home-hotel.component';
 import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.component';
+import { HomeEventsComponent } from './home-events/home-events.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,8 @@ import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.compon
     NgOptimizedImage,
     RouterLink,
     MatRipple,
+    HomeEventsComponent,
   ],
+  exports: [],
 })
 export class HomeModule {}

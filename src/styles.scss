@@ -1,9 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+
 @font-face {
   font-family: "Inria_Serif";
   src: url("./assets/fonts/InriaSerif-LightItalic.ttf") format("truetype");
@@ -26,12 +22,24 @@
   font-family: "Hero New";
   src: url("./assets/fonts/Hero New Regular.otf") format("truetype");
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 html,
 body {
   height: 100%;
 }
 h1 {
   font-size: clamp(24px, 5vw, 96px);
+}
+h2 {
+  font-size: clamp(16px, 4.5vw, 64px);
+}
+h3 {
+  font-size: clamp(16px, 4vw, 48px);
 }
 body {
   margin: 0;
