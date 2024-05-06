@@ -1,0 +1,51 @@
+@import "../../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+$primary-100: map-get($light-theme, primary, 200);
+$reference-width: 1920px;
+
+h1 {
+  text-transform: uppercase;
+  color: $primary;
+  margin: calc(110px * (100vw / $reference-width)) auto;
+  width: fit-content;
+}
+
+.events-container {
+  width: 95%;
+  margin: 0 auto;
+  padding: calc(50px * (100vw / $reference-width));
+  background-color: $primary-100;
+  border-radius: 15px;
+
+
+  h3 {
+    margin: calc(20px * (100vw / $reference-width));
+    color: $primary;
+  }
+
+  // used to overwrite tap label default behaviors, Encapsulation NONE required
+  mat-tab-group {
+    .mat-mdc-tab.mdc-tab {
+      height: auto;
+    }
+  }
+
+  .card-container {
+    $gap: calc(100px * (100vw / $reference-width));
+    margin-top: $gap;
+
+    app-event-card {
+      display: block;
+      margin-top: $gap;
+      width: 100%;
+    }
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+  .events-container {
+    width: 98%;
+  }
+}

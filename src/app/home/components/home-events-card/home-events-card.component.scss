@@ -4,12 +4,14 @@ $reference-width: 1920px;
   width: 100%;
   border-radius: 30px;
 
-  h3 {
-    width: 100%;
-    font-size: clamp(16px, 3vw, 48px);
-    text-align: center;
+  mat-card-header {
+    min-height: calc(164px * (100vw / $reference-width));
+    h3 {
+      width: 100%;
+      font-size: clamp(16px, 3vw, 48px);
+      text-align: center;
+    }
   }
-
   img {
     min-height: 170px;
     max-height: 500px;
@@ -17,6 +19,7 @@ $reference-width: 1920px;
     object-fit: cover;
   }
 }
+
 .event.mobile {
   img {
     height: clamp(170px, 38vw, 500px);

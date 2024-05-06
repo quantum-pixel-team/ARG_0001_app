@@ -1,4 +1,5 @@
-<div class="events-container">
+<div class="events-container"
+     [ngClass]="{mobile:(isDesktopWidth$ | async) === false}">
   <h2>EVENTS</h2>
 
   <div class="spacer"></div>
@@ -8,8 +9,9 @@
     init="false"
     navigation="{{ isDesktopWidth$ | async }}"
     pagination="{{ isDesktopWidth$ | async }}"
+    centered-slides
   >
-    <swiper-slide *ngFor="let event of events">
+    <swiper-slide lazy="true" *ngFor="let event of events">
       <app-home-events-card
         [event]="event"
         [isDesktopWidth$]="isDesktopWidth$"
