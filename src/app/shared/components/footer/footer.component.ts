@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import {Observable} from "rxjs";
-import {map, shareReplay} from "rxjs/operators";
-import {BreakpointObserver} from "@angular/cdk/layout";
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
   constructor(private breakpointObserver: BreakpointObserver) {}
@@ -17,6 +17,4 @@ export class FooterComponent {
       map((result) => result.matches),
       shareReplay(),
     );
-  protected readonly name = name;
-  colorss="gray";
 }
