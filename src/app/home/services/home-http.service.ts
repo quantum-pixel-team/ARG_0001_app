@@ -1,10 +1,15 @@
 import { Injectable } from '@angular/core';
 import { MenuItem } from '../interfaces/menu-item';
+import { HotelRoom } from '../interfaces/hotel-room';
+import { HttpClient } from '@angular/common/http';
+import { Event } from '../interfaces/event';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeHttpService {
+  constructor(private http: HttpClient) {}
+
   getTopMenu(): MenuItem[] {
     return [
       {
@@ -49,5 +54,49 @@ export class HomeHttpService {
           'https://th.bing.com/th/id/OIG3.wWRVYXFNrEtP__yIUmks?w=150&h=150&rs=1&pid=ImgDetMain',
       },
     ];
+  }
+
+  getRooms(): HotelRoom[] {
+    return [
+      {
+        name: 'Single Room',
+        facilities: ['Single Bed', 'Breakfast included', 'Free Wifi'],
+        featureImageUrl: 'assets/single-room.png',
+      },
+      {
+        name: 'Double Room',
+        facilities: [
+          'Perfect for traveling couples',
+          'Double Bed',
+          'Breakfast included',
+          'Free Wifi',
+        ],
+        featureImageUrl: 'assets/double-room-1.png',
+      },
+      {
+        name: 'Suite Room',
+        facilities: [
+          'Double Bed',
+          'Single Bed',
+          'Breakfast included',
+          'Free Wifi',
+        ],
+        featureImageUrl: 'assets/suite-room.png',
+      },
+      {
+        name: 'Double Room',
+        facilities: [
+          'Perfect for traveling couples',
+          'Double Bed',
+          'Breakfast included',
+          'Free Wifi',
+        ],
+        featureImageUrl: 'assets/double-room-1.png',
+      },
+    ];
+  }
+
+  fetchTopEvents() {
+    return this.http.get<Event[]>('events');
   }
 }

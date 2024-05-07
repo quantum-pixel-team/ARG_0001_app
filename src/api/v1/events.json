@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Live Music Night",
+    "featureImageUrl": "assets/events/live music night.png",
+    "description": ""
+  },
+  {
+    "name": "Christmas Event",
+    "featureImageUrl": "assets/events/chrismas event.png",
+    "description": ""
+  },
+  {
+    "name": "New Year Party",
+    "featureImageUrl": "assets/events/new year party.png",
+    "description": ""
+  },
+  {
+    "name": "Nature 1",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-1.jpg",
+    "description": ""
+  },
+  {
+    "name": "Nature 2",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-2.jpg",
+    "description": ""
+  },
+  {
+    "name": "Nature 3",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-3.jpg",
+    "description": ""
+  },
+  {
+    "name": "Nature 4",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-4.jpg",
+    "description": ""
+  },
+  {
+    "name": "Nature 5",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-5.jpg",
+    "description": ""
+  },
+  {
+    "name": "Nature 6",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-6.jpg",
+    "description": ""
+  },
+  {
+    "name": "Nature 7",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-7.jpg",
+    "description": ""
+  },
+  {
+    "name": "Nature 8",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-8.jpg",
+    "description": ""
+  },
+  {
+    "name": "Nature 9",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-9.jpg",
+    "description": ""
+  }
+]
