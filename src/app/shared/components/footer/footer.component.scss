@@ -1,0 +1,204 @@
+@import "../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+$reference-width: 1980px;
+$card-reference-height: 510px;
+
+.container {
+  width: 100%;
+  height: calc($card-reference-height * (110vw / $reference-width));
+  background-color: $primary;
+  display: grid;
+  grid-template-columns: 2fr 1fr 2fr;
+  padding: 0 2%;
+
+  h1 {
+    font-size: clamp(0.5rem, 2vw, 3rem);
+    color: white;
+    margin-bottom: 0;
+  }
+
+  .description {
+    grid-column: 1/2;
+
+    hr {
+      margin-right: 3%;
+      margin-top: 12%;
+      background-color: white;
+      border: none;
+      height: 2px;
+    }
+
+    .style {
+      p {
+        color: white;
+        font-size: clamp(0.3rem, 1.5vw, 1.5rem);
+        font-weight: 100;
+        padding-bottom: 0;
+      }
+
+      button {
+        height: auto;
+        width: auto;
+
+        i {
+          color: white;
+          font-size: clamp(1.5rem, 3vw, 3rem);
+          margin-left: 2%;
+        }
+      }
+
+      padding-left: 4%;
+    }
+  }
+
+  .logo {
+    margin-top: 8%;
+    grid-column: 2/3;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .contact-us {
+    font-weight: 100;
+
+    hr {
+      margin-left: 3%;
+      margin-top: 12%;
+      background-color: white;
+      border: none;
+      height: 2px;
+    }
+
+    .contact-details {
+      text-align: center;
+
+      .title {
+        color: white;
+        font-size: clamp(0.5rem, 2.3vw, 3rem);
+        margin-left: 10%;
+      }
+
+      h2 {
+        width: auto;
+        height: auto;
+        font-size: clamp(0.6rem, 1.6vw, 2rem);
+        color: white;
+        margin: 0;
+      }
+
+      button {
+        width: auto;
+        height: auto;
+        top: 0.5rem;
+
+        mat-icon {
+          width: auto;
+          height: auto;
+          font-size: clamp(1.5rem, 3vw, 3rem);
+          color: white;
+        }
+      }
+
+      .location-details {
+        margin-left: 10%;
+      }
+
+      .email-details {
+        margin-left: 13%;
+      }
+    }
+  }
+}
+
+.container.mobile {
+  height: calc($card-reference-height * (320vw / $reference-width));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+
+  .logo {
+    width: 30%;
+    margin-top: 0;
+
+    img {
+      padding-top: 2%;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .contact-us {
+    width: 100%;
+    height: auto;
+
+    hr {
+      margin: 0;
+      background-color: white;
+      border: none;
+      height: 2px;
+    }
+
+    .contact-details {
+      button {
+        mat-icon {
+          font-size: clamp(1.5rem, 7vw, 3rem);
+        }
+      }
+
+      .title {
+        font-size: clamp(0.7rem, 5vw, 3rem);
+        margin: 2% 0 0 0;
+      }
+
+      h2 {
+        font-size: clamp(0.7rem, 3vw, 2rem);
+        margin-right: 8%;
+      }
+
+      .location-details {
+        margin-left: 9%;
+      }
+
+      .email-details {
+        margin-left: 11%;
+      }
+
+      i {
+        color: white;
+        font-size: clamp(0.5rem, 6vw, 4rem);
+        margin-left: 2%;
+        padding-top: 3%;
+      }
+    }
+  }
+}
+
+.footer-qpt {
+  width: 100%;
+  height: auto;
+  background-color: $primary;
+
+  hr {
+    background-color: white;
+    border: none;
+    margin: 0 3% 0 3%;
+    height: 2px;
+  }
+
+  h2 {
+    text-align: center;
+    color: white;
+    margin-top: 1%;
+    padding-bottom: 1%;
+    margin-bottom: 0;
+    font-size: clamp(0.8rem, 2vw, 1.8rem);
+  }
+}

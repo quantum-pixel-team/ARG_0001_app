@@ -7,6 +7,8 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { FooterComponent } from './shared/components/footer/footer.component';
+
 
 describe('AppComponent', () => {
   @Component({
@@ -16,7 +18,7 @@ describe('AppComponent', () => {
   class MockMainNavComponent {}
   beforeEach(() =>
     TestBed.configureTestingModule({
-      declarations: [AppComponent, MockMainNavComponent],
+      declarations: [AppComponent, MockMainNavComponent, FooterComponent],
       imports: [
         RouterModule.forRoot([]),
         BrowserAnimationsModule,

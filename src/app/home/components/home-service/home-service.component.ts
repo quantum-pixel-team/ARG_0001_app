@@ -40,7 +40,7 @@ export class HomeServiceComponent {
     {
       id: 6,
       icon: 'payments',
-      title: 'Cash & Card\n' + 'Payment',
+      title: 'Cash & Card Payment',
     },
   ];
 
