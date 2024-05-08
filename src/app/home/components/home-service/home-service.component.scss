@@ -7,7 +7,6 @@ $card-reference-height: 500px;
 .service-container {
   width: 100%;
   height: calc($card-reference-height * (100vw / $reference-width));
-
   background-color: $primary;
   display: grid;
   grid-template-columns: repeat(6, 1.2fr);
@@ -43,10 +42,13 @@ $card-reference-height: 500px;
   .title {
     align-self: start;
     color: white;
+    font-family: "Hero New", serif;
+    font-weight: 300;
     margin-top: 5px;
     margin-bottom: 0;
-    width: calc(110px * (120vw / $reference-width));
-    height: calc(100px * (20vw / $card-reference-height));
+    margin-left: 7%;
+    width: calc(110px * (155vw / $reference-width));
+    height: calc(100px * (40vw / $card-reference-height));
     font-size: clamp(0.7rem, 2vw, 2rem);
   }
 }

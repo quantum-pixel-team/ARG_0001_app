@@ -5,22 +5,26 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
 import { ServerErrorComponent } from './components/server-error/server-error.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { MatOptionModule } from '@angular/material/core';
+import { MatOptionModule, MatRipple } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { MatIconButton } from '@angular/material/button';
+import { MatIconAnchor, MatIconButton } from '@angular/material/button';
+import { FooterComponent } from './components/footer/footer.component';
+
+import { MatTooltip } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
     MainNavComponent,
     LanguageSelectorComponent,
     ServerErrorComponent,
+    FooterComponent,
   ],
-  exports: [MainNavComponent, ServerErrorComponent],
+  exports: [MainNavComponent, ServerErrorComponent, FooterComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,
@@ -36,6 +40,9 @@ import { MatIconButton } from '@angular/material/button';
     NgIf,
     RouterLink,
     RouterLinkActive,
+    MatIconAnchor,
+    MatTooltip,
+    MatRipple,
   ],
 })
 export class SharedModule {}
