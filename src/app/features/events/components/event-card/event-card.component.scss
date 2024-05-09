@@ -6,8 +6,8 @@ $reference-width: 1920px;
 mat-card {
   display: grid;
   grid-template-columns: calc(630px * (100vw / $reference-width)) 1fr;
-
-  border-radius: clamp(15px, 2.5vw,30px);
+  grid-template-rows: 1fr clamp(65px, 8vw, 160px);
+  border-radius: clamp(15px, 2.5vw, 30px);
   overflow: hidden;
   max-height: 630px;
 
@@ -22,7 +22,7 @@ mat-card {
   }
 
   p {
-    font-size: clamp(12px, 2.4vw, 30px);
+    font-size: clamp(12px, 2.2vw, 28px);
   }
 
   .content {
@@ -32,7 +32,6 @@ mat-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 
     h3 {
       margin: 0;
@@ -48,15 +47,12 @@ mat-card {
       margin-bottom: 10px;
       min-height: 80px;
 
-
       p {
-        max-height: clamp(3rem, 35vw, 30rem);
-        overflow: scroll;
+        max-height: clamp(3rem, 30vw, 30rem);
         width: 95%;
         margin: 10px auto;
       }
     }
-
   }
 
   mat-card-actions {
@@ -84,7 +80,7 @@ mat-card {
 
     mat-icon {
       width: auto;
-      font-size: clamp(12px, 2.5vw, 40px);
+      font-size: clamp(15px, 2.5vw, 40px);
       height: auto;
       margin: 5px;
     }
@@ -96,7 +92,6 @@ mat-card {
 }
 
 @media screen and (max-width: 1000px) {
-
   mat-card {
     mat-card-actions {
       grid-column: span 2;
@@ -108,6 +103,16 @@ mat-card {
 
     .content mat-card-content {
       padding: 0;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  mat-card {
+    mat-card-actions {
+      .start-time,
+      .start-time-icon {
+        display: none;
+      }
     }
   }
 }

@@ -9,7 +9,6 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FooterComponent } from './shared/components/footer/footer.component';
 
-
 describe('AppComponent', () => {
   @Component({
     selector: 'app-main-nav',

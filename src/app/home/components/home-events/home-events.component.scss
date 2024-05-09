@@ -6,14 +6,15 @@ $reference-width: 1920px;
 .events-container {
   color: $primary;
   margin: 0 auto;
-  padding: calc(140px * (100vw / $reference-width)) calc(85px * (100vw / $reference-width));
+  padding: calc(140px * (100vw / $reference-width))
+    calc(85px * (100vw / $reference-width));
   background: $primary;
   background: linear-gradient(
-      0deg,
-      $primary 0%,
-      $primary 25%,
-      transparent 25%,
-      transparent 100%
+    0deg,
+    $primary 0%,
+    $primary 25%,
+    transparent 25%,
+    transparent 100%
   );
 
   h2 {

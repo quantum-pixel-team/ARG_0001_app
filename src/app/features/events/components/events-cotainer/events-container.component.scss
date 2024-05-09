@@ -1,7 +1,7 @@
 @import "../../../../../theme.scss";
 
 $primary: map-get($light-theme, primary, 500);
-$primary-100: map-get($light-theme, primary, 200);
+$primary-100: map-get($light-theme, primary, 100);
 $reference-width: 1920px;
 
 h1 {
@@ -13,11 +13,11 @@ h1 {
 
 .events-container {
   width: 95%;
-  margin: 0 auto;
-  padding: calc(50px * (100vw / $reference-width));
+  padding: calc(50px * (100vw / $reference-width))
+    calc(50px * (100vw / $reference-width)) 0;
+  margin: 0 auto calc(100px * (100vw / $reference-width));
   background-color: $primary-100;
   border-radius: 15px;
-
 
   h3 {
     margin: calc(20px * (100vw / $reference-width));
@@ -42,10 +42,69 @@ h1 {
     }
   }
 
+  mat-paginator {
+    background-color: transparent;
+    width: fit-content;
+    margin: calc(90px * (100vw / $reference-width)) auto;
+    color: $primary;
+
+    font-size: clamp(12px, 2.5vw, 40px);
+
+    mat-option {
+      font-size: clamp(12px, 2.5vw, 40px);
+    }
+
+    .mat-mdc-form-field {
+      background-color: $primary;
+      border-radius: 10px;
+      width: calc(180px * (100vw / $reference-width));
+      min-width: 70px;
+
+      mat-select {
+        color: white;
+
+        .mat-mdc-select-arrow {
+          color: white;
+        }
+      }
+    }
+
+    .mdc-notched-outline > * {
+      display: none;
+    }
+
+    .mat-mdc-paginator-range-actions {
+      button {
+        margin: clamp(5px, 1vw, 10px);
+      }
+
+      .mat-mdc-paginator-icon {
+        width: 48px;
+        height: 48px;
+        margin-top: -10px;
+        margin-left: -10px;
+      }
+
+      :not(.mat-mdc-button-disabled) .mat-mdc-paginator-icon path {
+        fill: $primary;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {
   .events-container {
     width: 98%;
+
+    mat-paginator {
+      .mat-mdc-paginator-range-actions {
+        .mat-mdc-paginator-icon {
+          width: 30px;
+          height: 30px;
+          margin-top: -8px;
+          margin-left: -8px;
+        }
+      }
+    }
   }
 }

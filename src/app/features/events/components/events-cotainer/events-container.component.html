@@ -1,24 +1,51 @@
 <h1>Events</h1>
-<div class="events-container">
+<div class="events-container" #eventsContainer>
   <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" dynamicHeight>
     <mat-tab>
       <ng-template mat-tab-label>
         <h3>UPCOMING</h3>
       </ng-template>
       <div class="card-container">
-        <app-event-card *ngFor="let event of upcomingEvents"
-                        [event]="event"></app-event-card>
+        <app-event-card
+          *ngFor="let event of upcomingEvents?.content"
+          [event]="event"
+        ></app-event-card>
+        <app-no-events
+          *ngIf="upcomingEvents === undefined || upcomingEvents.size === 0"
+        ></app-no-events>
       </div>
+      <mat-paginator
+        [length]="upcomingEvents?.totalElements"
+        color="primary"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="OnPageChanged($event)"
+        aria-label="Select page"
+      >
+      </mat-paginator>
     </mat-tab>
     <mat-tab>
       <ng-template mat-tab-label>
         <h3>RECENT</h3>
       </ng-template>
       <div class="card-container">
-        <app-event-card *ngFor="let event of recentEvents"
-                        [event]="event"></app-event-card>
+        <app-event-card
+          *ngFor="let event of recentEvents?.content"
+          [event]="event"
+        ></app-event-card>
+        <app-no-events
+          *ngIf="recentEvents === undefined || recentEvents.size === 0"
+        ></app-no-events>
       </div>
+      <mat-paginator
+        [length]="recentEvents?.totalElements"
+        color="primary"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="pageSizeOptions"
+        (page)="OnPageChanged($event)"
+        aria-label="Select page"
+      >
+      </mat-paginator>
     </mat-tab>
   </mat-tab-group>
-
 </div>

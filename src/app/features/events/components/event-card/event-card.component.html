@@ -1,25 +1,25 @@
 <mat-card>
-  <div class="img-container" >
-    <img
-      [src]="event.featureImageUrl"
-      alt="Event Name">
+  <div class="img-container">
+    <img [src]="event.featureImageUrl" alt="Event Name" />
   </div>
   <div class="content">
     <mat-card-header>
       <h3>{{ event.title }}</h3>
     </mat-card-header>
     <mat-card-content>
-      <hr>
+      <hr />
       <p>{{ event.shortDescription }}</p>
     </mat-card-content>
   </div>
   <mat-card-actions>
     <div class="start-end-date">
       <mat-icon>calendar_today</mat-icon>
-      <p>{{ event.startDate | date: "dd/MM/yyyy" }} </p>
-      <p *ngIf="event.endDate">- {{ event.endDate |date: "dd/MM/yyyy" }} </p>
-      <mat-icon *ngIf="event.startTime">schedule</mat-icon>
-      <p *ngIf="event.startTime">{{ event.startTime }}</p>
+      <p>{{ event.startDate | date: "dd/MM/yyyy" }}</p>
+      <p *ngIf="event.endDate">- {{ event.endDate | date: "dd/MM/yyyy" }}</p>
+      <mat-icon class="start-time-icon" *ngIf="event.startTime"
+        >schedule</mat-icon
+      >
+      <p class="start-time" *ngIf="event.startTime">{{ event.startTime }}</p>
     </div>
     <div class="spacer"></div>
     <button class="call-button" mat-ripple color="primary">

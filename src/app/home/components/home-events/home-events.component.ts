@@ -1,13 +1,12 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
 import { AppEvent } from '../../../features/events/interfaces/app-event';
-import {AsyncPipe, NgClass, NgForOf} from '@angular/common';
+import { AsyncPipe, NgClass, NgForOf } from '@angular/common';
 import { HomeEventsCardComponent } from '../home-events-card/home-events-card.component';
-import { HomeHttpService } from '../../services/home-http.service';
 import { MatCard, MatCardHeader, MatCardImage } from '@angular/material/card';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import {EventHttpService} from "../../../features/events/services/event-http.service";
+import { EventHttpService } from '../../../features/events/services/event-http.service';
 
 @Component({
   selector: 'app-home-events',
