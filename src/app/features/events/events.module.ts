@@ -1,9 +1,36 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { EventsCotainerComponent } from './events-cotainer/events-cotainer.component';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { EventsContainerComponent } from './components/events-cotainer/events-container.component';
+import { EventCardComponent } from './components/event-card/event-card.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatOption, MatRipple } from '@angular/material/core';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormField, MatSelect } from '@angular/material/select';
+import { MatMenuModule } from '@angular/material/menu';
+import { NoEventsComponent } from './components/no-events/no-events.component';
 
 @NgModule({
-  declarations: [EventsCotainerComponent],
-  imports: [CommonModule],
+  declarations: [
+    EventsContainerComponent,
+    EventCardComponent,
+    NoEventsComponent,
+  ],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatRipple,
+    MatPaginatorModule,
+    MatMenuModule,
+    MatFormField,
+    MatOption,
+    MatSelect,
+    NgOptimizedImage,
+  ],
 })
 export class EventsModule {}

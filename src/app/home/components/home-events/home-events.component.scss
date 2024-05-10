@@ -39,7 +39,18 @@ $reference-width: 1920px;
 swiper-container {
   width: 100%;
 }
+
 app-home-events-card {
   display: block;
   border-radius: 40px;
+}
+
+.events-container.mobile {
+  padding-left: 0;
+  padding-right: 0;
+
+  h2 {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
