@@ -35,6 +35,7 @@ import { RestaurantModule } from './features/restaurant/restaurant.module';
 import { ConferenceModule } from './features/conference/conference.module';
 import { EventsModule } from './features/events/events.module';
 import { ContactUsModule } from './features/contact-us/contact-us.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const app_modules = [
   CoreModule,
@@ -81,8 +82,10 @@ const app_modules = [
     MatDialogActions,
     NgSwitch,
     NgIf,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}
