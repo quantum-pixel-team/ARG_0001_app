@@ -11,7 +11,10 @@
           [event]="event"
         ></app-event-card>
         <app-no-events
-          *ngIf="upcomingEvents === undefined || upcomingEvents.numberOfElements === 0"
+          *ngIf="
+            upcomingEvents === undefined ||
+            upcomingEvents.numberOfElements === 0
+          "
         ></app-no-events>
       </div>
       <mat-paginator
@@ -34,7 +37,9 @@
           [event]="event"
         ></app-event-card>
         <app-no-events
-          *ngIf="recentEvents === undefined || recentEvents.numberOfElements === 0"
+          *ngIf="
+            recentEvents === undefined || recentEvents.numberOfElements === 0
+          "
         ></app-no-events>
       </div>
       <mat-paginator

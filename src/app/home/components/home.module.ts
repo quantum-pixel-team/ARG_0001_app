@@ -47,7 +47,7 @@ import { HomeEventsComponent } from './home-events/home-events.component';
     HomeHotelComponent,
     HomeHotelCardComponent,
   ],
-  providers: [provideNativeDateAdapter(),DatePipe],
+  providers: [provideNativeDateAdapter(), DatePipe],
   imports: [
     MatFormFieldModule,
     MatInputModule,

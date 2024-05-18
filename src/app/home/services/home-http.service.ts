@@ -1,15 +1,14 @@
-import {Injectable} from '@angular/core';
-import {MenuItem} from '../interfaces/menu-item';
-import {HotelRoom} from '../interfaces/hotel-room';
-import {HttpClient} from '@angular/common/http';
-import {Router} from "@angular/router";
+import { Injectable } from '@angular/core';
+import { MenuItem } from '../interfaces/menu-item';
+import { HotelRoom } from '../interfaces/hotel-room';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HomeHttpService {
-  constructor(private router: Router) {
-  }
+  constructor(private router: Router) {}
 
   getTopMenu(): MenuItem[] {
     return [
@@ -108,10 +107,10 @@ export class HomeHttpService {
   }
 
   fetchRestaurantMenu() {
-    this.router.navigate([`/restaurant`])
+    this.router.navigate([`/restaurant`]);
   }
 
   navigateToContactUs() {
-    this.router.navigate([`/contact-us`])
+    this.router.navigate([`/contact-us`]);
   }
 }

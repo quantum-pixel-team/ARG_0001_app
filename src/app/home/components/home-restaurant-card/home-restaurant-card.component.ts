@@ -1,6 +1,6 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Observable } from 'rxjs';
-import {MenuItem} from "../../interfaces/menu-item";
+import { MenuItem } from '../../interfaces/menu-item';
 
 @Component({
   selector: 'app-home-restaurant-card',
@@ -14,5 +14,4 @@ export class HomeRestaurantCardComponent {
   @Input() isMobileWidth$!: Observable<boolean>;
   @Input() xSmallWidth$!: Observable<boolean>;
   @Output() cardClicked = new EventEmitter<MenuItem>();
-
 }

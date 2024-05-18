@@ -9,8 +9,9 @@ $primary: map-get($light-theme, primary, 500);
 .mat-toolbar {
   padding-left: 20px;
   height: 85px;
-  transition: background-color 0.3s ease,
-  box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .sidenav {

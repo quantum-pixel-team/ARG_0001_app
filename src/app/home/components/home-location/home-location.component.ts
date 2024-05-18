@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-home-location',
@@ -6,5 +6,5 @@ import {Component, EventEmitter, Output} from '@angular/core';
   styleUrl: './home-location.component.scss',
 })
 export class HomeLocationComponent {
-  @Output() locationClicked  = new EventEmitter();
+  @Output() locationClicked = new EventEmitter();
 }

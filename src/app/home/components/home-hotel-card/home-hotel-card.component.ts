@@ -1,5 +1,5 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {HotelRoom} from '../../interfaces/hotel-room';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { HotelRoom } from '../../interfaces/hotel-room';
 
 @Component({
   selector: 'app-home-hotel-card',
@@ -9,5 +9,4 @@ import {HotelRoom} from '../../interfaces/hotel-room';
 export class HomeHotelCardComponent {
   @Input() room: HotelRoom | undefined;
   @Output() bookNowClicked = new EventEmitter();
-
 }

@@ -1,10 +1,16 @@
-import {AfterViewInit, Component, ElementRef, ViewChild, ViewEncapsulation,} from '@angular/core';
-import {AppEvent} from '../../interfaces/app-event';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  ViewChild,
+  ViewEncapsulation,
+} from '@angular/core';
+import { AppEvent } from '../../interfaces/app-event';
 
-import {EventHttpService} from '../../services/event-http.service';
-import {map} from 'rxjs/operators';
-import {Page} from '../../../../shared/interfaces/page';
-import {PageEvent} from '@angular/material/paginator';
+import { EventHttpService } from '../../services/event-http.service';
+import { map } from 'rxjs/operators';
+import { Page } from '../../../../shared/interfaces/page';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-events-cotainer',
@@ -17,10 +23,9 @@ export class EventsContainerComponent implements AfterViewInit {
   recentEvents: Page<AppEvent> | undefined;
   pageSizeOptions = [5, 10, 25, 100];
   pageSize = 5;
-  @ViewChild('eventsContainer', {static: false}) scrollTarget!: ElementRef;
+  @ViewChild('eventsContainer', { static: false }) scrollTarget!: ElementRef;
 
-  constructor(private service: EventHttpService) {
-  }
+  constructor(private service: EventHttpService) {}
 
   ngAfterViewInit(): void {
     const query = `pageIndex=0&pageSize=${this.pageSize}`;

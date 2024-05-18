@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
-import {HomeHttpService} from "../../services/home-http.service";
-import {BreakpointObserver} from "@angular/cdk/layout";
+import { Component } from '@angular/core';
+import { HomeHttpService } from '../../services/home-http.service';
+import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-home-container',
@@ -8,10 +8,7 @@ import {BreakpointObserver} from "@angular/cdk/layout";
   styleUrl: './home-container.component.scss',
 })
 export class HomeContainerComponent {
-  constructor(
-    private httpService: HomeHttpService,
-  ) {
-  }
+  constructor(private httpService: HomeHttpService) {}
 
   onLocationClicked() {
     this.httpService.navigateToContactUs();

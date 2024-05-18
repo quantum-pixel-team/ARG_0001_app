@@ -39,9 +39,9 @@ export class HomeRestaurantComponent implements OnInit {
     );
 
   onCardClicked(item: MenuItem) {
-    this.httpService.fetchRestaurantMenuItem(item)
+    this.httpService.fetchRestaurantMenuItem(item);
   }
-  onViewMoreClicked(){
-    this.httpService.fetchRestaurantMenu()
+  onViewMoreClicked() {
+    this.httpService.fetchRestaurantMenu();
   }
 }

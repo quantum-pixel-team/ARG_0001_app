@@ -42,6 +42,8 @@ export class HomeHotelComponent implements OnInit {
   }
 
   onBookNowClicked() {
-    open('https://app.inn-connect.com/book/properties/Aragosta%20Hotel%26Restaurant')
+    open(
+      'https://app.inn-connect.com/book/properties/Aragosta%20Hotel%26Restaurant',
+    );
   }
 }
