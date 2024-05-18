@@ -1,22 +1,14 @@
-@import "../../../../theme.scss";
 
-$primary: map-get($light-theme, primary, 500);
 $reference-width: 1980px;
 
-a {
+button {
   width: 100%;
-  height: 10%;
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  color: $primary;
-  justify-content: center;
-  text-decoration: none;
+  height: auto;
 
   h2 {
     font-size: clamp(1.5rem, 5vw, 3rem);
-    font-family: "Hero New", serif;
     font-weight: 300;
+    margin: clamp(20px, calc(30px * (100vw / $reference-width)), 30px), 0;
   }
 
   mat-icon {

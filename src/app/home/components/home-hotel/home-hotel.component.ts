@@ -40,4 +40,8 @@ export class HomeHotelComponent implements OnInit {
   getRoomOnRight() {
     return this.rooms ? this.rooms[2] : undefined;
   }
+
+  onBookNowClicked() {
+    open('https://app.inn-connect.com/book/properties/Aragosta%20Hotel%26Restaurant')
+  }
 }

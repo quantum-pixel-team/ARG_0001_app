@@ -37,4 +37,11 @@ export class HomeRestaurantComponent implements OnInit {
       map((result) => result.matches),
       shareReplay(),
     );
+
+  onCardClicked(item: MenuItem) {
+    this.httpService.fetchRestaurantMenuItem(item)
+  }
+  onViewMoreClicked(){
+    this.httpService.fetchRestaurantMenu()
+  }
 }
