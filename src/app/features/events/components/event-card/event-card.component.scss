@@ -1,0 +1,118 @@
+@import "../../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+$reference-width: 1920px;
+
+mat-card {
+  display: grid;
+  grid-template-columns: calc(630px * (100vw / $reference-width)) 1fr;
+  grid-template-rows: 1fr clamp(65px, 8vw, 160px);
+  border-radius: clamp(15px, 2.5vw, 30px);
+  overflow: hidden;
+  max-height: 630px;
+
+  .img-container {
+    grid-row: span 2;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  p {
+    font-size: clamp(12px, 2.2vw, 28px);
+  }
+
+  .content {
+    color: $primary;
+    max-height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+    }
+
+    hr {
+      border: $primary solid 2px;
+    }
+
+    mat-card-content {
+      width: 98%;
+      text-align: center;
+      margin-bottom: 10px;
+      min-height: 80px;
+
+      p {
+        max-height: clamp(3rem, 30vw, 30rem);
+        width: 95%;
+        margin: 10px auto;
+      }
+    }
+  }
+
+  mat-card-actions {
+    background-color: $primary;
+    justify-self: end;
+    padding: 0 calc(30px * (100vw / $reference-width));
+    width: 100%;
+    color: white;
+
+    .start-end-date {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      text-wrap: nowrap;
+      gap: 10px;
+    }
+
+    .call-button {
+      border-radius: 50%;
+      padding: 10px;
+      background: none;
+      border: none;
+      color: white;
+    }
+
+    mat-icon {
+      width: auto;
+      font-size: clamp(15px, 2.5vw, 40px);
+      height: auto;
+      margin: 5px;
+    }
+  }
+
+  .spacer {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  mat-card {
+    mat-card-actions {
+      grid-column: span 2;
+    }
+
+    .img-container {
+      grid-row: 1;
+    }
+
+    .content mat-card-content {
+      padding: 0;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  mat-card {
+    mat-card-actions {
+      .start-time,
+      .start-time-icon {
+        display: none;
+      }
+    }
+  }
+}

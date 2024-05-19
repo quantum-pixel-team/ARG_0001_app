@@ -1,0 +1,123 @@
+<div class="container" [ngClass]="{ mobile: (isHandset$ | async) }">
+  <ng-container *ngIf="(isHandset$ | async) === false; else nome">
+    <div class="description">
+      <hr />
+      <div class="style">
+        <h1>Aragosta</h1>
+        <p>
+          ARAGOSTA is founded at 1995, with a long experience in accomodation,
+          gastronomy field in fish and meat dishes, and lately with a Pizzeria.
+          The 4 star hotel located in the most beautiful area of the ancient
+          city of Durres.
+        </p>
+        <button mat-icon-button matTooltip="Link">
+          <i class="bi bi-instagram"></i>
+        </button>
+        <button mat-icon-button matTooltip="Link">
+          <i class="bi bi-facebook"></i>
+        </button>
+        <button mat-icon-button matTooltip="Link">
+          <i class="bi bi-tiktok"></i>
+        </button>
+        <button mat-icon-button matTooltip="Link">
+          <i class="bi bi-whatsapp"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="logo">
+      <img
+        ngSrc="../../../../assets/logo/white-logo.svg"
+        height="100"
+        width="340"
+        alt="logo"
+      />
+    </div>
+
+    <div class="contact-us">
+      <hr />
+      <div class="contact-details">
+        <h2 class="title">Contact Details</h2>
+
+        <h2>
+          <a href="https://google.com">
+            <button mat-icon-button matTooltip="Link">
+              <mat-icon>call</mat-icon>
+            </button>
+          </a>
+          +355 68 333 7050
+        </h2>
+
+        <h2 class="email-details">
+          <button mat-icon-button matTooltip="Link" routerLink=".">
+            <mat-icon>mail</mat-icon>
+          </button>
+          reservation&#64;aragosta.al
+        </h2>
+        <h2 class="location-details">
+          <button mat-icon-button matTooltip="Link" routerLink=".">
+            <mat-icon>location_on</mat-icon>
+          </button>
+          Rruga Taulantia, Durres
+        </h2>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #nome>
+    <div class="logo">
+      <img
+        ngSrc="../../../../assets/logo/white-logo.svg"
+        height="100"
+        width="340"
+        alt="logo"
+      />
+    </div>
+
+    <div class="contact-us">
+      <hr />
+      <div class="contact-details">
+        <h2 class="title">Contact Us</h2>
+
+        <h2>
+          <a href="https://google.com">
+            <button mat-icon-button matTooltip="Link">
+              <mat-icon>call</mat-icon>
+            </button>
+          </a>
+          +355 68 333 7050
+        </h2>
+
+        <h2 class="email-details">
+          <button mat-icon-button matTooltip="Link" routerLink=".">
+            <mat-icon>mail</mat-icon>
+          </button>
+          reservation&#64;aragosta.al
+        </h2>
+        <h2 class="location-details">
+          <button mat-icon-button matTooltip="Link" routerLink=".">
+            <mat-icon>location_on</mat-icon>
+          </button>
+          Rruga Taulantia, Durres
+        </h2>
+
+        <button mat-icon-button matTooltip="Link">
+          <i class="bi bi-instagram"></i>
+        </button>
+        <button mat-icon-button matTooltip="Link">
+          <i class="bi bi-facebook"></i>
+        </button>
+        <button mat-icon-button matTooltip="Link">
+          <i class="bi bi-tiktok"></i>
+        </button>
+        <button mat-icon-button matTooltip="Link">
+          <i class="bi bi-whatsapp"></i>
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<div class="footer-qpt">
+  <hr />
+  <h2>Aragosta 2024 © Powered by Quantum Pixel</h2>
+</div>

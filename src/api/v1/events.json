@@ -1,62 +1,88 @@
 [
   {
     "name": "Live Music Night",
-    "featureImageUrl": "assets/events/live music night.png",
-    "description": ""
+    "startDate": "2024-05-15T00:00:00.000Z",
+    "startTime": "19:00",
+    "endDate": "2024-05-15T00:00:00.000Z",
+    "description": "Join us for a night of delicious food and live music at our restaurant! Our talented musicians will be performing a mix of popular songs and classic hits while you enjoy a mouth-watering meal from our menu. Bring your friends and family for a fun and lively evening of dining and entertainment. Don`t miss out on this exciting event. Book your table now!",
+    "featureImageUrl": "assets/events/live music night.png"
   },
   {
     "name": "Christmas Event",
-    "featureImageUrl": "assets/events/chrismas event.png",
-    "description": ""
+    "startDate": "2024-12-24T00:00:00.000Z",
+    "startTime": "18:00",
+    "endDate": "2024-12-24T00:00:00.000Z",
+    "description": "\"Experience a Magical Christmas at Our Hotel/Restaurant!\"\n\nCelebrate the most wonderful time of the year with us as we transform our venue into a winter wonderland. Bring your family and friends to indulge in a festive feast and enjoy a memorable Christmas experience.",
+    "featureImageUrl": "assets/events/chrismas event.png"
   },
   {
     "name": "New Year Party",
-    "featureImageUrl": "assets/events/new year party.png",
-    "description": ""
+    "startDate": "2024-12-31T00:00:00.000Z",
+    "startTime": "20:00",
+    "endDate": "2025-01-01T00:00:00.000Z",
+    "description": "Join us for a dazzling New Year`s Eve celebration at our luxurious hotel/restaurant! Get ready to ring in the new year in style with an unforgettable night of delicious food, live music, and plenty of champagne. Don`t miss out on the ultimate New Year`s Eve experience at our hotel/restaurant. Book your table now!",
+    "featureImageUrl": "assets/events/new year party.png"
   },
   {
     "name": "Nature 1",
-    "featureImageUrl": "https://swiperjs.com/demos/images/nature-1.jpg",
-    "description": ""
+    "startDate": "2024-05-06T00:00:00.000Z",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-1.jpg"
   },
   {
     "name": "Nature 2",
-    "featureImageUrl": "https://swiperjs.com/demos/images/nature-2.jpg",
-    "description": ""
+    "startDate": "2024-05-06T00:00:00.000Z",
+    "endDate": "2024-05-06T00:00:00.000Z",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-2.jpg"
   },
   {
     "name": "Nature 3",
-    "featureImageUrl": "https://swiperjs.com/demos/images/nature-3.jpg",
-    "description": ""
+    "startDate": "2024-05-06T00:00:00.000Z",
+    "endDate": "2024-05-06T00:00:00.000Z",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-3.jpg"
   },
   {
     "name": "Nature 4",
-    "featureImageUrl": "https://swiperjs.com/demos/images/nature-4.jpg",
-    "description": ""
+    "startDate": "2024-05-06T00:00:00.000Z",
+    "endDate": "2024-05-06T00:00:00.000Z",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-4.jpg"
   },
   {
     "name": "Nature 5",
-    "featureImageUrl": "https://swiperjs.com/demos/images/nature-5.jpg",
-    "description": ""
+    "startDate": "2024-05-06T00:00:00.000Z",
+    "endDate": "2024-05-06T00:00:00.000Z",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-5.jpg"
   },
   {
     "name": "Nature 6",
-    "featureImageUrl": "https://swiperjs.com/demos/images/nature-6.jpg",
-    "description": ""
+    "startDate": "2024-05-06T00:00:00.000Z",
+    "endDate": "2024-05-06T00:00:00.000Z",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-6.jpg"
   },
   {
     "name": "Nature 7",
-    "featureImageUrl": "https://swiperjs.com/demos/images/nature-7.jpg",
-    "description": ""
+    "startDate": "2024-05-06T00:00:00.000Z",
+    "endDate": "2024-05-06T00:00:00.000Z",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-7.jpg"
   },
   {
     "name": "Nature 8",
-    "featureImageUrl": "https://swiperjs.com/demos/images/nature-8.jpg",
-    "description": ""
+    "startDate": "2024-05-06T00:00:00.000Z",
+    "endDate": "2024-05-06T00:00:00.000Z",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-8.jpg"
   },
   {
     "name": "Nature 9",
-    "featureImageUrl": "https://swiperjs.com/demos/images/nature-9.jpg",
-    "description": ""
+    "startDate": "2024-05-06T00:00:00.000Z",
+    "endDate": "2024-05-06T00:00:00.000Z",
+    "description": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam",
+    "featureImageUrl": "https://swiperjs.com/demos/images/nature-9.jpg"
   }
 ]

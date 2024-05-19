@@ -1,0 +1,16 @@
+@import "../../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+$reference-width: 1920px;
+.no-events-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: $primary;
+}
+
+svg {
+  width: calc(320px * (100vw / $reference-width));
+  height: calc(320px * (100vw / $reference-width));
+  min-width: 70px;
+}
