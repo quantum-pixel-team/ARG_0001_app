@@ -1,8 +1,9 @@
-import { Component, inject, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatMenuTrigger } from '@angular/material/menu';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-home-book-now',
@@ -19,7 +20,10 @@ export class HomeBookNowComponent {
   adults = 0;
   children = 0;
   rooms = 0;
-  private breakpointObserver = inject(BreakpointObserver);
+  constructor(
+    private datePipe: DatePipe,
+    private breakpointObserver: BreakpointObserver,
+  ) {}
 
   isMobileWidth$: Observable<boolean> = this.breakpointObserver
     .observe(['(max-width: 850px)'])
@@ -55,9 +59,6 @@ export class HomeBookNowComponent {
         break;
     }
   }
-
-  protected readonly Date = Date;
-
   onCheckinDateChanged() {
     if (this.checkoutDate == undefined) return;
     if (
@@ -65,5 +66,14 @@ export class HomeBookNowComponent {
     ) {
       this.checkoutDate = undefined;
     }
+  }
+  formatDate(date: Date): string {
+    return this.datePipe.transform(date, 'yyyy-MM-dd') ?? '';
+  }
+  submit() {
+    const baseUrl =
+      'https://app.inn-connect.com/book/properties/Aragosta%20Hotel%26Restaurant';
+    const params = `?start_date=${this.formatDate(this.checkinDate)}&adult-count%5B0%5D=${this.adults}&children-count%5B0%5D=${this.children}`;
+    open(baseUrl + params);
   }
 }
