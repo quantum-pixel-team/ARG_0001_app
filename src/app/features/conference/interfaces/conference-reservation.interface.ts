@@ -1,9 +1,9 @@
 
 
 export interface ConferenceReservation{
-  fullNameOrCompanyName:string |null,
-  email:string | null,
-  phoneNumber?:string | null,
+  fullNameOrCompanyName:string ,
+  email:string ,
+  phoneNumber:string | null,
   emailContent:string | null
   conferenceReservations : Partial<ConferenceDateReservation [] | null>,
 
