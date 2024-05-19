@@ -16,7 +16,7 @@
 
       <mat-form-field class="custom-input-filed" color="primary">
         <mat-label>Email:</mat-label>
-        <input matInput formControlName="email" ng-aut/>
+        <input matInput formControlName="email" />
         @if (getControl("email")?.hasError('email') && !getControl("email")?.hasError('required')) {
           <mat-error>Please enter a valid email address</mat-error>
         }
@@ -67,7 +67,7 @@
         <input matInput  formControlName="numberOfAttenders" type="number" />
       </mat-form-field>
 
-
+      <ng-container *ngIf="(isMobileWidth$ | async) ===false else mobileReservation">
       <mat-form-field class=" block-conference-reservation custom-input-filed lower-label-top" color="primary">
         <mat-label>Start Time:</mat-label>
         <input matInput [ngxTimepicker]="StartTime" formControlName="startTime" [format]="24" type="time"  />
@@ -93,7 +93,35 @@
         }
 
       </mat-form-field>
-      <ngx-material-timepicker #EndTime [theme]="primary"></ngx-material-timepicker>
+        <ngx-material-timepicker #EndTime [theme]="primary"></ngx-material-timepicker>
+      </ng-container>
+      <ng-template #mobileReservation>
+        <mat-form-field class=" block-conference-reservation custom-input-filed lower-label-top" color="primary">
+          <mat-label>Start Time:</mat-label>
+          <input matInput  formControlName="startTime"  type="time"  />
+          @if (getControl('startTime')?.hasError('required')) {
+            <mat-error>Required format HH:MM am/pm </mat-error>
+          }
+          @if (getControl('startTime')?.hasError('pattern')) {
+            <mat-error>Required format HH:MM am/pm</mat-error>
+          }
+        </mat-form-field>
+
+
+        <mat-form-field class="block-conference-reservation custom-input-filed lower-label-top" color="primary">
+          <mat-label>End Time:</mat-label>
+          <input matInput formControlName="endTime"  type="time" />
+
+          @if (getControl('endTime')?.hasError('required')) {
+            <mat-error>Required format HH:MM am/pm </mat-error>
+          }
+          @if (getControl('endTime')?.hasError('pattern')) {
+            <mat-error>Required format HH:MM am/pm </mat-error>
+          }
+
+        </mat-form-field>
+      </ng-template>
+
 
       @if (conferenceForm.hasError("timeNotValid") ){
 
