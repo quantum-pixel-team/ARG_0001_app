@@ -11,6 +11,6 @@ export class HomeContainerComponent {
   constructor(private httpService: HomeHttpService) {}
 
   onLocationClicked() {
-    this.httpService.navigateToContactUs();
+    this.httpService.navigateToArgLocation();
   }
 }

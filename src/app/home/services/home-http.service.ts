@@ -110,7 +110,7 @@ export class HomeHttpService {
     this.router.navigate([`/restaurant`]);
   }
 
-  navigateToContactUs() {
-    this.router.navigate([`/contact-us`]);
+  navigateToArgLocation() {
+    open("https://maps.app.goo.gl/9prZ1wKksVvmixwE7")
   }
 }
