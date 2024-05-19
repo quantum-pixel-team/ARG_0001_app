@@ -1,0 +1,45 @@
+@import "../restaurant-container/restaurant-container.component";
+
+.restaurant-menu-container {
+  margin: 100px;
+  border: solid 3px $primary;
+  text-align: center;
+  position: relative;
+
+  h1 {
+    font-size: clamp(24px, 5vw, 96px);
+    position: absolute;
+    top: 0;
+    margin: -4.5vw auto 0;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    z-index: 2;
+    padding: 0 50px;
+    background-color: white;
+  }
+
+  swiper-container {
+
+    swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .swiper-zoom-container {
+
+        height: 1000px;
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+
+  }
+
+}
+path {
+  color: $primary !important;
+  fill: $primary !important;
+}

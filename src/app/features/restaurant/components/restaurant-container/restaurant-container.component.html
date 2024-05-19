@@ -1,1 +1,14 @@
-<p>restaurant-container works!</p>
+<div class="restaurant-container">
+
+  <app-restaurant-info (bookNowClicked)="scrollTo(menu)"
+                       (seeMenuClicked)="scrollTo(reservation)"></app-restaurant-info>
+  <app-restaurant-staf></app-restaurant-staf>
+  <app-restaurant-speciality></app-restaurant-speciality>
+  <app-restaurant-cusine></app-restaurant-cusine>
+  <div #menu>
+    <app-restaurant-menu></app-restaurant-menu>
+  </div>
+  <div #reservation>
+    <app-restaurant-reservation></app-restaurant-reservation>
+  </div>
+</div>

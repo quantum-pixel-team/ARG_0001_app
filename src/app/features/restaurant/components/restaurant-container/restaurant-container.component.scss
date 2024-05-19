@@ -1,0 +1,10 @@
+@import "../../../../../theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+$reference-width: 1920px;
+.restaurant-container {
+  color: $primary;
+}
+app-restaurant-info{
+  color: white;
+}
