@@ -18,14 +18,17 @@
     </button>
     <app-home-hotel-card
       [room]="getRoomOnLeft()"
+      (bookNowClicked)="onBookNowClicked()"
       class="background-card room-on-left"
     ></app-home-hotel-card>
     <app-home-hotel-card
+      (bookNowClicked)="onBookNowClicked()"
       [room]="getRoomOnFocus()"
       class="shadowed-element room-on-focus"
     ></app-home-hotel-card>
     <app-home-hotel-card
       [room]="getRoomOnRight()"
+      (bookNowClicked)="onBookNowClicked()"
       class="background-card room-on-right"
     ></app-home-hotel-card>
     <button

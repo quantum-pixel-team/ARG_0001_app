@@ -79,13 +79,11 @@ mat-toolbar {
   }
 }
 
-mat-toolbar {
-  a.center {
-    width: 100%;
+a.center {
+  width: 100%;
 
-    img {
-      margin: 0 auto;
-      display: block;
-    }
+  img {
+    margin: 0 auto;
+    display: block;
   }
 }

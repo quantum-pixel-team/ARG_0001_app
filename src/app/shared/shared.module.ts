@@ -5,7 +5,7 @@ import { LanguageSelectorComponent } from './components/language-selector/langua
 import { ServerErrorComponent } from './components/server-error/server-error.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { MatOptionModule, MatRipple } from '@angular/material/core';
+import { MatOptionModule, MatRippleModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -15,7 +15,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconAnchor, MatIconButton } from '@angular/material/button';
 import { FooterComponent } from './components/footer/footer.component';
 
-import { MatTooltip } from '@angular/material/tooltip';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -41,8 +41,8 @@ import { MatTooltip } from '@angular/material/tooltip';
     RouterLink,
     RouterLinkActive,
     MatIconAnchor,
-    MatTooltip,
-    MatRipple,
+    MatTooltipModule,
+    MatRippleModule,
   ],
 })
 export class SharedModule {}

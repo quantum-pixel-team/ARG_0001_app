@@ -14,7 +14,9 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-flat-button color="primary">Book Room</button>
+      <button mat-flat-button color="primary" (click)="bookNowClicked.emit()">
+        Book Room
+      </button>
     </mat-card-actions>
   </div>
 </mat-card>

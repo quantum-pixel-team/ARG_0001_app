@@ -16,6 +16,7 @@
         [title]="el.title"
         [imageUrl]="el.imageUrl"
         [price]="el.price"
+        (cardClicked)="onCardClicked($event)"
         class="card"
       ></app-home-restaurant-card>
     </div>
@@ -27,11 +28,17 @@
         [title]="el.title"
         [imageUrl]="el.imageUrl"
         [price]="el.price"
+        (cardClicked)="onCardClicked($event)"
         class="card"
       ></app-home-restaurant-card>
     </div>
     <div class="view-more">
-      <button class="view-more-button" mat-button color="primary">
+      <button
+        class="view-more-button"
+        (click)="onViewMoreClicked()"
+        mat-button
+        color="primary"
+      >
         VIEW MORE
         <mat-icon>arrow_forward</mat-icon>
       </button>
@@ -42,6 +49,7 @@
       class="restaurant-menu-icon-container"
       mat-flat-button
       color="primary"
+      (click)="onViewMoreClicked()"
     >
       <mat-icon>restaurant_menu</mat-icon>
     </button>
