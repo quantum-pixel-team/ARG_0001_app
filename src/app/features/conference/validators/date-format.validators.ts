@@ -12,7 +12,6 @@ export function minDateRequired(dateControl: AbstractControl): ValidationErrors 
     const date1 = new Date(dateControl.value);
   const specifiedDate = new Date(date1).setHours(0, 0, 0, 0);
   const date = new Date().setHours(0, 0, 0, 0)
-  console.log(date1)
   return specifiedDate.valueOf() >= date.valueOf() ? null : {minDate: true}
 }
 

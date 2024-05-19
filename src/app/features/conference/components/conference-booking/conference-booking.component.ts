@@ -40,8 +40,8 @@ export class ConferenceBookingComponent implements OnInit {
   }
 
   protected conferenceForm = this.fb.nonNullable.group({
-      fullNameOrCompanyName: [null, [Validators.required, Validators.minLength(3)]],
-      email: [null, [Validators.required, Validators.email]],
+      fullNameOrCompanyName: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
       phoneNumber: [null, Validators.pattern("^(((067|068|069)\\d{7})){1}$")],
       reservationDate: [null, [Validators.required, dateFormatValidators, minDateRequired]],
       numberOfAttenders: [null, [Validators.required]],

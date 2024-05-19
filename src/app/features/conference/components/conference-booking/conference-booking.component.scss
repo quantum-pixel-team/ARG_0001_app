@@ -25,11 +25,7 @@ $comment-reference-height: 350px;
     mat-error {
       color: white;
     }
-    input:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0  1000px $primary inset;
-      -webkit-text-fill-color: white;
 
-    }
 
     h3 {
       color: white;
@@ -84,7 +80,10 @@ $comment-reference-height: 350px;
       width: 90%;
 
       margin: 3% 5% 0 5%;
-
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0  1000px $primary inset;
+        -webkit-text-fill-color: white;
+      }
 
       .mdc-text-field--filled:not(.mdc-text-field--outline) {
         background-color: $primary !important;
