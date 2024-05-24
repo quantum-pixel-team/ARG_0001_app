@@ -5,7 +5,7 @@ import { RestaurantInfoComponent } from "./components/restaurant-info/restaurant
 import { RestaurantStafComponent } from "./components/restaurant-staf/restaurant-staf.component";
 import { RestaurantSpecialityComponent } from "./components/restaurant-speciality/restaurant-speciality.component";
 import { RestaurantReservationComponent } from "./components/restaurant-reservation/restaurant-reservation.component";
-import { RestaurantCusineComponent } from "./components/restaurant-cusine/restaurant-cusine.component";
+import { RestaurantCuisineComponent } from "./components/restaurant-cuisine/restaurant-cuisine.component";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
 import { MatRippleModule } from "@angular/material/core";
@@ -16,7 +16,7 @@ import {
 import { RestaurantMenuComponent } from "./components/restaurant-menu/restaurant-menu.component";
 
 @NgModule({
-  declarations: [RestaurantContainerComponent, RestaurantInfoComponent, RestaurantStafComponent, RestaurantSpecialityComponent, RestaurantReservationComponent, RestaurantCusineComponent, RestaurantInfoDeviderComponent,RestaurantSpecialityDeviderComponent],
+  declarations: [RestaurantContainerComponent, RestaurantInfoComponent, RestaurantStafComponent, RestaurantSpecialityComponent, RestaurantReservationComponent, RestaurantCuisineComponent, RestaurantInfoDeviderComponent,RestaurantSpecialityDeviderComponent],
   imports: [CommonModule, MatCardModule, MatButtonModule, MatRippleModule, RestaurantMenuComponent]
 })
 export class RestaurantModule {}
