@@ -71,6 +71,8 @@ app-restaurant-info-devider {
   width: 50%;
   display: block;
   margin: calc(80px * (100vw / $reference-width)) auto;
+  fill: white;
+  color: white;
 }
 
 @media screen and (max-width: 950px) {
