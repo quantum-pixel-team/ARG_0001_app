@@ -14,9 +14,15 @@ import {
   RestaurantSpecialityDeviderComponent
 } from "./components/restaurant-speciality-devider/restaurant-speciality-devider.component";
 import { RestaurantMenuComponent } from "./components/restaurant-menu/restaurant-menu.component";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [RestaurantContainerComponent, RestaurantInfoComponent, RestaurantStafComponent, RestaurantSpecialityComponent, RestaurantReservationComponent, RestaurantCuisineComponent, RestaurantInfoDeviderComponent,RestaurantSpecialityDeviderComponent],
-  imports: [CommonModule, MatCardModule, MatButtonModule, MatRippleModule, RestaurantMenuComponent]
+  imports: [CommonModule, MatCardModule, MatButtonModule,
+    MatRippleModule, RestaurantMenuComponent,
+    MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, ReactiveFormsModule]
 })
 export class RestaurantModule {}

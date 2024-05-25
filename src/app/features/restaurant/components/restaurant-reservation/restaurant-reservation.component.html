@@ -1,1 +1,65 @@
-<p>restaurant-reservation works!</p>
+<div class="reservation-reservation-container">
+
+  <h2>RESERVATION FORM</h2>
+  <form class="reservation-form" [formGroup]="reservationForm" (ngSubmit)="bookTable()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required>
+      <mat-error *ngIf="reservationForm.get('name')?.hasError('required')">
+        Name is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" required>
+      <mat-error *ngIf="reservationForm.get('email')?.hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="reservationForm.get('email')?.hasError('email')">
+        Invalid email format
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Number of Guests</mat-label>
+      <input matInput type="number" formControlName="guests" required>
+      <mat-error *ngIf="reservationForm.get('guests')?.hasError('required')">
+        Number of guests is required
+      </mat-error>
+      <mat-error *ngIf="reservationForm.get('guests')?.hasError('min')">
+        Must be at least 1 guest
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="reservationForm.get('date')?.hasError('required')">
+        Date is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Time</mat-label>
+      <input matInput type="time" formControlName="time" required>
+      <mat-error *ngIf="reservationForm.get('time')?.hasError('required')">
+        Time is required
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Message (Optional)</mat-label>
+      <textarea matInput formControlName="message"></textarea>
+    </mat-form-field>
+
+    <div class="button-container">
+      <div class="line"></div>
+      <button mat-raised-button color="primary" type="submit" [disabled]="reservationForm.invalid">Book Table</button>
+      <div class="line"></div>
+    </div>
+  </form>
+
+</div>
