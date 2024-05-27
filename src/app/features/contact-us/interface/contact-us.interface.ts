@@ -1,5 +1,5 @@
-export interface ContactUs{
-  fullNameOrCompanyName : string,
-  email:string,
-  message:string
+export interface ContactUs {
+  fullNameOrCompanyName: string;
+  email: string;
+  message: string;
 }

@@ -28,7 +28,6 @@ $line-width: 800px;
     }
   }
 
-
   .contact-us-card {
     position: relative;
     top: calc($card-top-height * (100vw / $reference-width));
@@ -72,7 +71,7 @@ $line-width: 800px;
 
       .card-header {
         margin-top: 10%;
-        padding-bottom: 4%;;
+        padding-bottom: 4%;
 
         mat-icon {
           height: auto;
@@ -130,7 +129,6 @@ $line-width: 800px;
       border: none;
       height: 1px;
     }
-
   }
 
   .message-us-container {
@@ -145,12 +143,10 @@ $line-width: 800px;
 
       p {
         font-size: clamp(0.6rem, 2.2vw, 2rem);
-
       }
     }
 
     .message-us-input {
-
       grid-column-start: 4;
       grid-column-end: 5;
 
@@ -159,7 +155,6 @@ $line-width: 800px;
         display: flex;
         justify-content: center;
         align-items: center;
-
       }
 
       button {
@@ -194,13 +189,14 @@ $line-width: 800px;
           background-color: transparent;
         }
 
-        .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+        .mdc-text-field--filled:not(.mdc-text-field--disabled)
+          .mdc-line-ripple::before {
           border: 0;
         }
 
-        .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::after {
+        .mdc-text-field--filled:not(.mdc-text-field--disabled)
+          .mdc-line-ripple::after {
           border: 0;
-
         }
 
         .mat-ripple-element {
@@ -233,8 +229,6 @@ $line-width: 800px;
           font-size: clamp(1rem, 2vw, 3rem);
           color: $primary;
         }
-
-
       }
     }
   }
@@ -264,7 +258,6 @@ $line-width: 800px;
       grid-column-start: 4;
       grid-column-end: 5;
       align-self: center;
-
     }
 
     hr {
@@ -303,8 +296,8 @@ $line-width: 800px;
       .hover03 figure img {
         --webkit-transform: scale(1.5);
         transform: scale(1.5);
-        -webkit-transition: .3s ease-in-out;
-        transition: .3s ease-in-out;
+        -webkit-transition: 0.3s ease-in-out;
+        transition: 0.3s ease-in-out;
       }
 
       .hover03 figure:hover img {
@@ -357,15 +350,10 @@ $line-width: 800px;
         padding: 0;
       }
     }
-
   }
-
-
 }
 
 .contact-us-container.mobile {
-
-
   .contact-us-card {
     grid-template-rows: 48% 4% 48%;
     grid-template-columns: 6% 88% 6%;
@@ -382,7 +370,6 @@ $line-width: 800px;
       grid-row-start: 3;
       grid-row-end: 4;
     }
-
   }
 
   .second-line {
@@ -400,7 +387,6 @@ $line-width: 800px;
       h3 {
         font-size: clamp(1rem, 2vw, 3rem);
       }
-
     }
 
     .message-us-input {
@@ -412,10 +398,9 @@ $line-width: 800px;
   }
 
   .location-base {
-
     .location {
       grid-template-columns: 6% 88% 6%;
-      grid-template-rows: 50%  50%;
+      grid-template-rows: 50% 50%;
       top: 0;
 
       .location-img-card {

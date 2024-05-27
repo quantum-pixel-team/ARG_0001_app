@@ -82,10 +82,9 @@ const app_modules = [
     MatDialogActions,
     NgSwitch,
     NgIf,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

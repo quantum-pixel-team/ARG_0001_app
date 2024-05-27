@@ -1,15 +1,24 @@
-<div class="conference-background-container" [ngClass]="{mobile: (isMobileWidth$ | async)}">
+<div
+  class="conference-background-container"
+  [ngClass]="{ mobile: (isMobileWidth$ | async) }"
+>
   <div class="conference-booking-container">
     <h3>Conference Room Booking</h3>
-    <form novalidate (ngSubmit)="submitForm()" [formGroup]="conferenceForm" >
+    <form novalidate (ngSubmit)="submitForm()" [formGroup]="conferenceForm">
       <mat-form-field class="custom-input-filed" color="primary">
         <mat-label>Full Name/Company Name:</mat-label>
-        <input matInput formControlName="fullNameOrCompanyName" [minlength]="3"  />
-        @if (getControl("fullNameOrCompanyName")?.hasError('minlength') &&
-        !getControl("fullNameOrCompanyName")?.hasError('required')) {
+        <input
+          matInput
+          formControlName="fullNameOrCompanyName"
+          [minlength]="3"
+        />
+        @if (
+          getControl("fullNameOrCompanyName")?.hasError("minlength") &&
+          !getControl("fullNameOrCompanyName")?.hasError("required")
+        ) {
           <mat-error>Name must have a length 3 or bigger</mat-error>
         }
-        @if (getControl("fullNameOrCompanyName")?.hasError('required')) {
+        @if (getControl("fullNameOrCompanyName")?.hasError("required")) {
           <mat-error>Name is required</mat-error>
         }
       </mat-form-field>
@@ -17,24 +26,29 @@
       <mat-form-field class="custom-input-filed" color="primary">
         <mat-label>Email:</mat-label>
         <input matInput formControlName="email" />
-        @if (getControl("email")?.hasError('email') && !getControl("email")?.hasError('required')) {
+        @if (
+          getControl("email")?.hasError("email") &&
+          !getControl("email")?.hasError("required")
+        ) {
           <mat-error>Please enter a valid email address</mat-error>
         }
-        @if (getControl("email")?.hasError('required')) {
+        @if (getControl("email")?.hasError("required")) {
           <mat-error>Email is required</mat-error>
         }
       </mat-form-field>
 
       <mat-form-field class="custom-input-filed" color="primary">
         <mat-label>Mobile:</mat-label>
-        <input matInput formControlName="phoneNumber" >
-        @if (getControl("phoneNumber")?.hasError('pattern')) {
+        <input matInput formControlName="phoneNumber" />
+        @if (getControl("phoneNumber")?.hasError("pattern")) {
           <mat-error>Phone number must be Albanian</mat-error>
         }
       </mat-form-field>
 
-
-      <mat-form-field class="block-conference-reservation custom-input-filed lower-label-top" color="primary">
+      <mat-form-field
+        class="block-conference-reservation custom-input-filed lower-label-top"
+        color="primary"
+      >
         <mat-label>Reservation Date:</mat-label>
         <input
           matInput
@@ -42,13 +56,15 @@
           [min]="currentDate"
           formControlName="reservationDate"
           (click)="checkin.open()"
-
         />
 
-        @if (getControl("reservationDate")?.hasError('isNotDate')) {
+        @if (getControl("reservationDate")?.hasError("isNotDate")) {
           <mat-error>Required format: mm/dd/yyyy</mat-error>
         }
-        @if (getControl("reservationDate")?.hasError('minDate') && !getControl("reservationDate")?.hasError('isNotDate') ) {
+        @if (
+          getControl("reservationDate")?.hasError("minDate") &&
+          !getControl("reservationDate")?.hasError("isNotDate")
+        ) {
           <mat-error>Date can not be on the past </mat-error>
         }
 
@@ -61,108 +77,161 @@
         ></mat-datepicker>
       </mat-form-field>
 
-
-      <mat-form-field class="block-conference-reservation custom-input-filed lower-label-top " color="primary">
+      <mat-form-field
+        class="block-conference-reservation custom-input-filed lower-label-top"
+        color="primary"
+      >
         <mat-label>Number of Attendees:</mat-label>
-        <input matInput  formControlName="numberOfAttenders" type="number" />
+        <input matInput formControlName="numberOfAttenders" type="number" />
       </mat-form-field>
 
-      <ng-container *ngIf="(isMobileWidth$ | async) ===false else mobileReservation">
-      <mat-form-field class=" block-conference-reservation custom-input-filed lower-label-top" color="primary">
-        <mat-label>Start Time:</mat-label>
-        <input matInput [ngxTimepicker]="StartTime" formControlName="startTime" [format]="24" type="time"  />
-        @if (getControl('startTime')?.hasError('required')) {
-          <mat-error>Required format HH:MM am/pm </mat-error>
-        }
-        @if (getControl('startTime')?.hasError('pattern')) {
-          <mat-error>Required format HH:MM am/pm</mat-error>
-        }
-      </mat-form-field>
-
-      <ngx-material-timepicker #StartTime [theme]="primary"></ngx-material-timepicker>
-
-      <mat-form-field class="block-conference-reservation custom-input-filed lower-label-top" color="primary">
-        <mat-label>End Time:</mat-label>
-        <input matInput [ngxTimepicker]="EndTime" formControlName="endTime" [format]="24" type="time" />
-
-        @if (getControl('endTime')?.hasError('required')) {
-          <mat-error>Required format HH:MM am/pm </mat-error>
-        }
-        @if (getControl('endTime')?.hasError('pattern')) {
-          <mat-error>Required format HH:MM am/pm </mat-error>
-        }
-
-      </mat-form-field>
-        <ngx-material-timepicker #EndTime [theme]="primary"></ngx-material-timepicker>
-      </ng-container>
-      <ng-template #mobileReservation>
-        <mat-form-field class=" block-conference-reservation custom-input-filed lower-label-top" color="primary">
+      <ng-container
+        *ngIf="(isMobileWidth$ | async) === false; else mobileReservation"
+      >
+        <mat-form-field
+          class="block-conference-reservation custom-input-filed lower-label-top"
+          color="primary"
+        >
           <mat-label>Start Time:</mat-label>
-          <input matInput  formControlName="startTime"  type="time"  />
-          @if (getControl('startTime')?.hasError('required')) {
+          <input
+            matInput
+            [ngxTimepicker]="StartTime"
+            formControlName="startTime"
+            [format]="24"
+            type="time"
+          />
+          @if (getControl("startTime")?.hasError("required")) {
             <mat-error>Required format HH:MM am/pm </mat-error>
           }
-          @if (getControl('startTime')?.hasError('pattern')) {
+          @if (getControl("startTime")?.hasError("pattern")) {
             <mat-error>Required format HH:MM am/pm</mat-error>
           }
         </mat-form-field>
 
+        <ngx-material-timepicker
+          #StartTime
+          [theme]="primary"
+        ></ngx-material-timepicker>
 
-        <mat-form-field class="block-conference-reservation custom-input-filed lower-label-top" color="primary">
+        <mat-form-field
+          class="block-conference-reservation custom-input-filed lower-label-top"
+          color="primary"
+        >
           <mat-label>End Time:</mat-label>
-          <input matInput formControlName="endTime"  type="time" />
+          <input
+            matInput
+            [ngxTimepicker]="EndTime"
+            formControlName="endTime"
+            [format]="24"
+            type="time"
+          />
 
-          @if (getControl('endTime')?.hasError('required')) {
+          @if (getControl("endTime")?.hasError("required")) {
             <mat-error>Required format HH:MM am/pm </mat-error>
           }
-          @if (getControl('endTime')?.hasError('pattern')) {
+          @if (getControl("endTime")?.hasError("pattern")) {
             <mat-error>Required format HH:MM am/pm </mat-error>
           }
+        </mat-form-field>
+        <ngx-material-timepicker
+          #EndTime
+          [theme]="primary"
+        ></ngx-material-timepicker>
+      </ng-container>
+      <ng-template #mobileReservation>
+        <mat-form-field
+          class="block-conference-reservation custom-input-filed lower-label-top"
+          color="primary"
+        >
+          <mat-label>Start Time:</mat-label>
+          <input matInput formControlName="startTime" type="time" />
+          @if (getControl("startTime")?.hasError("required")) {
+            <mat-error>Required format HH:MM am/pm </mat-error>
+          }
+          @if (getControl("startTime")?.hasError("pattern")) {
+            <mat-error>Required format HH:MM am/pm</mat-error>
+          }
+        </mat-form-field>
 
+        <mat-form-field
+          class="block-conference-reservation custom-input-filed lower-label-top"
+          color="primary"
+        >
+          <mat-label>End Time:</mat-label>
+          <input matInput formControlName="endTime" type="time" />
+
+          @if (getControl("endTime")?.hasError("required")) {
+            <mat-error>Required format HH:MM am/pm </mat-error>
+          }
+          @if (getControl("endTime")?.hasError("pattern")) {
+            <mat-error>Required format HH:MM am/pm </mat-error>
+          }
         </mat-form-field>
       </ng-template>
 
-
-      @if (conferenceForm.hasError("timeNotValid") ){
-
-        <p class="time-interval-error">Start time needs to be less than End Time</p>
+      @if (conferenceForm.hasError("timeNotValid")) {
+        <p class="time-interval-error">
+          Start time needs to be less than End Time
+        </p>
       }
 
       <div formArrayName="conferenceReservations">
-
         <div class="add-send-button">
-          <button class="mat-elevation-z2" mat-stroked-button type="button" (click)="addReservationDate()" [disabled]="disableConferenceAddAppointment()">
+          <button
+            class="mat-elevation-z2"
+            mat-stroked-button
+            type="button"
+            (click)="addReservationDate()"
+            [disabled]="disableConferenceAddAppointment()"
+          >
             Add
           </button>
         </div>
         <ng-container
-          *ngFor="let appointmentDate of conferenceForm.controls.conferenceReservations.controls; let appointment=index"
-          [formGroupName]="appointment">
-
+          *ngFor="
+            let appointmentDate of conferenceForm.controls
+              .conferenceReservations.controls;
+            let appointment = index
+          "
+          [formGroupName]="appointment"
+        >
           <div class="reservation-date-display">
             <p>
-              Date: {{ appointmentDate.controls.reservationDate.value | date : 'dd/MM/yyyy' }}
-              From: {{ appointmentDate.controls.startTime.value }}-{{ appointmentDate.controls.endTime.value }}
+              Date:
+              {{
+                appointmentDate.controls.reservationDate.value
+                  | date: "dd/MM/yyyy"
+              }}
+              From: {{ appointmentDate.controls.startTime.value }}-{{
+                appointmentDate.controls.endTime.value
+              }}
               Attendees: {{ appointmentDate.controls.numberOfAttenders.value }}
             </p>
 
-            <button mat-icon-button (click)="deleteConferenceAppointment(this.appointment)">
+            <button
+              mat-icon-button
+              (click)="deleteConferenceAppointment(this.appointment)"
+            >
               <mat-icon>delete</mat-icon>
             </button>
           </div>
         </ng-container>
       </div>
 
-      <mat-form-field class="try comment custom-input-filed ">
+      <mat-form-field class="try comment custom-input-filed">
         <mat-label>Leave a comment</mat-label>
-        <textarea matInput  formControlName="emailContent"></textarea>
+        <textarea matInput formControlName="emailContent"></textarea>
       </mat-form-field>
       <div class="add-send-button">
-        <button class="mat-elevation-z2" mat-stroked-button type="submit" [disabled]="!isValid()">
+        <button
+          class="mat-elevation-z2"
+          mat-stroked-button
+          type="submit"
+          [disabled]="!isValid()"
+        >
           Sent
         </button>
       </div>
     </form>
   </div>
-
 </div>

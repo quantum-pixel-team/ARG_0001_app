@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { HomeHttpService } from '../../services/home-http.service';
-import { BreakpointObserver } from '@angular/cdk/layout';
-import {CommonServices} from "../../../shared/services/common.services";
+import { CommonServices } from '../../../shared/services/common.services';
 
 @Component({
   selector: 'app-home-container',
