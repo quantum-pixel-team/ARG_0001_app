@@ -70,13 +70,11 @@ export class ConferenceBookingComponent implements OnInit {
     );
 
 
-
   protected submitForm(): void {
     this.conferenceService.saveConferenceReservation(this.createConferenceAppointment()).subscribe({
       error: (err) => console.log(err),
     });
-    this.conferenceForm.reset()
-    this.conferenceForm.controls.conferenceReservations.clear()
+    this.resetConferenceAppointment()
   }
 
   protected createConferenceAppointment() {
@@ -118,13 +116,20 @@ export class ConferenceBookingComponent implements OnInit {
       endTime: this.conferenceForm.controls.endTime.value
     }
     this.conferenceForm.controls.conferenceReservations.push(this.createReservation(this.conference));
-    this.resetConferenceAppointment()
-  }
-
-  private resetConferenceAppointment() {
     this.conferenceForm.controls.reservationDate.reset()
     this.conferenceForm.controls.startTime.reset()
     this.conferenceForm.controls.endTime.reset()
+  }
+
+  private resetConferenceAppointment() {
+    this.conferenceForm.reset()
+    this.conferenceForm.controls.conferenceReservations.clear()
+    this.conferenceForm.controls.fullNameOrCompanyName.setErrors(null)
+    this.conferenceForm.controls.email.setErrors(null)
+    this.conferenceForm.controls.reservationDate.setErrors(null)
+    this.conferenceForm.controls.startTime.setErrors(null)
+    this.conferenceForm.controls.endTime.setErrors(null)
+
   }
 
   protected deleteConferenceAppointment(i: number) {
@@ -147,6 +152,5 @@ export class ConferenceBookingComponent implements OnInit {
   private isTimeRangeValid() {
     return this.conferenceForm.getError("timeNotValid") == null
   }
-
 
 }
