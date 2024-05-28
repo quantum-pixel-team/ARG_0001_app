@@ -13,6 +13,6 @@ export class ConferenceService {
     reservation: Partial<ConferenceReservation>,
   ): Observable<unknown> {
     const headers = { headers: { 'Content-Type': 'application/json' } };
-    return this.http.post('contact-us/email', reservation, headers);
+    return this.http.post('contact-us/conference-mail-reservation', reservation, headers);
   }
 }
