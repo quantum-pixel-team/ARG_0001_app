@@ -1,32 +1,28 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
-import { BreakpointObserver } from '@angular/cdk/layout';
-import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
-import { FormBuilder, Validators } from '@angular/forms';
-import { ConferenceService } from '../../service/conference.service';
-import {
-  ConferenceDateReservation,
-  ConferenceReservation,
-} from '../../interfaces/conference-reservation.interface';
-import {
-  appointmentTimeValidator,
-  dateFormatValidators,
-  minDateRequired,
-} from '../../validators/date-format.validators';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Observable} from "rxjs";
+import {map, shareReplay} from "rxjs/operators";
+import {BreakpointObserver} from "@angular/cdk/layout";
+import {NgxMaterialTimepickerTheme} from "ngx-material-timepicker";
+import {FormBuilder, Validators} from "@angular/forms";
+import {ConferenceService} from "../../service/conference.service";
+import {ConferenceDateReservation, ConferenceReservation} from "../../interfaces/conference-reservation.interface";
+import {appointmentTimeValidator, dateFormatValidators, minDateRequired} from "../../validators/date-format.validators";
+
 
 @Component({
   selector: 'app-conference-booking',
   templateUrl: './conference-booking.component.html',
   styleUrl: './conference-booking.component.scss',
   encapsulation: ViewEncapsulation.None,
+
 })
 export class ConferenceBookingComponent implements OnInit {
-  constructor(
-    private breakpointObserver: BreakpointObserver,
-    private fb: FormBuilder,
-    private conferenceService: ConferenceService,
-  ) {}
+
+  constructor(private breakpointObserver: BreakpointObserver,
+              private fb: FormBuilder,
+              private conferenceService: ConferenceService,
+  ) {
+  }
 
   protected currentDate: Date = new Date();
 
@@ -34,48 +30,28 @@ export class ConferenceBookingComponent implements OnInit {
     endTime: null,
     numberOfAttenders: null,
     reservationDate: null,
-    startTime: null,
+    startTime: null
   };
   protected conferenceAppointment?: ConferenceReservation;
+
 
   ngOnInit(): void {
     this.deleteConferenceAppointment(0);
   }
 
-  protected conferenceForm = this.fb.nonNullable.group(
-    {
-      fullNameOrCompanyName: [
-        '',
-        [Validators.required, Validators.minLength(3)],
-      ],
+  protected conferenceForm = this.fb.nonNullable.group({
+      fullNameOrCompanyName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: [null, Validators.pattern('^(((067|068|069)\\d{7})){1}$')],
-      reservationDate: [
-        null,
-        [Validators.required, dateFormatValidators, minDateRequired],
-      ],
+      phoneNumber: [null, Validators.pattern("^(((067|068|069)\\d{7})){1}$")],
+      reservationDate: [null, [Validators.required, dateFormatValidators, minDateRequired]],
       numberOfAttenders: [null, [Validators.required]],
-      startTime: [
-        null,
-        [
-          Validators.required,
-          Validators.pattern('^(?:[01]\\d|2[0-3]):[0-5]\\d$'),
-        ],
-      ],
-      endTime: [
-        null,
-        [
-          Validators.required,
-          Validators.pattern('^(?:[01]\\d|2[0-3]):[0-5]\\d$'),
-        ],
-      ],
+      startTime: [null, [Validators.required, Validators.pattern('^(?:[01]\\d|2[0-3]):[0-5]\\d$')]],
+      endTime: [null, [Validators.required, Validators.pattern('^(?:[01]\\d|2[0-3]):[0-5]\\d$')]],
       emailContent: null,
-      conferenceReservations: this.fb.array([
-        this.createReservation(this.conference),
-      ]),
+      conferenceReservations: this.fb.array([this.createReservation(this.conference)]),
     },
-    { validators: [appointmentTimeValidator] },
-  );
+    {validators: [appointmentTimeValidator]});
+
 
   private createReservation(conference: ConferenceDateReservation) {
     return this.fb.nonNullable.group({
@@ -83,7 +59,7 @@ export class ConferenceBookingComponent implements OnInit {
       numberOfAttenders: conference.numberOfAttenders,
       startTime: conference.startTime,
       endTime: conference.endTime,
-    });
+    })
   }
 
   protected isMobileWidth$: Observable<boolean> = this.breakpointObserver
@@ -93,27 +69,24 @@ export class ConferenceBookingComponent implements OnInit {
       shareReplay(),
     );
 
+
   protected submitForm(): void {
-    this.conferenceService
-      .saveConferenceReservation(this.createConferenceAppointment())
-      .subscribe({
-        error: (err) => console.log(err),
-      });
-    this.conferenceForm.reset();
-    this.conferenceForm.controls.conferenceReservations.clear();
+    this.conferenceService.saveConferenceReservation(this.createConferenceAppointment()).subscribe({
+      error: (err) => console.log(err),
+    });
+    this.resetConferenceAppointment()
   }
 
   protected createConferenceAppointment() {
-    return (this.conferenceAppointment = {
-      fullNameOrCompanyName:
-        this.conferenceForm.controls.fullNameOrCompanyName.value,
+    return this.conferenceAppointment = {
+      fullNameOrCompanyName: this.conferenceForm.controls.fullNameOrCompanyName.value,
       email: this.conferenceForm.controls.email.value,
       phoneNumber: this.conferenceForm.controls.phoneNumber.value,
       emailContent: this.conferenceForm.controls.emailContent.value,
-      conferenceReservations:
-        this.conferenceForm.controls.conferenceReservations.getRawValue(),
-    });
+      conferenceReservations: this.conferenceForm.controls.conferenceReservations.getRawValue()
+    }
   }
+
 
   protected primary: NgxMaterialTimepickerTheme = {
     container: {
@@ -134,23 +107,29 @@ export class ConferenceBookingComponent implements OnInit {
     return this.conferenceForm.get(controlName);
   }
 
+
   protected addReservationDate() {
     this.conference = {
       reservationDate: this.conferenceForm.controls.reservationDate.value,
       numberOfAttenders: this.conferenceForm.controls.numberOfAttenders.value,
       startTime: this.conferenceForm.controls.startTime.value,
-      endTime: this.conferenceForm.controls.endTime.value,
-    };
-    this.conferenceForm.controls.conferenceReservations.push(
-      this.createReservation(this.conference),
-    );
-    this.resetConferenceAppointment();
+      endTime: this.conferenceForm.controls.endTime.value
+    }
+    this.conferenceForm.controls.conferenceReservations.push(this.createReservation(this.conference));
+    this.conferenceForm.controls.reservationDate.reset()
+    this.conferenceForm.controls.startTime.reset()
+    this.conferenceForm.controls.endTime.reset()
   }
 
   private resetConferenceAppointment() {
-    this.conferenceForm.controls.reservationDate.reset();
-    this.conferenceForm.controls.startTime.reset();
-    this.conferenceForm.controls.endTime.reset();
+    this.conferenceForm.reset()
+    this.conferenceForm.controls.conferenceReservations.clear()
+    this.conferenceForm.controls.fullNameOrCompanyName.setErrors(null)
+    this.conferenceForm.controls.email.setErrors(null)
+    this.conferenceForm.controls.reservationDate.setErrors(null)
+    this.conferenceForm.controls.startTime.setErrors(null)
+    this.conferenceForm.controls.endTime.setErrors(null)
+
   }
 
   protected deleteConferenceAppointment(i: number) {
@@ -158,25 +137,20 @@ export class ConferenceBookingComponent implements OnInit {
   }
 
   protected disableConferenceAddAppointment() {
-    return !(
-      this.conferenceForm.controls.reservationDate.valid &&
+    return !(this.conferenceForm.controls.reservationDate.valid &&
       this.conferenceForm.controls.numberOfAttenders.valid &&
       this.conferenceForm.controls.startTime.valid &&
-      this.conferenceForm.controls.endTime.valid &&
-      this.isTimeRangeValid()
-    );
+      this.conferenceForm.controls.endTime.valid && this.isTimeRangeValid())
   }
 
   protected isValid() {
-    return (
-      this.conferenceForm.controls.conferenceReservations.length >= 1 &&
+    return this.conferenceForm.controls.conferenceReservations.length >= 1 &&
       this.conferenceForm.controls.fullNameOrCompanyName.valid &&
-      this.conferenceForm.controls.email.valid &&
-      this.conferenceForm.controls.emailContent.valid
-    );
+      this.conferenceForm.controls.email.valid && this.conferenceForm.controls.emailContent.valid;
   }
 
   private isTimeRangeValid() {
-    return this.conferenceForm.getError('timeNotValid') == null;
+    return this.conferenceForm.getError("timeNotValid") == null
   }
+
 }

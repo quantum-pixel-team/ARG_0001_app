@@ -5,14 +5,15 @@ $reference-width: 1980px;
 $card-reference-height: 400px;
 $comment-reference-height: 350px;
 
+
 .conference-background-container {
   width: 100%;
   height: auto;
-  background-color: #f5e1ca;
+  background-color: #F5E1CA;
 
   .conference-booking-container {
     position: relative;
-    top: - calc(300px * (100vw / $reference-width));
+    top: - calc(300px *(100vw /$reference-width));
     width: auto;
     height: auto;
     margin: 0 5% 0 5%;
@@ -24,10 +25,7 @@ $comment-reference-height: 350px;
     mat-error {
       color: white;
     }
-    input:-webkit-autofill {
-      -webkit-box-shadow: 0 0 0 1000px $primary inset;
-      -webkit-text-fill-color: white;
-    }
+
 
     h3 {
       color: white;
@@ -45,6 +43,7 @@ $comment-reference-height: 350px;
       padding: 0;
       width: 100%;
     }
+
 
     .time-interval-error {
       text-align: center;
@@ -73,12 +72,18 @@ $comment-reference-height: 350px;
           color: white;
         }
       }
+
     }
+
 
     .custom-input-filed {
       width: 90%;
 
       margin: 3% 5% 0 5%;
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0  1000px $primary inset;
+        -webkit-text-fill-color: white;
+      }
 
       .mdc-text-field--filled:not(.mdc-text-field--outline) {
         background-color: $primary !important;
@@ -88,14 +93,12 @@ $comment-reference-height: 350px;
         color: white;
       }
 
-      .mdc-text-field--focused:not(.mdc-text-field--disable)
-        .mdc-floating-label {
+      .mdc-text-field--focused:not(.mdc-text-field--disable) .mdc-floating-label {
         color: white;
       }
 
-      .mat-mdc-text-field-wrapper
-        .mat-mdc-form-field-flex
-        .mat-mdc-floating-label {
+      .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+
         font-size: clamp(1rem, 2vw, 4rem);
         margin-top: 2%;
       }
@@ -112,14 +115,12 @@ $comment-reference-height: 350px;
         height: auto;
       }
 
-      .mdc-text-field--filled:not(.mdc-text-field--disable)
-        .mdc-line-ripple::before {
+      .mdc-text-field--filled:not(.mdc-text-field--disable) .mdc-line-ripple::before {
         border-bottom-color: white;
         border-bottom-width: 4px;
       }
 
-      .mdc-text-field--filled:not(.mdc-text-field--disable)
-        .mdc-line-ripple::after {
+      .mdc-text-field--filled:not(.mdc-text-field--disable) .mdc-line-ripple::after {
         border-bottom-width: 2px;
       }
 
@@ -131,16 +132,15 @@ $comment-reference-height: 350px;
         height: clamp(1rem, 4vw, 3rem);
       }
 
-      .mdc-text-field--filled:not(.mdc-text-field--disabled)
-        .mdc-text-field__input {
+      .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-text-field__input {
         caret-color: white;
       }
+
     }
 
+
     .lower-label-top {
-      .mat-mdc-text-field-wrapper
-        .mat-mdc-form-field-flex
-        .mat-mdc-floating-label {
+      .mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
         margin-top: 4%;
       }
     }
@@ -193,9 +193,8 @@ $comment-reference-height: 350px;
         border-radius: 20px;
       }
 
-      .mdc-text-field--filled:not(.mdc-text-field--disable)
-        .mdc-line-ripple::before {
-        border: 0;
+      .mdc-text-field--filled:not(.mdc-text-field--disable) .mdc-line-ripple::before {
+        border: 0
       }
 
       .mdc-text-field:not(.mdc-text-field--disable) .mdc-text-field__input {
@@ -206,7 +205,9 @@ $comment-reference-height: 350px;
         background-color: $primary;
         margin-top: 4%;
       }
+
     }
+
   }
 }
 
