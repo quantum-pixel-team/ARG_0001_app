@@ -32,7 +32,7 @@ $line-width: 800px;
     position: relative;
     top: calc($card-top-height * (100vw / $reference-width));
     display: grid;
-    grid-template-columns: 6% 40% 9% 40% 6%;
+    grid-template-columns: 6% 40% 8% 40% 6%;
 
     .card-a {
       grid-column-start: 2;
@@ -97,7 +97,7 @@ $line-width: 800px;
 
   .line {
     display: grid;
-    grid-template-columns: 6% 40% 9% 40% 6%;
+    grid-template-columns: 6% 40% 8% 40% 6%;
     align-items: center;
     color: $primary;
     margin-bottom: 5%;
@@ -133,7 +133,7 @@ $line-width: 800px;
 
   .message-us-container {
     display: grid;
-    grid-template-columns: 6% 40% 9% 40% 6%;
+    grid-template-columns: 6% 40% 8% 40% 6%;
     color: $primary;
 
     .message-us {
@@ -322,7 +322,7 @@ $line-width: 800px;
 
         .location-detail-card {
           height: auto;
-          width: auto;
+          width: 86%;
           left: 14%;
           position: relative;
           color: $primary;
