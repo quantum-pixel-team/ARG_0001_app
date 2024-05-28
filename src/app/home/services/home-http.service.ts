@@ -111,6 +111,6 @@ export class HomeHttpService {
   }
 
   navigateToArgLocation() {
-    open("https://maps.app.goo.gl/9prZ1wKksVvmixwE7")
+    open('https://maps.app.goo.gl/9prZ1wKksVvmixwE7');
   }
 }
