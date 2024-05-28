@@ -186,7 +186,7 @@ $comment-reference-height: 350px;
 
     .comment {
       width: 90%;
-      height: calc($card-reference-height * (100vw / $reference-width));;
+      height: calc($card-reference-height * (100vw / $reference-width));
 
       .mdc-text-field {
         border: 4px solid white;
@@ -224,7 +224,7 @@ $comment-reference-height: 350px;
     }
 
     .comment {
-      height: calc($card-reference-height * (180vw / $reference-width));;
+      height: calc($card-reference-height * (180vw / $reference-width));
     }
   }
 }
