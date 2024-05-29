@@ -34,7 +34,9 @@
 
     <mat-form-field>
       <mat-label>Date</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="date" required>
+      <input
+        [min]="today"
+        matInput [matDatepicker]="picker" formControlName="date" required>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
       <mat-error *ngIf="reservationForm.get('date')?.hasError('required')">
@@ -50,16 +52,16 @@
       </mat-error>
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field appearance="outline">
       <mat-label>Message (Optional)</mat-label>
-      <textarea matInput formControlName="message"></textarea>
+      <textarea matInput placeholder="Leve us a message..." formControlName="message"></textarea>
     </mat-form-field>
 
-    <div class="button-container">
-      <div class="line"></div>
-      <button mat-raised-button color="primary" type="submit" [disabled]="reservationForm.invalid">Book Table</button>
-      <div class="line"></div>
-    </div>
-  </form>
 
+  </form>
+  <div class="button-container">
+    <div class="line"></div>
+    <button mat-raised-button color="primary" type="submit" [disabled]="reservationForm.invalid">Book Table</button>
+    <div class="line"></div>
+  </div>
 </div>

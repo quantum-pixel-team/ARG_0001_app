@@ -4,7 +4,7 @@ $reference-width: 1920px;
 
 .reservation-reservation-container {
   width: 90%;
-  margin: 0 auto;
+  margin: 100px auto;
 
   h2 {
     text-align: center;
@@ -31,6 +31,7 @@ $reference-width: 1920px;
     width: 90%;
     margin: 0 auto;
     padding: 30px;
+
     mat-form-field {
       display: block;
 
@@ -38,21 +39,23 @@ $reference-width: 1920px;
         background: transparent;
       }
     }
-    .button-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 20px;
-    }
 
-    .button-container .line {
+  }
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 50px;
+
+    .line {
       flex: 1;
       height: 3px;
       background-color: $primary;
       margin: 0 10px;
     }
 
-    .button-container button {
+    button {
       z-index: 1;
       font-size: clamp(16px, 3.1vw, 48px);
       height: auto;
@@ -60,6 +63,5 @@ $reference-width: 1920px;
       padding: 40px 50px;
       border-radius: 10px;
     }
-
   }
 }
