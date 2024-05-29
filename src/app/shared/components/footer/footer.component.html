@@ -10,18 +10,39 @@
           The 4 star hotel located in the most beautiful area of the ancient
           city of Durres.
         </p>
-        <button mat-icon-button matTooltip="Link">
-          <i class="bi bi-instagram"></i>
-        </button>
-        <button mat-icon-button matTooltip="Link">
-          <i class="bi bi-facebook"></i>
-        </button>
-        <button mat-icon-button matTooltip="Link">
-          <i class="bi bi-tiktok"></i>
-        </button>
-        <button mat-icon-button matTooltip="Link">
-          <i class="bi bi-whatsapp"></i>
-        </button>
+        <a
+          href="https://www.instagram.com/aragosta.durres/"
+          target="_blank"
+          matTooltip="Instagram"
+        >
+          <button mat-icon-button>
+            <i class="bi bi-instagram"></i>
+          </button>
+        </a>
+
+        <a
+          href="https://www.facebook.com/pages/Aragosta/169542073103683"
+          target="_blank"
+          matTooltip="Facebook"
+        >
+          <button mat-icon-button>
+            <i class="bi bi-facebook"></i>
+          </button>
+        </a>
+        <a
+          href="https://www.tiktok.com/@aragosta.durres"
+          target="_blank"
+          matTooltip="TikTok"
+        >
+          <button mat-icon-button>
+            <i class="bi bi-tiktok"></i>
+          </button>
+        </a>
+        <a routerLink="contact-us" matTooltip="Whatsapp">
+          <button mat-icon-button>
+            <i class="bi bi-whatsapp"></i>
+          </button>
+        </a>
       </div>
     </div>
 
@@ -39,27 +60,31 @@
       <div class="contact-details">
         <h2 class="title">Contact Details</h2>
 
-        <h2>
-          <a href="https://google.com">
-            <button mat-icon-button matTooltip="Link">
+        <p>
+          <a routerLink="contact-us">
+            <button mat-icon-button matTooltip="Call us">
               <mat-icon>call</mat-icon>
             </button>
           </a>
           +355 68 333 7050
-        </h2>
+        </p>
 
-        <h2 class="email-details">
-          <button mat-icon-button matTooltip="Link" routerLink=".">
+        <p class="email-details">
+          <button mat-icon-button matTooltip="Email US" routerLink="contact-us">
             <mat-icon>mail</mat-icon>
           </button>
           reservation&#64;aragosta.al
-        </h2>
-        <h2 class="location-details">
-          <button mat-icon-button matTooltip="Link" routerLink=".">
+        </p>
+        <p class="location-details">
+          <button
+            mat-icon-button
+            matTooltip="View our location"
+            routerLink="contact-us"
+          >
             <mat-icon>location_on</mat-icon>
           </button>
           Rruga Taulantia, Durres
-        </h2>
+        </p>
       </div>
     </div>
   </ng-container>
@@ -78,40 +103,60 @@
       <div class="contact-details">
         <h2 class="title">Contact Us</h2>
 
-        <h2>
-          <a href="https://google.com">
-            <button mat-icon-button matTooltip="Link">
+        <p>
+          <a routerLink="contact-us">
+            <button mat-icon-button matTooltip="Call us">
               <mat-icon>call</mat-icon>
             </button>
           </a>
           +355 68 333 7050
-        </h2>
+        </p>
 
-        <h2 class="email-details">
-          <button mat-icon-button matTooltip="Link" routerLink=".">
+        <p class="email-details">
+          <button mat-icon-button matTooltip="Email US" routerLink="contact-us">
             <mat-icon>mail</mat-icon>
           </button>
           reservation&#64;aragosta.al
-        </h2>
-        <h2 class="location-details">
-          <button mat-icon-button matTooltip="Link" routerLink=".">
+        </p>
+        <p class="location-details">
+          <button mat-icon-button matTooltip="View our location" routerLink=".">
             <mat-icon>location_on</mat-icon>
           </button>
           Rruga Taulantia, Durres
-        </h2>
+        </p>
+        <a
+          href="https://www.instagram.com/aragosta.durres/"
+          target="_blank"
+          matTooltip="Instagram"
+        >
+          <button mat-icon-button>
+            <i class="bi bi-instagram"></i>
+          </button>
+        </a>
 
-        <button mat-icon-button matTooltip="Link">
-          <i class="bi bi-instagram"></i>
-        </button>
-        <button mat-icon-button matTooltip="Link">
-          <i class="bi bi-facebook"></i>
-        </button>
-        <button mat-icon-button matTooltip="Link">
-          <i class="bi bi-tiktok"></i>
-        </button>
-        <button mat-icon-button matTooltip="Link">
-          <i class="bi bi-whatsapp"></i>
-        </button>
+        <a
+          href="https://www.facebook.com/pages/Aragosta/169542073103683"
+          target="_blank"
+          matTooltip="Facebook"
+        >
+          <button mat-icon-button>
+            <i class="bi bi-facebook"></i>
+          </button>
+        </a>
+        <a
+          href="https://www.tiktok.com/@aragosta.durres"
+          target="_blank"
+          matTooltip="TikTok"
+        >
+          <button mat-icon-button>
+            <i class="bi bi-tiktok"></i>
+          </button>
+        </a>
+        <a routerLink="contact-us" matTooltip="Whatsapp">
+          <button mat-icon-button>
+            <i class="bi bi-whatsapp"></i>
+          </button>
+        </a>
       </div>
     </div>
   </ng-template>
@@ -119,5 +164,9 @@
 
 <div class="footer-qpt">
   <hr />
-  <h2>Aragosta 2024 © Powered by Quantum Pixel</h2>
+  <p>
+    <a href="http://quantum-pixel.eu/" target="_blank"
+      >Aragosta 2024 © Powered by Quantum Pixel</a
+    >
+  </p>
 </div>

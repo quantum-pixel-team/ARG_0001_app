@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { HotelRoom } from '../../interfaces/hotel-room';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home-hotel-card',
@@ -9,4 +8,5 @@ import { Observable } from 'rxjs';
 })
 export class HomeHotelCardComponent {
   @Input() room: HotelRoom | undefined;
+  @Output() bookNowClicked = new EventEmitter();
 }

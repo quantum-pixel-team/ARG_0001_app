@@ -1,6 +1,6 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { HomeServiceComponent } from './home-service.component';
+// import { HomeServiceComponent } from './home-services.component';
 //
 // describe('HomeServiceComponent', () => {
 //   let component: HomeServiceComponent;

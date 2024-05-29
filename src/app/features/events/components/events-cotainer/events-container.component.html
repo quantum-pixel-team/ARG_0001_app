@@ -11,7 +11,10 @@
           [event]="event"
         ></app-event-card>
         <app-no-events
-          *ngIf="upcomingEvents === undefined || upcomingEvents.size === 0"
+          *ngIf="
+            upcomingEvents === undefined ||
+            upcomingEvents.numberOfElements === 0
+          "
         ></app-no-events>
       </div>
       <mat-paginator
@@ -19,7 +22,7 @@
         color="primary"
         [pageSize]="pageSize"
         [pageSizeOptions]="pageSizeOptions"
-        (page)="OnPageChanged($event)"
+        (page)="OnUpcomingPageChanged($event)"
         aria-label="Select page"
       >
       </mat-paginator>
@@ -34,7 +37,9 @@
           [event]="event"
         ></app-event-card>
         <app-no-events
-          *ngIf="recentEvents === undefined || recentEvents.size === 0"
+          *ngIf="
+            recentEvents === undefined || recentEvents.numberOfElements === 0
+          "
         ></app-no-events>
       </div>
       <mat-paginator
@@ -42,7 +47,7 @@
         color="primary"
         [pageSize]="pageSize"
         [pageSizeOptions]="pageSizeOptions"
-        (page)="OnPageChanged($event)"
+        (page)="OnRecentPageChanged($event)"
         aria-label="Select page"
       >
       </mat-paginator>
