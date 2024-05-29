@@ -25,11 +25,32 @@ jobs:
       SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
       GITHUB_REQ_TOKE: ${{secrets.GITHUB_TOKEN}}
 
-  cd:
+  cd-dev:
     needs: ci
     uses: quantum-pixel-team/ci-cd-templates/.github/workflows/common-cd.yml@master
     with:
-      environment: "dev"
+      environment: dev
+      docker-file-path: "Dockerfile"
+      tag: "blou5/arg-app:latest"
+      local-path: "arg-docker/dev"
+      remote-path: "/home/arg/app"
+      artifact-path: "dist/aragosta-app"
+      deploy-script: "
+        cd /home/arg/app &&
+        docker compose pull &&
+        docker compose up -d  "
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      HOST: ${{secrets.HOST}}
+      SSH_USER: ${{secrets.SSH_USER}}
+      SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+
+  cd-ope:
+    needs: cd-dev
+    uses: quantum-pixel-team/ci-cd-templates/.github/workflows/common-cd.yml@master
+    with:
+      environment: prod
       docker-file-path: "Dockerfile"
       tag: "blou5/arg-app:latest"
       local-path: "arg-docker/dev"
