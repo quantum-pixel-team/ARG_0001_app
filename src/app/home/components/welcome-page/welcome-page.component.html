@@ -3,13 +3,10 @@
   [ngClass]="{ mobile: (isHandset$ | async) }"
 >
   <div class="welcome-container">
-    <h2 class="welcome-title">Welcome to</h2>
+    <h2 class="welcome-title">{{ "HOME.TITLE" | translate}}</h2>
     <h2 class="title">Aragosta Hotel & Restaurant</h2>
     <p>
-      Aragosta Hotel & Restaurant is located in Durres, right next to a private
-      beach. Rooms are modernly furnished and air-conditioned, while some offer
-      a view of the sea. The hotel also features a restaurant and wine bar with
-      a sun terrace. Free WiFi and parking are also available.
+      {{"HOME.SHORT-DESCRIPTION" | translate}}
     </p>
   </div>
 

@@ -31,6 +31,7 @@ import { HomeLocationComponent } from './home-location/home-location.component';
 import { HomeHotelComponent } from './home-hotel/home-hotel.component';
 import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.component';
 import { HomeEventsComponent } from './home-events/home-events.component';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -48,27 +49,28 @@ import { HomeEventsComponent } from './home-events/home-events.component';
     HomeHotelCardComponent,
   ],
   providers: [provideNativeDateAdapter(), DatePipe],
-  imports: [
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    FormsModule,
-    MatButtonModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    DatePipe,
-    MatMenuModule,
-    MatDividerModule,
-    NgIf,
-    AsyncPipe,
-    NgClass,
-    MatCardModule,
-    NgForOf,
-    NgOptimizedImage,
-    RouterLink,
-    MatRipple,
-    HomeEventsComponent,
-  ],
+    imports: [
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        FormsModule,
+        MatButtonModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        DatePipe,
+        MatMenuModule,
+        MatDividerModule,
+        NgIf,
+        AsyncPipe,
+        NgClass,
+        MatCardModule,
+        NgForOf,
+        NgOptimizedImage,
+        RouterLink,
+        MatRipple,
+        HomeEventsComponent,
+        TranslateModule,
+    ],
   exports: [],
 })
 export class HomeModule {}

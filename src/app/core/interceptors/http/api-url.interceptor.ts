@@ -13,6 +13,9 @@ export class ApiUrlInterceptor implements HttpInterceptor {
 
   intercept(request: HttpRequest<never>, next: HttpHandler) {
     const apiUrl = this.config.getApiUrl();
+    if (request.url.startsWith('./assets/i18n/')) {
+      return next.handle(request);
+    }
     if (environment.envName === 'mock') {
       const extension = 'json';
 
