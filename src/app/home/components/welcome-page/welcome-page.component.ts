@@ -11,6 +11,7 @@ import { map, shareReplay } from 'rxjs/operators';
 export class WelcomePageComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
+  srcSet='640w, 750w,828w 1200w, 1980w, 2048w'
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe([Breakpoints.XSmall, '(max-width: 1000px)'])
     .pipe(
