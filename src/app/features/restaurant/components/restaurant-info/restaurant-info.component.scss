@@ -25,7 +25,6 @@ $reference-width: 1920px;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-
     }
 
     .restaurant-info-button-container {
@@ -54,7 +53,7 @@ $reference-width: 1920px;
 
     h1 {
       margin-top: 10px;
-      font-family: Italiana, serif; // TODO
+      font-family: "italiana", serif;
     }
   }
 }
@@ -81,7 +80,10 @@ app-restaurant-info-devider {
 }
 
 @media screen and (max-width: 1400px) {
-  .restaurant-info-container .restaurant-info-c-1 .restaurant-info .restaurant-info-button-container {
+  .restaurant-info-container
+    .restaurant-info-c-1
+    .restaurant-info
+    .restaurant-info-button-container {
     padding: 0 calc(90px * (100vw / $reference-width));
   }
 }

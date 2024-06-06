@@ -1,5 +1,5 @@
-import {AbstractControl, ValidationErrors} from '@angular/forms';
-import {isValidDate} from 'rxjs/internal/util/isDate';
+import { AbstractControl, ValidationErrors } from '@angular/forms';
+import { isValidDate } from 'rxjs/internal/util/isDate';
 
 export function dateFormatValidators(
   dateControl: AbstractControl,

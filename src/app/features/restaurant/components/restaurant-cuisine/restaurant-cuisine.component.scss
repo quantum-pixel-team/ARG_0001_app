@@ -28,21 +28,25 @@ $reference-width: 1920px;
 
   .restaurant-cuisine-details {
     display: grid;
-    grid-template-columns: calc(180px * (100vw / $reference-width)) 1fr 1fr calc(180px * (100vw / $reference-width));
+    grid-template-columns: calc(180px * (100vw / $reference-width)) 1fr 1fr calc(
+        180px * (100vw / $reference-width)
+      );
     grid-template-rows: 0.1fr 0.4fr 0.2fr 0.6fr 0.3fr 0.3fr 0.4fr 0.3fr;
     gap: calc(50px * (100vw / $reference-width));
 
     .background-cover {
       grid-row: 4 / 7;
       grid-column: 1 / 5;
-      background: white url("../../../../../assets/restaurant/arg_restaurant-background.svg");
+      background: white
+        url("../../../../../assets/restaurant/arg_restaurant-background.svg");
       z-index: 1;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    div, p {
+    div,
+    p {
       z-index: 2;
     }
 
@@ -86,28 +90,27 @@ $reference-width: 1920px;
     .restaurant-cuisine-details {
       grid-template-rows: 0.3fr 0.4fr 0.2fr 0.6fr 0.3fr 0.3fr 0.4fr 0.3fr;
 
-      grid-template-columns: calc(40px * (100vw / $reference-width)) 1fr 1fr calc(40px * (100vw / $reference-width));
+      grid-template-columns: calc(40px * (100vw / $reference-width)) 1fr 1fr calc(
+          40px * (100vw / $reference-width)
+        );
 
       p {
         padding: 0;
         grid-row: 1;
         grid-column: 2 / 4;
       }
-
+      $ref-width: 520px;
       .background-cover {
-        margin-top: calc(50px * (100vw / 520px));
+        margin-top: calc(50px * (100vw / $ref-width));
         grid-row: 2 / 7;
-
       }
-
     }
     h1 {
-      margin-left:  calc(100px * (100vw / $reference-width));
+      margin-left: calc(100px * (100vw / $reference-width));
       width: fit-content;
       &:after {
         display: none;
       }
     }
   }
-
 }

@@ -11,7 +11,8 @@ $reference-width: 1920px;
     display: flex;
     align-items: center;
 
-    &:after, &:before {
+    &:after,
+    &:before {
       content: "";
       flex: 1;
       height: 3px;
@@ -44,7 +45,10 @@ $reference-width: 1920px;
         -webkit-text-fill-color: $primary;
       }
 
-      mat-label, input, textarea, span {
+      mat-label,
+      input,
+      textarea,
+      span {
         color: $primary !important;
       }
 
@@ -54,7 +58,8 @@ $reference-width: 1920px;
       .mdc-notched-outline__leading:hover,
       .mdc-notched-outline__notch:hover,
       .mdc-notched-outline__trailing:hover,
-      .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+      .mdc-text-field--filled:not(.mdc-text-field--disabled)
+        .mdc-line-ripple::before {
         border-color: $primary !important;
       }
     }
@@ -85,6 +90,7 @@ $reference-width: 1920px;
       width: auto;
       padding: clamp(16px, 3vw, 40px) clamp(16px, 3.1vw, 50px);
       border-radius: 10px;
+      text-transform: uppercase;
     }
   }
 }

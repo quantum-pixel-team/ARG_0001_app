@@ -8,10 +8,9 @@ describe('RestaurantReservationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RestaurantReservationComponent]
-    })
-    .compileComponents();
-    
+      imports: [RestaurantReservationComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(RestaurantReservationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

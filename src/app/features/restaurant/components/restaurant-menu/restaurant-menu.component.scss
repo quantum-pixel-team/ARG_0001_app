@@ -23,14 +23,12 @@ $reference-width: 1920px;
   }
 
   swiper-container {
-
     swiper-slide {
       display: flex;
       justify-content: center;
       align-items: center;
 
       .swiper-zoom-container {
-
         height: calc(1100px * (100vw / $reference-width));
 
         img {
@@ -50,12 +48,10 @@ $reference-width: 1920px;
         }
       }
     }
-
   }
 
   path {
     color: $primary !important;
     fill: $primary !important;
   }
-
 }
