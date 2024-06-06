@@ -2,13 +2,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RestaurantCuisineComponent } from './restaurant-cuisine.component';
 
-describe('RestaurantCusineComponent', () => {
+describe('RestaurantCuisineComponent', () => {
   let component: RestaurantCuisineComponent;
   let fixture: ComponentFixture<RestaurantCuisineComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RestaurantCuisineComponent],
+      declarations: [RestaurantCuisineComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(RestaurantCuisineComponent);

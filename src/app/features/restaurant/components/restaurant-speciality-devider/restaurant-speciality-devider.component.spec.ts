@@ -8,7 +8,7 @@ describe('RestaurantSpecialityDeviderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RestaurantSpecialityDeviderComponent],
+      declarations: [RestaurantSpecialityDeviderComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(RestaurantSpecialityDeviderComponent);
