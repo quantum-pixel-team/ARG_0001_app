@@ -1,24 +1,20 @@
 <div class="reservation-reservation-container">
-
   <h2>RESERVATION FORM</h2>
   <form class="reservation-form" [formGroup]="reservationForm" (ngSubmit)="bookTable()">
     <mat-form-field>
       <mat-label>Name</mat-label>
       <input matInput formControlName="name" required>
-      <mat-error *ngIf="reservationForm.get('name')?.hasError('required')">
-        Name is required
-      </mat-error>
+      <mat-error *ngIf="reservationForm.get('name')?.hasError('required')">Name is required</mat-error>
+      <mat-error *ngIf="reservationForm.get('name')?.hasError('pattern')">Name should contain only alphabetic characters and spaces</mat-error>
+      <mat-error *ngIf="reservationForm.get('name')?.hasError('minlength')">Name should be at least 2 characters</mat-error>
+      <mat-error *ngIf="reservationForm.get('name')?.hasError('maxlength')">Name should be less than 50 characters</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput type="email" formControlName="email" required>
-      <mat-error *ngIf="reservationForm.get('email')?.hasError('required')">
-        Email is required
-      </mat-error>
-      <mat-error *ngIf="reservationForm.get('email')?.hasError('email')">
-        Invalid email format
-      </mat-error>
+      <mat-error *ngIf="reservationForm.get('email')?.hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="reservationForm.get('email')?.hasError('email')">Invalid email format</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -27,41 +23,47 @@
       <mat-error *ngIf="reservationForm.get('guests')?.hasError('required')">
         Number of guests is required
       </mat-error>
-      <mat-error *ngIf="reservationForm.get('guests')?.hasError('min')">
-        Must be at least 1 guest
-      </mat-error>
+      <mat-error *ngIf="reservationForm.get('guests')?.hasError('min')">Must be at least 1 guest</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Date</mat-label>
-      <input
-        [min]="today"
-        matInput [matDatepicker]="picker" formControlName="date" required>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-      <mat-error *ngIf="reservationForm.get('date')?.hasError('required')">
-        Date is required
-      </mat-error>
+      <input [min]="today" matInput              [matDatepicker]="picker" formControlName="date" required>
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <mat-icon color="primary" matDatepickerToggleIcon>event</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker color="primary" #picker></mat-datepicker>
+      <mat-error *ngIf="reservationForm.get('date')?.hasError('required')">Date is required</mat-error>
+      <mat-error *ngIf="reservationForm.get('date')?.hasError('isNotDate')">Invalid Date</mat-error>
+      <mat-error *ngIf="reservationForm.get('date')?.hasError('minDate')">Date cannot be in the past</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Time</mat-label>
-      <input matInput type="time" formControlName="time" required>
-      <mat-error *ngIf="reservationForm.get('time')?.hasError('required')">
-        Time is required
-      </mat-error>
+      <div style="display: flex; justify-content: space-between">
+        <input [ngxTimepicker]="time" matInput type="time" formControlName="time" [format]="24" required>
+        <mat-icon>schedule</mat-icon>
+      </div>
+      <mat-error *ngIf="reservationForm.get('time')?.hasError('required')">Time is required</mat-error>
+      <ngx-material-timepicker #time [theme]="primary"></ngx-material-timepicker>
     </mat-form-field>
+    <mat-error class="past-date-time" *ngIf="reservationForm.hasError('pastDateTime')">Date and Time cannot be in the past</mat-error>
 
     <mat-form-field appearance="outline">
       <mat-label>Message (Optional)</mat-label>
-      <textarea matInput placeholder="Leve us a message..." formControlName="message"></textarea>
+      <textarea #messageTextArea
+        (input)="adjustTextareaHeight()"
+        rows="3"
+        matInput placeholder="Leve us a message..." formControlName="message"></textarea>
+      <mat-error *ngIf="reservationForm.get('message')?.hasError('maxlength')">Message should be less than 1500 characters</mat-error>
     </mat-form-field>
 
 
   </form>
   <div class="button-container">
     <div class="line"></div>
-    <button mat-raised-button color="primary" type="submit" [disabled]="reservationForm.invalid">Book Table</button>
+    <button mat-raised-button (click)="bookTable()" color="primary" type="submit" [disabled]="reservationForm.invalid">Book Table</button>
     <div class="line"></div>
   </div>
 </div>

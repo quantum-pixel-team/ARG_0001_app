@@ -18,11 +18,13 @@ import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatDatepickerModule } from "@angular/material/datepicker";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import {NgxMaterialTimepickerModule} from "ngx-material-timepicker";
+import {MatIcon} from "@angular/material/icon";
 
 @NgModule({
   declarations: [RestaurantContainerComponent, RestaurantInfoComponent, RestaurantStafComponent, RestaurantSpecialityComponent, RestaurantReservationComponent, RestaurantCuisineComponent, RestaurantInfoDeviderComponent,RestaurantSpecialityDeviderComponent],
   imports: [CommonModule, MatCardModule, MatButtonModule,
     MatRippleModule, RestaurantMenuComponent,
-    MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, ReactiveFormsModule]
+    MatFormFieldModule, MatInputModule, MatDatepickerModule, FormsModule, ReactiveFormsModule, NgxMaterialTimepickerModule, MatIcon]
 })
 export class RestaurantModule {}
