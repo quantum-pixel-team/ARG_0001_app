@@ -1,8 +1,6 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
 import { isValidDate } from 'rxjs/internal/util/isDate';
 
-import { TimeFormat } from 'ngx-material-timepicker/src/app/material-timepicker/models/time-format.enum';
-
 export function dateFormatValidators(
   dateControl: AbstractControl,
 ): ValidationErrors | null {
