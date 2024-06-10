@@ -2,15 +2,15 @@
   <img src="assets/restaurant/arg_restaurant.png" alt="restaurant image" />
   <div class="restaurant-info-c-1">
     <div class="restaurant-info">
-      <h1>Restaurant</h1>
+      <h1>{{"RESTAURANT.Restaurant" | translate}}</h1>
       <p>
-        Come and taste meals from national and <br />
-        international cuisines.
+        {{"RESTAURANT.Resdesc-1" | translate}} <br>
+        {{"RESTAURANT.Resdesc-2" | translate}}
       </p>
       <app-restaurant-info-devider></app-restaurant-info-devider>
       <div class="restaurant-info-button-container">
-        <button (click)="bookNowClicked.emit()" mat-ripple>Book table</button>
-        <button (click)="seeMenuClicked.emit()" mat-ripple>See menu</button>
+        <button (click)="bookNowClicked.emit()" mat-ripple>{{"RESTAURANT.Booktable" | translate}}</button>
+        <button (click)="seeMenuClicked.emit()" mat-ripple>{{"RESTAURANT.Seemenu" | translate}}</button>
       </div>
     </div>
   </div>

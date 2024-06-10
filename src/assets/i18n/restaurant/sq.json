@@ -1,3 +1,22 @@
 {
-  "TITLES": "Mireservini bq"
+  "Restaurant": "Restorant",
+  "Resdesc-1": "Ejani dhe shijoni ushqime nga tradicionale dhe",
+  "Resdesc-2": "ato ndërkombëtare.",
+  "Booktable": "Rezervoni Tavolinë",
+  "Seemenu": "Shikoni Menun",
+  "Staff": "Stafi jonë",
+  "Staffdesc": "Shijoni një eksperiencë të shijshme ngrënieje në restorantin tonë, ku kuzhinierët tanë të talentuar përgatisin pjata të shkëlqyera me përbërësit më të freskët.",
+  "Chefspec-1": "Specialiteti I ",
+  "Chefspec-2": "Shefit tonë.",
+  "Chefspecdesc": "Specialiteti i shefit tonë është Linguine me Vongole, një pjatë klasike italiane që me siguri do të kënaqë shijen tuaj. Kjo pjatë është një dëshmi e vërtetë e përkushtimit të shefit tonë për të krijuar kuzhinë autentike dhe të shijshme. Mos e humbisni mundësinë për të provuar këtë pjatë firmato në restorantin tonë.",
+  "Cuisine": "KUZHINA JONË",
+  "CuisDesc": "Zbuloni kuzhinën tonë të larmishme dhe të shijshme, me një ndërthurje të pjatave tradicionale dhe moderne që do të kënaqin shijet tuaja, të ofruara në restorantin tonë.",
+  "Resform": "FORMATI I RESERVIMIT",
+  "Name": "Emri",
+  "Guest": "Të Ftuarit",
+  "Time":"Koha",
+  "Message": "Mesazh",
+  "Leave_message": "Leni një mesazh",
+  "Book_table": "Rezervoni Tavolinë"
+
 }

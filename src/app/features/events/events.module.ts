@@ -11,6 +11,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormField, MatSelect } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoEventsComponent } from './components/no-events/no-events.component';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -18,19 +19,20 @@ import { NoEventsComponent } from './components/no-events/no-events.component';
     EventCardComponent,
     NoEventsComponent,
   ],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatIconModule,
-    MatButtonModule,
-    MatTabsModule,
-    MatRipple,
-    MatPaginatorModule,
-    MatMenuModule,
-    MatFormField,
-    MatOption,
-    MatSelect,
-    NgOptimizedImage,
-  ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatIconModule,
+        MatButtonModule,
+        MatTabsModule,
+        MatRipple,
+        MatPaginatorModule,
+        MatMenuModule,
+        MatFormField,
+        MatOption,
+        MatSelect,
+        NgOptimizedImage,
+        TranslateModule,
+    ],
 })
 export class EventsModule {}

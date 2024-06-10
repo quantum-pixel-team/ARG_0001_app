@@ -16,6 +16,7 @@ import { MatIconAnchor, MatIconButton } from '@angular/material/button';
 import { FooterComponent } from '../components/footer/footer.component';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -25,24 +26,25 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     FooterComponent,
   ],
   exports: [MainNavComponent, ServerErrorComponent, FooterComponent],
-  imports: [
-    CommonModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatOptionModule,
-    MatIconModule,
-    FormsModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
-    NgOptimizedImage,
-    MatIconButton,
-    NgIf,
-    RouterLink,
-    RouterLinkActive,
-    MatIconAnchor,
-    MatTooltipModule,
-    MatRippleModule,
-  ],
+    imports: [
+        CommonModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatOptionModule,
+        MatIconModule,
+        FormsModule,
+        MatSidenavModule,
+        MatToolbarModule,
+        MatListModule,
+        NgOptimizedImage,
+        MatIconButton,
+        NgIf,
+        RouterLink,
+        RouterLinkActive,
+        MatIconAnchor,
+        MatTooltipModule,
+        MatRippleModule,
+        TranslateModule,
+    ],
 })
 export class SharedModule {}

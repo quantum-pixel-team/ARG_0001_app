@@ -1,0 +1,22 @@
+{
+  "Restaurant": "Ristorante",
+  "Resdesc-1": "Vieni ad assaggiare i piatti nazionali",
+  "Resdesc-2": "e cucine internazionali.",
+  "Booktable": "Prenota un tavolo",
+  "Seemenu": "Vedi il menù",
+  "Staff": "Il nostro staff",
+  "Staffdesc": "Godetevi una deliziosa esperienza culinaria nel nostro ristorante, dove i nostri talentuosi chef preparano piatti squisiti con ingredienti freschissimi. ",
+  "Chefspec-1": "La specialità del",
+  "Chefspec-2": "Nostro Chef",
+  "Chefspecdesc": "La specialità del nostro chef sono le Linguine con le Vongole, un classico piatto italiano che delizierà sicuramente il vostro palato. Questo piatto è una vera testimonianza della dedizione del nostro chef nel creare una cucina autentica e deliziosa. Non perdere l'occasione di provare questo piatto d'autore nel nostro ristorante.",
+  "Cuisine": "LA NOSTRA CUCINA",
+  "CuisDesc": "Scopri la nostra cucina varia e saporita, con una fusione di piatti tradizionali e moderni che stuzzicheranno le tue papille gustative, offerta nel nostro ristorante.",
+  "Resform": "MODULO DI PRENOTAZIONE",
+  "Name": "Nome",
+  "Guest": "Ospiti",
+  "Time":"Tempo",
+  "Message": "Messaggio",
+  "Leave_message": "Lasciate un messaggio",
+  "Book_table": "Prenota un tavolo"
+
+}

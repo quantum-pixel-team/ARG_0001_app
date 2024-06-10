@@ -1,12 +1,23 @@
 {
-  "TITLE": "Mireservini tek",
-  "SHORT-DESCRIPTION": "Aragosta Hotel & Restaurant ndodhet në Durrës, pranë një plazhi privat. Dhomat janë të mobiluara në mënyrë moderne dhe me ajër të kondicionuar, ndërsa disa ofrojnë një pamje të detit. Hoteli ka gjithashtu një restorant dhe bar vere me një tarracë dielli. WiFi falas dhe parking janë gjithashtu në dispozicion.",
-  "RESTAURANT": "RESTORANT",
-  "DESSERTS": "Embelsira",
-  "RESTAURANT.LABEL": "SHIKO ME SHUME",
-  "CONFERENCE.TITLE": "DHOMA E KONFERENCAVE",
-  "CONFERENCE.DESCRIPTION":"Një sallë konferencash ose mbledhjesh është gjithashtu në dispozicion, si dhe pajisje audio dhe video. Shërbimi i lavanderisë dhe hekurosjes mund të rregullohet. Plazhi privat është i pajisur me parasolë dhe karrige dielli",
-  "CONFERENCE.LABEL":"MESO ME SHUME",
-  "LOCATION": "Rruga Taulantia, Durres"
+  "Book_Now": "Rezervo Tani",
+  "Welcome": "Mirëserdhet në ",
+  "Welcome_Restaurant": "Restorant",
+  "WelDesc": "Aragosta Hotel & Restaurant ndodhet në Durrës, pranë një plazhi privat. Dhomat janë të mobiluara në mënyrë moderne dhe me ajër të kondicionuar, ndërsa disa ofrojnë pamje nga deti. Hoteli gjithashtu përmban një restorant dhe bar verë me një tarracë dielli. WiFi dhe parkim falas janë gjithashtu në dispozicion.",
+  "Services": {
+    "Wifi": "Wifi",
+    "Parking": "Parkimi",
+    "Beach": "Plazh",
+    "ElectricCharger": "Karikim Elektrik",
+    "ATM": "ATM",
+    "CashCard": "Kesh & Pagese me Karte"
+  },
+
+  "Restaurant": "RESTORANT",
+  "Dessert": "Embelsira",
+  "ViewMore": "Shiko më shumë",
+  "Confhome":"Salla e Konferencës",
+  "ConfDesc":"Një sallë konferencash ose mbledhjesh është gjithashtu e disponueshme,si dhe pajisje audio dhe video. Mund të organizohet shërbimi i lavanderisë dhe hekurosjes. Plazhi privat është i pajisur me çadra dhe shezlongë.",
+  "LearnMore":"Shiko më shumë",
+  "locfooter": "Rruga Taulantia, Durres"
 
 }

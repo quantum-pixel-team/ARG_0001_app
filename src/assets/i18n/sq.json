@@ -1,4 +1,12 @@
 {
-  "TITLE": "Mireservini tek",
-  "SHORT-DESCRIPTION": ""
+  "NavBar": {
+    "Home": "Home",
+    "Hotel": "Hotel",
+    "Restaurant": "Restoranti",
+    "Conference Room": "Dhoma Konferences",
+    "Events": "Evente",
+    "Contact": "Kontakt"
+  },
+  "AragDescfooter": "ARAGOSTA u themelua në vitin 1995, me një përvojë të gjatë në mikpritje,në fushën e gastronomisë me pjata peshku dhe mishi, dhe së fundmi me një Piceri.Hoteli me 4 yje ndodhet në zonën më të bukur të qytetit antik të Durrësit.",
+  "locfooter": "Rruga Taulantia, Durres"
 }

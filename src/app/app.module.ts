@@ -92,10 +92,11 @@ const app_modules = [
         useFactory: moduleHttpLoaderFactory,
         deps: [HttpClient],
       },
-      isolate:false
+      isolate: false
     })
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

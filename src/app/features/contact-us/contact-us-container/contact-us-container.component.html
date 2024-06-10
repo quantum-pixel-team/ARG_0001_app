@@ -1,10 +1,9 @@
 <div class="contact-us-container" [ngClass]="{ mobile: (isHandset$ | async) }">
   <div class="container-header">
     <div class="header-text">
-      <h2 class>Get in touch</h2>
+      <h2 class>{{ "CONTACT-US.Getintouch" | translate }}</h2>
       <p>
-        Want to get in touch? We'd love to hear from you. Here's how you can
-        reach us.
+        {{"CONTACT-US.Trecepdesc" | translate}}
       </p>
     </div>
   </div>
@@ -14,7 +13,7 @@
         <mat-icon>call</mat-icon>
       </mat-card-header>
       <mat-card-content>
-        <h4>Talk to the reception</h4>
+        <h4>{{"CONTACT-US.Talkreception" | translate}}</h4>
         <p>
           Want to book a room? Just pick up the phone and get in contact with a
           receptionist
@@ -42,9 +41,9 @@
   </div>
 
   <div class="line">
-    <hr class="line-a" />
-    <p class="center-text">OR</p>
-    <hr class="line-b" />
+    <hr class="line-a"/>
+    <p class="center-text">{{"CONTACT-US.or" | translate }}</p>
+    <hr class="line-b"/>
   </div>
 
   <div class="message-us-container">
@@ -60,7 +59,7 @@
       <form novalidate (ngSubmit)="saveForm()" [formGroup]="contactUsForm">
         <mat-form-field class="costume-input">
           <h4>Name</h4>
-          <input matInput formControlName="fullName" />
+          <input matInput formControlName="fullName"/>
           @if (contactUsForm.controls.fullName.hasError("required")) {
             <mat-error>Name is required</mat-error>
           }
@@ -77,7 +76,7 @@
 
         <mat-form-field class="costume-input">
           <h4>Email</h4>
-          <input matInput formControlName="email" />
+          <input matInput formControlName="email"/>
           @if (contactUsForm.controls.email.hasError("required")) {
             <mat-error>Email is required</mat-error>
           }
@@ -113,9 +112,9 @@
   </div>
 
   <div class="second-line">
-    <hr class="line-a" />
+    <hr class="line-a"/>
     <p>Give our premises a visit</p>
-    <hr class="line-b" />
+    <hr class="line-b"/>
   </div>
 
   <div class="location-base">
@@ -136,15 +135,15 @@
       <mat-card class="location-text-card">
         <ng-container *ngIf="(isHandset$ | async) === false">
           <div>
-            <hr class="vertical" />
+            <hr class="vertical"/>
           </div>
         </ng-container>
         <div class="location-detail-card">
-          <h3>Location</h3>
+          <h3>{{ "CONTACT-US.Location" | translate }}</h3>
           <p>Rruga Taulantia</p>
           <p>Durres</p>
           <p>Albania</p>
-          <h3>Phone</h3>
+          <h3>{{"CONTACT-US.Phone" | translate}}</h3>
           <p>+355 68 333 7050</p>
           <p>+355 68 205 8072</p>
           <h3 class="email-margin">Email</h3>

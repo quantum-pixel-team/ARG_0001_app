@@ -3,10 +3,10 @@
   [ngClass]="{ mobile: (isHandset$ | async) }"
 >
   <div class="welcome-container">
-    <h2 class="welcome-title">{{ "HOME.TITLE" | translate}}</h2>
-    <h2 class="title">Aragosta Hotel & Restaurant</h2>
+    <h2 class="welcome-title">{{ "HOME.Welcome" | translate}}</h2>
+    <h2 class="title">Aragosta Hotel & {{"HOME.Welcome_Restaurant" | translate}}</h2>
     <p>
-      {{"HOME.SHORT-DESCRIPTION" | translate}}
+      {{"HOME.WelDesc" | translate}}
     </p>
   </div>
 

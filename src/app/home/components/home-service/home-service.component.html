@@ -4,10 +4,10 @@
       *ngIf="(isHandset$ | async) === false || icon.id < 4; else reverseOrder"
     >
       <mat-icon class="icons">{{ icon.icon }}</mat-icon>
-      <p class="title">{{ icon.title }}</p>
+      <p class="title">{{ "HOME.Services."+icon.title | translate}}</p>
     </ng-container>
     <ng-template #reverseOrder>
-      <p class="title revers">{{ icon.title }}</p>
+      <p class="title revers">{{ "HOME.Services."+icon.title | translate}}</p>
       <mat-icon class="icons revers">{{ icon.icon }}</mat-icon>
     </ng-template>
   </ng-container>

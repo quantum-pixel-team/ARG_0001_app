@@ -1,0 +1,15 @@
+{
+  "Conference": "Salla e Konferencës",
+  "ConfDesc-1": "Mirësevini në faqen tonë të sallës së konferencave! Hoteli ynë ofron ambiente konferencash moderne për të gjitha nevojat e biznesit tuaj. Pavarësisht nëse po planifikoni një takim të vogël ose një ngjarje të madhe korporative, ne kemi hapësirën e përsosur për ju.",
+  "ConfDesc-2": "Dhomat tona të konferencave janë të pajisura me pajisje moderne audio-vizuale, akses në internet me shpejtësi të lartë dhe rregullime të rehatshme të ndenjëseve. Dhomat janë gjithashtu plotësisht me ajër të kondicionuar për të siguruar një mjedis të rehatshëm dhe produktiv për të pranishmit tuaj.",
+  "ConfBook": "Rezervimi i sallës së konferences.",
+  "Name": "Emri i plotë/Emri i kompanisë",
+  "Mobile": "Celulari",
+  "Rdate": "Data e Rezervimit",
+  "NrAttendees": "Numri i të pjesmarrësve",
+  "Stime": "Koha e Fillimit",
+  "Etime": "Koha e mbarimit",
+  "add": "Shto",
+  "Lmessage": "Leni një mesazh",
+  "Send": "Dërgoni"
+}

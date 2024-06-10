@@ -18,6 +18,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatIcon } from '@angular/material/icon';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { MatIcon } from '@angular/material/icon';
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
     MatIcon,
+    TranslateModule,
   ],
 })
 export class RestaurantModule {}

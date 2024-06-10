@@ -1,3 +1,22 @@
 {
-  "TITLES": "Welcome lol"
+  "Restaurant": "Restaurant",
+  "Resdesc-1": "Come and taste meals from national and",
+  "Resdesc-2": "international cuisines.",
+  "Booktable": "Book Table",
+  "Seemenu": "See Menu",
+  "Staff": "Our Staff",
+  "Staffdesc": "Indulge in a delectable dining experience at our on-site restaurant, where our talented chefs create mouth-watering dishes using the freshest ingredients. ",
+  "Chefspec-1": "The Specialty of ",
+  "Chefspec-2": "Our Chef.",
+  "Chefspecdesc": "Our chef's specialty is the Linguine with Vongole, a classic Italian dish that is sure to delight your taste buds. This dish is a true testament to our chef's dedication to creating authentic and delicious cuisine. Don't miss the opportunity to try this signature dish at our restaurant.",
+  "Cuisine": "OUR CUISINE",
+  "CuisDesc": "Discover the diverse and flavorful cuisine offered at our restaurant, featuring a fusion of traditional and modern dishes that will tantalize your taste buds.",
+  "Resform": "RESERVATION FORM",
+  "Name": "Name",
+  "Guest": "Guests",
+  "Time":"Time",
+  "Message": "Message",
+  "Leave_message": "Leave a message",
+  "Book_table": "Book Table"
+
 }

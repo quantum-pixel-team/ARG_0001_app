@@ -3,10 +3,10 @@
   [ngClass]="{ mobile: (isMobileWidth$ | async) }"
 >
   <div class="conference-booking-container">
-    <h3>Conference Room Booking</h3>
+    <h3>{{"CONFERENCE.ConfBook" | translate}}</h3>
     <form novalidate (ngSubmit)="submitForm()" [formGroup]="conferenceForm">
       <mat-form-field class="custom-input-filed" color="primary">
-        <mat-label>Full Name/Company Name:</mat-label>
+        <mat-label>{{"CONFERENCE.Name" | translate  }}</mat-label>
         <input
           matInput
           formControlName="fullNameOrCompanyName"
@@ -38,7 +38,7 @@
       </mat-form-field>
 
       <mat-form-field class="custom-input-filed" color="primary">
-        <mat-label>Mobile:</mat-label>
+        <mat-label>{{"CONFERENCE.Mobile" | translate}}</mat-label>
         <input matInput formControlName="phoneNumber" />
         @if (getControl("phoneNumber")?.hasError("pattern")) {
           <mat-error>Phone number must be Albanian</mat-error>
@@ -49,7 +49,7 @@
         class="block-conference-reservation custom-input-filed lower-label-top"
         color="primary"
       >
-        <mat-label>Reservation Date:</mat-label>
+        <mat-label>{{ "CONFERENCE.Rdate" | translate }}</mat-label>
         <input
           matInput
           [matDatepicker]="checkin"
@@ -81,7 +81,7 @@
         class="block-conference-reservation custom-input-filed lower-label-top"
         color="primary"
       >
-        <mat-label>Number of Attendees:</mat-label>
+        <mat-label>{{"CONFERENCE.NrAttendees" | translate}}</mat-label>
         <input matInput formControlName="numberOfAttenders" type="number" />
       </mat-form-field>
 
@@ -92,7 +92,7 @@
           class="block-conference-reservation custom-input-filed lower-label-top"
           color="primary"
         >
-          <mat-label>Start Time:</mat-label>
+          <mat-label>{{"CONFERENCE.Stime" | translate}}</mat-label>
           <input
             matInput
             [ngxTimepicker]="StartTime"
@@ -117,7 +117,7 @@
           class="block-conference-reservation custom-input-filed lower-label-top"
           color="primary"
         >
-          <mat-label>End Time:</mat-label>
+          <mat-label>{{"CONFERENCE.Etime" | translate}}</mat-label>
           <input
             matInput
             [ngxTimepicker]="EndTime"
@@ -184,7 +184,7 @@
             (click)="addReservationDate()"
             [disabled]="disableConferenceAddAppointment()"
           >
-            Add
+            {{"CONFERENCE.add" | translate}}
           </button>
         </div>
         <ng-container
@@ -219,7 +219,7 @@
       </div>
 
       <mat-form-field class="try comment custom-input-filed">
-        <mat-label>Leave a comment</mat-label>
+        <mat-label>{{"CONFERENCE.Lmessage" | translate}}</mat-label>
         <textarea matInput formControlName="emailContent"></textarea>
       </mat-form-field>
       <div class="add-send-button">
@@ -229,7 +229,7 @@
           type="submit"
           [disabled]="!isValid()"
         >
-          Sent
+          {{"CONFERENCE.Send" | translate}}
         </button>
       </div>
     </form>

@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIcon } from '@angular/material/icon';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [
@@ -18,18 +19,19 @@ import { MatIcon } from '@angular/material/icon';
     ConferenceWelcomePageComponent,
     ConferenceBookingComponent,
   ],
-  imports: [
-    CommonModule,
-    NgOptimizedImage,
-    MatFormFieldModule,
-    MatInputModule,
-    MatDatepickerModule,
-    MatButtonModule,
-    ReactiveFormsModule,
-    NgxMaterialTimepickerModule,
-    ReactiveFormsModule,
-    BrowserModule,
-    MatIcon,
-  ],
+    imports: [
+        CommonModule,
+        NgOptimizedImage,
+        MatFormFieldModule,
+        MatInputModule,
+        MatDatepickerModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        NgxMaterialTimepickerModule,
+        ReactiveFormsModule,
+        BrowserModule,
+        MatIcon,
+        TranslateModule,
+    ],
 })
 export class ConferenceModule {}

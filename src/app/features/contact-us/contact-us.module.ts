@@ -8,20 +8,22 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
+import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
   declarations: [ContactUsContainerComponent],
-  imports: [
-    CommonModule,
-    MatCardModule,
-    MatIcon,
-    MatIconModule,
-    MatButton,
-    MatInputModule,
-    MatFormFieldModule,
-    BrowserModule,
-    NgOptimizedImage,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatIcon,
+        MatIconModule,
+        MatButton,
+        MatInputModule,
+        MatFormFieldModule,
+        BrowserModule,
+        NgOptimizedImage,
+        ReactiveFormsModule,
+        TranslateModule,
+    ],
 })
 export class ContactUsModule {}

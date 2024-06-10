@@ -1,12 +1,12 @@
 <div class="reservation-reservation-container">
-  <h2>RESERVATION FORM</h2>
+  <h2>{{"RESTAURANT.Resform" | translate}}</h2>
   <form
     class="reservation-form"
     [formGroup]="reservationForm"
     (ngSubmit)="bookTable()"
   >
     <mat-form-field>
-      <mat-label>Name</mat-label>
+      <mat-label>{{"RESTAURANT.Name" | translate}}</mat-label>
       <input matInput formControlName="name" required />
       <mat-error *ngIf="reservationForm.get('name')?.hasError('required')"
         >Name is required</mat-error
@@ -34,7 +34,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Number of Guests</mat-label>
+      <mat-label>{{"RESTAURANT.Guest" | translate}}</mat-label>
       <input matInput type="number" formControlName="guests" required />
       <mat-error *ngIf="reservationForm.get('guests')?.hasError('required')">
         Number of guests is required
@@ -70,7 +70,7 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Time</mat-label>
+      <mat-label>{{"RESTAURANT.Time" | translate}}</mat-label>
       <div style="display: flex; justify-content: space-between">
         <input
           [ngxTimepicker]="time"
@@ -97,13 +97,13 @@
     >
 
     <mat-form-field appearance="outline">
-      <mat-label>Message (Optional)</mat-label>
+      <mat-label>{{"RESTAURANT.Message" | translate}} (Optional)</mat-label>
       <textarea
         #messageTextArea
         (input)="adjustTextareaHeight()"
         rows="3"
         matInput
-        placeholder="Leve us a message..."
+        placeholder="{{'RESTAURANT.Leave_message' | translate }}"
         formControlName="message"
       ></textarea>
       <mat-error *ngIf="reservationForm.get('message')?.hasError('maxlength')"
@@ -120,7 +120,7 @@
       type="submit"
       [disabled]="reservationForm.invalid"
     >
-      Book Table
+      {{"RESTAURANT.Book_table" | translate}}
     </button>
     <div class="line"></div>
   </div>
