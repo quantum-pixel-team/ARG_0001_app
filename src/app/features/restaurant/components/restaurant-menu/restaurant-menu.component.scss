@@ -1,0 +1,57 @@
+@import "../restaurant-container/restaurant-container.component";
+
+$reference-width: 1920px;
+
+.restaurant-menu-container {
+  margin: calc(100px * (100vw / $reference-width));
+  padding: calc(70px * (100vw / $reference-width));
+  border: solid 3px $primary;
+  text-align: center;
+  position: relative;
+
+  h1 {
+    font-size: clamp(24px, 5vw, 96px);
+    position: absolute;
+    top: 0;
+    margin: -4.5vw auto 0;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    z-index: 2;
+    padding: 0 50px;
+    background-color: white;
+  }
+
+  swiper-container {
+    swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .swiper-zoom-container {
+        height: calc(1100px * (100vw / $reference-width));
+
+        img {
+          height: 100%;
+          max-width: 100%;
+          object-fit: scale-down;
+        }
+      }
+      @media screen and (max-width: 950px) {
+        .swiper-zoom-container {
+          height: calc(1800px * (100vw / $reference-width));
+        }
+      }
+      @media screen and (max-width: 550px) {
+        .swiper-zoom-container {
+          height: auto;
+        }
+      }
+    }
+  }
+
+  path {
+    color: $primary !important;
+    fill: $primary !important;
+  }
+}

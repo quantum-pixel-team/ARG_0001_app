@@ -1,0 +1,16 @@
+<div class="restaurant-menu-container">
+  <h1>Menu</h1>
+  <swiper-container
+    navigation="true"
+    pagination="true"
+    pagination-dynamic-bullets="true"
+    pagination-clickable="true"
+    zoom="true"
+  >
+    <swiper-slide *ngFor="let menuImgUrl of menuList" lazy="true">
+      <div class="swiper-zoom-container">
+        <img loading="lazy" [src]="menuImgUrl" />
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</div>
