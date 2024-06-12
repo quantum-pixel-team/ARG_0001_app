@@ -17,16 +17,16 @@ on:
         default: "delta"
 
 jobs:
-#  ci:
-#    uses: quantum-pixel-team/ci-cd-templates/.github/workflows/app-ci-angular.yml@master
-#    with:
-#      artifact-path: "dist/aragosta-app"
-#    secrets:
-#      SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
-#      GITHUB_REQ_TOKE: ${{secrets.GITHUB_TOKEN}}
+  ci:
+    uses: quantum-pixel-team/ci-cd-templates/.github/workflows/app-ci-angular.yml@master
+    with:
+      artifact-path: "dist/aragosta-app"
+    secrets:
+      SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+      GITHUB_REQ_TOKE: ${{secrets.GITHUB_TOKEN}}
 
   cd-dev:
-#    needs: ci
+    needs: ci
     uses: quantum-pixel-team/ci-cd-templates/.github/workflows/common-cd.yml@master
     with:
       environment: dev
