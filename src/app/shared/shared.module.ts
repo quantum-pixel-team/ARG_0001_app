@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
-import {CommonModule, NgIf, NgOptimizedImage, provideImgixLoader} from '@angular/common';
+import {
+  CommonModule,
+  NgIf,
+  NgOptimizedImage,
+  provideImgixLoader,
+} from '@angular/common';
 import { MainNavComponent } from './components/main-nav/main-nav.component';
 import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
 import { ServerErrorComponent } from './components/server-error/server-error.component';

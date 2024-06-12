@@ -15,7 +15,8 @@ import {
   NgClass,
   NgForOf,
   NgIf,
-  NgOptimizedImage, provideImgixLoader,
+  NgOptimizedImage,
+  provideImgixLoader,
 } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { BookNowOptionRowComponent } from './book-now-option-row/book-now-option-row.component';
@@ -47,7 +48,11 @@ import { HomeEventsComponent } from './home-events/home-events.component';
     HomeHotelComponent,
     HomeHotelCardComponent,
   ],
-  providers: [provideNativeDateAdapter(), DatePipe, provideImgixLoader("https://aragosta-test.imgix.net")],
+  providers: [
+    provideNativeDateAdapter(),
+    DatePipe,
+    provideImgixLoader('https://aragosta-test.imgix.net'),
+  ],
   imports: [
     MatFormFieldModule,
     MatInputModule,
