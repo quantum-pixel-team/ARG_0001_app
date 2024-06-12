@@ -2,13 +2,14 @@ FROM nginx:alpine
 
 RUN mkdir -p /etc/nginx/ssl
 
-COPY ../../config/nginx-selfsigned.crt /etc/nginx/ssl/nginx-selfsigned.crt
-COPY ../../config/nginx-selfsigned.key /etc/nginx/ssl/nginx-selfsigned.key
+
 
 COPY ../../config/nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copy the SSL certificate and key files
 
+COPY ../../config/nginx-selfsigned.crt /etc/nginx/ssl/nginx-selfsigned.crt
+COPY ../../config/nginx-selfsigned.key /etc/nginx/ssl/nginx-selfsigned.key
 
 # Use the following commands to build the image and run the container (run from the root folder)
 # 1. You'll first need to build the project using `ng build`
