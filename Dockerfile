@@ -1,4 +1,4 @@
-##### Stage 1
+##### Stage 1: Build Angular App #####
 FROM node:lts AS node
 WORKDIR /app
 COPY package.json package-lock.json ./
@@ -6,8 +6,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
-##### Stage 2
-
+##### Stage 2: Build Nginx with HTTP/3 support #####
 FROM nginx:alpine
 
 # Install build dependencies
@@ -19,16 +18,14 @@ RUN apk add --no-cache --virtual .build-deps \
     cmake \
     git \
     go \
-    libc-dev
-
-# Install Rust
-RUN apk add --no-cache rust cargo
+    libc-dev \
+    rust cargo
 
 # Clone quiche
 RUN git clone --recursive https://github.com/cloudflare/quiche /usr/local/src/quiche
 
 # Download and extract Nginx source
-RUN wget http://nginx.org/download/nginx-1.21.0.tar.gz && \
+RUN wget https://nginx.org/download/nginx-1.21.0.tar.gz && \
     tar -zxvf nginx-1.21.0.tar.gz && \
     rm nginx-1.21.0.tar.gz
 
@@ -51,25 +48,27 @@ RUN ./configure \
     --with-compat \
     --with-http_ssl_module \
     --with-http_v2_module \
-    --with-http_v3_module \
-    --with-openssl=/usr/local/src/quiche/deps/boringssl \
-    --with-quiche=/usr/local/src/quiche && \
+    --with-http_v3=../quiche \
+    --with-openssl=../quiche/deps/boringssl \
+    --with-quiche=../quiche && \
     make && \
     make install
 
-# Clean up
+# Clean up build dependencies and source
 WORKDIR /
-RUN rm -rf /nginx-1.21.0 /usr/local/src/quiche
+RUN apk del .build-deps && \
+    rm -rf /nginx-1.21.0 /usr/local/src/quiche
 
-VOLUME /var/cache/nginx
+# Copy Angular build artifacts
 COPY --from=node /app/dist/aragosta-app /usr/share/nginx/html
-COPY ./config/nginx.conf /etc/nginx/conf.d/default.conf
+
+# Copy Nginx configuration and SSL certificates
+COPY ./config/nginx.conf /etc/nginx/nginx.conf
 COPY ./config/nginx-selfsigned.crt /etc/nginx/ssl/nginx-selfsigned.crt
 COPY ./config/nginx-selfsigned.key /etc/nginx/ssl/nginx-selfsigned.key
 
+# Expose ports
 EXPOSE 80 443
 
 # Run Nginx
 CMD ["nginx", "-g", "daemon off;"]
-# docker build -t nginx-angular -f nginx.prod.dockerfile .
-# docker run -p 8080:80 nginx-angular
