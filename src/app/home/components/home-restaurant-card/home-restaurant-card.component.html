@@ -8,10 +8,11 @@
   <mat-card-header>
     <img
       mat-card-avatar
-      [ngSrc]="imageUrl"
+      [src]="imageUrl"
       [alt]="title"
       [height]="150"
       [width]="150"
+      loading="lazy"
     />
 
     <div class="card-title">{{ title }}</div>
