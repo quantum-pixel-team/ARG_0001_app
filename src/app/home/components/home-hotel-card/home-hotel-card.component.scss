@@ -1,4 +1,3 @@
-$primary: #d34418;
 $reference-width: 1920px;
 
 .hotel-room {
@@ -29,7 +28,7 @@ $reference-width: 1920px;
 
     hr {
       width: 100%;
-      border: $border-size $primary solid;
+      border: $border-size var(--color-primary-color) solid;
       margin: 0 auto;
     }
 

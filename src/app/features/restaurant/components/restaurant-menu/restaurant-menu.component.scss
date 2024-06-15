@@ -1,11 +1,9 @@
-@import "../restaurant-container/restaurant-container.component";
-
 $reference-width: 1920px;
 
 .restaurant-menu-container {
   margin: calc(100px * (100vw / $reference-width));
   padding: calc(70px * (100vw / $reference-width));
-  border: solid 3px $primary;
+  border: solid 3px var(--color-primary-color);
   text-align: center;
   position: relative;
 
@@ -51,7 +49,7 @@ $reference-width: 1920px;
   }
 
   path {
-    color: $primary !important;
-    fill: $primary !important;
+    color: var(--color-primary-color) !important;
+    fill: var(--color-primary-color) !important;
   }
 }

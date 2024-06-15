@@ -7,58 +7,22 @@
     }"
   >
     <div class="input-field-container">
-      <div class="check-in">
-        <button type="button" (click)="checkin.open()" class="check-in-label">
-          Check-in
-        </button>
-        <mat-form-field appearance="outline">
-          <mat-label>Check-in</mat-label>
-          <input
-            matInput
-            [min]="currentDate"
-            [matDatepicker]="checkin"
-            [(ngModel)]="checkinDate"
-            (ngModelChange)="onCheckinDateChanged()"
-          />
-          <mat-datepicker-toggle matIconSuffix [for]="checkin">
-            <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
-          </mat-datepicker-toggle>
-          <mat-datepicker
-            [touchUi]="isMobileWidth$ | async"
-            #checkin
-          ></mat-datepicker>
-        </mat-form-field>
-        <div class="check-in-date-label">
-          {{ checkinDate | date: "dd/MM/yyyy" }}
-        </div>
-      </div>
+      <app-home-book-now-date-picker
+        label="Check-in"
+        [minDate]="currentDate"
+        [selectedDate]="checkinDate"
+        (dateChange)="onCheckinDateChanged()"
+        [isMobileWidth$]="isMobileWidth$"
+      ></app-home-book-now-date-picker>
       <div class="vl"></div>
-      <div class="check-out">
-        <button type="button" (click)="checkout.open()" class="check-out-label">
-          Check-out
-        </button>
 
-        <mat-form-field appearance="outline">
-          <mat-label>Check-out</mat-label>
-          <input
-            matInput
-            [min]="addDays(checkinDate, 1)"
-            [matDatepicker]="checkout"
-            [(ngModel)]="checkoutDate"
-          />
-          <mat-datepicker-toggle matIconSuffix [for]="checkout">
-            <mat-icon matDatepickerToggleIcon>event_available</mat-icon>
-          </mat-datepicker-toggle>
-          <mat-datepicker
-            [touchUi]="isMobileWidth$ | async"
-            #checkout
-          ></mat-datepicker>
-        </mat-form-field>
-        <div class="check-out-date-label">
-          <div *ngIf="checkoutDate === undefined">dd/MM/yyyy</div>
-          {{ checkoutDate | date: "dd/MM/yyyy" }}
-        </div>
-      </div>
+      <app-home-book-now-date-picker
+        label="Check-out"
+        [minDate]="addDays(checkinDate, 1)"
+        [selectedDate]="checkoutDate"
+        [isMobileWidth$]="isMobileWidth$"
+      ></app-home-book-now-date-picker>
+
       <div class="vl"></div>
       <div class="select-options">
         <button [matMenuTriggerFor]="menu">

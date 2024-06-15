@@ -1,11 +1,7 @@
-@import "../../../../../theme.scss";
-
-$primary: map-get($light-theme, primary, 500);
-$primary-100: map-get($light-theme, primary, 100);
 $reference-width: 1920px;
 
 .restaurant-cuisine-container {
-  background-color: $primary-100;
+  background-color: var(--color-primary-100-color);
   padding-top: calc(100px * (100vw / $reference-width));
   padding-bottom: calc(290px * (100vw / $reference-width));
 
@@ -22,7 +18,7 @@ $reference-width: 1920px;
       flex: 1;
       margin-left: 2rem;
       height: 3px;
-      background-color: $primary;
+      background-color: var(--color-primary-color);
     }
   }
 

@@ -27,12 +27,7 @@ import { MatTabBody } from '@angular/material/tabs';
 import { MatSidenavContainer } from '@angular/material/sidenav';
 import { MatDialogActions, MatDialogContent } from '@angular/material/dialog';
 import { CoreModule } from './core/core.module';
-import {
-  NgIf,
-  NgOptimizedImage,
-  NgSwitch,
-  provideImgixLoader,
-} from '@angular/common';
+import { NgIf, NgOptimizedImage, NgSwitch } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/components/home.module';
 import { HotelModule } from './features/hotel/hotel.module';

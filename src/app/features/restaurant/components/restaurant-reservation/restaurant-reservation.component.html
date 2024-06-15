@@ -106,7 +106,7 @@
         placeholder="Leve us a message..."
         formControlName="message"
       ></textarea>
-      <mat-error *ngIf="reservationForm.get('message')?.hasError('maxlength')"
+      <mat-error *ngIf="reservationForm.get('messageUs')?.hasError('maxlength')"
         >Message should be less than 1500 characters</mat-error
       >
     </mat-form-field>

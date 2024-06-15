@@ -1,15 +1,12 @@
-@import "../../../../theme.scss";
-
 $header-height: 680px;
 $reference-width: 1980px;
-$primary: map-get($light-theme, primary, 700);
 $card-top-height: -140px;
 $line-width: 800px;
 .contact-us-container {
   width: 100%;
 
   .container-header {
-    background-color: $primary;
+    background-color: var(--color-primary-color);
     height: calc($header-height * (100vw / $reference-width));
 
     .header-text {
@@ -45,7 +42,7 @@ $line-width: 800px;
     }
 
     .mat-mdc-card {
-      border: 1px solid $primary;
+      border: 1px solid var(--color-primary-color);
       border-radius: 0;
     }
 
@@ -56,16 +53,16 @@ $line-width: 800px;
       text-align: center;
 
       h4 {
-        color: $primary;
+        color: var(--color-primary-color);
         font-size: clamp(1rem, 2vw, 2rem);
       }
 
       a:-webkit-any-link {
-        color: $primary;
+        color: var(--color-primary-color);
       }
 
       p {
-        color: $primary;
+        color: var(--color-primary-color);
         font-size: clamp(0.5rem, 1vw, 1.5rem);
       }
 
@@ -76,7 +73,7 @@ $line-width: 800px;
         mat-icon {
           height: auto;
           width: auto;
-          color: $primary;
+          color: var(--color-primary-color);
           font-size: clamp(1rem, 7vw, 5rem);
         }
       }
@@ -89,7 +86,7 @@ $line-width: 800px;
           font-size: clamp(1rem, 2vw, 2rem);
           padding: clamp(1rem, 2vw, 2.3rem);
           color: white;
-          background-color: $primary;
+          background-color: var(--color-primary-color);
         }
       }
     }
@@ -99,7 +96,7 @@ $line-width: 800px;
     display: grid;
     grid-template-columns: 6% 40% 8% 40% 6%;
     align-items: center;
-    color: $primary;
+    color: var(--color-primary-color);
     margin-bottom: 5%;
 
     .line-a {
@@ -125,7 +122,7 @@ $line-width: 800px;
 
     hr {
       margin: 0;
-      background-color: $primary;
+      background-color: var(--color-primary-color);
       border: none;
       height: 1px;
     }
@@ -134,7 +131,7 @@ $line-width: 800px;
   .message-us-container {
     display: grid;
     grid-template-columns: 6% 40% 8% 40% 6%;
-    color: $primary;
+    color: var(--color-primary-color);
 
     .message-us {
       grid-column-start: 2;
@@ -145,99 +142,13 @@ $line-width: 800px;
         font-size: clamp(0.6rem, 2.2vw, 2rem);
       }
     }
-
-    .message-us-input {
-      grid-column-start: 4;
-      grid-column-end: 5;
-
-      .center-button {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      button {
-        font-size: clamp(1rem, 2vw, 2rem);
-        padding: clamp(1rem, 2vw, 2.3rem);
-        //background-color: $primary;
-        //color: white;
-      }
-
-      h4 {
-        margin: 0;
-        font-size: clamp(1rem, 2vw, 2rem);
-      }
-
-      .costume-input {
-        width: 100%;
-
-        input:-webkit-autofill {
-          -webkit-box-shadow: 0 0 0 1000px white inset;
-          -webkit-text-fill-color: $primary;
-        }
-
-        .mdc-text-field {
-          padding: 0;
-        }
-
-        .mat-form-field-underline {
-          display: none;
-        }
-
-        .mdc-text-field--filled:not(.mdc-text-field--disabled) {
-          background-color: transparent;
-        }
-
-        .mdc-text-field--filled:not(.mdc-text-field--disabled)
-          .mdc-line-ripple::before {
-          border: 0;
-        }
-
-        .mdc-text-field--filled:not(.mdc-text-field--disabled)
-          .mdc-line-ripple::after {
-          border: 0;
-        }
-
-        .mat-ripple-element {
-          transition-duration: 0ms !important;
-        }
-
-        .mat-mdc-form-field-infix {
-          width: 100%;
-          padding: 0;
-          min-height: 0;
-        }
-
-        .mat-mdc-form-field-focus-overlay {
-          background-color: transparent;
-        }
-
-        input {
-          width: 100%;
-          border: 1px solid $primary;
-          --focus: 1px solid $primary;
-          font-size: clamp(1rem, 2vw, 3rem);
-          caret-color: $primary;
-          color: $primary;
-          padding: 3px;
-        }
-
-        textarea {
-          width: 100%;
-          border: 1px solid $primary;
-          font-size: clamp(1rem, 2vw, 3rem);
-          color: $primary;
-        }
-      }
-    }
   }
 
   .second-line {
     display: grid;
     grid-template-columns: 6% 26% 36% 26% 6%;
     justify-items: center;
-    color: $primary;
+    color: var(--color-primary-color);
     margin-top: 5%;
     margin-bottom: 5%;
 
@@ -263,7 +174,7 @@ $line-width: 800px;
     hr {
       width: 100%;
       margin: 0;
-      background-color: $primary;
+      background-color: var(--color-primary-color);
       border: none;
       height: 1px;
     }
@@ -271,85 +182,6 @@ $line-width: 800px;
 
   .location-base {
     margin-bottom: 5%;
-
-    .location {
-      top: 0;
-      display: grid;
-      grid-template-columns: 6% 54% 34% 6%;
-
-      .location-img-card {
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        figure {
-          margin: 0;
-          overflow: hidden;
-        }
-
-        grid-column-start: 2;
-        grid-column-end: 3;
-      }
-
-      .hover03 figure img {
-        --webkit-transform: scale(1.5);
-        transform: scale(1.5);
-        -webkit-transition: 0.3s ease-in-out;
-        transition: 0.3s ease-in-out;
-      }
-
-      .hover03 figure:hover img {
-        --webkit-transform: scale(1.05);
-        transform: scale(1.05);
-      }
-
-      .location-text-card {
-        grid-column-start: 3;
-        grid-column-end: 4;
-
-        hr.vertical {
-          position: absolute;
-          left: 7%;
-          top: 4%;
-          bottom: 0;
-          width: 4px;
-          height: 90%;
-          background: $primary;
-          border: 0;
-        }
-
-        .location-detail-card {
-          height: auto;
-          width: 86%;
-          left: 14%;
-          position: relative;
-          color: $primary;
-
-          h3 {
-            font-size: clamp(0.5rem, 3vw, 4rem);
-            margin-top: 11%;
-            margin-bottom: 5%;
-          }
-
-          p {
-            font-size: clamp(0.8rem, 2vw, 3rem);
-            width: auto;
-            margin: 0;
-          }
-
-          .email-margin {
-            margin-top: 5%;
-            margin-bottom: 3%;
-          }
-        }
-      }
-
-      .mat-mdc-card-content {
-        padding: 0;
-      }
-    }
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { RestaurantMenuComponent } from '../restaurant-menu/restaurant-menu.component';
 import { RestaurantReservationComponent } from '../restaurant-reservation/restaurant-reservation.component';
 

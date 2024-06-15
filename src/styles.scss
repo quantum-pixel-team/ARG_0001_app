@@ -1,4 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+@import "theme.scss";
+
+$primary: map-get($light-theme, primary, 500);
+
+$primary-400: map-get($light-theme, primary, 400);
+$primary-100: map-get($light-theme, primary, 100);
+$primary-50: map-get($light-theme, primary, 50);
+
+:root {
+  --color-primary-color: #{$primary};
+  --color-primary-400-color: #{$primary-400};
+  --color-primary-100-color: #{$primary-100};
+  --color-primary-50-color: #{$primary-50};
+}
+
+$reference-width: 1920px;
 
 @font-face {
   font-family: "Inria_Serif";

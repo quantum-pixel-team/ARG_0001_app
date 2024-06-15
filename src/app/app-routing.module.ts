@@ -6,7 +6,7 @@ import { HomeContainerComponent } from './home/components/home-container/home-co
 import { RestaurantContainerComponent } from './features/restaurant/components/restaurant-container/restaurant-container.component';
 import { ConferenceContainerComponent } from './features/conference/components/conference-container/conference-container.component';
 import { EventsContainerComponent } from './features/events/components/events-cotainer/events-container.component';
-import { ContactUsContainerComponent } from './features/contact-us/contact-us-container/contact-us-container.component';
+import { ContactUsContainerComponent } from './features/contact-us/components/contact-us-container/contact-us-container.component';
 
 const routes: Routes = [
   { path: 'users', component: UserContainerComponent },

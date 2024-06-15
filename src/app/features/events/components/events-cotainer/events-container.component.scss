@@ -1,12 +1,8 @@
-@import "../../../../../theme.scss";
-
-$primary: map-get($light-theme, primary, 500);
-$primary-100: map-get($light-theme, primary, 100);
 $reference-width: 1920px;
 
 h1 {
   text-transform: uppercase;
-  color: $primary;
+  color: var(--color-primary-color);
   margin: calc(110px * (100vw / $reference-width)) auto;
   width: fit-content;
 }
@@ -16,12 +12,12 @@ h1 {
   padding: calc(50px * (100vw / $reference-width))
     calc(50px * (100vw / $reference-width)) 0;
   margin: 0 auto calc(100px * (100vw / $reference-width));
-  background-color: $primary-100;
+  background-color: var(--color-primary-100-color);
   border-radius: 15px;
 
   h3 {
     margin: calc(20px * (100vw / $reference-width));
-    color: $primary;
+    color: var(--color-primary-color);
   }
 
   // used to overwrite tap label default behaviors, Encapsulation NONE required
@@ -46,7 +42,7 @@ h1 {
     background-color: transparent;
     width: fit-content;
     margin: calc(90px * (100vw / $reference-width)) auto;
-    color: $primary;
+    color: var(--color-primary-color);
 
     font-size: clamp(12px, 2.5vw, 40px);
 
@@ -55,7 +51,7 @@ h1 {
     }
 
     .mat-mdc-form-field {
-      background-color: $primary;
+      background-color: var(--color-primary-color);
       border-radius: 10px;
       width: calc(180px * (100vw / $reference-width));
       min-width: 70px;
@@ -86,7 +82,7 @@ h1 {
       }
 
       :not(.mat-mdc-button-disabled) .mat-mdc-paginator-icon path {
-        fill: $primary;
+        fill: var(--color-primary-color);
       }
     }
   }
