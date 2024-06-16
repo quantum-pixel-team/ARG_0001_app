@@ -1,5 +1,6 @@
 services:
   app:
+    image: blou5/arg-app:latest
     build:
       context: ../..
       dockerfile: Dockerfile
