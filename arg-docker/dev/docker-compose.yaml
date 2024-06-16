@@ -1,6 +1,8 @@
 services:
   app:
-    image: blou5/arg-app:latest
+    build:
+      context: ../..
+      dockerfile: Dockerfile
     ports:
       - "4200:80"
       - "4201:443"

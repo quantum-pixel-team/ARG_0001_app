@@ -46,9 +46,3 @@ $dark-theme: mat.define-dark-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include mat.all-component-themes($light-theme);
-// No Dark Theme will be applied for this project
-//@media (prefers-color-scheme: light) {
-//  // Use the `-color` mixins to only apply color styles without reapplying the same
-//  // typography and density styles.
-//  @include mat.all-component-themes($light-theme);
-//}
