@@ -53,13 +53,13 @@ export class EventsContainerComponent implements AfterViewInit {
       .subscribe({
         next: (value) => {
           this.recentEvents = value;
-          this.navigateToTop()
+          this.navigateToTop();
         },
         error: (err) => console.error(err),
       });
   }
 
-  private navigateToTop(){
+  private navigateToTop() {
     this.scrollTarget.nativeElement.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
