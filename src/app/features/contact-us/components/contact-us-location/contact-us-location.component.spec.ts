@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ContactUsLocationComponent } from './contact-us-location.component';
+import { MatCardModule } from "@angular/material/card";
+import { NgOptimizedImage } from "@angular/common";
 
 describe('ContactUsLocationComponent', () => {
   let component: ContactUsLocationComponent;
@@ -8,7 +10,8 @@ describe('ContactUsLocationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ContactUsLocationComponent],
+      declarations: [ContactUsLocationComponent],
+      imports:[MatCardModule, NgOptimizedImage]
     }).compileComponents();
 
     fixture = TestBed.createComponent(ContactUsLocationComponent);
