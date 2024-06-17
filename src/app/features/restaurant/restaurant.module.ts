@@ -17,7 +17,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-import { MatIcon } from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
+import { RestaurantRoutingModule } from './restaurant-routing.module';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MatIcon } from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
-    MatIcon,
+    MatIconModule,
+    RestaurantRoutingModule,
   ],
 })
 export class RestaurantModule {}

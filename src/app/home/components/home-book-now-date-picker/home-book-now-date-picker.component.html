@@ -1,0 +1,31 @@
+<div
+  class="date-picker"
+  [ngClass]="{
+    mobile: (isMobileWidth$ | async)
+  }"
+>
+  <button type="button" (click)="datePicker.open()" class="date-label">
+    {{ label }}
+  </button>
+  <mat-form-field appearance="outline">
+    <mat-label>{{ label }}</mat-label>
+    <input
+      matInput
+      [min]="minDate"
+      [matDatepicker]="datePicker"
+      [(ngModel)]="selectedDate"
+      (ngModelChange)="onDateChanged()"
+    />
+    <mat-datepicker-toggle matIconSuffix [for]="datePicker">
+      <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker
+      [touchUi]="isMobileWidth$ | async"
+      #datePicker
+    ></mat-datepicker>
+  </mat-form-field>
+  <div class="date-placeholder">
+    <div *ngIf="selectedDate === undefined">dd/MM/yyyy</div>
+    {{ selectedDate | date: "dd/MM/yyyy" }}
+  </div>
+</div>

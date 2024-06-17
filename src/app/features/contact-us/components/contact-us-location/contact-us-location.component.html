@@ -1,0 +1,33 @@
+<div class="location contact-us-card">
+  <mat-card class="location-img-card">
+    <div class="hover03">
+      <figure>
+        <img
+          [ngSrc]="'location.jpg?format=compress'"
+          alt="some"
+          height="1640"
+          width="1900"
+          (click)="navigateToMaps.emit()"
+        />
+      </figure>
+    </div>
+  </mat-card>
+  <mat-card class="location-text-card">
+    <ng-container *ngIf="(isHandset$ | async) === false">
+      <div>
+        <hr class="vertical" />
+      </div>
+    </ng-container>
+    <div class="location-detail-card">
+      <h3>Location</h3>
+      <p>Rruga Taulantia</p>
+      <p>Durres</p>
+      <p>Albania</p>
+      <h3>Phone</h3>
+      <p>+355 68 333 7050</p>
+      <p>+355 68 205 8072</p>
+      <h3 class="email-margin">Email</h3>
+      <p>reservation&#64;aragosta.al</p>
+    </div>
+  </mat-card>
+</div>

@@ -1,13 +1,10 @@
-@import "../../../../theme.scss";
-
-$primary: map-get($light-theme, primary, 500);
 $reference-width: 1980px;
 $card-reference-height: 500px;
 
 .service-container {
   width: 100%;
   height: calc($card-reference-height * (100vw / $reference-width));
-  background-color: $primary;
+  background-color: var(--color-primary-color);
   display: grid;
   grid-template-columns: repeat(6, 1.2fr);
   grid-template-rows: repeat(2, 1.2fr);
@@ -27,7 +24,7 @@ $card-reference-height: 500px;
   }
 
   mat-icon {
-    color: $primary;
+    color: var(--color-primary-color);
     transform-origin: center;
     font-size: clamp(1.5rem, 3.5vw, 5rem);
     height: auto;

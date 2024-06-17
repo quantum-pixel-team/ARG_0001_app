@@ -11,6 +11,14 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormField, MatSelect } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoEventsComponent } from './components/no-events/no-events.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: EventsContainerComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -31,6 +39,7 @@ import { NoEventsComponent } from './components/no-events/no-events.component';
     MatOption,
     MatSelect,
     NgOptimizedImage,
+    RouterModule.forChild(routes),
   ],
 })
 export class EventsModule {}

@@ -2,11 +2,11 @@ import { Component, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
-import { HomeHttpService } from '../../../home/services/home-http.service';
+import { HomeHttpService } from '../../../../home/services/home-http.service';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ContactUs } from '../interface/contact-us.interface';
-import { ContactUsService } from '../services/contact-us-service';
-import { CommonServices } from '../../../shared/services/common.services';
+import { ContactUs } from '../../interface/contact-us.interface';
+import { ContactUsService } from '../../services/contact-us-service';
+import { CommonServices } from '../../../../shared/services/common.services';
 
 @Component({
   selector: 'app-contact-us-container',
@@ -61,15 +61,6 @@ export class ContactUsContainerComponent {
     this.commonService.openWhatsapp();
   }
 
-  protected isValidForm() {
-    return (
-      this.contactUsForm.valid &&
-      this.contactUsForm.controls.fullName.dirty &&
-      this.contactUsForm.controls.email.dirty &&
-      this.contactUsForm.controls.messageUs.dirty
-    );
-  }
-
   private createContactUs() {
     return (this.contactUs = {
       fullNameOrCompanyName: this.contactUsForm.controls.fullName.value,
@@ -78,7 +69,7 @@ export class ContactUsContainerComponent {
     });
   }
 
-  protected saveForm() {
+  protected sendMessage() {
     this.contactUsService
       .sendContactUsMessage(this.createContactUs())
       .subscribe({ error: (err) => console.log(err) });

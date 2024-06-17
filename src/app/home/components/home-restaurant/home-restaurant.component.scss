@@ -1,16 +1,13 @@
-@import "../../../../theme.scss";
-
-$primary: map-get($light-theme, primary, 500);
-
 $reference-width: 1980px;
 $card-reference-height: 150px;
+
 .headline-1 {
   font-size: clamp(24px, 96px, 5vw);
   font-weight: 700;
-  color: $primary;
+  color: var(--color-primary-color);
   margin: 20px auto clamp(20px, 190px, 5vw) auto;
   width: fit-content;
-  border-bottom: solid 3px $primary;
+  border-bottom: solid 3px var(--color-primary-color);
   padding: 0 calc(50px * (100vw / $reference-width));
 }
 
@@ -27,10 +24,10 @@ $card-reference-height: 150px;
     h1,
     h2 {
       font-size: clamp(20px, 48px, 4vw);
-      color: $primary;
+      color: var(--color-primary-color);
       font-family: Inria_Serif, serif;
       font-weight: 300;
-      border-bottom: solid 1px $primary;
+      border-bottom: solid 1px var(--color-primary-color);
       padding: 10px 20px;
       margin: 0 auto calc(50px * (100vw / $reference-width)) auto;
       width: fit-content;
@@ -83,7 +80,8 @@ $card-reference-height: 150px;
 
   .view-more {
     border-radius: 5px;
-    border: solid calc(4px * (100vw / $reference-width)) $primary;
+    border: solid calc(4px * (100vw / $reference-width))
+      var(--color-primary-color);
     width: fit-content;
     margin: 30px 0 0 auto;
     font-size: clamp(14px, 24px, 3vw);

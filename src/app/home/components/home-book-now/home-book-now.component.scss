@@ -1,9 +1,3 @@
-@import "../../../../theme.scss";
-
-$primary: map-get($light-theme, primary, 500);
-$primary-400: map-get($light-theme, primary, 400);
-$primary-100: map-get($light-theme, primary, 100);
-$primary-50: map-get($light-theme, primary, 50);
 $primary-font-size: clamp(12px, 2rem, 3vw);
 $label-font-size: clamp(12px, 20px, 3vw);
 $reference-width: 1980px;
@@ -24,82 +18,22 @@ $reference-width: 1980px;
     padding: 0 20px;
 
     .input-field-container {
-      border: $primary solid 5px;
+      border: var(--color-primary-color) solid 5px;
       border-radius: 90px 0 0 90px;
       border-right: none;
-      background-color: $primary-100;
+      background-color: var(--color-primary-100-color);
       display: grid;
       grid-template-columns: 2fr 0.05fr 2fr 0.05fr 2fr;
       height: 100%;
 
-      .check-in,
-      .check-out {
-        display: grid;
-        grid-template-columns: 2.5fr 1fr;
-        grid-template-rows: 2fr 1fr;
-        align-items: end;
-        justify-items: center;
-
-        mat-form-field {
-          justify-self: start;
-
-          .mat-mdc-text-field-wrapper {
-            padding: 0;
-
-            .mat-mdc-form-field-flex {
-              .mat-mdc-form-field-infix {
-                width: 0;
-
-                input {
-                  display: none;
-                }
-              }
-
-              .mdc-notched-outline {
-                width: 0;
-                height: 0;
-
-                * {
-                  display: none !important;
-                }
-              }
-            }
-          }
-
-          .mat-mdc-form-field-subscript-wrapper {
-            height: 0;
-          }
-        }
-
-        .check-in-label,
-        .check-out-label {
-          font-size: $primary-font-size;
-          width: 100%;
-          padding: 12px;
-          color: $primary;
-          height: auto;
-          background: none;
-          border: none;
-          cursor: pointer;
-        }
-
-        .check-in-date-label,
-        .check-out-date-label {
-          align-self: start;
-          grid-column: 1 / 3;
-          color: $primary;
-          font-size: $label-font-size;
-        }
-      }
-
       mat-icon {
         transform: scale(1.5);
-        color: $primary;
+        color: var(--color-primary-color);
       }
 
       .select-options {
         .options-container {
-          background-color: $primary-50;
+          background-color: var(--color-primary-50-color);
           border-radius: 16px;
         }
 
@@ -108,7 +42,7 @@ $reference-width: 1980px;
         }
 
         button {
-          color: $primary;
+          color: var(--color-primary-color);
           height: 100%;
           width: 100%;
 
@@ -137,7 +71,7 @@ $reference-width: 1980px;
     }
 
     .vl {
-      background-color: $primary;
+      background-color: var(--color-primary-color);
       width: 5px;
       height: 100%;
     }
@@ -241,14 +175,14 @@ $reference-width: 1980px;
 
 .mat-datepicker-popup {
   .mat-datepicker-content {
-    background-color: $primary-50;
+    background-color: var(--color-primary-50-color);
     border-radius: 16px;
   }
 }
 
 .cdk-overlay-pane {
   .mat-mdc-menu-panel {
-    background-color: $primary-50;
+    background-color: var(--color-primary-50-color);
     border-radius: 10px;
   }
 }

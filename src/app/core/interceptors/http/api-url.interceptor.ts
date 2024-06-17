@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {
-  HttpInterceptor,
   HttpHandler,
+  HttpInterceptor,
   HttpRequest,
 } from '@angular/common/http';
 import { ConfigService } from '../../config/config.service';

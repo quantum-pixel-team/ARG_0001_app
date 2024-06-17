@@ -9,8 +9,15 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
-import { BrowserModule } from '@angular/platform-browser';
 import { MatIcon } from '@angular/material/icon';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: ConferenceContainerComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -27,9 +34,8 @@ import { MatIcon } from '@angular/material/icon';
     MatButtonModule,
     ReactiveFormsModule,
     NgxMaterialTimepickerModule,
-    ReactiveFormsModule,
-    BrowserModule,
     MatIcon,
+    RouterModule.forChild(routes),
   ],
 })
 export class ConferenceModule {}

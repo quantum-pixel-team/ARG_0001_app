@@ -32,6 +32,7 @@ import { HomeLocationComponent } from './home-location/home-location.component';
 import { HomeHotelComponent } from './home-hotel/home-hotel.component';
 import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.component';
 import { HomeEventsComponent } from './home-events/home-events.component';
+import { HomeBookNowDatePickerComponent } from './home-book-now-date-picker/home-book-now-date-picker.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { HomeEventsComponent } from './home-events/home-events.component';
     HomeServiceComponent,
     HomeHotelComponent,
     HomeHotelCardComponent,
+    HomeBookNowDatePickerComponent,
   ],
   providers: [
     provideNativeDateAdapter(),

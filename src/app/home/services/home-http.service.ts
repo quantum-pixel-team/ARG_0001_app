@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MenuItem } from '../interfaces/menu-item';
 import { HotelRoom } from '../interfaces/hotel-room';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
