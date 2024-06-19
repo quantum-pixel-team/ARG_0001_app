@@ -11,7 +11,15 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormField, MatSelect } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoEventsComponent } from './components/no-events/no-events.component';
+import { RouterModule, Routes } from '@angular/router';
 import {TranslateModule} from "@ngx-translate/core";
+
+const routes: Routes = [
+  {
+    path: '',
+    component: EventsContainerComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -19,20 +27,21 @@ import {TranslateModule} from "@ngx-translate/core";
     EventCardComponent,
     NoEventsComponent,
   ],
-    imports: [
-        CommonModule,
-        MatCardModule,
-        MatIconModule,
-        MatButtonModule,
-        MatTabsModule,
-        MatRipple,
-        MatPaginatorModule,
-        MatMenuModule,
-        MatFormField,
-        MatOption,
-        MatSelect,
-        NgOptimizedImage,
-        TranslateModule,
-    ],
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTabsModule,
+    MatRipple,
+    MatPaginatorModule,
+    MatMenuModule,
+    MatFormField,
+    MatOption,
+    MatSelect,
+    NgOptimizedImage,
+    RouterModule.forChild(routes),
+    TranslateModule
+  ],
 })
 export class EventsModule {}

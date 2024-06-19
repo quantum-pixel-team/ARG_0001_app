@@ -9,7 +9,7 @@
   >
     <swiper-slide *ngFor="let menuImgUrl of menuList" lazy="true">
       <div class="swiper-zoom-container">
-        <img loading="lazy" [src]="menuImgUrl" />
+        <img [src]="menuImgUrl" loading="lazy" />
       </div>
     </swiper-slide>
   </swiper-container>

@@ -15,7 +15,8 @@ import {
   NgClass,
   NgForOf,
   NgIf,
-  NgOptimizedImage,
+  NgOptimizedImage, provideImgixLoader,
+
 } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { BookNowOptionRowComponent } from './book-now-option-row/book-now-option-row.component';
@@ -31,6 +32,7 @@ import { HomeLocationComponent } from './home-location/home-location.component';
 import { HomeHotelComponent } from './home-hotel/home-hotel.component';
 import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.component';
 import { HomeEventsComponent } from './home-events/home-events.component';
+import { HomeBookNowDatePickerComponent } from './home-book-now-date-picker/home-book-now-date-picker.component';
 import {TranslateModule} from "@ngx-translate/core";
 
 @NgModule({
@@ -47,30 +49,35 @@ import {TranslateModule} from "@ngx-translate/core";
     HomeServiceComponent,
     HomeHotelComponent,
     HomeHotelCardComponent,
+    HomeBookNowDatePickerComponent,
   ],
-  providers: [provideNativeDateAdapter(), DatePipe],
-    imports: [
-        MatFormFieldModule,
-        MatInputModule,
-        MatDatepickerModule,
-        FormsModule,
-        MatButtonModule,
-        MatIconModule,
-        ReactiveFormsModule,
-        DatePipe,
-        MatMenuModule,
-        MatDividerModule,
-        NgIf,
-        AsyncPipe,
-        NgClass,
-        MatCardModule,
-        NgForOf,
-        NgOptimizedImage,
-        RouterLink,
-        MatRipple,
-        HomeEventsComponent,
-        TranslateModule,
-    ],
+  providers: [
+    provideNativeDateAdapter(),
+    DatePipe,
+    provideImgixLoader('https://aragosta-test.imgix.net'),
+  ],
+  imports: [
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    FormsModule,
+    MatButtonModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    DatePipe,
+    MatMenuModule,
+    MatDividerModule,
+    NgIf,
+    AsyncPipe,
+    NgClass,
+    MatCardModule,
+    NgForOf,
+    NgOptimizedImage,
+    RouterLink,
+    MatRipple,
+    HomeEventsComponent,
+    TranslateModule
+  ],
   exports: [],
 })
 export class HomeModule {}

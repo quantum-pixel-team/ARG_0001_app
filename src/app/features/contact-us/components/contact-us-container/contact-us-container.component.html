@@ -1,0 +1,77 @@
+<div class="contact-us-container" [ngClass]="{ mobile: (isHandset$ | async) }">
+  <div class="container-header">
+    <div class="header-text">
+      <h2 class>Get in touch</h2>
+      <p>
+        Want to get in touch? We'd love to hear from you. Here's how you can
+        reach us.
+      </p>
+    </div>
+  </div>
+  <div class="contact-us-card">
+    <mat-card class="card-a base-card-design">
+      <mat-card-header class="card-header">
+        <mat-icon>call</mat-icon>
+      </mat-card-header>
+      <mat-card-content>
+        <h4>Talk to the reception</h4>
+        <p>
+          Want to book a room? Just pick up the phone and get in contact with a
+          receptionist
+        </p>
+      </mat-card-content>
+      <mat-card-footer>
+        <h4><a href="tel:+355 68 205 8072">+355 68 205 8072</a></h4>
+      </mat-card-footer>
+    </mat-card>
+    <mat-card class="card-b base-card-design">
+      <mat-card-header class="card-header">
+        <mat-icon><i class="bi bi-whatsapp"></i></mat-icon>
+      </mat-card-header>
+      <mat-card-content>
+        <h4>Talk to the reception</h4>
+        <p>
+          Want to book a room? Just pick up the phone and get in contact with a
+          receptionist
+        </p>
+      </mat-card-content>
+      <mat-card-footer>
+        <button mat-flat-button (click)="openWhatsapp()">Contact</button>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+
+  <div class="line">
+    <hr class="line-a" />
+    <p class="center-text">OR</p>
+    <hr class="line-b" />
+  </div>
+
+  <div class="message-us-container">
+    <div class="message-us">
+      <h3>MESSAGE US</h3>
+      <p>
+        We value our guests' feedback and are always happy to assist with any
+        inquiries. We look forward to hearing from you and making your stay at
+        our hotel a memorable one.
+      </p>
+    </div>
+    <app-contact-us-from
+      class="message-us-input"
+      (sendMessage)="sendMessage()"
+      [contactUsForm]="contactUsForm"
+    ></app-contact-us-from>
+  </div>
+
+  <div class="second-line">
+    <hr class="line-a" />
+    <p>Give our premises a visit</p>
+    <hr class="line-b" />
+  </div>
+
+  <div class="location-base">
+    <app-contact-us-location
+      [isHandset$]="isHandset$"
+    ></app-contact-us-location>
+  </div>
+</div>

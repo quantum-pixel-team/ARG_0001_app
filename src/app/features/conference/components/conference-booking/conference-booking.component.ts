@@ -49,7 +49,7 @@ export class ConferenceBookingComponent implements OnInit {
         [Validators.required, Validators.minLength(3)],
       ],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: [null, Validators.pattern('^(((067|068|069)\\d{7})){1}$')],
+      phoneNumber: [null, Validators.pattern('^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$')],
       reservationDate: [
         null,
         [Validators.required, dateFormatValidators, minDateRequired],

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MenuItem } from '../interfaces/menu-item';
 import { HotelRoom } from '../interfaces/hotel-room';
-import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -67,7 +66,7 @@ export class HomeHttpService {
       {
         name: 'Single Room',
         facilities: ['Single Bed', 'Breakfast included', 'Free Wifi'],
-        featureImageUrl: 'assets/single-room.png',
+        featureImageUrl: '/assets/single-room.avif',
       },
       {
         name: 'Double Room',
@@ -77,7 +76,7 @@ export class HomeHttpService {
           'Breakfast included',
           'Free Wifi',
         ],
-        featureImageUrl: 'assets/double-room-1.png',
+        featureImageUrl: '/assets/double-room-1.avif',
       },
       {
         name: 'Suite Room',
@@ -87,7 +86,7 @@ export class HomeHttpService {
           'Breakfast included',
           'Free Wifi',
         ],
-        featureImageUrl: 'assets/suite-room.png',
+        featureImageUrl: '/assets/suite-room.avif',
       },
       {
         name: 'Double Room',
@@ -97,7 +96,7 @@ export class HomeHttpService {
           'Breakfast included',
           'Free Wifi',
         ],
-        featureImageUrl: 'assets/double-room-1.png',
+        featureImageUrl: 'assets/double-room-1.avif',
       },
     ];
   }

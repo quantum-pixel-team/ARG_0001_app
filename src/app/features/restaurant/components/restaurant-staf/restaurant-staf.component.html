@@ -1,6 +1,14 @@
 <div class="restaurant-staff-container">
-  <img src="assets/restaurant/arg_staff_1.png" alt="Staff image" />
-  <img src="assets/restaurant/arg_staff_2.png" alt="Staff image" />
+  <img
+    [src]="'assets/restaurant/arg_staff_1.png'"
+    alt="Staff image"
+    loading="lazy"
+  />
+  <img
+    [src]="'assets/restaurant/arg_staff_2.png'"
+    alt="Staff image"
+    loading="lazy"
+  />
   <div class="staff-description">
     <h3>{{"RESTAURANT.Staff" |translate}}</h3>
     <p>

@@ -41,7 +41,7 @@
         <mat-label>{{"CONFERENCE.Mobile" | translate}}</mat-label>
         <input matInput formControlName="phoneNumber" />
         @if (getControl("phoneNumber")?.hasError("pattern")) {
-          <mat-error>Phone number must be Albanian</mat-error>
+          <mat-error>Phone number not valid</mat-error>
         }
       </mat-form-field>
 

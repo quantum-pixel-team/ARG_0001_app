@@ -1,8 +1,7 @@
 $reference-width: 1920px;
-$primary: #d34418;
 
 .container {
-  color: $primary;
+  color: var(--color-primary-color);
   max-width: 1600px;
   margin: 0 auto;
   padding: calc(50px * (100vw / $reference-width));
@@ -15,14 +14,14 @@ $primary: #d34418;
 
     h1 {
       padding: clamp(5px, 2.5vw, 20px) clamp(20px, 5vw, 125px);
-      border-bottom: solid $border-size $primary;
+      border-bottom: solid $border-size var(--color-primary-color);
       width: fit-content;
     }
 
     div {
       height: calc(160px * (100vw / $reference-width));
       width: calc(160px * (100vw / $reference-width));
-      border: solid $border-size $primary;
+      border: solid $border-size var(--color-primary-color);
       border-bottom: none;
     }
 

@@ -23,7 +23,7 @@ export class EventsContainerComponent implements AfterViewInit {
   recentEvents: Page<AppEvent> | undefined;
   pageSizeOptions = [5, 10, 25, 100];
   pageSize = 5;
-  @ViewChild('eventsContainer', { static: false }) scrollTarget!: ElementRef;
+  @ViewChild('events', { static: false }) scrollTarget!: ElementRef;
 
   constructor(private service: EventHttpService) {}
 
@@ -51,16 +51,21 @@ export class EventsContainerComponent implements AfterViewInit {
       .fetchRecentEvents(query)
       .pipe(map(this.sliceDescriptionIfSmallWidth))
       .subscribe({
-        next: (value) => (this.recentEvents = value),
+        next: (value) => {
+          this.recentEvents = value;
+          this.navigateToTop();
+        },
         error: (err) => console.error(err),
       });
+  }
+
+  private navigateToTop() {
     this.scrollTarget.nativeElement.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
       inline: 'nearest',
     });
   }
-
   private sliceDescriptionIfSmallWidth(events: Page<AppEvent>) {
     if (window.innerWidth < 600) {
       events.content = events.content.map((event) => {
