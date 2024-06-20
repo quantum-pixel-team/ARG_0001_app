@@ -1,12 +1,27 @@
 {
   "Getintouch": "Get in touch",
+  "GetInTouchDesc": "Want to get in touch? We'd love to hear from you. Here's how you can reach us.",
   "Talkreception": "Talk to the reception",
   "Trecepdesc": "Want to book a room? Just pick up the phone and get in contact with a receptionist",
-  "Messageus":"Message Us",
-  "or" : "or",
+  "SupportCont": "Contact Support",
+  "SupportDesc": "Have any questions about our facilities? Send us an email and we’ll get back to you in no time",
+  "Messageus": "Message Us",
+  "MessageDesc": "We value our guests' feedback and are always happy to assist with any inquiries. We look forward to hearing from you and making your stay at our hotel a memorable one.",
+  "or": "or",
   "Premisesvisit": "Give our premises a visit",
   "Location": "Location",
-  "locdesc": "Taulantia Street, Durres",
-  "Phone": "Phone"
-
+  "LocStr": "Taulantia Street",
+  "LocCity": "Durres",
+  "Phone": "Phone",
+  "Name": "Name",
+  "ReqName": "Name is required",
+  "CharReqName": "Name should be 2 or more character ",
+  "MaxCharReqName": "Enter less than 50 characters",
+  "PatterReqName": "Name should contain only letters",
+  "EmailMsg": "Please enter a valid email",
+  "EmailReqMsg": "Email is required",
+  "MinCharMess": "Message should be at least 10 character",
+  "Msg": "Message",
+  "MsgError": "Message is required",
+  "SendButt": "Send"
 }

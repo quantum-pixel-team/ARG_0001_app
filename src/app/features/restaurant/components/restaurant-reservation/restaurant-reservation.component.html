@@ -1,57 +1,59 @@
 <div class="reservation-reservation-container">
-  <h2>{{"RESTAURANT.Resform" | translate}}</h2>
+  <h2>{{ "RESTAURANT.Resform" | translate }}</h2>
   <form
     class="reservation-form"
     [formGroup]="reservationForm"
     (ngSubmit)="bookTable()"
   >
     <mat-form-field>
-      <mat-label>{{"RESTAURANT.Name" | translate}}</mat-label>
-      <input matInput formControlName="name" required />
+      <mat-label>{{ "RESTAURANT.Name" | translate }}</mat-label>
+      <input matInput formControlName="name" />
       <mat-error *ngIf="reservationForm.get('name')?.hasError('required')"
-        >Name is required</mat-error
-      >
+        >{{ "RESTAURANT.ReqName" | translate }}
+      </mat-error>
       <mat-error *ngIf="reservationForm.get('name')?.hasError('pattern')"
-        >Name should contain only alphabetic characters and spaces</mat-error
-      >
+        >{{ "RESTAURANT.LetterReqName" | translate }}
+      </mat-error>
       <mat-error *ngIf="reservationForm.get('name')?.hasError('minlength')"
-        >Name should be at least 2 characters</mat-error
-      >
+        >{{ "RESTAURANT.CharReqName" | translate }}
+      </mat-error>
       <mat-error *ngIf="reservationForm.get('name')?.hasError('maxlength')"
-        >Name should be less than 50 characters</mat-error
-      >
+        >{{ "RESTAURANT.MaxCharReqName" | translate }}
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Email</mat-label>
       <input matInput type="email" formControlName="email" required />
       <mat-error *ngIf="reservationForm.get('email')?.hasError('required')"
-        >Email is required</mat-error
-      >
-      <mat-error *ngIf="reservationForm.get('email')?.hasError('email')"
-        >Invalid email format</mat-error
-      >
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-label>{{"RESTAURANT.Guest" | translate}}</mat-label>
-      <input matInput type="number" formControlName="guests" required />
-      <mat-error *ngIf="reservationForm.get('guests')?.hasError('required')">
-        Number of guests is required
+        >{{ "RESTAURANT.ReqEmail" | translate }}
       </mat-error>
-      <mat-error *ngIf="reservationForm.get('guests')?.hasError('min')"
-        >Must be at least 1 guest</mat-error
-      >
+      <mat-error *ngIf="reservationForm.get('email')?.hasError('email')"
+        >{{ "RESTAURANT.ValidReqEmail" | translate }}
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Date</mat-label>
+      <mat-label>{{ "RESTAURANT.Guest" | translate }}</mat-label>
+      <input matInput formControlName="guests" required />
+      <mat-error *ngIf="reservationForm.get('guests')?.hasError('required')">
+        {{ "RESTAURANT.ReqGuest" | translate }}
+      </mat-error>
+      <mat-error *ngIf="reservationForm.get('guests')?.hasError('min')">
+        {{ "RESTAURANT.ReqNumGuest" | translate }}
+      </mat-error>
+      <mat-error *ngIf="reservationForm.get('guests')?.hasError('pattern')">
+        {{ "RESTAURANT.PatternGuestErr" | translate }}
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>{{ "RESTAURANT.Date" | translate }}</mat-label>
       <input
         [min]="today"
         matInput
         [matDatepicker]="picker"
         formControlName="date"
-        required
       />
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker">
@@ -59,18 +61,20 @@
       </mat-datepicker-toggle>
       <mat-datepicker color="primary" #picker></mat-datepicker>
       <mat-error *ngIf="reservationForm.get('date')?.hasError('required')"
-        >Date is required</mat-error
-      >
-      <mat-error *ngIf="reservationForm.get('date')?.hasError('isNotDate')"
-        >Invalid Date</mat-error
-      >
-      <mat-error *ngIf="reservationForm.get('date')?.hasError('minDate')"
-        >Date cannot be in the past</mat-error
-      >
+        >{{ "RESTAURANT.ReqDate" | translate }}
+      </mat-error>
+
+      <mat-error
+        *ngIf="
+          reservationForm.get('date')?.hasError('minDate') &&
+          !reservationForm.get('date')?.hasError('required')
+        "
+        >{{ "RESTAURANT.PastDateErr" | translate }}
+      </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>{{"RESTAURANT.Time" | translate}}</mat-label>
+      <mat-label>{{ "RESTAURANT.Time" | translate }}</mat-label>
       <div style="display: flex; justify-content: space-between">
         <input
           [ngxTimepicker]="time"
@@ -83,8 +87,8 @@
         <mat-icon>schedule</mat-icon>
       </div>
       <mat-error *ngIf="reservationForm.get('time')?.hasError('required')"
-        >Time is required</mat-error
-      >
+        >{{ "RESTAURANT.ReqTime" | translate }}
+      </mat-error>
       <ngx-material-timepicker
         #time
         [theme]="primary"
@@ -93,22 +97,22 @@
     <mat-error
       class="past-date-time"
       *ngIf="reservationForm.hasError('pastDateTime')"
-      >Date and Time cannot be in the past</mat-error
-    >
+      >{{ "RESTAURANT.Date&TimeErr" | translate }}
+    </mat-error>
 
     <mat-form-field appearance="outline">
-      <mat-label>{{"RESTAURANT.Message" | translate}} (Optional)</mat-label>
+      <mat-label>{{ "RESTAURANT.Message" | translate }} (Optional)</mat-label>
       <textarea
         #messageTextArea
         (input)="adjustTextareaHeight()"
         rows="3"
         matInput
-        placeholder="{{'RESTAURANT.Leave_message' | translate }}"
+        placeholder="{{ 'RESTAURANT.Leave_message' | translate }}"
         formControlName="message"
       ></textarea>
       <mat-error *ngIf="reservationForm.get('messageUs')?.hasError('maxlength')"
-        >Message should be less than 1500 characters</mat-error
-      >
+        >Message should be less than 1500 characters
+      </mat-error>
     </mat-form-field>
   </form>
   <div class="button-container">
@@ -120,7 +124,7 @@
       type="submit"
       [disabled]="reservationForm.invalid"
     >
-      {{"RESTAURANT.Book_table" | translate}}
+      {{ "RESTAURANT.Book_table" | translate }}
     </button>
     <div class="line"></div>
   </div>

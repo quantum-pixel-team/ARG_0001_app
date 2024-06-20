@@ -12,7 +12,7 @@ import { MatFormField, MatSelect } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { NoEventsComponent } from './components/no-events/no-events.component';
 import { RouterModule, Routes } from '@angular/router';
-import {TranslateModule} from "@ngx-translate/core";
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -41,7 +41,7 @@ const routes: Routes = [
     MatSelect,
     NgOptimizedImage,
     RouterModule.forChild(routes),
-    TranslateModule
+    TranslateModule,
   ],
 })
 export class EventsModule {}

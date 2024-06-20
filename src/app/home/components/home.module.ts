@@ -15,8 +15,8 @@ import {
   NgClass,
   NgForOf,
   NgIf,
-  NgOptimizedImage, provideImgixLoader,
-
+  NgOptimizedImage,
+  provideImgixLoader,
 } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { BookNowOptionRowComponent } from './book-now-option-row/book-now-option-row.component';
@@ -33,7 +33,7 @@ import { HomeHotelComponent } from './home-hotel/home-hotel.component';
 import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.component';
 import { HomeEventsComponent } from './home-events/home-events.component';
 import { HomeBookNowDatePickerComponent } from './home-book-now-date-picker/home-book-now-date-picker.component';
-import {TranslateModule} from "@ngx-translate/core";
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -76,7 +76,7 @@ import {TranslateModule} from "@ngx-translate/core";
     RouterLink,
     MatRipple,
     HomeEventsComponent,
-    TranslateModule
+    TranslateModule,
   ],
   exports: [],
 })

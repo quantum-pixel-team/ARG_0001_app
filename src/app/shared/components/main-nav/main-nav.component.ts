@@ -1,11 +1,19 @@
-import {AfterViewInit, ChangeDetectorRef, Component, EventEmitter, inject, Output, ViewChild,} from '@angular/core';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {Observable} from 'rxjs';
-import {map, shareReplay} from 'rxjs/operators';
-import {MatSidenavContainer} from '@angular/material/sidenav';
-import {Language} from '../../interfaces/Language';
-import {NavigationEnd, Router} from '@angular/router';
-import {TranslateService} from "@ngx-translate/core";
+import {
+  AfterViewInit,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  inject,
+  Output,
+  ViewChild,
+} from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { MatSidenavContainer } from '@angular/material/sidenav';
+import { Language } from '../../interfaces/Language';
+import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-nav',
@@ -31,9 +39,7 @@ export class MainNavComponent implements AfterViewInit {
   constructor(
     private cdr: ChangeDetectorRef,
     private router: Router,
-
   ) {}
-
 
   ngAfterViewInit(): void {
     this.sidenavContainer.scrollable.elementScrolled().subscribe(() => {
@@ -62,6 +68,5 @@ export class MainNavComponent implements AfterViewInit {
 
   onLanguageChange(event: Language) {
     this.languageChanged.emit(event);
-
   }
 }

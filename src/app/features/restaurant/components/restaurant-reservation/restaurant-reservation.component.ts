@@ -17,6 +17,7 @@ import {
   futureDateValidator,
   futureTimeValidator,
 } from '../validators/restaurant-date-validators';
+import { minDateRequired } from '../../../conference/validators/date-format.validators';
 
 @Component({
   selector: 'app-restaurant-reservation',
@@ -46,8 +47,8 @@ export class RestaurantReservationComponent implements OnInit {
           ],
         ],
         email: ['', [Validators.required, Validators.email]],
-        guests: ['', [Validators.min(1)]],
-        date: ['', [Validators.required, futureDateValidator]],
+        guests: ['', [Validators.min(1), Validators.pattern('^[0-9]*$')]],
+        date: ['', [Validators.required, futureDateValidator, minDateRequired]],
         time: ['', [Validators.required, futureTimeValidator]],
         message: ['', Validators.maxLength(1500)],
       },
