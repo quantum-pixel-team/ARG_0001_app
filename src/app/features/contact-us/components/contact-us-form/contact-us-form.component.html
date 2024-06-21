@@ -37,7 +37,7 @@
         <mat-error>{{ "CONTACT-US.MinCharMess" | translate }}</mat-error>
       }
       @if (contactUsForm.get("messageUs")!.hasError("maxlength")) {
-        <mat-error>Message should be less than 1500 characters</mat-error>
+        <mat-error>{{ "CONTACT-US.MaxCharMess" | translate }}</mat-error>
       }
     </mat-form-field>
     <div class="center-button">

@@ -32,5 +32,6 @@
   "Date&TimeErr": "Date and Time cannot be in the past",
   "Message": "Message",
   "Leave_message": "Leave a message",
+  "MaxCharMess": "Message should be less than 1500 characters",
   "Book_table": "Book Table"
 }

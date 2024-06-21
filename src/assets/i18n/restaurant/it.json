@@ -32,5 +32,6 @@
   "Date&TimeErr": "La data e l'ora non possono essere nel passato",
   "Message": "Messaggio",
   "Leave_message": "Lasciate un messaggio",
+  "MaxCharMess": "Il messaggio deve contenere meno di 1500 caratteri",
   "Book_table": "Prenota un tavolo"
 }

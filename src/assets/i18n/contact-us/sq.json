@@ -21,6 +21,7 @@
   "EmailMsg": "Ju lutem vendosi një  emaili te vlefshme",
   "EmailReqMsg": "Email është i detyrueshëm",
   "MinCharMess": "Mesazhi duhet të jetë të paktën 10 karaktere",
+  "MaxCharMess": "Mesazhi duhet të jetë më pak se 1500 karaktere",
   "Msg": "Mesazhi",
   "MsgError": "Shkruani nje mesazh",
   "SendButt": "Dergo"

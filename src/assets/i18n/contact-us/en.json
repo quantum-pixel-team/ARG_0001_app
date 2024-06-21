@@ -21,6 +21,7 @@
   "EmailMsg": "Please enter a valid email",
   "EmailReqMsg": "Email is required",
   "MinCharMess": "Message should be at least 10 character",
+  "MaxCharMess": "Message should be less than 1500 characters",
   "Msg": "Message",
   "MsgError": "Message is required",
   "SendButt": "Send"

@@ -111,7 +111,7 @@
         formControlName="message"
       ></textarea>
       <mat-error *ngIf="reservationForm.get('messageUs')?.hasError('maxlength')"
-        >Message should be less than 1500 characters
+        >  {{ "RESTAURANT.MaxCharMess" | translate }}
       </mat-error>
     </mat-form-field>
   </form>

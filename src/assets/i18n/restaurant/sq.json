@@ -32,5 +32,6 @@
   "Date&TimeErr": "Data dhe ora nuk mund të jenë në të kaluarën",
   "Message": "Mesazh",
   "Leave_message": "Leni një mesazh",
+  "MaxCharMess": "Mesazhi duhet të jetë më pak se 1500 karaktere",
   "Book_table": "Rezervoni Tavolinë"
 }

@@ -21,6 +21,7 @@
   "EmailMsg": "Inserisci una email valida",
   "EmailReqMsg": "L'e-mail è obbligatoria",
   "MinCharMess": "Il messaggio deve contenere almeno 10 caratteri",
+  "MaxCharMess": "Il messaggio deve contenere meno di 1500 caratteri",
   "Msg": "Messagio",
   "MsgError": "Il messaggio è obbligatorio",
   "SendButt": "INVIA"
