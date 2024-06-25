@@ -20,7 +20,6 @@ export class RestaurantReservationComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private datePipe: DatePipe,
     private restaurantHttpService: RestaurantHttpService,
     private _snackBar: MatSnackBar,
 
@@ -39,7 +38,7 @@ export class RestaurantReservationComponent implements OnInit {
             Validators.maxLength(50)
           ]
         ],
-        phoneNumber: ["", [Validators.required]],
+        phoneNumber: ["", [Validators.required,Validators.pattern('^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$')]],
         guests: ["", [Validators.min(1)]],
         date: ["", [Validators.required, futureDateValidator]],
         time: ["", [Validators.required, futureTimeValidator]],
