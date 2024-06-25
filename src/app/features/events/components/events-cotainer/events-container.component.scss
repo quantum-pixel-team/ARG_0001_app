@@ -1,13 +1,12 @@
 $reference-width: 1920px;
 
-h1 {
-  text-transform: uppercase;
-  color: var(--color-primary-color);
-  margin: calc(110px * (100vw / $reference-width)) auto;
-  width: fit-content;
-}
-
 .events-container {
+  h1 {
+    text-transform: uppercase;
+    color: var(--color-primary-color);
+    margin: calc(110px * (100vw / $reference-width)) auto;
+    width: fit-content;
+  }
   width: 95%;
   padding: calc(50px * (100vw / $reference-width))
     calc(50px * (100vw / $reference-width)) 0;
