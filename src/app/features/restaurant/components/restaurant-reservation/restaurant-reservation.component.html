@@ -24,13 +24,11 @@
 
     <mat-form-field>
       <mat-label>Email</mat-label>
-      <input matInput type="email" formControlName="email" required />
-      <mat-error *ngIf="reservationForm.get('email')?.hasError('required')"
-        >Email is required</mat-error
+      <input matInput type="text" formControlName="phoneNumber" required />
+      <mat-error *ngIf="reservationForm.get('phoneNumber')?.hasError('required')"
+        >Phone number is required</mat-error
       >
-      <mat-error *ngIf="reservationForm.get('email')?.hasError('email')"
-        >Invalid email format</mat-error
-      >
+
     </mat-form-field>
 
     <mat-form-field>
