@@ -28,9 +28,6 @@ export class LanguageSelectorComponent {
 
   onLanguageChange(selectedLanguage: Language) {
     this.languageChanged.emit(selectedLanguage);
-    console.log(selectedLanguage.code);
     this.translateService.use(selectedLanguage.code);
-    const currentLanguage = this.translateService.currentLang;
-    console.log('currentLanguage', currentLanguage);
   }
 }

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { EventHttpService } from '../../../features/events/services/event-http.service';
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-home-events',
@@ -21,6 +22,7 @@ import { EventHttpService } from '../../../features/events/services/event-http.s
     MatCardImage,
     AsyncPipe,
     NgClass,
+    TranslateModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
