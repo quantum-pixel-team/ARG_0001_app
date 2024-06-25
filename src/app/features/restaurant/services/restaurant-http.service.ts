@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http";
-import { Observable } from "rxjs";
-import { ReservationDetails } from "../interfaces/RestaurantReservation";
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { ReservationDetails } from '../interfaces/RestaurantReservation';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class RestaurantHttpService {
-
-  constructor(
-    private http: HttpClient
-  ) { }
-
+  constructor(private http: HttpClient) {}
 
   sendMessage(messageObj: ReservationDetails): Observable<any> {
-   return this.http.post("whatsapp/send",messageObj)
+    return this.http.post('whatsapp/send', messageObj);
   }
 }

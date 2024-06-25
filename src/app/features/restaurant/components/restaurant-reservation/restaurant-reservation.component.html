@@ -20,19 +20,18 @@
       <mat-error *ngIf="reservationForm.get('name')?.hasError('maxlength')"
         >Name should be less than 50 characters</mat-error
       >
-
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Phone Number</mat-label>
       <input matInput type="text" formControlName="phoneNumber" required />
-      <mat-error *ngIf="reservationForm.get('phoneNumber')?.hasError('required')"
+      <mat-error
+        *ngIf="reservationForm.get('phoneNumber')?.hasError('required')"
         >Phone number is required</mat-error
       >
       <mat-error *ngIf="reservationForm.get('phoneNumber')?.hasError('pattern')"
         >Phone number is not valid</mat-error
       >
-
     </mat-form-field>
 
     <mat-form-field>
