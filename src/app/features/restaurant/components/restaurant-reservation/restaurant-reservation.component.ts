@@ -106,11 +106,11 @@ export class RestaurantReservationComponent implements OnInit {
         .subscribe({
           next: () =>
             this._snackBar.open('Reservation send successfully.', 'ok', {
-              duration: 3_000,
+              duration: 4_000,
             }),
           error: (error) => {
             this._snackBar.open('Something went wrong.', 'ok', {
-              duration: 3_000,
+              duration: 4_000,
             });
             console.log(error);
           },
