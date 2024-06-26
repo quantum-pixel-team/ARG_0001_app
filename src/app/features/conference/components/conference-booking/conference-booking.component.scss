@@ -76,6 +76,9 @@ $comment-reference-height: 350px;
         -webkit-box-shadow: 0 0 0 1000px var(--color-primary-color) inset;
         -webkit-text-fill-color: white;
       }
+      .mat-drawer-container {
+        color: white;
+      }
 
       .mdc-text-field--filled:not(.mdc-text-field--outline) {
         background-color: var(--color-primary-color) !important;

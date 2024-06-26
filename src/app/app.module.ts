@@ -2,12 +2,15 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { NgOptimizedImage } from '@angular/common';
-import { SharedModule } from './shared/shared.module';
+
 import { HomeModule } from './home/components/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { moduleHttpLoaderFactory } from './core/config/translate-http-loader-factory';
+import { SharedModule } from './shared/modules/shared.module';
 
 const app_modules = [CoreModule, SharedModule, HomeModule];
 
@@ -19,6 +22,15 @@ const app_modules = [CoreModule, SharedModule, HomeModule];
     BrowserAnimationsModule,
     NgOptimizedImage,
     ...app_modules,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: moduleHttpLoaderFactory,
+        deps: [HttpClient],
+      },
+      isolate: false,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

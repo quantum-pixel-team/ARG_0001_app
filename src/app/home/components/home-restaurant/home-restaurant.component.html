@@ -1,4 +1,4 @@
-<div class="headline-1">RESTAURANT</div>
+<div class="headline-1">{{ "HOME.Restaurant" | translate }}</div>
 <div
   class="home-restaurant"
   [ngClass]="{
@@ -20,7 +20,7 @@
         class="card"
       ></app-home-restaurant-card>
     </div>
-    <h2>Dessert</h2>
+    <h2>{{ "HOME.Dessert" | translate }}</h2>
     <div class="restaurant-menu-card-container">
       <app-home-restaurant-card
         [isMobileWidth$]="isMobileWidth$"
@@ -39,7 +39,7 @@
         mat-button
         color="primary"
       >
-        VIEW MORE
+        {{ "HOME.ViewMore" | translate }}
         <mat-icon>arrow_forward</mat-icon>
       </button>
     </div>

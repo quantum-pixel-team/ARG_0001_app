@@ -18,6 +18,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatIconModule } from '@angular/material/icon';
+import { TranslateModule } from '@ngx-translate/core';
 import { RestaurantRoutingModule } from './restaurant-routing.module';
 
 @NgModule({
@@ -45,6 +46,7 @@ import { RestaurantRoutingModule } from './restaurant-routing.module';
     NgxMaterialTimepickerModule,
     MatIconModule,
     RestaurantRoutingModule,
+    TranslateModule,
   ],
 })
 export class RestaurantModule {}

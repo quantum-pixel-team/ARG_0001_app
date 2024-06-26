@@ -11,8 +11,8 @@ import {
 } from '../../interfaces/conference-reservation.interface';
 import {
   appointmentTimeValidator,
-  dateFormatValidators,
   minDateRequired,
+  startTimeValidator,
 } from '../../validators/date-format.validators';
 
 @Component({
@@ -46,35 +46,32 @@ export class ConferenceBookingComponent implements OnInit {
     {
       fullNameOrCompanyName: [
         '',
-        [Validators.required, Validators.minLength(3)],
+        [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.pattern('^[a-zA-Z ]*$'),
+        ],
       ],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: [null, Validators.pattern('^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$')],
-      reservationDate: [
+      phoneNumber: [
         null,
-        [Validators.required, dateFormatValidators, minDateRequired],
+        Validators.pattern(
+          '^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$',
+        ),
       ],
-      numberOfAttenders: [null, [Validators.required]],
-      startTime: [
+      reservationDate: [null, [Validators.required, minDateRequired]],
+      numberOfAttenders: [
         null,
-        [
-          Validators.required,
-          Validators.pattern('^(?:[01]\\d|2[0-3]):[0-5]\\d$'),
-        ],
+        [Validators.required, Validators.pattern('^[0-9]*$')],
       ],
-      endTime: [
-        null,
-        [
-          Validators.required,
-          Validators.pattern('^(?:[01]\\d|2[0-3]):[0-5]\\d$'),
-        ],
-      ],
+      startTime: [null, [Validators.required]],
+      endTime: [null, [Validators.required]],
       emailContent: null,
       conferenceReservations: this.fb.array([
         this.createReservation(this.conference),
       ]),
     },
-    { validators: [appointmentTimeValidator] },
+    { validators: [appointmentTimeValidator, startTimeValidator] },
   );
 
   private createReservation(conference: ConferenceDateReservation) {
@@ -173,6 +170,7 @@ export class ConferenceBookingComponent implements OnInit {
   }
 
   protected isValid() {
+    console.log(this.conferenceForm.controls.fullNameOrCompanyName.valid);
     return (
       this.conferenceForm.controls.conferenceReservations.length >= 1 &&
       this.conferenceForm.controls.fullNameOrCompanyName.valid &&

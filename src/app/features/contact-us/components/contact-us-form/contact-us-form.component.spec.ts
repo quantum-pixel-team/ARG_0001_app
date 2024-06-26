@@ -1,6 +1,6 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { ContactUsFromComponent } from './contact-us-from.component';
+// import { ContactUsFormComponent } from './contact-us-form.component';
 // import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 // import { MatFormFieldModule } from "@angular/material/form-field";
 // import { MatIconModule } from "@angular/material/icon";
@@ -9,13 +9,13 @@
 // import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 // import { MatInputModule } from "@angular/material/input";
 //
-// describe('ContactUsFromComponent', () => {
-//   let component: ContactUsFromComponent;
-//   let fixture: ComponentFixture<ContactUsFromComponent>;
+// describe('ContactUsFormComponent', () => {
+//   let component: ContactUsFormComponent;
+//   let fixture: ComponentFixture<ContactUsFormComponent>;
 //
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       declarations: [ContactUsFromComponent],
+//       declarations: [ContactUsFormComponent],
 //       imports: [BrowserAnimationsModule,
 //         MatFormFieldModule,
 //         MatIconModule,
@@ -27,7 +27,7 @@
 //         MatInputModule]
 //     }).compileComponents();
 //
-//     fixture = TestBed.createComponent(ContactUsFromComponent);
+//     fixture = TestBed.createComponent(ContactUsFormComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

@@ -13,6 +13,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { MatSidenavContainer } from '@angular/material/sidenav';
 import { Language } from '../../interfaces/Language';
 import { NavigationEnd, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-nav',
