@@ -33,5 +33,8 @@
   "Message": "Mesazh",
   "Leave_message": "Leni një mesazh",
   "MaxCharMess": "Mesazhi duhet të jetë më pak se 1500 karaktere",
-  "Book_table": "Rezervoni Tavolinë"
+  "Book_table": "Rezervoni Tavolinë",
+  "invalid_phone_no": "Numri I celularit nuk eshte I sakte",
+  "phone_number": "Numri i celularit",
+  "phone_number_required": "Numri i celularit eshte i detyrueshem"
 }

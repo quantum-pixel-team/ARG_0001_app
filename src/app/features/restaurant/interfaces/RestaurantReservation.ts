@@ -2,7 +2,7 @@ export interface ReservationDetails {
   name: string;
   phoneNumber: string;
   guests: number;
-  date: string;
+  date: Date;
   time: string;
   message?: string;
   languageCode?: 'en' | 'sq';
