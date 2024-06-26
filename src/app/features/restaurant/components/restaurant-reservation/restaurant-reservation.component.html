@@ -23,13 +23,14 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input matInput type="email" formControlName="email" required />
-      <mat-error *ngIf="reservationForm.get('email')?.hasError('required')"
-        >{{ "RESTAURANT.ReqEmail" | translate }}
+      <mat-label>{{ "RESTAURANT.phone_number" | translate }}</mat-label>
+      <input matInput type="text" formControlName="phoneNumber" required />
+      <mat-error
+        *ngIf="reservationForm.get('phoneNumber')?.hasError('required')"
+        >{{ "RESTAURANT.phone_number_required" | translate }}
       </mat-error>
-      <mat-error *ngIf="reservationForm.get('email')?.hasError('email')"
-        >{{ "RESTAURANT.ValidReqEmail" | translate }}
+      <mat-error *ngIf="reservationForm.get('phoneNumber')?.hasError('pattern')"
+        >{{ "RESTAURANT.invalid_phone_no" | translate }}
       </mat-error>
     </mat-form-field>
 
@@ -54,6 +55,7 @@
         matInput
         [matDatepicker]="picker"
         formControlName="date"
+        required
       />
       <mat-hint>MM/DD/YYYY</mat-hint>
       <mat-datepicker-toggle matSuffix [for]="picker">
@@ -110,8 +112,10 @@
         placeholder="{{ 'RESTAURANT.Leave_message' | translate }}"
         formControlName="message"
       ></textarea>
-      <mat-error *ngIf="reservationForm.get('messageUs')?.hasError('maxlength')"
-        >  {{ "RESTAURANT.MaxCharMess" | translate }}
+      <mat-error
+        *ngIf="reservationForm.get('messageUs')?.hasError('maxlength')"
+      >
+        {{ "RESTAURANT.MaxCharMess" | translate }}
       </mat-error>
     </mat-form-field>
   </form>

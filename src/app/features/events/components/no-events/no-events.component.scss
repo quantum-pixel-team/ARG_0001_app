@@ -5,10 +5,10 @@ $reference-width: 1920px;
   align-items: center;
   flex-direction: column;
   color: var(--color-primary-color);
-}
 
-svg {
-  width: calc(320px * (100vw / $reference-width));
-  height: calc(320px * (100vw / $reference-width));
-  min-width: 70px;
+  svg {
+    width: calc(320px * (100vw / $reference-width));
+    height: calc(320px * (100vw / $reference-width));
+    min-width: 70px;
+  }
 }

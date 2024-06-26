@@ -33,5 +33,8 @@
   "Message": "Messaggio",
   "Leave_message": "Lasciate un messaggio",
   "MaxCharMess": "Il messaggio deve contenere meno di 1500 caratteri",
-  "Book_table": "Prenota un tavolo"
+  "Book_table": "Prenota un tavolo",
+  "invalid_phone_no": "Phone number is not valid",
+  "phone_number": "Numero di telefono",
+  "phone_number_required": "Il numero di telefono è obbligatorio"
 }

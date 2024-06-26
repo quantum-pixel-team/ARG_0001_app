@@ -12,11 +12,12 @@ import {
   Validators,
 } from '@angular/forms';
 import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
-import { DatePipe } from '@angular/common';
 import {
   futureDateValidator,
   futureTimeValidator,
 } from '../validators/restaurant-date-validators';
+import { RestaurantHttpService } from '../../services/restaurant-http.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { minDateRequired } from '../../../conference/validators/date-format.validators';
 
 @Component({
@@ -27,11 +28,13 @@ import { minDateRequired } from '../../../conference/validators/date-format.vali
 })
 export class RestaurantReservationComponent implements OnInit {
   reservationForm!: FormGroup;
+
   @ViewChild('messageTextArea') messageTextArea!: ElementRef;
 
   constructor(
     private fb: FormBuilder,
-    private datePipe: DatePipe,
+    private restaurantHttpService: RestaurantHttpService,
+    private _snackBar: MatSnackBar,
   ) {}
 
   ngOnInit(): void {
@@ -46,7 +49,15 @@ export class RestaurantReservationComponent implements OnInit {
             Validators.maxLength(50),
           ],
         ],
-        email: ['', [Validators.required, Validators.email]],
+        phoneNumber: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(
+              '^[\\+]?[(]?[0-9]{3}[)]?[-\\s\\.]?[0-9]{3}[-\\s\\.]?[0-9]{4,6}$',
+            ),
+          ],
+        ],
         guests: ['', [Validators.min(1), Validators.pattern('^[0-9]*$')]],
         date: ['', [Validators.required, futureDateValidator, minDateRequired]],
         time: ['', [Validators.required, futureTimeValidator]],
@@ -80,25 +91,32 @@ export class RestaurantReservationComponent implements OnInit {
   bookTable() {
     if (this.reservationForm.valid) {
       const formValue = this.reservationForm.value;
-      const phoneNumber = '+355683337050';
 
-      // Format the date
-      const formattedDate = this.datePipe.transform(
-        formValue.date,
-        'MM/dd/yyyy',
-      );
-
-      const whatsappMessage = `
-      Restaurant Reservation:
-        Name: ${formValue.name}
-        Email: ${formValue.email}
-        Guests: ${formValue.guests}
-        Date: ${formattedDate}
-        Time: ${formValue.time}
-        Message: ${formValue.message || 'N/A'}
-      `;
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-      window.open(whatsappUrl, '_blank');
+      this.restaurantHttpService
+        .sendMessage({
+          name: formValue.name,
+          phoneNumber: formValue.phoneNumber,
+          guests: formValue.guests,
+          date: formValue.date,
+          time: formValue.time,
+          message: formValue.message,
+          languageCode: 'sq',
+          to: `+355676923049`,
+        })
+        .subscribe({
+          next: () => {
+            this._snackBar.open('Reservation send successfully.', 'ok', {
+              duration: 4_000,
+            });
+            this.reservationForm.reset();
+          },
+          error: (error) => {
+            this._snackBar.open('Something went wrong.', 'ok', {
+              duration: 4_000,
+            });
+            console.log(error);
+          },
+        });
     } else {
       console.log('Form is invalid');
     }
