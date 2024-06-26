@@ -11,6 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { MatIcon } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 const routes: Routes = [
   {
@@ -36,6 +37,7 @@ const routes: Routes = [
     NgxMaterialTimepickerModule,
     MatIcon,
     RouterModule.forChild(routes),
+    TranslateModule,
   ],
 })
 export class ConferenceModule {}

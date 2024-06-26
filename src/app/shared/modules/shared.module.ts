@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule, NgIf, NgOptimizedImage } from '@angular/common';
-import { MainNavComponent } from './components/main-nav/main-nav.component';
-import { LanguageSelectorComponent } from './components/language-selector/language-selector.component';
-import { ServerErrorComponent } from './components/server-error/server-error.component';
+import { MainNavComponent } from '../components/main-nav/main-nav.component';
+import { LanguageSelectorComponent } from '../components/language-selector/language-selector.component';
+import { ServerErrorComponent } from '../components/server-error/server-error.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule, MatRippleModule } from '@angular/material/core';
@@ -13,9 +13,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { MatIconAnchor, MatIconButton } from '@angular/material/button';
-import { FooterComponent } from './components/footer/footer.component';
+import { FooterComponent } from '../components/footer/footer.component';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconAnchor,
     MatTooltipModule,
     MatRippleModule,
+    TranslateModule,
   ],
 })
 export class SharedModule {}

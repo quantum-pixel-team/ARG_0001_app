@@ -21,7 +21,7 @@
             'highlight-color': !hasScrolled && isHomePage,
             'border-bottom': hasScrolled || !isHomePage
           }"
-          >{{ link.label }}</a
+          >{{ "NavBar." + link.label | translate }}</a
         >
       </ng-container>
       <app-language-selector
@@ -83,7 +83,7 @@
               'highlight-color': !hasScrolled && isHomePage,
               'border-bottom': hasScrolled || !isHomePage
             }"
-            >{{ link.label }}</a
+            >{{ "NavBar." + link.label | translate }}</a
           >
         </ng-container>
         <app-language-selector

@@ -15,7 +15,7 @@ export class HomeServiceComponent {
     {
       id: 1,
       icon: 'wifi',
-      title: 'Free Wifi',
+      title: 'Wifi',
     },
     {
       id: 2,
@@ -25,22 +25,22 @@ export class HomeServiceComponent {
     {
       id: 3,
       icon: 'beach_access',
-      title: ' Beach',
+      title: 'Beach',
     },
     {
       id: 4,
       icon: 'ev_station',
-      title: 'Electric Charger',
+      title: 'ElectricCharger',
     },
     {
       id: 5,
       icon: 'local_atm',
-      title: ' ATM',
+      title: 'ATM',
     },
     {
       id: 6,
       icon: 'payments',
-      title: 'Cash & Card Payment',
+      title: 'CashCard',
     },
   ];
 

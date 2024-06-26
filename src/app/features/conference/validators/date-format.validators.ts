@@ -1,11 +1,5 @@
-import { AbstractControl, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormControl, ValidationErrors } from '@angular/forms';
 import { isValidDate } from 'rxjs/internal/util/isDate';
-
-export function dateFormatValidators(
-  dateControl: AbstractControl,
-): ValidationErrors | null {
-  return isValidDate(dateControl.value) ? null : { isNotDate: true };
-}
 
 export function minDateRequired(
   dateControl: AbstractControl,
@@ -26,10 +20,29 @@ export function appointmentTimeValidator(
     return null;
   }
   const startTimeControl: Date = control.get('startTime')?.value;
-  const endTimeControl = control.get('endTime')?.value;
-  console.log(startTimeControl.valueOf() < endTimeControl.valueOf());
+  const endTimeControl: Date = control.get('endTime')?.value;
 
   return startTimeControl.valueOf() < endTimeControl.valueOf()
     ? null
     : { timeNotValid: true };
+}
+
+export function startTimeValidator(
+  control: AbstractControl,
+): ValidationErrors | null {
+  if (
+    control.get('startTime')?.value == null ||
+    control.get('reservationDate')?.value == null
+  ) {
+    return null;
+  }
+  const [hours, minutes] = control.get('startTime')?.value.split(':');
+  const reservationDate: Date = control.get('reservationDate')?.value;
+  const currentTime: Date = new Date();
+  const reservationTime: Date = new Date();
+  reservationTime.setHours(+hours, +minutes);
+  if (reservationDate <= currentTime) {
+    return reservationTime > currentTime ? null : { timeNotInPast: true };
+  }
+  return null;
 }

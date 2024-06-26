@@ -33,6 +33,7 @@ import { HomeHotelComponent } from './home-hotel/home-hotel.component';
 import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.component';
 import { HomeEventsComponent } from './home-events/home-events.component';
 import { HomeBookNowDatePickerComponent } from './home-book-now-date-picker/home-book-now-date-picker.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { HomeBookNowDatePickerComponent } from './home-book-now-date-picker/home
     RouterLink,
     MatRipple,
     HomeEventsComponent,
+    TranslateModule,
   ],
   exports: [],
 })

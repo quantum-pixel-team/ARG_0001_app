@@ -6,21 +6,16 @@
     alt="conference pic"
     sizes="100vw"
     ngSrcset=" 128w, 256w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w, 1500w,1700w,1980w"
+    [priority]="'true'"
   />
   <div class="conference-image-container">
-    <h2>CONFERENCE ROOM</h2>
+    <h2>{{ "CONFERENCE.Conference" | translate }}</h2>
 
     <p>
-      Welcome to our conference room page! Our hotel offers state-of-the-art
-      conference facilities for all your business needs. Whether you are
-      planning a small meeting or a large corporate event, we have the perfect
-      space for you.
+      {{ "CONFERENCE.ConfDesc-1" | translate }}
     </p>
     <p>
-      Our conference rooms are equipped with modern audio-visual equipment,
-      high-speed internet access, and comfortable seating arrangements. The
-      rooms are also fully air-conditioned to ensure a comfortable and
-      productive environment for your attendees.
+      {{ "CONFERENCE.ConfDesc-2" | translate }}
     </p>
   </div>
 </div>
