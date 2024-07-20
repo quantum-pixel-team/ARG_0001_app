@@ -18,11 +18,10 @@ $mobileHeight: 124px;
   flex: 1 1 auto;
 }
 
-mat-toolbar {
+mat-toolbar.mat-toolbar {
 
-  --navbar-height: $height;
   padding-left: 20px;
-  height: $height;
+  height: $height ;
   z-index: 10;
   top: 0;
   position: fixed;
@@ -30,6 +29,7 @@ mat-toolbar {
 
   box-shadow 0.3s ease;
   a {
+    display: block;
     text-decoration: none;
     padding: 0 10px;
     color: white;
