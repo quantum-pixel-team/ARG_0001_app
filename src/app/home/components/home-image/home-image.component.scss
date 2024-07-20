@@ -32,6 +32,8 @@ $bookNowHalfHeight: var(--home-book-now-half-height);
 }
 
 .container.mobile {
+  height: 58dvh;
+
   .text-overlay {
     font-size: clamp(2.4rem, 3.5vw, 4rem);
   }
