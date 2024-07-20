@@ -1,10 +1,19 @@
-.home-image {
-  margin-top: -230px;
-  filter: brightness(0.5);
-  height: 600px;
-  object-fit: cover;
+
+$bookNowHeight: var(--home-book-now-height);
+
+
+app-home-image {
+  display: block;
+  margin-top: calc(var(--navbar-height) * -1);
 }
 
 img {
   width: 100%;
+}
+
+.book-now {
+  margin-top: calc(var(--home-book-now-half-height) * -1);
+  transform: translateY(-50%);
+  display: block;
+  height: $bookNowHeight;
 }

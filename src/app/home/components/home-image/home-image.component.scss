@@ -1,13 +1,20 @@
+$bookNowHalfHeight: var(--home-book-now-half-height);
 .container {
   position: relative;
+  height: 100dvh;
+
+  .spacer {
+    height: $bookNowHalfHeight;
+  }
+
   img {
     width: 100%;
-    height: auto;
+    transform: translateY(0);
+    height: calc(100% - $bookNowHalfHeight);
   }
+
   .home-image {
-    margin-top: -230px;
     filter: brightness(0.5);
-    height: auto;
     object-fit: cover;
     position: relative;
   }
@@ -17,8 +24,8 @@
     color: white;
     text-align: center;
     font-size: clamp(3rem, 4.5vw, 6rem);
-    margin-top: 8%;
-    top: 0;
+    top: 50%;
+    transform: translateY(-100%);
     width: 100%;
     font-family: Inria_Serif, fantasy;
   }
@@ -27,10 +34,6 @@
 .container.mobile {
   .text-overlay {
     font-size: clamp(2.4rem, 3.5vw, 4rem);
-    margin-top: 7%;
   }
 
-  .home-image {
-    height: 500px;
-  }
 }

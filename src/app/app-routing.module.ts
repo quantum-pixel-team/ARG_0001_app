@@ -35,7 +35,7 @@ const routes: Routes = [
         (m) => m.ContactUsModule,
       ),
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'hotel', pathMatch: 'full' },
   { path: '**', redirectTo: 'home' },
 ];
 

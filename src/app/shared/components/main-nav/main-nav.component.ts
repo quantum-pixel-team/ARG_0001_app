@@ -1,69 +1,73 @@
-import {
-  AfterViewInit,
-  ChangeDetectorRef,
-  Component,
-  EventEmitter,
-  inject,
-  Output,
-  ViewChild,
-} from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
-import { MatSidenavContainer } from '@angular/material/sidenav';
-import { Language } from '../../interfaces/Language';
-import { NavigationEnd, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+import { Component, EventEmitter, HostListener, inject, OnInit, Output, ViewEncapsulation } from "@angular/core";
+import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
+import { Observable } from "rxjs";
+import { map, shareReplay } from "rxjs/operators";
+import { Language } from "../../interfaces/Language";
+import { NavigationEnd, Router } from "@angular/router";
 
 @Component({
-  selector: 'app-main-nav',
-  templateUrl: './main-nav.component.html',
-  styleUrl: './main-nav.component.scss',
+  selector: "app-main-nav",
+  templateUrl: "./main-nav.component.html",
+  styleUrl: "./main-nav.component.scss",
+  encapsulation: ViewEncapsulation.None
 })
-export class MainNavComponent implements AfterViewInit {
+export class MainNavComponent implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
   @Output() languageChanged = new EventEmitter<Language>();
 
-  @ViewChild(MatSidenavContainer) sidenavContainer!: MatSidenavContainer;
   hasScrolled = false;
   isHomePage = false;
   navigationLinks = [
-    { label: 'Home', routerLink: 'home' },
-    { label: 'Hotel', routerLink: 'hotel' },
-    { label: 'Restaurant', routerLink: 'restaurant' },
-    { label: 'Conference Room', routerLink: 'conference' },
-    { label: 'Events', routerLink: 'events' },
-    { label: 'Contact', routerLink: 'contact-us' },
+    { label: "Home", routerLink: "home", icon: "" },
+    { label: "Hotel", routerLink: "hotel", icon: "assets/icons/navbar/hotel.svg" },
+    { label: "Restaurant", routerLink: "restaurant", icon: "assets/icons/navbar/restaurant.svg" },
+    { label: "Conference Room", routerLink: "conference", icon: "assets/icons/navbar/conference.svg" },
+    { label: "Events", routerLink: "events", icon: "assets/icons/navbar/events.svg" },
+    { label: "Contact", routerLink: "contact-us", icon: "assets/icons/navbar/conference" }
+  ];
+
+  mobileNavigationLinks = [
+    { label: "Hotel", routerLink: "hotel", icon: "assets/icons/navbar/hotel.svg" },
+    { label: "Restaurant", routerLink: "restaurant", icon: "assets/icons/navbar/restaurant.svg" },
+    { label: "Conference", routerLink: "conference", icon: "assets/icons/navbar/conference.svg" },
+    { label: "Events", routerLink: "events", icon: "assets/icons/navbar/events.svg" },
   ];
 
   constructor(
-    private cdr: ChangeDetectorRef,
-    private router: Router,
-  ) {}
+    private router: Router
+  ) {
+  }
 
-  ngAfterViewInit(): void {
-    this.sidenavContainer.scrollable.elementScrolled().subscribe(() => {
-      const scrollable = this.sidenavContainer.scrollable;
+  ngOnInit(): void {
+    // Initial check for scrolling on load
+    this.onScroll();
 
-      const offsetFromTop = scrollable.measureScrollOffset('top');
-      const scrolled = offsetFromTop > 20;
-      if (scrolled !== this.hasScrolled) {
-        this.hasScrolled = scrolled;
-        this.cdr.detectChanges();
-      }
-    });
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isHomePage = this.router.url === '/home';
+        this.isHomePage = this.router.url === "/home";
       }
     });
   }
 
+  @HostListener("window:scroll", [])
+  onScroll(): void {
+
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      console.log("scroll down");
+      this.hasScrolled = true;
+    } else {
+      console.log("scroll top");
+      this.hasScrolled = false;
+
+    }
+
+  }
+
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe([Breakpoints.XSmall, '(max-width: 1000px)'])
+    .observe([Breakpoints.XSmall, "(max-width: 920px)"])
     .pipe(
       map((result) => result.matches),
-      shareReplay(),
+      shareReplay()
     );
 
   onLanguageChange(event: Language) {

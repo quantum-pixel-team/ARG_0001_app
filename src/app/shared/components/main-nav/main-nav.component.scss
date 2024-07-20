@@ -1,34 +1,17 @@
-.sidenav-container {
-  height: 100%;
-  background-color: white;
-}
-.mat-drawer-container {
-  color: white;
-}
-.mat-toolbar {
-  padding-left: 20px;
-  height: 85px;
-  transition:
-    background-color 0.3s ease,
-    box-shadow 0.3s ease;
-}
+$height: 85px;
+$mobileHeight: 124px;
 
-.sidenav {
-  width: 200px;
+:root {
+  --navbar-height: #{$height};
+}
+@media (max-width: 920px) {
+  :root {
+    --navbar-height: #{$mobileHeight};
+  }
 }
 
 .transparent {
   background-color: transparent !important;
-}
-
-.mat-toolbar.mat-primary {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.hidden {
-  display: none;
 }
 
 .spacer {
@@ -36,6 +19,16 @@
 }
 
 mat-toolbar {
+
+  --navbar-height: $height;
+  padding-left: 20px;
+  height: $height;
+  z-index: 10;
+  top: 0;
+  position: fixed;
+  transition: background-color 0.3s ease,
+
+  box-shadow 0.3s ease;
   a {
     text-decoration: none;
     padding: 0 10px;
@@ -47,7 +40,7 @@ mat-toolbar {
     text-decoration: none;
   }
 
-  .nav-bar-buttons-container {
+  .navbar-buttons-container {
     display: flex;
     justify-content: center;
     height: 100%;
@@ -55,7 +48,7 @@ mat-toolbar {
     align-content: center;
 
     a {
-      font-size: larger;
+      font-size: clamp(16px, 22px, 1.6vw);
       align-content: center;
     }
 
@@ -76,13 +69,100 @@ mat-toolbar {
       max-width: 200px;
     }
   }
+  a.center {
+    width: 100%;
+
+    img {
+      margin: 0 auto;
+      display: block;
+    }
+  }
 }
 
-a.center {
-  width: 100%;
 
-  img {
-    margin: 0 auto;
-    display: block;
+
+mat-toolbar.mobile {
+  display: block;
+  height: $mobileHeight;
+
+  padding: 0;
+
+  .logo {
+    position: relative;
+
+    .home-link {
+      display: block;
+      padding: 15px 0;
+      height: auto;
+      align-self: center;
+
+      img.main-logo {
+        height: 43px;
+      }
+    }
+
+    .buttons {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 12px;
+
+      height: 20px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: end;
+
+      * {
+        padding: 0;
+      }
+    }
+
+
+  }
+
+
+  .navbar-buttons-container {
+    padding: 0 12px;
+    height: 51px;
+    display: flex;
+    justify-content: flex-start;
+
+    overflow: scroll;
+    width: 100%;
+    gap: 15px;
+
+    * {
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      display: block;
+      font-size: 15px;
+    }
+
+    img {
+      height: 15px;
+    }
+
+    @media (min-width: 450px) {
+      $length: clamp(15px, 22px, 3.5vw);
+      justify-content: center;
+      gap: $length;
+      a {
+        font-size: $length;
+      }
+    }
+
+  }
+
+  @media (max-width: 400px) {
+    .logo {
+      .main-logo {
+        transform: translateX(-50%);
+        margin: 0 50% 0 44%;
+      }
+    }
   }
 }

@@ -23,6 +23,7 @@ export class LanguageSelectorComponent {
   selectedLanguage: Language = this.languages[0];
   @Input() whiteColor = false;
   @Output() languageChanged = new EventEmitter<Language>();
+  @Input() mobile!: boolean;
 
   constructor(readonly translateService: TranslateService) {}
 
