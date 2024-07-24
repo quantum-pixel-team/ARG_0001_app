@@ -6,38 +6,39 @@
   [class.mat-elevation-z6]="hasScrolled"
 >
   <div class="logo">
+    <div class="home-link" [ngClass]="{ center: isHandset$ | async }">
 
-    <a
-      class="home-link"
-      routerLink="home"
-      [ngClass]="{ center: isHandset$ | async }"
-    >
-      <ng-container *ngIf="hasScrolled || !isHomePage ||( isHandset$ | async); else notScrolled">
-        <img
-          src="../../../../assets/logo/aragosta-logo-white-slim.svg"
-          alt="aragosta logo"
-          class="main-logo"
-        />
-      </ng-container>
-      <ng-template #notScrolled>
-        <img
-          src="../../../../assets/logo/aragosta-logo-slim.svg"
-          alt="aragosta logo"
-          class="main-logo"
-        />
-      </ng-template>
-    </a>
+      <a
+        class="link"
+        routerLink="home"
 
+      >
+        <ng-container *ngIf="hasScrolled || !isHomePage ||( isHandset$ | async); else notScrolled">
+          <img
+            src="../../../../assets/logo/aragosta-logo-white-slim.svg"
+            alt="aragosta logo"
+            class="main-logo"
+          />
+        </ng-container>
+        <ng-template #notScrolled>
+          <img
+            src="../../../../assets/logo/aragosta-logo-slim.svg"
+            alt="aragosta logo"
+            class="main-logo"
+          />
+        </ng-template>
+      </a>
+    </div>
     <div class="buttons" *ngIf="isHandset$ | async">
 
-      <a routerLink="contact-us">
+      <a routerLink="contact-us" mat-ripple>
         <img src="assets/icons/navbar/contact-us.svg" alt="Contact Us button icon">
       </a>
 
-      <app-language-selector
-        [mobile]="true"
-        (languageChanged)="onLanguageChange($event)"
-        [whiteColor]="true"
+      <app-language-selector mat-ripple
+                             [mobile]="true"
+                             (languageChanged)="onLanguageChange($event)"
+                             [whiteColor]="true"
       ></app-language-selector>
     </div>
   </div>
@@ -50,6 +51,7 @@
   >
     <ng-container *ngFor="let link of navigationLinks">
       <a
+        mat-ripple
         [routerLink]="link.routerLink"
         color="primary"
         routerLinkActive="active"

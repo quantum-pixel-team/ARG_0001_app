@@ -4,6 +4,7 @@ $mobileHeight: 124px;
 :root {
   --navbar-height: #{$height};
 }
+
 @media (max-width: 920px) {
   :root {
     --navbar-height: #{$mobileHeight};
@@ -21,13 +22,13 @@ $mobileHeight: 124px;
 mat-toolbar.mat-toolbar {
 
   padding-left: 20px;
-  height: $height ;
+  height: $height;
   z-index: 10;
   top: 0;
   position: fixed;
   transition: background-color 0.3s ease,
-
   box-shadow 0.3s ease;
+
   a {
     display: block;
     text-decoration: none;
@@ -69,6 +70,7 @@ mat-toolbar.mat-toolbar {
       max-width: 200px;
     }
   }
+
   a.center {
     width: 100%;
 
@@ -80,7 +82,6 @@ mat-toolbar.mat-toolbar {
 }
 
 
-
 mat-toolbar.mobile {
   display: block;
   height: $mobileHeight;
@@ -89,15 +90,23 @@ mat-toolbar.mobile {
 
   .logo {
     position: relative;
+    height: 73px;
 
     .home-link {
-      display: block;
-      padding: 15px 0;
+      padding: 0;
       height: auto;
-      align-self: center;
+      width: fit-content;
+      margin: 0 auto;
 
-      img.main-logo {
-        height: 43px;
+      a {
+        padding: 0;
+      }
+
+      .main-logo {
+        padding: 10px;
+        border-radius: 5px;
+
+        height: 100%;
       }
     }
 
@@ -107,18 +116,21 @@ mat-toolbar.mobile {
       transform: translateY(-50%);
       right: 12px;
 
-      height: 20px;
+      height: 30px;
       display: flex;
-      gap: 12px;
       align-items: center;
       justify-content: end;
 
-      * {
-        padding: 0;
+      a, app-language-selector {
+        padding: 5px;
+        border-radius: 10px;
+      }
+
+      a {
+        border-radius: 50%;
+
       }
     }
-
-
   }
 
 
@@ -128,7 +140,7 @@ mat-toolbar.mobile {
     display: flex;
     justify-content: flex-start;
 
-    overflow: scroll;
+    overflow-x: scroll;
     width: 100%;
     gap: 15px;
 
@@ -159,9 +171,16 @@ mat-toolbar.mobile {
 
   @media (max-width: 400px) {
     .logo {
-      .main-logo {
-        transform: translateX(-50%);
-        margin: 0 50% 0 44%;
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 3fr 1fr;
+      justify-items: center;
+      align-items: center;
+
+      .buttons {
+        justify-self: end;
+        position: unset;
+        transform: translateY(0);
       }
     }
   }
