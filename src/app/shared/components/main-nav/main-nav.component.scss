@@ -91,14 +91,15 @@ mat-toolbar.mobile {
   .logo {
     position: relative;
     height: 73px;
+    top:0;
 
     .home-link {
       padding: 0;
-      height: auto;
+      height: 100%;
       width: fit-content;
       margin: 0 auto;
 
-      a {
+      .link {
         padding: 0;
       }
 
@@ -119,7 +120,7 @@ mat-toolbar.mobile {
       height: 30px;
       display: flex;
       align-items: center;
-      justify-content: end;
+      justify-content: flex-end;
 
       a, app-language-selector {
         padding: 5px;

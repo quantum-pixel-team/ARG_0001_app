@@ -1,15 +1,23 @@
-import { Component, EventEmitter, HostListener, inject, OnInit, Output, ViewEncapsulation } from "@angular/core";
-import { BreakpointObserver, Breakpoints } from "@angular/cdk/layout";
-import { Observable } from "rxjs";
-import { map, shareReplay } from "rxjs/operators";
-import { Language } from "../../interfaces/Language";
-import { NavigationEnd, Router } from "@angular/router";
+import {
+  Component,
+  EventEmitter,
+  HostListener,
+  inject,
+  OnInit,
+  Output,
+  ViewEncapsulation,
+} from '@angular/core';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { map, shareReplay } from 'rxjs/operators';
+import { Language } from '../../interfaces/Language';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
-  selector: "app-main-nav",
-  templateUrl: "./main-nav.component.html",
-  styleUrl: "./main-nav.component.scss",
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-main-nav',
+  templateUrl: './main-nav.component.html',
+  styleUrl: './main-nav.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
 export class MainNavComponent implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
@@ -18,25 +26,58 @@ export class MainNavComponent implements OnInit {
   hasScrolled = false;
   isHomePage = false;
   navigationLinks = [
-    { label: "Home", routerLink: "home", icon: "" },
-    { label: "Hotel", routerLink: "hotel", icon: "assets/icons/navbar/hotel.svg" },
-    { label: "Restaurant", routerLink: "restaurant", icon: "assets/icons/navbar/restaurant.svg" },
-    { label: "Conference Room", routerLink: "conference", icon: "assets/icons/navbar/conference.svg" },
-    { label: "Events", routerLink: "events", icon: "assets/icons/navbar/events.svg" },
-    { label: "Contact", routerLink: "contact-us", icon: "assets/icons/navbar/conference" }
+    { label: 'Home', routerLink: 'home', icon: '' },
+    {
+      label: 'Hotel',
+      routerLink: 'hotel',
+      icon: 'assets/icons/navbar/hotel.svg',
+    },
+    {
+      label: 'Restaurant',
+      routerLink: 'restaurant',
+      icon: 'assets/icons/navbar/restaurant.svg',
+    },
+    {
+      label: 'Conference Room',
+      routerLink: 'conference',
+      icon: 'assets/icons/navbar/conference.svg',
+    },
+    {
+      label: 'Events',
+      routerLink: 'events',
+      icon: 'assets/icons/navbar/events.svg',
+    },
+    {
+      label: 'Contact',
+      routerLink: 'contact-us',
+      icon: 'assets/icons/navbar/conference',
+    },
   ];
 
   mobileNavigationLinks = [
-    { label: "Hotel", routerLink: "hotel", icon: "assets/icons/navbar/hotel.svg" },
-    { label: "Restaurant", routerLink: "restaurant", icon: "assets/icons/navbar/restaurant.svg" },
-    { label: "Conference", routerLink: "conference", icon: "assets/icons/navbar/conference.svg" },
-    { label: "Events", routerLink: "events", icon: "assets/icons/navbar/events.svg" },
+    {
+      label: 'Hotel',
+      routerLink: 'hotel',
+      icon: 'assets/icons/navbar/hotel.svg',
+    },
+    {
+      label: 'Restaurant',
+      routerLink: 'restaurant',
+      icon: 'assets/icons/navbar/restaurant.svg',
+    },
+    {
+      label: 'Conference',
+      routerLink: 'conference',
+      icon: 'assets/icons/navbar/conference.svg',
+    },
+    {
+      label: 'Events',
+      routerLink: 'events',
+      icon: 'assets/icons/navbar/events.svg',
+    },
   ];
 
-  constructor(
-    private router: Router
-  ) {
-  }
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     // Initial check for scrolling on load
@@ -44,30 +85,22 @@ export class MainNavComponent implements OnInit {
 
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isHomePage = this.router.url === "/home";
+        this.isHomePage = this.router.url === '/home';
       }
     });
   }
 
-  @HostListener("window:scroll", [])
+  @HostListener('window:scroll', [])
   onScroll(): void {
-
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      console.log("scroll down");
-      this.hasScrolled = true;
-    } else {
-      console.log("scroll top");
-      this.hasScrolled = false;
-
-    }
-
+    this.hasScrolled =
+      document.body.scrollTop > 20 || document.documentElement.scrollTop > 20;
   }
 
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe([Breakpoints.XSmall, "(max-width: 920px)"])
+    .observe([Breakpoints.XSmall, '(max-width: 920px)'])
     .pipe(
       map((result) => result.matches),
-      shareReplay()
+      shareReplay(),
     );
 
   onLanguageChange(event: Language) {
