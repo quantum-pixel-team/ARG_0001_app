@@ -1,18 +1,26 @@
 $primary-font-size: clamp(12px, 2rem, 3vw);
 $label-font-size: clamp(12px, 20px, 3vw);
-$reference-width: 1980px;
+$reference-width: 1920px;
+:root {
+  --home-book-now-height: 140px;
+  --home-book-now-half-height: calc(var(--home-book-now-height) / 2);
+}
 
 .book-now-container {
   position: relative;
+  display: flex;
+  align-items: center;
   width: 100%;
-  margin-top: - calc(100px * (100vw / $reference-width));
+  height: 100%;
+  margin-top: 0;
 
   .book-now-card {
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items: center;
     max-width: 1080px;
-    height: 165px;
+    max-height: 165px;
+    height: 100%;
     margin-right: auto;
     margin-left: auto;
     padding: 0 20px;
@@ -84,7 +92,7 @@ $reference-width: 1980px;
   }
 
   .mobile {
-    height: clamp(80px, 156px, 18vw);
+    height: clamp(80px, 100%, 17vw);
 
     button.submit {
       border-radius: 0 10px 10px 0;

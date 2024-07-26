@@ -1,31 +1,90 @@
 .language-selector {
-  .lang-icon {
-    padding-right: 1.5rem;
-  }
-
   height: 57px;
+
   .mat-mdc-text-field-wrapper {
     .mat-mdc-form-field-flex {
       .mat-mdc-form-field-infix {
-        font-size: larger;
         display: flex;
         min-width: 120px !important;
         width: fit-content !important;
       }
+
       .mdc-notched-outline {
-        .mdc-notched-outline__leading,
-        .mdc-notched-outline__trailing {
-          display: none !important;
-        }
+        display: none;
       }
     }
   }
+
   mat-select {
     .mat-mdc-select-value {
       padding: 0 10px;
     }
   }
+
   mat-select * {
     color: white !important;
   }
+}
+
+app-language-selector {
+  max-height: 100%;
+}
+
+.mobile.language-selector {
+  height: 100%;
+  font-size: 12px;
+
+  .mat-mdc-form-field-subscript-wrapper {
+    display: none;
+  }
+
+  #language {
+  }
+
+  .lang-icon {
+    padding: 0;
+    height: 20px;
+  }
+
+  .mat-mdc-text-field-wrapper {
+
+    padding: 0;
+
+    .mat-mdc-form-field-flex {
+      .mat-mdc-form-field-infix {
+        font-size: inherit;
+        align-items: center;
+        min-height: 10px;
+        padding: 0;
+        min-width: 42px !important;
+        gap: 5px;
+
+        mat-select {
+          .mat-mdc-select-arrow-wrapper {
+            display: none;
+          }
+
+          .mat-mdc-select-value {
+            padding: 0;
+          }
+        }
+
+      }
+    }
+  }
+
+
+}
+
+mat-option.lang-option {
+
+  font-size: 12px;
+
+  .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after {
+    width: 12px;
+    height: 5px;
+  }
+}
+#cdk-overlay-0.cdk-overlay-pane:has(> #language-panel) {
+  width: 80px !important;
 }

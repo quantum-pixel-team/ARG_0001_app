@@ -1,57 +1,88 @@
 import {
-  AfterViewInit,
-  ChangeDetectorRef,
   Component,
   EventEmitter,
+  HostListener,
   inject,
+  OnInit,
   Output,
-  ViewChild,
+  ViewEncapsulation,
 } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { MatSidenavContainer } from '@angular/material/sidenav';
 import { Language } from '../../interfaces/Language';
 import { NavigationEnd, Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-main-nav',
   templateUrl: './main-nav.component.html',
   styleUrl: './main-nav.component.scss',
+  encapsulation: ViewEncapsulation.None,
 })
-export class MainNavComponent implements AfterViewInit {
+export class MainNavComponent implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
   @Output() languageChanged = new EventEmitter<Language>();
 
-  @ViewChild(MatSidenavContainer) sidenavContainer!: MatSidenavContainer;
   hasScrolled = false;
   isHomePage = false;
   navigationLinks = [
-    { label: 'Home', routerLink: 'home' },
-    { label: 'Hotel', routerLink: 'hotel' },
-    { label: 'Restaurant', routerLink: 'restaurant' },
-    { label: 'Conference Room', routerLink: 'conference' },
-    { label: 'Events', routerLink: 'events' },
-    { label: 'Contact', routerLink: 'contact-us' },
+    { label: 'Home', routerLink: 'home', icon: '' },
+    {
+      label: 'Hotel',
+      routerLink: 'hotel',
+      icon: 'assets/icons/navbar/hotel.svg',
+    },
+    {
+      label: 'Restaurant',
+      routerLink: 'restaurant',
+      icon: 'assets/icons/navbar/restaurant.svg',
+    },
+    {
+      label: 'Conference Room',
+      routerLink: 'conference',
+      icon: 'assets/icons/navbar/conference.svg',
+    },
+    {
+      label: 'Events',
+      routerLink: 'events',
+      icon: 'assets/icons/navbar/events.svg',
+    },
+    {
+      label: 'Contact',
+      routerLink: 'contact-us',
+      icon: 'assets/icons/navbar/conference',
+    },
   ];
 
-  constructor(
-    private cdr: ChangeDetectorRef,
-    private router: Router,
-  ) {}
+  mobileNavigationLinks = [
+    {
+      label: 'Hotel',
+      routerLink: 'hotel',
+      icon: 'assets/icons/navbar/hotel.svg',
+    },
+    {
+      label: 'Restaurant',
+      routerLink: 'restaurant',
+      icon: 'assets/icons/navbar/restaurant.svg',
+    },
+    {
+      label: 'Conference',
+      routerLink: 'conference',
+      icon: 'assets/icons/navbar/conference.svg',
+    },
+    {
+      label: 'Events',
+      routerLink: 'events',
+      icon: 'assets/icons/navbar/events.svg',
+    },
+  ];
 
-  ngAfterViewInit(): void {
-    this.sidenavContainer.scrollable.elementScrolled().subscribe(() => {
-      const scrollable = this.sidenavContainer.scrollable;
+  constructor(private router: Router) {}
 
-      const offsetFromTop = scrollable.measureScrollOffset('top');
-      const scrolled = offsetFromTop > 20;
-      if (scrolled !== this.hasScrolled) {
-        this.hasScrolled = scrolled;
-        this.cdr.detectChanges();
-      }
-    });
+  ngOnInit(): void {
+    // Initial check for scrolling on load
+    this.onScroll();
+
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isHomePage = this.router.url === '/home';
@@ -59,8 +90,14 @@ export class MainNavComponent implements AfterViewInit {
     });
   }
 
+  @HostListener('window:scroll', [])
+  onScroll(): void {
+    this.hasScrolled =
+      document.body.scrollTop > 20 || document.documentElement.scrollTop > 20;
+  }
+
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe([Breakpoints.XSmall, '(max-width: 1000px)'])
+    .observe([Breakpoints.XSmall, '(max-width: 920px)'])
     .pipe(
       map((result) => result.matches),
       shareReplay(),
