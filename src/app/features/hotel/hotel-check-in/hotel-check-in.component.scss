@@ -1,0 +1,113 @@
+$icon-size:200px;
+$check-in-size:1980px;
+
+.check-in-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  .some{
+    position: relative;
+    background-color: white;
+    width: 90%;
+    height: 200px;
+    border: #af360c solid 2px;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+
+    .check-in-range{
+      grid-column-start: 1;
+      grid-column-end: 2;
+
+    }
+    .select-option{
+      grid-column-start: 2;
+      grid-column-end: 3;
+
+      button{
+        height: 58px;
+        width: 320px;
+        .option-persons-container {
+          display: flex;
+
+          .option-persons-label,
+          .option-persons-number,
+          .option-persons-drop-down,
+          .option-persons-icon {
+
+            padding: 12px 0;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .costume{
+      padding: 30px;
+      width: 100px;
+      .mat-date-range-input-inner{
+        color:var(--color-primary-color);
+      }
+      .mat-form-field-appearance-outline .mat-form-field-outline {
+        color: var(--color-primary-color);
+      }
+
+      mat-date-range-input{
+        border: 1px solid var(--color-primary-color);
+      }
+
+
+      .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+      .mdc-notched-outline__leading,
+      .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+      .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+        border-color: var(--color-primary-color);
+      }
+
+      .mat-mdc-form-field-icon-suffix {
+        .mat-mdc-icon-button.mat-mdc-button-base {
+          background-color: var(--color-primary-color);
+          border-radius: 0 10px 10px 0;
+          height: 100%;
+          display: block;
+        }
+        mat-icon{
+          color:white;
+        }
+      }
+
+      .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius:10px;
+      }
+
+      .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+      }
+
+      .mat-datepicker-toggle{
+        color: var(--color-primary-color);
+      }
+      .mat-mdc-icon-button.mat-mdc-button-base{
+        //--mdc-icon-button-state-layer-size: 3vw;
+      }
+      .mat-date-range-input-inner{
+        font-size: 0.9rem;
+      }
+
+
+      .mat-mdc-form-field-type-mat-date-range-input .mat-mdc-form-field-infix {
+        width: 100%;
+      }
+
+      .mat-mdc-form-field-flex{
+        width: 320px;
+      }
+    }
+  }
+
+}
