@@ -1,0 +1,74 @@
+$reference-width: 1920px;
+
+.container {
+  border: var(--color-primary-color) solid 3px;
+  border-radius: 15px;
+  width: 100%;
+  overflow: hidden;
+
+  .header {
+    margin: 30px;
+    font-size: clamp(10px, 24px, 1.25vw);
+  }
+
+  hr {
+    background-color: var(--color-primary-color);
+    border: none;
+    height: 2px;
+  }
+
+  .subheader {
+    margin: 25px;
+    font-size: clamp(10px, 20px, 1.23vw);
+  }
+
+  .filters {
+    margin-left: 30px;
+  }
+
+  .filter-section {
+    margin-top: 30px;
+
+    * {
+      font-size: clamp(10px, 20px, 1.23vw);
+    }
+  }
+
+  .budget {
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+    .input-container {
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+    }
+
+    input {
+      padding-left: 10px;
+      border: var(--color-primary-color) solid 1px;
+      border-radius: 5px;
+      width: calc(150px * (100vw / $reference-width));
+      max-width: 150px;
+      height: calc(150px * (100vw / $reference-width));
+      max-height: 30px;
+    }
+  }
+
+  .sort-container {
+
+    mat-radio-button {
+      display: flex;
+      height: 60px;
+      width: 100%;
+      padding: 0 calc(30px * (100vw / $reference-width));
+    }
+
+    .mat-mdc-radio-checked {
+      background: var(--color-primary-100-color);
+    }
+
+  }
+
+
+}

@@ -1,2 +1,13 @@
 <app-book-now></app-book-now>
-<app-hotel-check-in></app-hotel-check-in>
+<app-hotel-check-in
+  (checkInDate)="checkInDate = $event"
+  (checkOutDate)="onCheckOutDateChanged($event)"
+></app-hotel-check-in>
+<div class="filters-rooms">
+  <app-hotel-filters
+  (filterChange)="onFiltersChanged($event)"
+  ></app-hotel-filters>
+  <app-hotel-table-room
+    [hotelRooms]="hotelRooms"
+  ></app-hotel-table-room>
+</div>

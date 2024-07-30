@@ -1,5 +1,5 @@
-import {Component, ViewEncapsulation} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import { Component, EventEmitter, Output, ViewEncapsulation } from "@angular/core";
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-hotel-check-in',
@@ -8,12 +8,12 @@ import {FormControl, FormGroup} from "@angular/forms";
   encapsulation: ViewEncapsulation.None,
 })
 export class HotelCheckInComponent {
-
-  minDate: Date=new Date();
-  minDate1: Date=new Date();
+  @Output() checkInDate = new EventEmitter<Date>();
+  @Output() checkOutDate = new EventEmitter<Date>();
 
   range = new FormGroup({
     start: new FormControl<Date | null>(null),
     end: new FormControl<Date | null>(null),
   });
+
 }
