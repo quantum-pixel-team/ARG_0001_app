@@ -1,7 +1,6 @@
 <app-book-now></app-book-now>
 <app-hotel-check-in
-  (checkInDate)="checkInDate = $event"
-  (checkOutDate)="onCheckOutDateChanged($event)"
+($bookNowFiltersEvent)="onPersonFilterChanged($event)"
 ></app-hotel-check-in>
 <div class="filters-rooms">
   <app-hotel-filters

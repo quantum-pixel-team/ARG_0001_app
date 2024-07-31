@@ -4,19 +4,22 @@
     <div class="check-in-range ">
       <h6>Check-in - Check-out</h6>
 
-     <app-hotel-book-now-date></app-hotel-book-now-date>
-
+      <app-hotel-book-now-date
+        (checkInDate)="onCheckInChanged($event)"
+        (checkOutDate)="onCHeckOutChanged($event)"
+      ></app-hotel-book-now-date>
     </div>
 
     <div class="select-person-options">
       <h6>Adults - Children - Rooms</h6>
       <button style="padding: 0" [matMenuTriggerFor]="menue">
         <div class="select-option-persons-container">
-          <div class="select-option-persons-label">{{  adults }} Adults - {{ children}} Children - {{rooms}}  Rooms</div>
-
-            <div class="select-option-persons-icon">
-              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-            </div>
+          <div class="select-option-persons-label">{{ bookNowFiltersEvent.numberOfRooms }} Adults
+            - {{ bookNowFiltersEvent.numberOfChildren }} Children - {{ bookNowFiltersEvent.numberOfRooms }}  Rooms
+          </div>
+          <div class="select-option-persons-icon">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </div>
         </div>
 
       </button>
@@ -47,9 +50,9 @@
 
     <div class="check-in-button">
       <h6></h6>
-    <button class="some-button">
-      checkin
-    </button>
+      <button mat-button (click)="onCheckInClicked()" class="some-button">
+        checkin
+      </button>
     </div>
 
   </div>

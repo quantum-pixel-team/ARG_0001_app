@@ -18,3 +18,10 @@ export interface HotelQueryParams {
   roomFacilities: string[];
   sort: 'ASC' | 'DESC';
 }
+export interface BookNowFilters {
+  numberOfRooms: number;
+  numberOfAdults: number;
+  numberOfChildren: number;
+  checkInDate: Date;
+  checkOutDate: Date;
+}
