@@ -19,7 +19,7 @@ export class HotelReservationContainerComponent implements OnInit {
   constructor(private httpService: HotelHttpService) {
     this.queryParams = {
       pageIndex: 0,
-      pageSize: 5,
+      pageSize: 20,
       checkInDate: this.addDays(new Date(), 1),
       checkOutDate: this.addDays(new Date(), 2),
       numberOfRooms: 1,
