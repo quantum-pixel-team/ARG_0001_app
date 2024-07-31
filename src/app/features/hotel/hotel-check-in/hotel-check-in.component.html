@@ -1,36 +1,56 @@
 <div class="check-in-container">
   <div class="some">
 
-    <div class="check-in-range costume">
-      <mat-form-field appearance="outline" >
-        <mat-datepicker-toggle matIconPrefix [for]="picker">
-          <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
-        </mat-datepicker-toggle  >
-<!--        <mat-label>{{ label }}</mat-label>-->
-        <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
-          <input matStartDate formControlName="start" [(ngModel)]="minDate">
-          <input matEndDate formControlName="end" [(ngModel)]="minDate1">
-        </mat-date-range-input>
-        <mat-datepicker-toggle  matIconSuffix [for]="picker">
-          <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
-        </mat-datepicker-toggle  >
-        <mat-date-range-picker #picker></mat-date-range-picker>
-      </mat-form-field>
+    <div class="check-in-range ">
+      <h6>Check-in - Check-out</h6>
+
+     <app-hotel-book-now-date></app-hotel-book-now-date>
+
     </div>
 
-    <div class="select-option costume">
-      <button >
-        <div class="option-persons-container">
-          <div class="option-persons-label">Persons</div>
-          <div class="option-persons-number"></div>
-          <mat-icon class="option-persons-drop-down"
-          >arrow_drop_down</mat-icon
-          >
-          <mat-icon class="option-persons-icon">person</mat-icon>
+    <div class="select-person-options">
+      <h6>Adults - Children - Rooms</h6>
+      <button style="padding: 0" [matMenuTriggerFor]="menue">
+        <div class="select-option-persons-container">
+          <div class="select-option-persons-label">{{  adults }} Adults - {{ children}} Children - {{rooms}}  Rooms</div>
+
+            <div class="select-option-persons-icon">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </div>
         </div>
-        <div class="rooms"> Room</div>
+
       </button>
 
+      <mat-menu #menue="matMenu" class="something">
+        <mat-card-content
+          class="options-container"
+          (click)="$event.stopPropagation()"
+        >
+          <app-book-now-option-row
+            (quantityChange)="onQuantityChange($event, 'adults')"
+            label="Adults"
+          ></app-book-now-option-row>
+          <mat-divider></mat-divider>
+          <app-book-now-option-row
+            (quantityChange)="onQuantityChange($event, 'children')"
+            label="Children"
+          ></app-book-now-option-row>
+          <mat-divider></mat-divider>
+          <app-book-now-option-row
+            (quantityChange)="onQuantityChange($event, 'rooms')"
+            label="Rooms"
+          ></app-book-now-option-row>
+        </mat-card-content>
+      </mat-menu>
+
     </div>
+
+    <div class="check-in-button">
+      <h6></h6>
+    <button class="some-button">
+      checkin
+    </button>
+    </div>
+
   </div>
 </div>

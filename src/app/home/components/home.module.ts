@@ -78,6 +78,8 @@ import { TranslateModule } from '@ngx-translate/core';
     HomeEventsComponent,
     TranslateModule,
   ],
-  exports: [],
+    exports: [
+        BookNowOptionRowComponent
+    ],
 })
 export class HomeModule {}

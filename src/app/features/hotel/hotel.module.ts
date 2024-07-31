@@ -16,7 +16,11 @@ import {
 import {MatIcon} from "@angular/material/icon";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
-import {MatMenu} from "@angular/material/menu";
+import {MatMenu, MatMenuTrigger} from "@angular/material/menu";
+import {MatCardContent} from "@angular/material/card";
+import {MatDivider} from "@angular/material/divider";
+import {HomeModule} from "../../home/components/home.module";
+import {HotelBookNowDateComponent} from "./components/hotel-book-now-date/hotel-book-now-date.component";
 
 const routes: Routes = [
   {
@@ -26,7 +30,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [HotelReservationContainerComponent,BookNowComponent,HotelCheckInComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, MatDatepickerInput, MatFormFieldModule, MatDatepickerModule, FormsModule, ReactiveFormsModule, JsonPipe, MatIcon, MatInput, MatButton, MatMenu],
+  declarations: [HotelReservationContainerComponent,BookNowComponent,HotelCheckInComponent,HotelBookNowDateComponent],
+  imports: [CommonModule, RouterModule.forChild(routes), MatFormFieldModule, MatSelectModule, FormsModule, ReactiveFormsModule, MatDatepickerInput, MatFormFieldModule, MatDatepickerModule, FormsModule, ReactiveFormsModule, JsonPipe, MatIcon, MatInput, MatButton, MatMenu, MatMenuTrigger, MatCardContent, MatDivider, HomeModule],
 })
 export class HotelModule {}
