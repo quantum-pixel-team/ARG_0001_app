@@ -1,0 +1,75 @@
+.costume {
+  //padding: 30px;
+  //width: 100px;
+
+
+  mat-form-field {
+    max-width: 550px;
+    width: 100%;
+  }
+
+  .mat-date-range-input-inner {
+    color: var(--color-primary-color);
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: var(--color-primary-color);
+  }
+
+  mat-date-range-input {
+    border: 1px solid var(--color-primary-color);
+  }
+
+
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled),
+  .mdc-notched-outline__leading,
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled),
+  .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+    border-color: var(--color-primary-color);
+  }
+
+
+  .mat-mdc-form-field-icon-suffix {
+    .mat-mdc-icon-button.mat-mdc-button-base {
+      background-color: var(--color-primary-color);
+      border-radius: 0 10px 10px 0;
+      height: 100%;
+      display: block;
+    }
+
+    mat-icon {
+      color: white;
+    }
+  }
+
+  .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__leading {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+
+  .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .mat-datepicker-toggle {
+    color: var(--color-primary-color);
+  }
+
+  .mat-date-range-input-inner {
+    //font-size: 0.9rem;
+  }
+
+  .mat-mdc-form-field-bottom-align::before {
+    content: none;
+  }
+
+  .mat-mdc-form-field-icon-suffix {
+    height: 56px;
+  }
+
+  //.mat-date-range-input-container {
+  //  flex-wrap: wrap;
+  //}
+
+}
