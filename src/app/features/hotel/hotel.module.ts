@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, JsonPipe } from '@angular/common';
+import { CommonModule, JsonPipe, NgOptimizedImage } from "@angular/common";
 import { HotelReservationContainerComponent } from './hotel-reservation-container/hotel-reservation-container.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BookNowComponent } from './book-now/book-now.component';
@@ -23,6 +23,8 @@ import { MatRippleModule } from '@angular/material/core';
 import { HotelBookNowButtonComponent } from './components/hotel-book-now-button/hotel-book-now-button.component';
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatRadioModule } from "@angular/material/radio";
+import { HomeEventsCardComponent } from "../../home/components/home-events-card/home-events-card.component";
+import { HotelRoomCardImagesComponent } from "./components/hotel-room-card-images/hotel-room-card-images.component";
 
 const routes: Routes = [
   {
@@ -39,7 +41,7 @@ const routes: Routes = [
     HotelTableRoomComponent,
     HotelRoomCardComponent,
     HotelFiltersComponent,
-    HotelBookNowButtonComponent
+    HotelBookNowButtonComponent,
   ],
   imports: [
     CommonModule,
@@ -61,7 +63,10 @@ const routes: Routes = [
     MatCardModule,
     MatRippleModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    NgOptimizedImage,
+    HomeEventsCardComponent,
+    HotelRoomCardImagesComponent,
   ],
 })
 export class HotelModule {}
