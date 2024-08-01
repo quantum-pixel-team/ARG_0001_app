@@ -6,6 +6,7 @@ import {
   HotelFilters,
   HotelQueryParams,
 } from '../../interfaces/HotelFilters';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hotel-reservation-container',
@@ -16,7 +17,10 @@ export class HotelReservationContainerComponent implements OnInit {
   queryParams: HotelQueryParams;
   hotelRooms: HotelRoom[] = [];
 
-  constructor(private httpService: HotelHttpService) {
+  constructor(
+    private httpService: HotelHttpService,
+    readonly translateService: TranslateService,
+  ) {
     this.queryParams = {
       pageIndex: 0,
       pageSize: 20,
@@ -24,6 +28,8 @@ export class HotelReservationContainerComponent implements OnInit {
       checkOutDate: this.addDays(new Date(), 2),
       numberOfRooms: 1,
       numberOfAdults: 1,
+      available: false,
+      language: 'en',
       childrenAges: [],
       roomTypes: [],
       minPrice: null,
@@ -35,6 +41,10 @@ export class HotelReservationContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchRooms();
+    this.translateService.onLangChange.subscribe((event) => {
+      this.queryParams.language = event.lang;
+      this.fetchRooms();
+    });
   }
 
   addDays(date: Date, days: number): Date {
@@ -60,6 +70,7 @@ export class HotelReservationContainerComponent implements OnInit {
     this.queryParams.maxPrice = filters.maxPrice;
     this.queryParams.minPrice = filters.minPrice;
     this.queryParams.sort = filters.sortOrder;
+    this.queryParams.available = filters.available;
 
     this.fetchRooms();
   }

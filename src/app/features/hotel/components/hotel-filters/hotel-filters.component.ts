@@ -57,18 +57,20 @@ export class HotelFiltersComponent {
   }
 
   onSelectionChange() {
-    const options = Object.keys(this.filtersForm.value).filter(
-      (option) => this.filtersForm.value[option],
-    );
+    const options = Object.keys(this.filtersForm.value)
+      .filter((option) => this.filtersForm.value[option])
+      .filter((el) => el !== 'Available');
     const minPrice = this.priceForm.value.minPrice;
     const maxPrice = this.priceForm.value.maxPrice;
     const sortOrder = this.sortForm.value.sortOrder;
+    const available = !!this.filtersForm.value['Available'];
 
     this.filterChange.emit({
       roomTypes: options,
       minPrice: minPrice,
       maxPrice: maxPrice,
       sortOrder: sortOrder,
+      available: available,
     });
   }
 }

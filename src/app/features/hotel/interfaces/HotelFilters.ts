@@ -1,5 +1,6 @@
 export interface HotelFilters {
   roomTypes: string[];
+  available: boolean;
   minPrice: number | null;
   maxPrice: number | null;
   sortOrder: 'ASC' | 'DESC';
@@ -11,6 +12,8 @@ export interface HotelQueryParams {
   checkOutDate: Date;
   numberOfRooms: number;
   numberOfAdults: number;
+  available: boolean;
+  language: string;
   childrenAges: number[];
   roomTypes: string[];
   minPrice: number | null;
