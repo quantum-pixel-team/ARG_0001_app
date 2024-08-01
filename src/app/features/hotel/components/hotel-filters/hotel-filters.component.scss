@@ -23,7 +23,7 @@ $reference-width: 1920px;
   }
 
   .filters {
-    margin-left: 30px;
+    margin-left: clamp(10px, 30px, 1.5vw);
   }
 
   .filter-section {
@@ -35,8 +35,8 @@ $reference-width: 1920px;
   }
 
   .budget {
-    margin-right: 30px;
-    margin-bottom: 30px;
+    margin-right: clamp(10px, 30px, 1.5vw);
+    margin-bottom: clamp(10px, 30px, 1.5vw);
 
     .input-container {
       display: flex;

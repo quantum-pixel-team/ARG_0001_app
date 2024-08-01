@@ -1,6 +1,7 @@
-<swiper-container style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="mySwiper"
-                 navigation="true">
+<swiper-container
+  class="mySwiper"
+  navigation="true">
   <swiper-slide lazy="true" *ngFor="let image of room.imagesUrl">
-    <img loading="lazy" [alt]="room.name" [ngSrc]="image" fill/>
+    <img loading="lazy" [alt]="room.name" [ngSrc]="image" fill />
   </swiper-slide>
 </swiper-container>

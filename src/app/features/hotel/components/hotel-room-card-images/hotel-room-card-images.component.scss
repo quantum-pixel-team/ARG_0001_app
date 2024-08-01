@@ -1,6 +1,15 @@
 swiper-container {
   width: 100%;
   height: 100%;
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
+
+  // tablet
+  @media screen and (max-width: 768px) {
+    --swiper-navigation-size: 15px
+  }
+  --swiper-navigation-size: 30px
+
 }
 
 swiper-slide {

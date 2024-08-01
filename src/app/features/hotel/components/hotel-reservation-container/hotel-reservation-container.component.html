@@ -6,7 +6,10 @@
   <app-hotel-filters
   (filterChange)="onFiltersChanged($event)"
   ></app-hotel-filters>
-  <app-hotel-table-room
+  <app-hotel-room-table
     [hotelRooms]="hotelRooms"
-  ></app-hotel-table-room>
+    [numberOfAdults]="queryParams.numberOfAdults"
+    [childrenAges]="queryParams.childrenAges"
+    [numberOfRequestedRooms]="queryParams.numberOfRooms"
+  ></app-hotel-room-table>
 </div>

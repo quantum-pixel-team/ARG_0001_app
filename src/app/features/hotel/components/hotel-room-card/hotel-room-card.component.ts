@@ -10,5 +10,7 @@ export class HotelRoomCardComponent {
   @Input() room!: HotelRoom;
   @Output() bookNowClicked = new EventEmitter<HotelRoom>();
   @Output() checkDatesClicked = new EventEmitter<HotelRoom>();
+  @Input() roomNotAvailable = true;
+  @Input() roomCapacityNotEnough = false;
 
 }

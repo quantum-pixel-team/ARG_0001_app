@@ -1,6 +1,17 @@
+$reference-width: 1920px;
 .filters-rooms {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  gap: 25px;
-  padding: 50px 100px;
+  gap: clamp(8px, 35px, 1.7vw);
+  padding: calc(50px * (100vw / $reference-width)) calc(100px * (100vw / $reference-width));
+
+  @media (max-width: 768px) {
+    display: block;
+    gap: 0;
+
+    app-hotel-filters {
+      display: none;
+    }
+  }
+
 }

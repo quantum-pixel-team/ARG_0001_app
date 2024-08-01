@@ -2,22 +2,22 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { HotelRoom } from '../../interfaces/room';
 
 @Component({
-  selector: 'app-hotel-book-now-button',
-  templateUrl: './hotel-book-now-button.component.html',
-  styleUrl: './hotel-book-now-button.component.scss',
+  selector: 'app-hotel-room-book-now-button',
+  templateUrl: './hotel-room-book-now-button.component.html',
+  styleUrl: './hotel-room-book-now-button.component.scss',
 })
-export class HotelBookNowButtonComponent {
+export class HotelRoomBookNowButtonComponent {
   @Output() bookNowClicked = new EventEmitter();
   @Output() checkDatesClicked = new EventEmitter();
-  @Input() isRomNotAvailable = true;
-  @Input() romCapacityNotEnough = false;
+  @Input() roomNotAvailable = true;
+  @Input() roomCapacityNotEnough = false;
 
   buttonCLicked() {
-    if (this.isRomNotAvailable) {
+    if (this.roomNotAvailable) {
       this.checkDatesClicked.emit();
       return;
     }
-    if (!this.isRomNotAvailable) {
+    if (!this.roomNotAvailable) {
       this.bookNowClicked.emit();
       return;
     }

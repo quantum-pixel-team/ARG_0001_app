@@ -1,9 +1,0 @@
-<button (click)="buttonCLicked()"
-        mat-ripple class="book-now"
-        [class.not-available]="isRomNotAvailable"
-        [class.capacity-not-enough]="romCapacityNotEnough"
-        [disabled]="romCapacityNotEnough"
->
-  {{ romCapacityNotEnough ? 'THE ROOM CAPACITY IS NOT ENOUGH FOR ALL GUESTS' : isRomNotAvailable ? 'UNAVAILABLE' : 'Available' }}
-  <div class="book-now-label">{{ isRomNotAvailable ? 'Check Dates' : 'Book Now' }}</div>
-</button>

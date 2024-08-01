@@ -15,12 +15,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenu, MatMenuTrigger } from "@angular/material/menu";
-import { HotelTableRoomComponent } from './components/hotel-table-room/hotel-table-room.component';
+import { HotelTableRoomComponent } from './components/hotel-room-table/hotel-room-table.component';
 import { HotelRoomCardComponent } from './components/hotel-room-card/hotel-room-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { HotelFiltersComponent } from './components/hotel-filters/hotel-filters.component';
 import { MatRippleModule } from '@angular/material/core';
-import { HotelBookNowButtonComponent } from './components/hotel-book-now-button/hotel-book-now-button.component';
+import { HotelRoomBookNowButtonComponent } from './components/hotel-room-book-now-button/hotel-room-book-now-button.component';
 import { MatCheckboxModule } from "@angular/material/checkbox";
 import { MatRadioModule } from "@angular/material/radio";
 import { HomeEventsCardComponent } from "../../home/components/home-events-card/home-events-card.component";
@@ -45,7 +45,7 @@ const routes: Routes = [
     HotelTableRoomComponent,
     HotelRoomCardComponent,
     HotelFiltersComponent,
-    HotelBookNowButtonComponent,
+    HotelRoomBookNowButtonComponent,
   ],
   imports: [
     CommonModule,
