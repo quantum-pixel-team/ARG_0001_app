@@ -1,47 +1,25 @@
-<div class="container" [ngClass]="{ 'x-small': isXSmallWidth$ | async }">
+<div class="container">
   <div class="header">
     <div></div>
     <h1>HOTEL</h1>
     <div></div>
   </div>
   <div class="card-container">
-    <button
-      class="navigate navigate-before"
-      matRipple
-      [matRippleCentered]="false"
-      [matRippleDisabled]="false"
-      [matRippleUnbounded]="true"
-      [matRippleRadius]="100"
-      [matRippleColor]="'primary'"
-    >
-      <mat-icon color="primary">navigate_before</mat-icon>
-    </button>
-    <app-home-hotel-card
-      [room]="getRoomOnLeft()"
-      (bookNowClicked)="onBookNowClicked()"
-      class="background-card room-on-left"
-    ></app-home-hotel-card>
-    <app-home-hotel-card
-      (bookNowClicked)="onBookNowClicked()"
-      [room]="getRoomOnFocus()"
-      class="shadowed-element room-on-focus"
-    ></app-home-hotel-card>
-    <app-home-hotel-card
-      [room]="getRoomOnRight()"
-      (bookNowClicked)="onBookNowClicked()"
-      class="background-card room-on-right"
-    ></app-home-hotel-card>
-    <button
-      class="navigate navigate-next"
-      matRipple
-      [matRippleCentered]="false"
-      [matRippleDisabled]="false"
-      [matRippleUnbounded]="true"
-      [matRippleRadius]="100"
-      [matRippleColor]="'primary'"
-      aria-label="Example icon button with a vertical three dot icon"
-    >
-      <mat-icon color="primary">navigate_next</mat-icon>
-    </button>
+
+   <div *ngFor="let room of this.rooms; let i  = index" class="card-item" [ngClass]="{
+        'selected-card' : i === selectedCard,
+        'prev-card': i === selectedCard - 1,
+        'next-card' : i === selectedCard + 1,
+        'hide-left-card' : i < selectedCard - 1,
+        'hide-right-card': i > selectedCard + 1,
+   }">
+     <app-home-hotel-card [room]="room"
+                          class="slider-card"
+                          (panright)="showPrevCard(i)"
+                          (panleft)="showNextCard(i)"
+     >
+     </app-home-hotel-card>
+   </div>
+
   </div>
 </div>

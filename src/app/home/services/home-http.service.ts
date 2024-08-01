@@ -89,15 +89,20 @@ export class HomeHttpService {
         featureImageUrl: '/assets/suite-room.avif',
       },
       {
-        name: 'Double Room',
+        name: 'Single Room',
+        facilities: ['Single Bed', 'Breakfast included', 'Free Wifi'],
+        featureImageUrl: '/assets/single-room.avif',
+      },      {
+        name: 'Suite Room',
         facilities: [
-          'Perfect for traveling couples',
           'Double Bed',
+          'Single Bed',
           'Breakfast included',
           'Free Wifi',
         ],
-        featureImageUrl: 'assets/double-room-1.avif',
+        featureImageUrl: '/assets/suite-room.avif',
       },
+
     ];
   }
 

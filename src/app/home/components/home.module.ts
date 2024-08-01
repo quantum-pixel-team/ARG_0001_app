@@ -34,6 +34,7 @@ import { HomeHotelCardComponent } from './home-hotel-card/home-hotel-card.compon
 import { HomeEventsComponent } from './home-events/home-events.component';
 import { HomeBookNowDatePickerComponent } from './home-book-now-date-picker/home-book-now-date-picker.component';
 import { TranslateModule } from '@ngx-translate/core';
+import {HammerModule} from "@angular/platform-browser";
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { TranslateModule } from '@ngx-translate/core';
     MatRipple,
     HomeEventsComponent,
     TranslateModule,
+    HammerModule
   ],
     exports: [
         BookNowOptionRowComponent

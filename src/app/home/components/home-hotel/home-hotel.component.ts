@@ -11,7 +11,7 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrl: './home-hotel.component.scss',
 })
 export class HomeHotelComponent implements OnInit {
-  rooms: HotelRoom[] | undefined;
+  rooms: HotelRoom[] = [] ;
 
   constructor(
     private homeHttpService: HomeHttpService,
@@ -25,10 +25,22 @@ export class HomeHotelComponent implements OnInit {
       shareReplay(),
     );
 
+  selectedCard= 0;
   ngOnInit(): void {
     this.rooms = this.homeHttpService.getRooms();
-  }
 
+  }
+  showPrevCard(i:number){
+    if(this.selectedCard > 0){
+      this.selectedCard = i-1;
+    }
+  }
+  showNextCard(i:number){
+
+    if (this.selectedCard < this.rooms.length - 1){
+     this.selectedCard = i+1;
+    }
+  }
   getRoomOnLeft() {
     return this.rooms ? this.rooms[0] : undefined;
   }
