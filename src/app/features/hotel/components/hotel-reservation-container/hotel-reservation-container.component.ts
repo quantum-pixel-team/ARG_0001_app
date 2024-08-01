@@ -16,6 +16,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class HotelReservationContainerComponent implements OnInit {
   queryParams: HotelQueryParams;
   hotelRooms: HotelRoom[] = [];
+  error: any;
 
   constructor(
     private httpService: HotelHttpService,
@@ -60,7 +61,7 @@ export class HotelReservationContainerComponent implements OnInit {
         this.hotelRooms = result.content;
       },
       error: (error) => {
-        console.log(error);
+        this.error = error;
       },
     });
   }

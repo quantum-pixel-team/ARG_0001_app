@@ -13,18 +13,18 @@ $reference-width: 1920px;
   .images {
     border: var(--color-primary-color) solid 1px;
     max-width: 400px;
-    min-width: 150px;
+    min-width: 160px;
     width: calc(400px * (100vw / $reference-width));
     overflow: hidden;
     //padding: 23px 0 23px 23px;
 
     // tablet
     @media screen and (max-width: 768px) {
-      min-width: 170px;
+      //min-width: 170px;
     }
     // Mobile M
     @media screen and (max-width: 375px) {
-      min-width: 130px;
+      min-width: 160px;
     }
 
     border-radius: 10px;
@@ -54,6 +54,69 @@ $reference-width: 1920px;
       margin: 0;
       font-size: var(--ig-h1-font-size);
     }
+
+    .room-description {
+      font-size: 10px;
+    }
+
+    .policy {
+      background: none;
+      border: none;
+      border-radius: 5px;
+      color: var(--color-primary-color);
+      //min-width: fit-content;
+
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        font-size: 8px;
+        text-decoration-line: underline;
+      }
+
+      mat-icon {
+        font-size: 12px;
+        height: auto;
+        width: auto;
+      }
+    }
+
+    .facilities {
+
+      @media screen and (max-width: 425px) {
+        display: none;
+
+      }
+    }
+
+    mat-card-content {
+      padding: 0;
+    }
+
+    .view-more-button {
+      padding: 0;
+      width: 73px;
+      height: 18px;
+      font-size: 10px;
+      color: var(--color-primary-color)
+    }
+
+    hr {
+      background-color: var(--color-primary-color);
+      border: none;
+      height: 1px;
+      margin: 0;
+    }
+
+    .book-now-button {
+      position: relative;
+      right: 0;
+      width: 116px;
+      display: block;
+      height: 24px;
+    }
   }
 
 
@@ -74,37 +137,8 @@ $reference-width: 1920px;
 
 
   //
-  //  .policy {
-  //    background: none;
-  //    border: none;
-  //    border-radius: 5px;
-  //    color: var(--color-primary-color);
-  //    min-width: fit-content;
-  //
-  //    display: flex;
-  //    gap: 10px;
-  //    justify-content: center;
-  //    align-items: center;
-  //
-  //    p {
-  //      font-size: 15px;
-  //      text-decoration-line: underline;
-  //    }
-  //
-  //    mat-icon {
-  //      font-size: 25px;
-  //      height: auto;
-  //      width: auto;
-  //    }
-  //  }
-  //
-  //  .room-description {
-  //    font-size: 20px;
-  //    width: 40vw;
-  //    overflow: hidden;
-  //    text-overflow: ellipsis;
-  //  }
-  //}
+
+
   //
   //mat-card-content {
   //  display: grid;

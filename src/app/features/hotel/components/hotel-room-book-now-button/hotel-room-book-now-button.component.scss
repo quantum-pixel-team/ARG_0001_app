@@ -5,6 +5,8 @@ $reference-width: 1920px;
   width: fit-content;
   max-height: 100px;
   height: calc(100px * (100vw / $reference-width));
+  min-height: 24px;
+
   color: var(--color-primary-color);
   border: var(--color-primary-color) solid 2px;
   border-radius: 10px;
@@ -17,6 +19,7 @@ $reference-width: 1920px;
   background: none;
   font-weight: lighter;
 
+  padding: 0;
   .book-now-label {
 
     display: flex;
@@ -26,6 +29,7 @@ $reference-width: 1920px;
 
     width: calc(200px * (100vw / $reference-width));
     height: calc(70px * (100vw / $reference-width));
+    height: 100%;
     max-height: 70px;
     max-width: 200px;
     background-color: var(--color-primary-color);

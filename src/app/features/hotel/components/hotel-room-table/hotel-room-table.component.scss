@@ -1,11 +1,14 @@
+$reference-width: 1920px;
+
 .container {
   width: 100%;
   padding: 25px;
   border: var(--color-primary-color) solid 1px;
   border-radius: 10px;
   display: grid;
-  gap: 50px;
+  gap: calc(50px * (100vw / $reference-width));
 
+  // Mobile L
   @media screen  and (max-width: 425px) {
     padding: 0;
     border: none;
