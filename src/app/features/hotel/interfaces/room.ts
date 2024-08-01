@@ -8,6 +8,7 @@ export interface HotelRoom {
   id: number;
   name: string;
   description: string;
+  shortDescription: string;
   totalPrice: number;
   totalCapacity: number;
   imagesUrl: string[];
