@@ -4,10 +4,7 @@ $reference-width: 1920px;
   font-size: clamp(10px, 24px, 1.25vw);
   width: fit-content;
   max-height: 100px;
-  height: calc(100px * (100vw / $reference-width));
-  min-height: 24px;
-
-  color: var(--color-primary-color);
+  height: 100%;
   border: var(--color-primary-color) solid 2px;
   border-radius: 10px;
   padding: clamp(5px, 15px, calc(15px * (100vw / $reference-width)));
@@ -17,25 +14,42 @@ $reference-width: 1920px;
   justify-items: center;
   align-items: center;
   background: none;
-  font-weight: lighter;
+  color: var(--color-primary-color);
 
-  padding: 0;
   .book-now-label {
 
     display: flex;
     justify-content: center;
     align-items: center;
 
+    white-space: nowrap;
 
-    width: calc(200px * (100vw / $reference-width));
-    height: calc(70px * (100vw / $reference-width));
+    width: fit-content;
     height: 100%;
     max-height: 70px;
     max-width: 200px;
     background-color: var(--color-primary-color);
     color: white;
-    border-radius: 10px;
+    border-radius: 7px;
+    padding: 0 calc(40px * (100vw / $reference-width));
     font-weight: 500;
+  }
+
+  // mobile XL
+  @media screen and (max-width: 500px) {
+    height: calc(100px * (100vw / $reference-width));
+
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+    gap: 5px;
+
+    .book-now-label {
+      padding: 0 5px;
+      min-width: 61px;
+      border-radius: 3px;
+      height: 100%;
+    }
   }
 }
 
@@ -47,6 +61,23 @@ $reference-width: 1920px;
     background: white;
     color: red;
   }
+
+  // mobile XL
+  @media screen and (max-width: 500px) {
+    background: white;
+    color: red;
+
+    .book-now-label {
+      background: red;
+      color: white;
+    }
+  }
+  // mobile M
+  @media screen and (max-width: 375px) {
+    .outside-label {
+      display: none;
+    }
+  }
 }
 
 .book-now.capacity-not-enough {
@@ -54,7 +85,16 @@ $reference-width: 1920px;
   max-width: 300px;
   font-size: clamp(8px, 16px, 1.2vw);
   color: white;
+
   .book-now-label {
     display: none;
+  }
+
+
+  // mobile XL
+  @media screen and (max-width: 500px) {
+    background: white;
+    color: red;
+
   }
 }
