@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { HotelRoom } from '../../interfaces/room';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hotel-room-book-now-button',
@@ -11,6 +10,8 @@ export class HotelRoomBookNowButtonComponent {
   @Output() checkDatesClicked = new EventEmitter();
   @Input() roomNotAvailable = true;
   @Input() roomCapacityNotEnough = false;
+  @Input() isStayDurationBelowMinNights!: boolean;
+  @Input() notAvailableLabel: string | undefined;
 
   buttonCLicked() {
     if (this.roomNotAvailable) {

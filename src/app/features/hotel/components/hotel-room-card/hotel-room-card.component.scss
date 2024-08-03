@@ -3,26 +3,25 @@ $reference-width: 1920px;
   border: var(--color-primary-color) solid 3px;
   border-radius: 15px;
   width: 100%;
-  //height: clamp(180px, 400px, 21vw);
   padding: clamp(10px, 25px, 1.3vw);
   display: grid;
 
   gap: clamp(10px, 50px, calc(50px * (100vw / $reference-width)));
   grid-template-columns: auto 1fr;
-  display: grid;
 
   .images {
-    border: var(--color-primary-color) solid 1px;
     max-width: 400px;
     min-width: 160px;
-    width: calc(400px * (100vw / $reference-width));
+    width: calc(390px * (100vw / $reference-width));
     overflow: hidden;
-    //padding: 23px 0 23px 23px;
 
-    // tablet
-    @media screen and (max-width: 768px) {
-      //min-width: 170px;
+
+    // Tablet
+    @media screen and (max-width: 768px) and (min-width: 425px) {
+      min-width: 190px;
+      border-width: 1px;
     }
+
     // Mobile M
     @media screen and (max-width: 375px) {
       min-width: 160px;
@@ -30,21 +29,14 @@ $reference-width: 1920px;
 
     border-radius: 10px;
 
-
-    //img {
-    //  width: 100%;
-    //  height: 100%;
-    //  object-fit: cover;
-    //}
-
+  }
+  // tablet
+  @media screen and (max-width: 768px) {
+    border-width: 1px;
   }
 
 
   .details {
-    //padding: 25px 25px 25px 50px;
-    border: red solid 1px;
-    //height: 100%;
-    //width: 100%;
 
     .policy {
       background: none;
@@ -120,7 +112,7 @@ $reference-width: 1920px;
       display: grid;
       grid-template-columns: auto 1fr;
       align-items: center;
-      gap: 18px;
+      gap: calc(18px * (100vw / $reference-width));
 
       .policy {
         display: none;
@@ -251,6 +243,8 @@ $reference-width: 1920px;
 
   h3 {
     margin: 0;
+    font-size: clamp(13px, 25px, calc(25px * (100vw / $reference-width)));
+
   }
 
 }

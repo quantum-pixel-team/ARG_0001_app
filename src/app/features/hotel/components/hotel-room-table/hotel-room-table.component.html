@@ -1,6 +1,7 @@
 <div class="container">
   <app-hotel-room-card
     [roomNotAvailable]="isRoomNotAvailable(room)"
+    [notAvailableLabel]="getNotAvailableLabel(room)"
     [roomCapacityNotEnough]="isRoomCapacityNotEnough(room)"
     [room]="room"
     *ngFor="let room of hotelRooms"

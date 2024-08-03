@@ -3,7 +3,7 @@ export interface HotelFilters {
   available: boolean;
   minPrice: number | null;
   maxPrice: number | null;
-  sortOrder: 'ASC' | 'DESC';
+  sort: 'ASC' | 'DESC';
 }
 export interface HotelQueryParams {
   pageIndex: number;

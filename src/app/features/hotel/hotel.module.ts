@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule, JsonPipe, NgOptimizedImage } from "@angular/common";
+import { CommonModule, JsonPipe, NgOptimizedImage } from '@angular/common';
 import { HotelReservationContainerComponent } from './components/hotel-reservation-container/hotel-reservation-container.component';
 import { RouterModule, Routes } from '@angular/router';
 import { BookNowComponent } from './components/book-now/book-now.component';
@@ -14,20 +14,31 @@ import {
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { MatMenu, MatMenuTrigger } from "@angular/material/menu";
+import { MatMenu, MatMenuTrigger } from '@angular/material/menu';
 import { HotelTableRoomComponent } from './components/hotel-room-table/hotel-room-table.component';
 import { HotelRoomCardComponent } from './components/hotel-room-card/hotel-room-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { HotelFiltersComponent } from './components/hotel-filters/hotel-filters.component';
 import { MatRippleModule } from '@angular/material/core';
 import { HotelRoomBookNowButtonComponent } from './components/hotel-room-book-now-button/hotel-room-book-now-button.component';
-import { MatCheckboxModule } from "@angular/material/checkbox";
-import { MatRadioModule } from "@angular/material/radio";
-import { HomeEventsCardComponent } from "../../home/components/home-events-card/home-events-card.component";
-import { HotelRoomCardImagesComponent } from "./components/hotel-room-card-images/hotel-room-card-images.component";
-import { HotelBookNowDateComponent } from "./components/hotel-book-now-date/hotel-book-now-date.component";
-import { HomeModule } from "../../home/components/home.module";
-import { MatDivider } from "@angular/material/divider";
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { HomeEventsCardComponent } from '../../home/components/home-events-card/home-events-card.component';
+import { HotelRoomCardImagesComponent } from './components/hotel-room-card-images/hotel-room-card-images.component';
+import { HotelBookNowDateComponent } from './components/hotel-book-now-date/hotel-book-now-date.component';
+import { HomeModule } from '../../home/components/home.module';
+import { MatDivider } from '@angular/material/divider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { HotelFiltersDialogComponent } from './components/hotel-filters-dialog/hotel-filters-dialog.component';
+import {
+  MatDialogActions,
+  MatDialogClose,
+  MatDialogContent,
+} from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 const routes: Routes = [
   {
@@ -46,6 +57,7 @@ const routes: Routes = [
     HotelRoomCardComponent,
     HotelFiltersComponent,
     HotelRoomBookNowButtonComponent,
+    HotelFiltersDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -74,6 +86,16 @@ const routes: Routes = [
     MatMenuTrigger,
     HomeModule,
     MatDivider,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDialogClose,
+    MatDialogActions,
+    MatDialogContent,
+    MatPaginator,
+    MatProgressSpinnerModule,
   ],
 })
 export class HotelModule {}

@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, Output } from "@angular/core";
-import { HotelRoom } from "../../interfaces/room";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { HotelRoom } from '../../interfaces/room';
 
 @Component({
   selector: 'app-hotel-room-card',
   templateUrl: './hotel-room-card.component.html',
-  styleUrl: './hotel-room-card.component.scss'
+  styleUrl: './hotel-room-card.component.scss',
 })
 export class HotelRoomCardComponent {
   @Input() room!: HotelRoom;
@@ -12,5 +12,7 @@ export class HotelRoomCardComponent {
   @Output() checkDatesClicked = new EventEmitter<HotelRoom>();
   @Input() roomNotAvailable = true;
   @Input() roomCapacityNotEnough = false;
+  @Input() notAvailableLabel: string | undefined;
+
 
 }

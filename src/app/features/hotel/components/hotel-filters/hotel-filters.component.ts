@@ -1,75 +1,86 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { debounceTime } from 'rxjs';
 import { HotelFilters } from '../../interfaces/HotelFilters';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 
 @Component({
   selector: 'app-hotel-filters',
   templateUrl: './hotel-filters.component.html',
   styleUrl: './hotel-filters.component.scss',
 })
-export class HotelFiltersComponent {
-  options = [
-    'Double room',
-    'Twin room',
-    'Single room',
-    'Sea view',
-    'Balcony',
-    'Available',
+export class HotelFiltersComponent implements OnInit {
+  availableCheckBox = { label: 'Available', checked: false };
+  checkboxes = [
+    { label: 'Double room', checked: false },
+    { label: 'Twin room', checked: false },
+    { label: 'Single room', checked: false },
+    { label: 'Sea view', checked: false },
+    { label: 'Balcony', checked: false },
   ];
-  filtersForm: FormGroup;
   priceForm: FormGroup;
   sortForm: FormGroup;
-  @Output() filterChange = new EventEmitter<HotelFilters>();
+  @Output() filterChanged = new EventEmitter<HotelFilters>();
+  @Input() filters!: HotelFilters;
+  @Input() mobile = false;
+  @Input() filtersOnly = false;
+  @Input() sortOnly = false;
 
-  constructor(private formBuilder: FormBuilder) {
-    // Create a form group with controls for each option
-    const filtersConfig = this.options.reduce(
-      (acc, option) => {
-        acc[option] = [false, Validators.required];
-        return acc;
-      },
-      {} as { [key: string]: any },
-    );
-
-    this.filtersForm = this.formBuilder.group(filtersConfig);
-
-    this.priceForm = this.formBuilder.group({
+  constructor(private fb: FormBuilder) {
+    this.priceForm = this.fb.group({
       minPrice: [null, [Validators.min(0)]],
       maxPrice: [null, [Validators.min(0)]],
     });
 
-    this.sortForm = this.formBuilder.group({
+    this.sortForm = this.fb.group({
       sortOrder: ['ASC'],
     });
 
-    this.filtersForm.valueChanges
-      .pipe(debounceTime(500))
-      .subscribe(() => this.onSelectionChange());
+    this.priceForm.valueChanges.subscribe(() => this.onSelectionChange());
 
-    this.priceForm.valueChanges
-      .pipe(debounceTime(500))
-      .subscribe(() => this.onSelectionChange());
+    this.sortForm.valueChanges.subscribe(() => this.onSelectionChange());
+  }
 
-    this.sortForm.valueChanges
-      .pipe(debounceTime(500))
-      .subscribe(() => this.onSelectionChange());
+  ngOnInit() {
+    console.log(this.filters);
+
+    this.checkboxes = this.checkboxes
+      .map((el) => {
+        el.checked = this.filters.roomTypes.indexOf(el.label) !== -1;
+        return el;
+      })
+      .map((checkbox) => ({ ...checkbox }));
+
+    this.availableCheckBox.checked = this.filters.available;
+
+    this.priceForm.setValue({
+      minPrice: this.filters.minPrice,
+      maxPrice: this.filters.maxPrice,
+    });
+    this.sortForm.setValue({
+      sortOrder: this.filters.sort,
+    });
+  }
+
+  onCheckboxChange(checkbox: any, $event: MatCheckboxChange) {
+    checkbox.checked = $event.checked;
+    console.log(checkbox, $event);
+    this.onSelectionChange();
   }
 
   onSelectionChange() {
-    const options = Object.keys(this.filtersForm.value)
-      .filter((option) => this.filtersForm.value[option])
-      .filter((el) => el !== 'Available');
+    const options = this.checkboxes
+      .filter((option) => option.checked)
+      .map((el) => el.label);
     const minPrice = this.priceForm.value.minPrice;
     const maxPrice = this.priceForm.value.maxPrice;
     const sortOrder = this.sortForm.value.sortOrder;
-    const available = !!this.filtersForm.value['Available'];
+    const available = this.availableCheckBox.checked;
 
-    this.filterChange.emit({
+    this.filterChanged.emit({
       roomTypes: options,
       minPrice: minPrice,
       maxPrice: maxPrice,
-      sortOrder: sortOrder,
+      sort: sortOrder,
       available: available,
     });
   }

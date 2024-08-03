@@ -1,7 +1,7 @@
 $reference-width: 1920px;
 
 .book-now {
-  font-size: clamp(10px, 24px, 1.25vw);
+  font-size: clamp(8px, 24px, 1.25vw);
   width: fit-content;
   max-height: 100px;
   height: 100%;
@@ -10,7 +10,7 @@ $reference-width: 1920px;
   padding: clamp(5px, 15px, calc(15px * (100vw / $reference-width)));
   display: grid;
   grid-template-columns: auto auto;
-  gap: 15px;
+  gap: calc(15px * (100vw / $reference-width));
   justify-items: center;
   align-items: center;
   background: none;
@@ -35,8 +35,22 @@ $reference-width: 1920px;
     font-weight: 500;
   }
 
-  // mobile XL
-  @media screen and (max-width: 500px) {
+}
+
+.outside-not-available-label {
+  display: none;
+}
+
+
+.not-available-label {
+  width: fit-content;
+  margin: 0 auto;
+  font-size: clamp(8px, 24px, 1.25vw);
+}
+
+// mobile XL
+@media screen and (max-width: 500px) {
+  .book-now {
     height: calc(100px * (100vw / $reference-width));
 
     padding: 0;
@@ -51,7 +65,18 @@ $reference-width: 1920px;
       height: 100%;
     }
   }
+  .outside-label.not-available {
+    display: none;
+  }
+  .outside-not-available-label.not-available {
+    display: block;
+  }
+
+  .not-available-label {
+    display: none;
+  }
 }
+
 
 .book-now.not-available {
   background: red;

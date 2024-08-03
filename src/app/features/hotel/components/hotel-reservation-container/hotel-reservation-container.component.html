@@ -1,16 +1,53 @@
 <app-book-now></app-book-now>
-<app-hotel-check-in
-($bookNowFiltersEvent)="onPersonFilterChanged($event)"
-></app-hotel-check-in>
-<div class="filters-rooms">
-  <app-hotel-filters
-  (filterChange)="onFiltersChanged($event)"
-  ></app-hotel-filters>
-  <app-hotel-room-table
-    [hotelRooms]="hotelRooms"
-    [numberOfAdults]="queryParams.numberOfAdults"
-    [childrenAges]="queryParams.childrenAges"
-    [numberOfRequestedRooms]="queryParams.numberOfRooms"
-  ></app-hotel-room-table>
+
+<div #bookNow>
+
+  <app-hotel-check-in
+    ($bookNowFiltersEvent)="onPersonFilterChanged($event)"
+  ></app-hotel-check-in>
 </div>
-{{error | json}}
+
+<div class="filters-rooms" [class.mobile]="isHandset$ | async">
+  <app-hotel-filters *ngIf="(isHandset$ | async) === false else mobileFilterHeader"
+                     (filterChanged)="filterChanged.emit($event)"
+                     [filters]="queryParams"
+                     [mobile]="false"
+  ></app-hotel-filters>
+  <ng-template #mobileFilterHeader>
+    <div class="mobile-filter-header">
+      <button
+        (click)="openSortDialog()"
+        mat-button color="primary">
+        <mat-icon>swap_vert</mat-icon>
+        Sort
+      </button>
+      <button (click)="openFilterDialog()"
+              mat-button color="primary">
+        <mat-icon>filter_list</mat-icon>
+        Filter
+      </button>
+    </div>
+  </ng-template>
+  <ng-container
+    *ngIf="roomsPage; else loading"
+  >
+
+    <app-hotel-room-table
+      [hotelRooms]="roomsPage.content"
+      [numberOfAdults]="queryParams.numberOfAdults"
+      [childrenAges]="queryParams.childrenAges"
+      [numberOfRequestedNights]="numberOfRequestedNights()"
+      [numberOfRequestedRooms]="queryParams.numberOfRooms"
+    ></app-hotel-room-table>
+  </ng-container>
+  <ng-template #loading>
+    <mat-spinner></mat-spinner>
+  </ng-template>
+
+  <mat-paginator (page)="onPageChanged($event)"
+                 [length]="roomsPage?.totalElements"
+                 [pageSizeOptions]="[5, 10, 25]"
+                 [pageSize]="queryParams.pageSize"
+                 aria-label="Select page">
+  </mat-paginator>
+</div>

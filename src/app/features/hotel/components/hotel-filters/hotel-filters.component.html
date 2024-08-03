@@ -1,17 +1,23 @@
-<div class="container">
+<div class="container" [class.mobile]="mobile" [class.sort-only]="sortOnly">
   <div class="header">Filter by:</div>
-  <hr>
+  <hr *ngIf="!sortOnly">
   <div class="filters">
-    <section class="filter-section" [formGroup]="filtersForm">
+    <section class="filter-section">
       <h4 class="subheader" style="margin: 0">Top Filters</h4>
-      <p *ngFor="let option of options">
-        <mat-checkbox [formControlName]="option">{{ option }}</mat-checkbox>
-      </p>
+      <div *ngFor="let checkbox of checkboxes">
+        <mat-checkbox color="primary" [checked]="checkbox.checked" (change)="onCheckboxChange(checkbox, $event)">
+          {{ checkbox.label }}
+        </mat-checkbox>
+      </div>
+      <div>
+        <mat-checkbox [checked]="availableCheckBox.checked" (change)="onCheckboxChange(availableCheckBox, $event)">
+          {{ availableCheckBox.label }}
+        </mat-checkbox>
+      </div>
     </section>
   </div>
-  <hr>
+  <hr *ngIf="!sortOnly">
   <div class="filters">
-
     <section class="budget" [formGroup]="priceForm">
       <h4 class="subheader">Budget</h4>
       <div class="input-container">
@@ -21,8 +27,8 @@
       </div>
     </section>
   </div>
-  <hr>
-  <div>
+  <div *ngIf="!filtersOnly">
+    <hr>
     <section class="sort-container" [formGroup]="sortForm">
       <h4 class="subheader">Sort by:</h4>
       <mat-radio-group formControlName="sortOrder">
@@ -31,4 +37,6 @@
       </mat-radio-group>
     </section>
   </div>
+  <hr *ngIf="mobile">
+
 </div>
