@@ -1,6 +1,6 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { HotelRoomBookNowButtonComponent } from './hotel-room-book-now-button.component';
+// import { HotelRoomBookNowButtonComponent } from './hotel-room-hotel-overview-button.component';
 //
 // describe('HotelRoomBookNowButtonComponent', () => {
 //   let component: HotelRoomBookNowButtonComponent;

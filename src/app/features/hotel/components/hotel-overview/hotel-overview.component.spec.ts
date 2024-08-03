@@ -1,18 +1,18 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { BookNowComponent } from './book-now.component';
+// import { HotelOverviewComponent } from './hotel-overview.component';
 //
-// describe('BookNowComponent', () => {
-//   let component: BookNowComponent;
-//   let fixture: ComponentFixture<BookNowComponent>;
+// describe('HotelOverviewComponent', () => {
+//   let component: HotelOverviewComponent;
+//   let fixture: ComponentFixture<HotelOverviewComponent>;
 //
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       imports: [BookNowComponent]
+//       imports: [HotelOverviewComponent]
 //     })
 //     .compileComponents();
 //
-//     fixture = TestBed.createComponent(BookNowComponent);
+//     fixture = TestBed.createComponent(HotelOverviewComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

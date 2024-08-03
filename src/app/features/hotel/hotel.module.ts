@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule, JsonPipe, NgOptimizedImage } from '@angular/common';
 import { HotelReservationContainerComponent } from './components/hotel-reservation-container/hotel-reservation-container.component';
 import { RouterModule, Routes } from '@angular/router';
-import { BookNowComponent } from './components/book-now/book-now.component';
+import { HotelOverviewComponent } from './components/hotel-overview/hotel-overview.component';
 import { HotelCheckInComponent } from './components/hotel-check-in/hotel-check-in.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
@@ -50,7 +50,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HotelReservationContainerComponent,
-    BookNowComponent,
+    HotelOverviewComponent,
     HotelCheckInComponent,
     HotelBookNowDateComponent,
     HotelTableRoomComponent,
