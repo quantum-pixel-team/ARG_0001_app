@@ -80,6 +80,8 @@ import {HammerModule} from "@angular/platform-browser";
     TranslateModule,
     HammerModule
   ],
-  exports: [],
+    exports: [
+        BookNowOptionRowComponent
+    ],
 })
 export class HomeModule {}

@@ -1,0 +1,42 @@
+<div class="container" [class.mobile]="mobile" [class.sort-only]="sortOnly">
+  <div class="header">Filter by:</div>
+  <hr *ngIf="!sortOnly">
+  <div class="filters">
+    <section class="filter-section">
+      <h4 class="subheader" style="margin: 0">Top Filters</h4>
+      <div *ngFor="let checkbox of checkboxes">
+        <mat-checkbox color="primary" [checked]="checkbox.checked" (change)="onCheckboxChange(checkbox, $event)">
+          {{ checkbox.label }}
+        </mat-checkbox>
+      </div>
+      <div>
+        <mat-checkbox color="primary"  [checked]="availableCheckBox.checked" (change)="onCheckboxChange(availableCheckBox, $event)">
+          {{ availableCheckBox.label }}
+        </mat-checkbox>
+      </div>
+    </section>
+  </div>
+  <hr *ngIf="!sortOnly">
+  <div class="filters">
+    <section class="budget" [formGroup]="priceForm">
+      <h4 class="subheader">Budget</h4>
+      <div class="input-container">
+        <input type="number" formControlName="minPrice" placeholder="0">
+        to
+        <input type="number" formControlName="maxPrice" placeholder="70">
+      </div>
+    </section>
+  </div>
+  <div *ngIf="!filtersOnly">
+    <hr>
+    <section class="sort-container" [formGroup]="sortForm">
+      <h4 class="subheader">Sort by:</h4>
+      <mat-radio-group formControlName="sortOrder">
+        <mat-radio-button value="DESC">Price - Highest to Lowest</mat-radio-button>
+        <mat-radio-button value="ASC">Price - Lowest to Highest</mat-radio-button>
+      </mat-radio-group>
+    </section>
+  </div>
+  <hr *ngIf="mobile">
+
+</div>

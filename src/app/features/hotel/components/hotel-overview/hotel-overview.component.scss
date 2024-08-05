@@ -1,0 +1,42 @@
+$reference-width: 1920px;
+.container {
+  position: relative;
+  display: grid;
+  grid-template-columns:  1fr 0.3fr 2fr;
+  top: 2vw;
+  margin: 2vw;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.logo-container {
+  grid-area: 1 / 1 / 2 / 3;
+  z-index: 1;
+  position: relative;
+  margin-bottom: -8px;
+
+  svg {
+    width: 100%;
+    object-fit: cover;
+    height: auto;
+  }
+
+  .logo {
+    position: absolute;
+    width: clamp(100px , 500px, calc(500px * (100vw / $reference-width)));
+    transform: translate(-50%, -50%);
+    left: 40%;
+    top: 50%;
+  }
+}
+
+.center {
+  background-color: deepskyblue;
+  grid-area: 1 / 2 / 2 / 4;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+img {
+  object-fit: cover;
+}

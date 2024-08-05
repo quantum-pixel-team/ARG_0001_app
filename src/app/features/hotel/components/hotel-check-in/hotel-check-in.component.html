@@ -1,0 +1,59 @@
+<div class="check-in-container">
+  <div class="some">
+
+    <div class="check-in-range ">
+      <h6>Check-in - Check-out</h6>
+
+      <app-hotel-book-now-date
+        (checkInDate)="onCheckInChanged($event)"
+        (checkOutDate)="onCHeckOutChanged($event)"
+      ></app-hotel-book-now-date>
+    </div>
+
+    <div class="select-person-options">
+      <h6>Adults - Children - Rooms</h6>
+      <button style="padding: 0" [matMenuTriggerFor]="menue">
+        <div class="select-option-persons-container">
+          <div class="select-option-persons-label">{{ bookNowFiltersEvent.numberOfAdults }} Adults
+            - {{ bookNowFiltersEvent.numberOfChildren }} Children - {{ bookNowFiltersEvent.numberOfRooms }}  Rooms
+          </div>
+          <div class="select-option-persons-icon">
+            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+          </div>
+        </div>
+
+      </button>
+
+      <mat-menu #menue="matMenu" class="something">
+        <mat-card-content
+          class="options-container"
+          (click)="$event.stopPropagation()"
+        >
+          <app-book-now-option-row
+            (quantityChange)="onQuantityChange($event, 'adults')"
+            label="Adults"
+          ></app-book-now-option-row>
+          <mat-divider></mat-divider>
+          <app-book-now-option-row
+            (quantityChange)="onQuantityChange($event, 'children')"
+            label="Children"
+          ></app-book-now-option-row>
+          <mat-divider></mat-divider>
+          <app-book-now-option-row
+            (quantityChange)="onQuantityChange($event, 'rooms')"
+            label="Rooms"
+          ></app-book-now-option-row>
+        </mat-card-content>
+      </mat-menu>
+
+    </div>
+
+    <div class="check-in-button">
+      <h6></h6>
+      <button mat-button (click)="onCheckInClicked()" class="some-button">
+        checkin
+      </button>
+    </div>
+
+  </div>
+</div>
