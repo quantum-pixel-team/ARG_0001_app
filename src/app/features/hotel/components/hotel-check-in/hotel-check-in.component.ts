@@ -1,6 +1,15 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import {
+  FormArray,
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { BookNowFilters } from '../../interfaces/HotelFilters';
+import { Observable } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
   selector: 'app-hotel-check-in',
@@ -11,15 +20,40 @@ export class HotelCheckInComponent {
   @Output() $bookNowFiltersEvent = new EventEmitter<BookNowFilters>();
 
   bookNowFiltersEvent: BookNowFilters;
-
-  constructor() {
+  bookingForm = this.fb.group({
+    adults: [1, Validators.required],
+    children: [0, Validators.required],
+    rooms: [1, Validators.required],
+    age: this.fb.array([]),
+  });
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private fb: FormBuilder,
+  ) {
     this.bookNowFiltersEvent = {
       numberOfRooms: 1,
       numberOfAdults: 1,
       numberOfChildren: 0,
       checkInDate: new Date(),
       checkOutDate: new Date(),
+      childrenAge:[]
     };
+  }
+
+  get age(): FormArray {
+    return this.bookingForm.get('age') as FormArray;
+  }
+
+
+  addChild() {
+    this.bookNowFiltersEvent.childrenAge.push(0)
+    this.bookingForm.controls.age.push(new FormControl(0));
+  }
+  addAge(index:number,age:number) {
+    this.bookNowFiltersEvent.childrenAge[index]=age
+  }
+  removeChild(index: number) {
+    this.age.removeAt(index);
   }
 
   range = new FormGroup({
@@ -33,6 +67,11 @@ export class HotelCheckInComponent {
         this.bookNowFiltersEvent.numberOfAdults = quantity;
         break;
       case 'children':
+        if (quantity > this.bookNowFiltersEvent.numberOfChildren.valueOf()) {
+          this.addChild()
+        } else {
+          this.removeChild(quantity);
+        }
         this.bookNowFiltersEvent.numberOfChildren = quantity;
         break;
       case 'rooms':
@@ -41,22 +80,31 @@ export class HotelCheckInComponent {
       default:
         break;
     }
+    if(type.includes('ages')){
+      const index = Number(type.charAt(4));
+      this.addAge(index,quantity);
+    }
   }
-
   onCheckInClicked() {
-    console.table(this.bookNowFiltersEvent)
+    console.table(this.bookNowFiltersEvent);
     this.$bookNowFiltersEvent.emit(this.bookNowFiltersEvent);
   }
-
   onCheckInChanged($event: Date) {
-    console.log("Check-in")
-    console.log($event)
-    this.bookNowFiltersEvent.checkInDate = $event
+    console.log("adawda" + $event)
+    this.bookNowFiltersEvent.checkInDate = $event;
   }
 
   onCHeckOutChanged($event: Date) {
-    console.log("Check-out")
-    console.log($event)
-    this.bookNowFiltersEvent.checkOutDate = $event
+    this.bookNowFiltersEvent.checkOutDate = $event;
+  }
+
+  isHandset$: Observable<boolean> = this.breakpointObserver
+    .observe([Breakpoints.XSmall, '(max-width: 700px)'])
+    .pipe(
+      map((result) => result.matches),
+      shareReplay(),
+    );
+  submitForm() {
+    console.log();
   }
 }

@@ -1,59 +1,141 @@
-<div class="check-in-container">
+<div class="check-in-container" [ngClass]="{ mobile: (isHandset$ | async)}">
   <div class="some">
+    <ng-container *ngIf="(isHandset$ | async) === false; else reverseOrder">
+      <div class="check-in-range ">
+        <h6>Check-in - Check-out</h6>
+        <app-hotel-book-now-date
+          (checkInDate)="onCheckInChanged($event)"
+          (checkOutDate)="onCHeckOutChanged($event)"
+        ></app-hotel-book-now-date>
+      </div>
 
-    <div class="check-in-range ">
-      <h6>Check-in - Check-out</h6>
-
-      <app-hotel-book-now-date
-        (checkInDate)="onCheckInChanged($event)"
-        (checkOutDate)="onCHeckOutChanged($event)"
-      ></app-hotel-book-now-date>
-    </div>
-
-    <div class="select-person-options">
-      <h6>Adults - Children - Rooms</h6>
-      <button style="padding: 0" [matMenuTriggerFor]="menue">
-        <div class="select-option-persons-container">
-          <div class="select-option-persons-label">{{ bookNowFiltersEvent.numberOfAdults }} Adults
-            - {{ bookNowFiltersEvent.numberOfChildren }} Children - {{ bookNowFiltersEvent.numberOfRooms }}  Rooms
+      <div class="select-person-options">
+        <h6>Adults - Children - Rooms</h6>
+        <button style="padding: 0" [matMenuTriggerFor]="menu">
+          <div class="select-option-persons-container">
+            <div class="select-option-persons-label">{{ bookNowFiltersEvent.numberOfAdults }} Adults
+              - {{ bookNowFiltersEvent.numberOfChildren }} Children - {{ bookNowFiltersEvent.numberOfRooms }}  Rooms
+            </div>
+            <div class="select-option-persons-icon">
+              <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+            </div>
           </div>
-          <div class="select-option-persons-icon">
-            <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+
+        </button>
+
+        <mat-menu #menu="matMenu" class="something">
+          <form novalidate  (ngSubmit)="submitForm()" >
+            <mat-card-content
+              class="options-container"
+              (click)="$event.stopPropagation()"
+            >
+              <app-child-age-now-option-row
+                (quantityChange)="onQuantityChange($event, 'adults')"
+                label="Adults"
+                [quantity]="bookNowFiltersEvent.numberOfAdults"
+
+              ></app-child-age-now-option-row>
+              <mat-divider></mat-divider>
+              <app-child-age-now-option-row
+                (quantityChange)="onQuantityChange($event, 'children')"
+                label="Children"
+                [quantity]="bookNowFiltersEvent.numberOfChildren"
+              ></app-child-age-now-option-row>
+              <mat-divider></mat-divider>
+              <app-child-age-now-option-row
+                (quantityChange)="onQuantityChange($event, 'rooms')"
+                label="Rooms"
+                [quantity]="bookNowFiltersEvent.numberOfRooms"
+              ></app-child-age-now-option-row>
+              <div *ngFor=
+                     "let child of age.controls;
+                            let i = index"
+              >
+                <app-child-age-now-option-row
+                  (quantityChange)="onQuantityChange($event, 'ages' + i)"
+                  label="Child {{ i+ 1 }} Age"
+                  [quantity]="0"
+                ></app-child-age-now-option-row>
+              </div>
+            </mat-card-content>
+          </form>
+        </mat-menu>
+
+      </div>
+
+      <div class="check-in-button">
+        <button mat-button (click)="onCheckInClicked()" class="some-button">
+          checkin
+        </button>
+      </div>
+    </ng-container>
+    <ng-template #reverseOrder>
+      <div class="check-in-range ">
+        <app-hotel-book-now-button-mobile
+          (checkInDateMobile)="onCheckInChanged($event)"
+          (checkOutDateMobile)="onCHeckOutChanged($event)"
+        ></app-hotel-book-now-button-mobile>
+      </div>
+
+      <div class="select-person-options">
+
+        <button style="padding: 0" [matMenuTriggerFor]="menue">
+          <div class="select-option-persons-container">
+            <div class="select-option-persons-label">{{ bookNowFiltersEvent.numberOfAdults }} Adults
+              - {{ bookNowFiltersEvent.numberOfChildren }} Children - {{ bookNowFiltersEvent.numberOfRooms }}  Rooms
+            </div>
+            <div class="select-option-persons-icon">
+              <mat-icon matDatepickerToggleIcon>person</mat-icon>
+            </div>
           </div>
-        </div>
 
-      </button>
+        </button>
 
-      <mat-menu #menue="matMenu" class="something">
-        <mat-card-content
-          class="options-container"
-          (click)="$event.stopPropagation()"
-        >
-          <app-book-now-option-row
-            (quantityChange)="onQuantityChange($event, 'adults')"
-            label="Adults"
-          ></app-book-now-option-row>
-          <mat-divider></mat-divider>
-          <app-book-now-option-row
-            (quantityChange)="onQuantityChange($event, 'children')"
-            label="Children"
-          ></app-book-now-option-row>
-          <mat-divider></mat-divider>
-          <app-book-now-option-row
-            (quantityChange)="onQuantityChange($event, 'rooms')"
-            label="Rooms"
-          ></app-book-now-option-row>
-        </mat-card-content>
-      </mat-menu>
+        <mat-menu #menue="matMenu" class="something">
+          <form novalidate  (ngSubmit)="submitForm()" >
+            <mat-card-content
+              class="options-container"
+              (click)="$event.stopPropagation()"
+            >
+              <app-child-age-now-option-row
+                (quantityChange)="onQuantityChange($event, 'adults')"
+                label="Adults"
+                [quantity]="bookNowFiltersEvent.numberOfAdults"
+              ></app-child-age-now-option-row>
+              <mat-divider></mat-divider>
+              <app-child-age-now-option-row
+                (quantityChange)="onQuantityChange($event, 'children')"
+                label="Children"
+                [quantity]="bookNowFiltersEvent.numberOfChildren"
+              ></app-child-age-now-option-row>
+              <mat-divider></mat-divider>
+              <app-child-age-now-option-row
+                (quantityChange)="onQuantityChange($event, 'rooms')"
+                label="Rooms"
+                [quantity]="bookNowFiltersEvent.numberOfRooms"
+              ></app-child-age-now-option-row>
+              <div *ngFor=
+                     "let child of age.controls;
+                            let i = index"
+              >
+                <app-child-age-now-option-row
+                  (quantityChange)="onQuantityChange($event, 'ages' + i)"
+                  label="Child {{ i+ 1 }} Age"
+                  [quantity]="0"
+                ></app-child-age-now-option-row>
+              </div>
+            </mat-card-content>
+          </form>
+        </mat-menu>
 
-    </div>
+      </div>
+      <div class="check-in-button">
+        <button mat-button (click)="onCheckInClicked()" class="some-button" >
+          checkin
+        </button>
+      </div>
 
-    <div class="check-in-button">
-      <h6></h6>
-      <button mat-button (click)="onCheckInClicked()" class="some-button">
-        checkin
-      </button>
-    </div>
-
+    </ng-template>
   </div>
+
 </div>

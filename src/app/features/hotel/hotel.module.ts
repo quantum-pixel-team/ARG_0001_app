@@ -28,6 +28,10 @@ import { HotelRoomCardImagesComponent } from "./components/hotel-room-card-image
 import { HotelBookNowDateComponent } from "./components/hotel-book-now-date/hotel-book-now-date.component";
 import { HomeModule } from "../../home/components/home.module";
 import { MatDivider } from "@angular/material/divider";
+import {
+  HotelBookNowButtonMobileComponent
+} from "./components/hotel-book-now-button-mobile/hotel-book-now-button-mobile.component";
+import {ChildAgeOptionRowComponent} from "./components/hotel-child-age-row/child-age-option-row.component";
 
 const routes: Routes = [
   {
@@ -46,6 +50,8 @@ const routes: Routes = [
     HotelRoomCardComponent,
     HotelFiltersComponent,
     HotelBookNowButtonComponent,
+    HotelBookNowButtonMobileComponent,
+    ChildAgeOptionRowComponent
   ],
   imports: [
     CommonModule,
