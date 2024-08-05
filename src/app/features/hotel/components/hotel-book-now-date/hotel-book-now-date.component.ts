@@ -14,7 +14,6 @@ import {
 
 @Component({
   selector: 'app-hotel-book-now-date',
-
   templateUrl: './hotel-book-now-date.component.html',
   styleUrl: './hotel-book-now-date.component.scss',
   encapsulation: ViewEncapsulation.None,

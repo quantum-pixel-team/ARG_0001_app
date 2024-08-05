@@ -1,6 +1,32 @@
+$reference-width: 1920px;
 .filters-rooms {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  gap: 25px;
-  padding: 50px 100px;
+  gap: clamp(8px, 35px, 1.7vw);
+  padding: calc(50px * (100vw / $reference-width)) calc(100px * (100vw / $reference-width));
+
+
+}
+
+.filters-rooms.mobile {
+  display: block;
+  gap: 0;
+
+}
+
+.mobile-filter-header {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+mat-paginator {
+  grid-area: 2 / 2;
+  margin: 20px 5px;
+}
+
+.error {
+  color: var(--color-primary-color);
+  font-size: clamp(13px, 50px, calc(48px * (100vw / $reference-width)));
+  padding: 15px;
+  margin: 0 auto;
 }

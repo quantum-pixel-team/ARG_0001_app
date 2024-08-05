@@ -1,0 +1,16 @@
+<p class="not-available-label" *ngIf="notAvailableLabel"> {{notAvailableLabel}}</p>
+<button (click)="buttonCLicked()"
+        mat-ripple
+        class="book-now"
+        [class.not-available]="roomNotAvailable"
+        [class.capacity-not-enough]="roomCapacityNotEnough"
+        [disabled]="roomCapacityNotEnough"
+>
+  <div class="outside-label" [class.not-available]="roomNotAvailable">
+    {{ roomCapacityNotEnough ? 'THE ROOM CAPACITY IS NOT ENOUGH FOR ALL GUESTS' : roomNotAvailable ? 'UNAVAILABLE' : 'Available' }}
+  </div>
+  <div *ngIf="notAvailableLabel" class="outside-not-available-label" [class.not-available]="roomNotAvailable">
+    {{notAvailableLabel}}
+  </div>
+  <div class="book-now-label">{{ roomNotAvailable ? 'Check Dates' : 'Book Now' }}</div>
+</button>

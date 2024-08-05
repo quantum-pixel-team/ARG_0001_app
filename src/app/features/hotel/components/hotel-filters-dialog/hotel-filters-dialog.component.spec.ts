@@ -1,18 +1,18 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { HotelTableRoomComponent } from './hotel-table-room.component';
+// import { HotelFiltersDialogComponent } from './hotel-filters-dialog.component';
 //
-// describe('HotelTableRoomComponent', () => {
-//   let component: HotelTableRoomComponent;
-//   let fixture: ComponentFixture<HotelTableRoomComponent>;
+// describe('HotelFiltersDialogComponent', () => {
+//   let component: HotelFiltersDialogComponent;
+//   let fixture: ComponentFixture<HotelFiltersDialogComponent>;
 //
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       imports: [HotelTableRoomComponent]
+//       imports: [HotelFiltersDialogComponent]
 //     })
 //     .compileComponents();
 //
-//     fixture = TestBed.createComponent(HotelTableRoomComponent);
+//     fixture = TestBed.createComponent(HotelFiltersDialogComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

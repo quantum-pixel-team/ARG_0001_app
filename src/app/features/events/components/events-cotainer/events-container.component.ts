@@ -66,6 +66,7 @@ export class EventsContainerComponent implements AfterViewInit {
       inline: 'nearest',
     });
   }
+
   private sliceDescriptionIfSmallWidth(events: Page<AppEvent>) {
     if (window.innerWidth < 600) {
       events.content = events.content.map((event) => {

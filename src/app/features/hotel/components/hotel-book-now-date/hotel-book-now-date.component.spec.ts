@@ -1,6 +1,6 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { HotelBookNowDateComponent } from './hotel-book-now-date.component';
+// import { HotelBookNowDateComponent } from './hotel-hotel-overview-date.component';
 //
 // describe('HotelBookNowDateComponent', () => {
 //   let component: HotelBookNowDateComponent;

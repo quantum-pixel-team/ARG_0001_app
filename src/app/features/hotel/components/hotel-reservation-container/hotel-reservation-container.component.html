@@ -1,12 +1,50 @@
-<app-book-now></app-book-now>
-<app-hotel-check-in
-($bookNowFiltersEvent)="onPersonFilterChanged($event)"
-></app-hotel-check-in>
-<div class="filters-rooms">
-  <app-hotel-filters
-  (filterChange)="onFiltersChanged($event)"
+<app-hotel-overview></app-hotel-overview>
+
+<div #bookNow>
+
+  <app-hotel-check-in
+    ($bookNowFiltersEvent)="onPersonFilterChanged($event)"
+  ></app-hotel-check-in>
+</div>
+
+<div class="filters-rooms" [class.mobile]="isHandset$ | async">
+  <app-hotel-filters *ngIf="(isHandset$ | async) === false else mobileFilterHeader"
+                     (filterChanged)="filterChanged.emit($event)"
+                     [filters]="queryParams"
+                     [mobile]="false"
   ></app-hotel-filters>
-  <app-hotel-table-room
-    [hotelRooms]="hotelRooms"
-  ></app-hotel-table-room>
+  <ng-template #mobileFilterHeader>
+    <div class="mobile-filter-header">
+      <button
+        (click)="openSortDialog()"
+        mat-button color="primary">
+        <mat-icon>swap_vert</mat-icon>
+        Sort
+      </button>
+      <button (click)="openFilterDialog()"
+              mat-button color="primary">
+        <mat-icon>filter_list</mat-icon>
+        Filter
+      </button>
+    </div>
+  </ng-template>
+
+  <app-hotel-room-table *ngIf="roomsPage"
+                        [hotelRooms]="roomsPage.content"
+                        [numberOfAdults]="queryParams.numberOfAdults"
+                        [childrenAges]="queryParams.childrenAges"
+                        [numberOfRequestedNights]="numberOfRequestedNights()"
+                        [numberOfRequestedRooms]="queryParams.numberOfRooms"
+  ></app-hotel-room-table>
+  <mat-spinner *ngIf="!roomsPage && !error"></mat-spinner>
+  <div class="error" *ngIf="error?.status === 404">No available Rooms with the applied filters.</div>
+  <div class="error" *ngIf="error?.status === 400">Bad request, please check if all required filters are set</div>
+  <div *ngIf="!roomsPage && error?.status >= 500" class="error">Something went wrong when fetching rooms from server.
+  </div>
+  <mat-paginator (page)="onPageChanged($event)"
+                 [length]="roomsPage?.totalElements"
+                 [pageSizeOptions]="[5, 10, 25]"
+                 [pageSize]="queryParams.pageSize"
+                 aria-label="Select page">
+  </mat-paginator>
 </div>
