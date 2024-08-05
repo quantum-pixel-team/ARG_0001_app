@@ -123,6 +123,7 @@ export class HotelReservationContainerComponent implements OnInit {
     this.queryParams.checkOutDate = filter.checkOutDate;
     this.queryParams.numberOfAdults = filter.numberOfAdults;
     this.queryParams.numberOfRooms = filter.numberOfRooms;
+    this.queryParams.childrenAges=filter.childrenAge
     this.fetchRooms();
   }
 

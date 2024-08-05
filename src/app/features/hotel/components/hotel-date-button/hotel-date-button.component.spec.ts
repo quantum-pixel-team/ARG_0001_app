@@ -1,18 +1,18 @@
 // import { ComponentFixture, TestBed } from '@angular/core/testing';
 //
-// import { HotelBookNowDateComponent } from './hotel-hotel-overview-date.component';
+// import { HotelDateButtonComponent } from './hotel-hotel-overview-date.component';
 //
-// describe('HotelBookNowDateComponent', () => {
-//   let component: HotelBookNowDateComponent;
-//   let fixture: ComponentFixture<HotelBookNowDateComponent>;
+// describe('HotelDateButtonComponent', () => {
+//   let component: HotelDateButtonComponent;
+//   let fixture: ComponentFixture<HotelDateButtonComponent>;
 //
 //   beforeEach(async () => {
 //     await TestBed.configureTestingModule({
-//       imports: [HotelBookNowDateComponent]
+//       imports: [HotelDateButtonComponent]
 //     })
 //     .compileComponents();
 //
-//     fixture = TestBed.createComponent(HotelBookNowDateComponent);
+//     fixture = TestBed.createComponent(HotelDateButtonComponent);
 //     component = fixture.componentInstance;
 //     fixture.detectChanges();
 //   });

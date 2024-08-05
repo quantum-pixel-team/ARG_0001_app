@@ -1,12 +1,12 @@
-<div class="check-in-container" [ngClass]="{ mobile: (isHandset$ | async)}">
-  <div class="some">
+<div class="container" [ngClass]="{ mobile: (isHandset$ | async)}">
+  <div class="check-in-container">
     <ng-container *ngIf="(isHandset$ | async) === false; else reverseOrder">
       <div class="check-in-range ">
         <h6>Check-in - Check-out</h6>
-        <app-hotel-book-now-date
+        <app-hotel-date-button
           (checkInDate)="onCheckInChanged($event)"
           (checkOutDate)="onCHeckOutChanged($event)"
-        ></app-hotel-book-now-date>
+        ></app-hotel-date-button>
       </div>
 
       <div class="select-person-options">
@@ -24,7 +24,7 @@
         </button>
 
         <mat-menu #menu="matMenu" class="something">
-          <form novalidate  (ngSubmit)="submitForm()" >
+          <form novalidate  >
             <mat-card-content
               class="options-container"
               (click)="$event.stopPropagation()"
@@ -33,7 +33,6 @@
                 (quantityChange)="onQuantityChange($event, 'adults')"
                 label="Adults"
                 [quantity]="bookNowFiltersEvent.numberOfAdults"
-
               ></app-child-age-now-option-row>
               <mat-divider></mat-divider>
               <app-child-age-now-option-row
@@ -65,16 +64,16 @@
 
       <div class="check-in-button">
         <button mat-button (click)="onCheckInClicked()" class="some-button">
-          checkin
+          Check
         </button>
       </div>
     </ng-container>
     <ng-template #reverseOrder>
       <div class="check-in-range ">
-        <app-hotel-book-now-button-mobile
+        <app-hotel-date-button-mobile
           (checkInDateMobile)="onCheckInChanged($event)"
           (checkOutDateMobile)="onCHeckOutChanged($event)"
-        ></app-hotel-book-now-button-mobile>
+        ></app-hotel-date-button-mobile>
       </div>
 
       <div class="select-person-options">
@@ -92,7 +91,7 @@
         </button>
 
         <mat-menu #menue="matMenu" class="something">
-          <form novalidate  (ngSubmit)="submitForm()" >
+          <form novalidate  >
             <mat-card-content
               class="options-container"
               (click)="$event.stopPropagation()"
@@ -131,7 +130,7 @@
       </div>
       <div class="check-in-button">
         <button mat-button (click)="onCheckInClicked()" class="some-button" >
-          checkin
+          Check
         </button>
       </div>
 

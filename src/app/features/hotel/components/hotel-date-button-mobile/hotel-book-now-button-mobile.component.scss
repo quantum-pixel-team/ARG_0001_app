@@ -1,4 +1,4 @@
-.costumise {
+.custom-date-mobile {
 
   height: 100%;
 
@@ -6,9 +6,16 @@
     border: 1px solid var(--color-primary-color);
 
   }
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field__input {
+   color: var(--color-primary-color);
+  }
+
+  .mat-date-range-input-mirror {
+    visibility: visible;
+  }
 
   .mat-mdc-form-field-bottom-align::before {
-    content: none;
+    //content: none;
   }
 
   .mat-mdc-form-field-flex {

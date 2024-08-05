@@ -10,14 +10,12 @@
     <mat-icon>remove_circle</mat-icon>
   </button>
   <input
+    [(ngModel)]="quantity"
     min="1"
     type="number"
     [id]="label"
-    [value]="quantity"
     class="option-adults"
-    [formControl]="control"
   />
-
   <button
     mat-icon-button
     color="primary"

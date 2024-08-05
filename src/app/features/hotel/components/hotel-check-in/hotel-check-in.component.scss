@@ -1,13 +1,14 @@
 $icon-size: 200px;
 $check-in-size: 1980px;
 
-.check-in-container {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 
-  .some {
+
+  .check-in-container {
     position: relative;
     background-color: white;
     width: 90%;
@@ -103,8 +104,8 @@ $check-in-size: 1980px;
 }
 
 
-.check-in-container.mobile{
-  .some {
+.container.mobile{
+  .check-in-container {
     width: 90%;
     height: 260px;
     grid-template-columns: none;
