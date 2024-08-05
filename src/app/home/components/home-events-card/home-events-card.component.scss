@@ -3,7 +3,7 @@ $reference-width: 1920px;
 .event {
   width: 100%;
   border-radius: 30px;
-
+  overflow: hidden;
   mat-card-header {
     min-height: calc(164px * (100vw / $reference-width));
     h3 {

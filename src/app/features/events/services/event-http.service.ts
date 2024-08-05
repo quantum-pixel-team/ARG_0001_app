@@ -16,7 +16,7 @@ export class EventHttpService {
     return this.http.get<Page<AppEvent>>(`events?eventType=recent&${params}`);
   }
 
-  fetchTopEvents() {
-    return this.http.get<Page<AppEvent>>(`events`);
+  fetchTopEvents(languageCode: string) {
+    return this.http.get<Page<AppEvent>>(`events?language=${languageCode}`);
   }
 }

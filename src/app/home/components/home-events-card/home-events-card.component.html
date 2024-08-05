@@ -4,7 +4,9 @@
 >
   <img
     mat-card-image
-    [src]="event?.featureImageUrl"
+    [ngSrc]="event.featureImageUrl"
+    [width]="500"
+    [height]="500"
     loading="lazy"
     alt="Photo of {{ event?.title }}}"
   />
