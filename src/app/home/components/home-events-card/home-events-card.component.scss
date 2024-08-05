@@ -4,24 +4,32 @@ $reference-width: 1920px;
   width: 100%;
   border-radius: 30px;
   overflow: hidden;
+
   mat-card-header {
     min-height: calc(164px * (100vw / $reference-width));
+
     h3 {
       width: 100%;
       font-size: clamp(16px, 3vw, 48px);
       text-align: center;
     }
   }
-  img {
+
+  .image-container {
     min-height: 170px;
     max-height: 500px;
     height: clamp(170px, 25vw, 500px);
-    object-fit: cover;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 
 .event.mobile {
-  img {
+  .image-container {
     height: clamp(170px, 38vw, 500px);
   }
 }

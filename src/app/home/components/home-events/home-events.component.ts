@@ -1,4 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+} from '@angular/core';
 import { AppEvent } from '../../../features/events/interfaces/app-event';
 import { AsyncPipe, NgClass, NgForOf } from '@angular/common';
 import { HomeEventsCardComponent } from '../home-events-card/home-events-card.component';
@@ -26,7 +30,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomeEventsComponent implements OnInit {
+export class HomeEventsComponent implements AfterViewInit {
   events: AppEvent[] = [];
   private languageCode = 'en';
 
@@ -43,7 +47,7 @@ export class HomeEventsComponent implements OnInit {
       shareReplay(),
     );
 
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.fetchEvents();
     this.initializeSwiper();
 
