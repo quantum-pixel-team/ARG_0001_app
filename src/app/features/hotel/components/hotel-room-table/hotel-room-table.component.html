@@ -6,5 +6,6 @@
     [room]="room"
     *ngFor="let room of hotelRooms"
     (bookNowClicked)="onBookNowClick($event)"
+    (viewMoreClicked)="onViewMoreClicked(room)"
   ></app-hotel-room-card>
 </div>

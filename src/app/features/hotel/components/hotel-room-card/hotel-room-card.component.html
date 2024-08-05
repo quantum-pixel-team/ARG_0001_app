@@ -2,13 +2,16 @@
   <div class="images">
 
     <app-hotel-room-card-images
+      (imageClicked)="viewMoreClicked.emit()"
       [room]="room"
     ></app-hotel-room-card-images>
   </div>
 
   <div class="details">
     <div class="card-header">
-      <mat-card-title class="card-title">
+      <mat-card-title
+        (click)="viewMoreClicked.emit()"
+        class="card-title">
         <h3>{{ room.name }}</h3>
       </mat-card-title>
       <button mat-ripple class="policy">
@@ -23,7 +26,10 @@
       <div class="facilities">
         <mat-icon *ngFor="let facility of room.facilities">{{ facility.iconName }}</mat-icon>
       </div>
-      <button class="view-more-button" mat-stroked-button>More Details</button>
+      <button class="view-more-button"
+              (click)="viewMoreClicked.emit()"
+              mat-stroked-button>More Details
+      </button>
 
       <hr>
       <div class="room-capacity">{{ room.totalCapacity }}

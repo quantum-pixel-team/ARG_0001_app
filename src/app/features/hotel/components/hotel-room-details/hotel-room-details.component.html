@@ -1,0 +1,35 @@
+<div class="hotel-room-details-container">
+  <mat-dialog-actions class="close">
+    <button mat-ripple (close)="onNoClick()" mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-dialog-actions>
+  <div class="images">
+    <app-hotel-room-details-images
+      [room]="room"
+    ></app-hotel-room-details-images>
+  </div>
+  <div class="details">
+    <h1 class="room-name">{{ room.name }}</h1>
+    <p class="description">{{ room.description }}</p>
+    <div class="capacity-policy">
+      <div class="capacity">
+        <p>Room capacity:</p>
+        <p>{{ room.totalCapacity }}</p>
+        <mat-icon>person</mat-icon>
+      </div>
+      <div class="policy">
+        <button mat-button color="primary">Policy
+          <mat-icon iconPositionEnd>info</mat-icon>
+        </button>
+      </div>
+    </div>
+    <div class="facilities">
+      <div class="facility" *ngFor="let facility of room.facilities">
+        <mat-icon>{{ facility.iconName }}</mat-icon>
+        {{ facility.name }}
+      </div>
+    </div>
+  </div>
+
+</div>
