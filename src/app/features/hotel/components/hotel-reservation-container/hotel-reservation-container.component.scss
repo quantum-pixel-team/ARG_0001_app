@@ -23,3 +23,10 @@ mat-paginator {
   grid-area: 2 / 2;
   margin: 20px 5px;
 }
+
+.error {
+  color: var(--color-primary-color);
+  font-size: clamp(13px, 50px, calc(48px * (100vw / $reference-width)));
+  padding: 15px;
+  margin: 0 auto;
+}

@@ -28,22 +28,19 @@
       </button>
     </div>
   </ng-template>
-  <ng-container
-    *ngIf="roomsPage; else loading"
-  >
 
-    <app-hotel-room-table
-      [hotelRooms]="roomsPage.content"
-      [numberOfAdults]="queryParams.numberOfAdults"
-      [childrenAges]="queryParams.childrenAges"
-      [numberOfRequestedNights]="numberOfRequestedNights()"
-      [numberOfRequestedRooms]="queryParams.numberOfRooms"
-    ></app-hotel-room-table>
-  </ng-container>
-  <ng-template #loading>
-    <mat-spinner></mat-spinner>
-  </ng-template>
-
+  <app-hotel-room-table *ngIf="roomsPage"
+                        [hotelRooms]="roomsPage.content"
+                        [numberOfAdults]="queryParams.numberOfAdults"
+                        [childrenAges]="queryParams.childrenAges"
+                        [numberOfRequestedNights]="numberOfRequestedNights()"
+                        [numberOfRequestedRooms]="queryParams.numberOfRooms"
+  ></app-hotel-room-table>
+  <mat-spinner *ngIf="!roomsPage && !error"></mat-spinner>
+  <div class="error" *ngIf="error?.status === 404">No available Rooms with the applied filters.</div>
+  <div class="error" *ngIf="error?.status === 400">Bad request, please check if all required filters are set</div>
+  <div *ngIf="!roomsPage && error?.status >= 500" class="error">Something went wrong when fetching rooms from server.
+  </div>
   <mat-paginator (page)="onPageChanged($event)"
                  [length]="roomsPage?.totalElements"
                  [pageSizeOptions]="[5, 10, 25]"

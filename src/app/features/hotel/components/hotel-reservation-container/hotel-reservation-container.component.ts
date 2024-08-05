@@ -22,6 +22,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { getDifferenceInDays } from '../../../../shared/utils/DateTime';
 import { Page } from '../../../../shared/interfaces/page';
 import { PageEvent } from '@angular/material/paginator';
+import { ErrorResponse } from '../../../../shared/interfaces/ErrorResponse';
+import {Error} from "../../../../shared/interfaces/Error";
 
 @Component({
   selector: 'app-hotel-reservation-container',
@@ -34,7 +36,7 @@ export class HotelReservationContainerComponent implements OnInit {
   @ViewChild('bookNow') bookNow!: ElementRef;
 
   readonly dialog = inject(MatDialog);
-  error: any;
+  error: any | undefined;
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(['(max-width: 768px)'])
     .pipe(
@@ -94,12 +96,13 @@ export class HotelReservationContainerComponent implements OnInit {
 
   private fetchRooms() {
     this.roomsPage = undefined;
+    this.error = undefined;
 
     this.httpService.fetchRooms(this.queryParams).subscribe({
       next: (result) => {
         this.roomsPage = result;
       },
-      error: (error) => {
+      error: (error: any) => {
         this.error = error;
       },
     });
@@ -137,9 +140,6 @@ export class HotelReservationContainerComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result: HotelQueryParams) => {
-      console.log('The dialog was closed');
-      console.table(result);
-
       if (result !== undefined) {
         this.onFiltersChanged(result);
       }
@@ -160,9 +160,6 @@ export class HotelReservationContainerComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result: HotelQueryParams) => {
-      console.log('The dialog was closed');
-      console.table(result);
-
       if (result !== undefined) {
         this.onFiltersChanged(result);
       }
