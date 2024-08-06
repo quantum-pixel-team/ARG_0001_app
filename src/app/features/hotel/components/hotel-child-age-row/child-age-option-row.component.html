@@ -1,4 +1,5 @@
 <div class="options-row-container">
+
   <label [for]="label">{{ label }}</label>
   <button
     mat-icon-button
@@ -9,9 +10,11 @@
   >
     <mat-icon>remove_circle</mat-icon>
   </button>
+
   <input
     [(ngModel)]="quantity"
     min="1"
+    max=6
     type="number"
     [id]="label"
     class="option-adults"
@@ -22,6 +25,7 @@
     color="primary"
     class="option-plus"
     (click)="incrementQuantity()"
+    [disabled]="quantity >= 6 && label.includes('Child ')"
   >
     <mat-icon>add_circle</mat-icon>
   </button>
