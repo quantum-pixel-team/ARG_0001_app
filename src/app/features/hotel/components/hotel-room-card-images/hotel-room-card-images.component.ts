@@ -1,4 +1,10 @@
-import {Component, CUSTOM_ELEMENTS_SCHEMA, EventEmitter, Input, Output} from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { HotelRoom } from '../../interfaces/room';
 import { MatCardXlImage } from '@angular/material/card';
 import { NgForOf, NgOptimizedImage } from '@angular/common';

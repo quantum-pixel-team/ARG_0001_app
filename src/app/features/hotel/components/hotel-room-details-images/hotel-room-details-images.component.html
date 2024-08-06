@@ -1,13 +1,12 @@
-<swiper-container
-  init="false"
-  #swiper
->
-  <swiper-slide
-    *ngFor="let image of room.imagesUrl ">
-    <img loading="lazy" [alt]="room.name"
-         [ngSrc]="image"
-         sizes="100vw"
-         ngSrcset="300w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w, 1500w,1700w, 1980w"
-         fill/>
+<swiper-container init="false" #swiper>
+  <swiper-slide *ngFor="let image of room.imagesUrl">
+    <img
+      loading="lazy"
+      [alt]="room.name"
+      [ngSrc]="image"
+      sizes="100vw"
+      ngSrcset="300w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w, 1500w,1700w, 1980w"
+      fill
+    />
   </swiper-slide>
 </swiper-container>

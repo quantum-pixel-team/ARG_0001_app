@@ -59,7 +59,7 @@
         class="router-link"
         [ngClass]="{
           'highlight-color': !hasScrolled && isHomePage,
-          'border-bottom': hasScrolled || !isHomePage
+          'border-bottom': hasScrolled || !isHomePage,
         }"
         >{{ "NavBar." + link.label | translate }}</a
       >
@@ -77,7 +77,7 @@
         class="router-link"
         [ngClass]="{
           'highlight-color': !hasScrolled && isHomePage,
-          'border-bottom': hasScrolled || !isHomePage
+          'border-bottom': hasScrolled || !isHomePage,
         }"
       >
         <img [src]="link.icon" alt="" />
