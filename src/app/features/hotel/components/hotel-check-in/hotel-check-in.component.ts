@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl } from '@angular/forms';
 import { BookNowFilters } from '../../interfaces/HotelFilters';
 import { Observable } from 'rxjs';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -12,7 +12,7 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class HotelCheckInComponent {
   @Output() $bookNowFiltersEvent = new EventEmitter<BookNowFilters>();
-
+  protected isCheckInDateNull=true;
   bookNowFiltersEvent: BookNowFilters;
   bookingForm = this.fb.group({
     age: this.fb.array([]),
@@ -46,11 +46,6 @@ export class HotelCheckInComponent {
     this.age.removeAt(index);
   }
 
-  range = new FormGroup({
-    start: new FormControl<Date | null>(null),
-    end: new FormControl<Date | null>(null),
-  });
-
   onQuantityChange(quantity: number, type: string) {
     switch (type) {
       case 'adults':
@@ -79,9 +74,11 @@ export class HotelCheckInComponent {
     this.$bookNowFiltersEvent.emit(this.bookNowFiltersEvent);
   }
   onCheckInChanged($event: Date) {
+    this.isCheckInDateNull=false
     this.bookNowFiltersEvent.checkInDate = $event;
   }
   onCHeckOutChanged($event: Date) {
+    this.isCheckInDateNull=false
     this.bookNowFiltersEvent.checkOutDate = $event;
   }
   isHandset$: Observable<boolean> = this.breakpointObserver
@@ -90,4 +87,6 @@ export class HotelCheckInComponent {
       map((result) => result.matches),
       shareReplay(),
     );
+
+
 }

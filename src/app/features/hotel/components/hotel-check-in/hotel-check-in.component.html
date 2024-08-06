@@ -6,6 +6,7 @@
         <app-hotel-date-button
           (checkInDate)="onCheckInChanged($event)"
           (checkOutDate)="onCHeckOutChanged($event)"
+
         ></app-hotel-date-button>
       </div>
 
@@ -63,7 +64,7 @@
       </div>
 
       <div class="check-in-button">
-        <button mat-button (click)="onCheckInClicked()" class="some-button">
+        <button mat-button (click)="onCheckInClicked()" class="some-button" [disabled]="isCheckInDateNull">
           Check
         </button>
       </div>
