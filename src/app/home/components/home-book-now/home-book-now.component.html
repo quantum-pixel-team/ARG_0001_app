@@ -27,7 +27,7 @@
       <div class="select-options">
         <button [matMenuTriggerFor]="menu">
           <div class="option-persons-container">
-            <div class="option-persons-label">Persons</div>
+            <div class="option-persons-label">{{ "HOME.Book_Now.Persons" | translate }}</div>
             <div class="option-persons-number">{{ children + adults }}</div>
             <mat-icon class="option-persons-drop-down"
               >arrow_drop_down</mat-icon
@@ -66,7 +66,7 @@
       mat-flat-button
       color="primary"
     >
-      {{ "HOME.Book_Now" | translate }}
+      {{ "HOME.Book_Now.Book_Now" | translate }}
     </button>
   </div>
 </div>
