@@ -130,7 +130,7 @@
 
       </div>
       <div class="check-in-button">
-        <button mat-button (click)="onCheckInClicked()" class="some-button" >
+        <button mat-button (click)="onCheckInClicked()" class="some-button" [disabled]="isCheckInDateNull">
           Check
         </button>
       </div>
