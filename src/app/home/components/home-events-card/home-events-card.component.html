@@ -3,7 +3,6 @@
   [ngClass]="{ mobile: (isDesktopWidth$ | async) === false }"
 >
   <div class="image-container">
-
     <img
       mat-card-image
       [ngSrc]="event.featureImageUrl"
@@ -12,7 +11,6 @@
       loading="lazy"
       alt="Photo of {{ event.title }}}"
       ngSrcset=" 300w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w, 1500w,1700w,1980w"
-
     />
   </div>
   <mat-card-header>

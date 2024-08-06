@@ -23,7 +23,7 @@ import { getDifferenceInDays } from '../../../../shared/utils/DateTime';
 import { Page } from '../../../../shared/interfaces/page';
 import { PageEvent } from '@angular/material/paginator';
 import { ErrorResponse } from '../../../../shared/interfaces/ErrorResponse';
-import {Error} from "../../../../shared/interfaces/Error";
+import { Error } from '../../../../shared/interfaces/Error';
 
 @Component({
   selector: 'app-hotel-reservation-container',
@@ -123,6 +123,7 @@ export class HotelReservationContainerComponent implements OnInit {
     this.queryParams.checkOutDate = filter.checkOutDate;
     this.queryParams.numberOfAdults = filter.numberOfAdults;
     this.queryParams.numberOfRooms = filter.numberOfRooms;
+    this.queryParams.childrenAges = filter.childrenAge;
     this.fetchRooms();
   }
 

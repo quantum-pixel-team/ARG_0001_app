@@ -6,10 +6,9 @@ swiper-container {
 
   // tablet
   @media screen and (max-width: 768px) {
-    --swiper-navigation-size: 15px
+    --swiper-navigation-size: 15px;
   }
-  --swiper-navigation-size: 30px
-
+  --swiper-navigation-size: 30px;
 }
 
 swiper-slide {

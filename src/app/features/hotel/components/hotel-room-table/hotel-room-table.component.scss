@@ -9,7 +9,7 @@ $reference-width: 1920px;
   gap: calc(50px * (100vw / $reference-width));
   max-width: 90vw;
   // Tablet s
-  @media screen  and (max-width: 570px) {
+  @media screen and (max-width: 570px) {
     padding: 0;
     border: none;
   }
