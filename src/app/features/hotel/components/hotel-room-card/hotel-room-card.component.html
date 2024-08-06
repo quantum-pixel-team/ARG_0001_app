@@ -1,9 +1,6 @@
 <mat-card class="room-card" appearance="outlined">
   <div class="images">
-
-    <app-hotel-room-card-images
-      [room]="room"
-    ></app-hotel-room-card-images>
+    <app-hotel-room-card-images [room]="room"></app-hotel-room-card-images>
   </div>
 
   <div class="details">
@@ -15,18 +12,22 @@
         <mat-icon>info</mat-icon>
         <p>Policy</p>
       </button>
-      <mat-card-subtitle class="room-description">{{ room.shortDescription }}</mat-card-subtitle>
+      <mat-card-subtitle class="room-description">{{
+        room.shortDescription
+      }}</mat-card-subtitle>
     </div>
-
 
     <mat-card-content>
       <div class="facilities">
-        <mat-icon *ngFor="let facility of room.facilities">{{ facility.iconName }}</mat-icon>
+        <mat-icon *ngFor="let facility of room.facilities">{{
+          facility.iconName
+        }}</mat-icon>
       </div>
       <button class="view-more-button" mat-stroked-button>More Details</button>
 
-      <hr>
-      <div class="room-capacity">{{ room.totalCapacity }}
+      <hr />
+      <div class="room-capacity">
+        {{ room.totalCapacity }}
         <mat-icon>person</mat-icon>
       </div>
       <button mat-ripple class="policy">
@@ -34,15 +35,15 @@
         <p>Policy</p>
       </button>
       <div class="total-price">
-        <h3>
-          {{ room.totalPrice }} €/total
-        </h3>
+        <h3>{{ room.totalPrice }} €/total</h3>
       </div>
-      <app-hotel-room-book-now-button class="book-now-button"
-                                      [roomNotAvailable]="roomNotAvailable"
-                                      [notAvailableLabel]="notAvailableLabel"
-                                      [roomCapacityNotEnough]="roomCapacityNotEnough"
-                                      (bookNowClicked)="bookNowClicked.emit(room)"></app-hotel-room-book-now-button>
+      <app-hotel-room-book-now-button
+        class="book-now-button"
+        [roomNotAvailable]="roomNotAvailable"
+        [notAvailableLabel]="notAvailableLabel"
+        [roomCapacityNotEnough]="roomCapacityNotEnough"
+        (bookNowClicked)="bookNowClicked.emit(room)"
+      ></app-hotel-room-book-now-button>
     </mat-card-content>
   </div>
 </mat-card>

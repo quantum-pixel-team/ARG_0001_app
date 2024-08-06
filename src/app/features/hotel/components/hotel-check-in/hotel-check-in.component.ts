@@ -12,7 +12,7 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class HotelCheckInComponent {
   @Output() $bookNowFiltersEvent = new EventEmitter<BookNowFilters>();
-  protected isCheckInDateNull=true;
+  protected isCheckInDateNull = true;
   bookNowFiltersEvent: BookNowFilters;
   bookingForm = this.fb.group({
     age: this.fb.array([]),
@@ -74,11 +74,11 @@ export class HotelCheckInComponent {
     this.$bookNowFiltersEvent.emit(this.bookNowFiltersEvent);
   }
   onCheckInChanged($event: Date) {
-    this.isCheckInDateNull=false
+    this.isCheckInDateNull = false;
     this.bookNowFiltersEvent.checkInDate = $event;
   }
   onCHeckOutChanged($event: Date) {
-    this.isCheckInDateNull=false
+    this.isCheckInDateNull = false;
     this.bookNowFiltersEvent.checkOutDate = $event;
   }
   isHandset$: Observable<boolean> = this.breakpointObserver
@@ -87,6 +87,4 @@ export class HotelCheckInComponent {
       map((result) => result.matches),
       shareReplay(),
     );
-
-
 }

@@ -1,19 +1,21 @@
 <mat-toolbar
   color="primary"
   class="mat-toolbar"
-  [class.transparent]="!hasScrolled && isHomePage && (isHandset$ |async) === false"
+  [class.transparent]="
+    !hasScrolled && isHomePage && (isHandset$ | async) === false
+  "
   [class.mobile]="isHandset$ | async"
   [class.mat-elevation-z6]="hasScrolled"
 >
   <div class="logo">
     <div class="home-link" [ngClass]="{ center: isHandset$ | async }">
-
-      <a
-        class="link"
-        routerLink="home"
-
-      >
-        <ng-container *ngIf="hasScrolled || !isHomePage ||( isHandset$ | async); else notScrolled">
+      <a class="link" routerLink="home">
+        <ng-container
+          *ngIf="
+            hasScrolled || !isHomePage || (isHandset$ | async);
+            else notScrolled
+          "
+        >
           <img
             src="assets/logo/aragosta-logo-white-slim.svg"
             alt="aragosta logo"
@@ -30,25 +32,24 @@
       </a>
     </div>
     <div class="buttons" *ngIf="isHandset$ | async">
-
       <a routerLink="contact-us" mat-ripple>
-        <img src="assets/icons/navbar/contact-us.svg" alt="Contact Us button icon">
+        <img
+          src="assets/icons/navbar/contact-us.svg"
+          alt="Contact Us button icon"
+        />
       </a>
 
-      <app-language-selector mat-ripple
-                             [mobile]="true"
-                             (languageChanged)="onLanguageChange($event)"
-                             [whiteColor]="true"
+      <app-language-selector
+        mat-ripple
+        [mobile]="true"
+        (languageChanged)="onLanguageChange($event)"
+        [whiteColor]="true"
       ></app-language-selector>
     </div>
   </div>
   <span class="spacer"></span>
 
-
-  <div
-    class="navbar-buttons-container"
-    *ngIf="(isHandset$ | async) === false"
-  >
+  <div class="navbar-buttons-container" *ngIf="(isHandset$ | async) === false">
     <ng-container *ngFor="let link of navigationLinks">
       <a
         mat-ripple
@@ -57,10 +58,10 @@
         routerLinkActive="active"
         class="router-link"
         [ngClass]="{
-              'highlight-color': !hasScrolled && isHomePage,
-              'border-bottom': hasScrolled || !isHomePage
-            }"
-      >{{ "NavBar." + link.label | translate }}</a
+          'highlight-color': !hasScrolled && isHomePage,
+          'border-bottom': hasScrolled || !isHomePage
+        }"
+        >{{ "NavBar." + link.label | translate }}</a
       >
     </ng-container>
     <app-language-selector
@@ -68,24 +69,20 @@
       [whiteColor]="true"
     ></app-language-selector>
   </div>
-  <div
-    class="navbar-buttons-container"
-    *ngIf="(isHandset$ | async)"
-  >
+  <div class="navbar-buttons-container" *ngIf="isHandset$ | async">
     <ng-container *ngFor="let link of mobileNavigationLinks">
       <a
         [routerLink]="link.routerLink"
         routerLinkActive="active"
         class="router-link"
         [ngClass]="{
-              'highlight-color': !hasScrolled && isHomePage,
-              'border-bottom': hasScrolled || !isHomePage
-            }"
+          'highlight-color': !hasScrolled && isHomePage,
+          'border-bottom': hasScrolled || !isHomePage
+        }"
       >
-        <img [src]="link.icon" alt="">
+        <img [src]="link.icon" alt="" />
         {{ "NavBar." + link.label | translate }}</a
       >
     </ng-container>
   </div>
 </mat-toolbar>
-

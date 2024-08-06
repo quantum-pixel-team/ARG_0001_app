@@ -2,7 +2,7 @@ $reference-width: 1920px;
 .container {
   position: relative;
   display: grid;
-  grid-template-columns:  1fr 0.3fr 2fr;
+  grid-template-columns: 1fr 0.3fr 2fr;
   top: 2vw;
   margin: 2vw;
   border-radius: 10px;
@@ -23,7 +23,7 @@ $reference-width: 1920px;
 
   .logo {
     position: absolute;
-    width: clamp(100px , 500px, calc(500px * (100vw / $reference-width)));
+    width: clamp(100px, 500px, calc(500px * (100vw / $reference-width)));
     transform: translate(-50%, -50%);
     left: 40%;
     top: 50%;

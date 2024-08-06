@@ -39,10 +39,8 @@ import {
 } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import {
-  HotelBookNowButtonMobileComponent
-} from "./components/hotel-date-button-mobile/hotel-book-now-button-mobile.component";
-import {ChildAgeOptionRowComponent} from "./components/hotel-child-age-row/child-age-option-row.component";
+import { HotelBookNowButtonMobileComponent } from './components/hotel-date-button-mobile/hotel-book-now-button-mobile.component';
+import { ChildAgeOptionRowComponent } from './components/hotel-child-age-row/child-age-option-row.component';
 
 const routes: Routes = [
   {
@@ -63,7 +61,7 @@ const routes: Routes = [
     HotelRoomBookNowButtonComponent,
     HotelFiltersDialogComponent,
     HotelBookNowButtonMobileComponent,
-    ChildAgeOptionRowComponent
+    ChildAgeOptionRowComponent,
   ],
   imports: [
     CommonModule,

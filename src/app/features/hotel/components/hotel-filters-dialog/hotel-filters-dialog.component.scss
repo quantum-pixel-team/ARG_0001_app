@@ -9,7 +9,6 @@
   --mdc-dialog-container-color: none;
 }
 
-
 .mat-mdc-dialog-actions {
   justify-content: space-evenly;
   row-gap: 20px;
@@ -18,11 +17,10 @@
     border-radius: 10px;
   }
   // mobile M
-  @media screen and  (max-width: 375px){
+  @media screen and (max-width: 375px) {
     button {
       padding: 15px 30px;
       border-radius: 8px;
     }
-
   }
 }

@@ -7,7 +7,6 @@ $check-in-size: 1980px;
   justify-content: center;
   width: 100%;
 
-
   .check-in-container {
     position: relative;
     background-color: white;
@@ -24,7 +23,6 @@ $check-in-size: 1980px;
     justify-items: center;
 
     .check-in-range {
-
       margin-left: calc(50px * (100vw / $check-in-size));
       width: 100%;
       max-width: 550px;
@@ -51,12 +49,9 @@ $check-in-size: 1980px;
           justify-items: start;
 
           .option-persons-label {
-
             grid-column-start: 1;
             grid-column-end: 2;
-
           }
-
 
           .select-option-persons-icon {
             padding: 0;
@@ -73,18 +68,17 @@ $check-in-size: 1980px;
             border-radius: 0 9px 10px 0;
             color: white;
             justify-self: center;
-
           }
         }
       }
     }
+
     .check-in-button {
       display: flex;
       align-items: center;
       width: 100%;
 
-      .some-button {
-
+      .booking-button {
         max-width: 320px;
         height: 56px;
         border-radius: 10px;
@@ -93,18 +87,17 @@ $check-in-size: 1980px;
         background-color: var(--color-primary-color);
         width: calc(320px * (80vw / $check-in-size));
         margin-top: 4em;
+      }
 
-
+      .book-now-disabled {
+        background-color: var(--mdc-icon-button-disabled-icon-color);
+        border: none;
       }
     }
   }
-
-
-
 }
 
-
-.container.mobile{
+.container.mobile {
   .check-in-container {
     width: 90%;
     height: 260px;
@@ -113,27 +106,30 @@ $check-in-size: 1980px;
     grid-gap: 0;
     align-items: start;
     overflow: hidden;
-    border:3px solid  var(--color-primary-color);
-    .check-in-range{
+    border: 3px solid var(--color-primary-color);
+
+    .check-in-range {
       grid-row-start: 1;
       grid-row-end: 2;
       max-width: 100%;
       margin: 0;
     }
 
-    .select-person-options{
+    .select-person-options {
       grid-row-start: 2;
       grid-row-end: 3;
       max-width: 100%;
-      button{
-        max-width:100%;
-        height:100px;
+
+      button {
+        max-width: 100%;
+        height: 100px;
         border-radius: 0;
-        border:none;
+        border: none;
         background-color: white;
         color: var(--color-primary-color);
-        .select-option-persons-container{
-          .select-option-persons-icon{
+
+        .select-option-persons-container {
+          .select-option-persons-icon {
             background-color: white;
             color: var(--color-primary-color);
           }
@@ -141,29 +137,19 @@ $check-in-size: 1980px;
       }
     }
 
-    .check-in-button{
+    .check-in-button {
       grid-row-start: 3;
       grid-row-end: 4;
       overflow: scroll;
       height: 57px;
       align-self: start;
-      .some-button{
 
+      .booking-button {
         border-radius: 0;
         margin-top: 0;
         width: 100%;
         max-width: 100%;
-
       }
     }
-  }
-
-
-}
-
-.cdk-overlay-container {
-  .mat-mdc-menu-panel {
-    max-width: 550px;
-    width: calc(550px * (120vw / $check-in-size))
   }
 }

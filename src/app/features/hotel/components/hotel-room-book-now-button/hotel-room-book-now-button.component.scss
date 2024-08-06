@@ -17,7 +17,6 @@ $reference-width: 1920px;
   color: var(--color-primary-color);
 
   .book-now-label {
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,13 +33,11 @@ $reference-width: 1920px;
     padding: 0 calc(40px * (100vw / $reference-width));
     font-weight: 500;
   }
-
 }
 
 .outside-not-available-label {
   display: none;
 }
-
 
 .not-available-label {
   width: fit-content;
@@ -76,7 +73,6 @@ $reference-width: 1920px;
     display: none;
   }
 }
-
 
 .book-now.not-available {
   background: red;
@@ -115,11 +111,9 @@ $reference-width: 1920px;
     display: none;
   }
 
-
   // mobile XL
   @media screen and (max-width: 500px) {
     background: white;
     color: red;
-
   }
 }

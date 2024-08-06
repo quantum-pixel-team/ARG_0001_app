@@ -1,8 +1,16 @@
-$check-in-size:1980px;
+$check-in-size: 1980px;
 
 .custom-date-desktop {
-
-
+  .hide-placholder {
+    .mat-date-range-input-mirror {
+      visibility: hidden;
+    }
+  }
+  .mat-date-range-input-mirror {
+    visibility: visible;
+    font-size: clamp(10px, 1vw, 13px);
+    color: var(--color-primary-color);
+  }
 
   mat-form-field {
     max-width: 550px;
@@ -21,14 +29,14 @@ $check-in-size:1980px;
     border: 1px solid var(--color-primary-color);
   }
 
-
   .mdc-text-field--outlined:not(.mdc-text-field--disabled),
   .mdc-notched-outline__leading,
   .mdc-text-field--outlined:not(.mdc-text-field--disabled),
-  .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
+  .mdc-notched-outline__notch,
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+    .mdc-notched-outline__trailing {
     border-color: var(--color-primary-color);
   }
-
 
   .mat-mdc-form-field-icon-suffix {
     .mat-mdc-icon-button.mat-mdc-button-base {
@@ -48,20 +56,38 @@ $check-in-size:1980px;
     border-bottom-left-radius: 10px;
   }
 
-
   .mdc-text-field--outlined:not(.mdc-text-field--disabled)
-  .mdc-notched-outline .mdc-notched-outline__leading,
+    .mdc-notched-outline
+    .mdc-notched-outline__leading,
   .mdc-text-field--outlined:not(.mdc-text-field--disabled)
-  .mdc-notched-outline .mdc-notched-outline__notch,
+    .mdc-notched-outline
+    .mdc-notched-outline__notch,
   .mdc-text-field--outlined:not(.mdc-text-field--disabled)
-  .mdc-notched-outline .mdc-notched-outline__trailing {
+    .mdc-notched-outline
+    .mdc-notched-outline__trailing {
     border-color: var(--color-primary-color);
   }
 
-  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__leading, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__notch, .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(.mdc-text-field--focused):hover .mdc-notched-outline .mdc-notched-outline__trailing {
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+      .mdc-text-field--focused
+    ):hover
+    .mdc-notched-outline
+    .mdc-notched-outline__leading,
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+      .mdc-text-field--focused
+    ):hover
+    .mdc-notched-outline
+    .mdc-notched-outline__notch,
+  .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+      .mdc-text-field--focused
+    ):hover
+    .mdc-notched-outline
+    .mdc-notched-outline__trailing {
     border-color: var(--color-primary-color);
   }
-  .mdc-text-field--outlined .mdc-notched-outline .mdc-notched-outline__trailing {
+  .mdc-text-field--outlined
+    .mdc-notched-outline
+    .mdc-notched-outline__trailing {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
   }
@@ -82,7 +108,6 @@ $check-in-size:1980px;
     height: 56px;
   }
   .mat-date-range-input-mirror {
-    min-width: calc(50px * (100vw / $check-in-size ));
+    min-width: calc(50px * (100vw / $check-in-size));
   }
-
 }

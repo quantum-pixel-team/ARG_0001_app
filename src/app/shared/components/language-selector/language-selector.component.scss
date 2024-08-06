@@ -47,7 +47,6 @@ app-language-selector {
   }
 
   .mat-mdc-text-field-wrapper {
-
     padding: 0;
 
     .mat-mdc-form-field-flex {
@@ -68,16 +67,12 @@ app-language-selector {
             padding: 0;
           }
         }
-
       }
     }
   }
-
-
 }
 
 mat-option.lang-option {
-
   font-size: 12px;
 
   .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after {

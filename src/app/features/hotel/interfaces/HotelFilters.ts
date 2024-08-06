@@ -27,5 +27,5 @@ export interface BookNowFilters {
   numberOfChildren: number;
   checkInDate: Date;
   checkOutDate: Date;
-  childrenAge:number[]
+  childrenAge: number[];
 }

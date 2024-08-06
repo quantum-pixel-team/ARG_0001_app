@@ -1,12 +1,31 @@
 <div class="custom-date-desktop">
-
   <mat-form-field appearance="outline">
     <mat-datepicker-toggle matIconPrefix [for]="picker">
       <mat-icon matDatepickerToggleIcon>calendar_month</mat-icon>
     </mat-datepicker-toggle>
-    <mat-date-range-input [formGroup]="dateRangeFormDesktop" [dateFilter]="unavailableDate" [rangePicker]="picker">
-      <input matStartDate type="button" formControlName="checkInDateDesktop"  (click)="picker.open()" >
-      <input matEndDate type="button"  formControlName="checkOutDateDesktop" (click)="picker.open()">
+    <mat-date-range-input
+      [formGroup]="dateRangeFormDesktop"
+      [dateFilter]="unavailableDate"
+      [rangePicker]="picker"
+      [class.hide-placholder]="
+        dateRangeFormDesktop.get('checkInDateDesktop')?.value ||
+        dateRangeFormDesktop.get('checkOutDateDesktop')?.value
+      "
+    >
+      <input
+        matStartDate
+        type="button"
+        formControlName="checkInDateDesktop"
+        (click)="picker.open()"
+        placeholder="MM/dd/yyyy"
+      />
+      <input
+        matEndDate
+        type="button"
+        formControlName="checkOutDateDesktop"
+        (click)="picker.open()"
+        placeholder="MM/dd/yyyy"
+      />
     </mat-date-range-input>
     <mat-datepicker-toggle matIconSuffix [for]="picker">
       <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>

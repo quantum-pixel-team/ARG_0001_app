@@ -13,40 +13,49 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrl: './hotel-date-button.component.scss',
   encapsulation: ViewEncapsulation.None,
 })
-export class HotelDateButtonComponent implements OnInit{
+export class HotelDateButtonComponent implements OnInit {
   dateRangeFormDesktop!: FormGroup;
   today: Date = new Date();
-  tomorrow: Date = new Date(this.today.getFullYear(), this.today.getMonth(), this.today.getDate() + 1);
+  tomorrow: Date = new Date(
+    this.today.getFullYear(),
+    this.today.getMonth(),
+    this.today.getDate() + 1,
+  );
 
   @Output() checkInDate = new EventEmitter<Date>();
   @Output() checkOutDate = new EventEmitter<Date>();
 
-  constructor(private fb: FormBuilder) {
-
-  }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.dateRangeFormDesktop = this.fb.group({
       checkInDateDesktop: [null, [Validators.required]],
-      checkOutDateDesktop: [null, [Validators.required]]
-    }, );
-
-    this.dateRangeFormDesktop.get('checkInDateDesktop')?.valueChanges.subscribe((value) => {
-      if (value) {
-        this.today = new Date(value);
-        this.checkInDate.emit(value);
-      }
+      checkOutDateDesktop: [null, [Validators.required]],
     });
 
-    this.dateRangeFormDesktop.get('checkOutDateDesktop')?.valueChanges.subscribe((value) => {
-      if (value) {
-        this.checkOutDate.emit(value);
-      }
-    });
+    this.dateRangeFormDesktop
+      .get('checkInDateDesktop')
+      ?.valueChanges.subscribe((value) => {
+        if (value) {
+          this.today = new Date(value);
+          this.checkInDate.emit(value);
+        }
+      });
+
+    this.dateRangeFormDesktop
+      .get('checkOutDateDesktop')
+      ?.valueChanges.subscribe((value) => {
+        if (value) {
+          this.checkOutDate.emit(value);
+        }
+      });
   }
 
-  unavailableDate(calendarDate:Date):boolean{
+  unavailableDate(calendarDate: Date): boolean {
     const today = new Date();
-    return calendarDate >= new Date(today.getFullYear(), today.getMonth(), today.getDate() )
+    return (
+      calendarDate >=
+      new Date(today.getFullYear(), today.getMonth(), today.getDate())
+    );
   }
 }

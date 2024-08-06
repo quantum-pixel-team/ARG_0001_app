@@ -6,13 +6,13 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './child-age-option-row.component.scss',
 })
 export class ChildAgeOptionRowComponent {
-  @Input()quantity !: number;
+  @Input() quantity!: number;
   @Input() label!: string;
   @Output() quantityChange = new EventEmitter<number>();
 
   decrementQuantity() {
     this.quantity -= 1;
-    console.log("somes")
+    console.log('somes');
     this.quantityChange.emit(this.quantity);
   }
 

@@ -8,10 +8,9 @@ describe('HotelBookNowButtonMobileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HotelBookNowButtonMobileComponent]
-    })
-    .compileComponents();
-    
+      imports: [HotelBookNowButtonMobileComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(HotelBookNowButtonMobileComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
