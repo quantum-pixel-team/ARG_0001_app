@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from '@angular/core';
 import { AppEvent } from '../../../features/events/interfaces/app-event';
 import { MatCard, MatCardHeader, MatCardImage } from '@angular/material/card';
 import { Observable } from 'rxjs';
-import { AsyncPipe, NgClass } from '@angular/common';
+import {AsyncPipe, NgClass, NgOptimizedImage} from '@angular/common';
 import { MatButton } from '@angular/material/button';
 
 @Component({
@@ -17,10 +17,11 @@ import { MatButton } from '@angular/material/button';
     NgClass,
     AsyncPipe,
     MatButton,
+    NgOptimizedImage,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeEventsCardComponent {
-  @Input() event: AppEvent | undefined;
+  @Input() event!: AppEvent;
   @Input() isDesktopWidth$!: Observable<boolean>;
 }

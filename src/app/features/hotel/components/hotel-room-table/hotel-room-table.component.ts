@@ -19,7 +19,7 @@ export class HotelTableRoomComponent {
 
   isRoomCapacityNotEnough(room: HotelRoom) {
     const guests =
-      this.numberOfAdults + (this.childrenAges?.filter((age) => age > 6).length | 0);
+      this.numberOfAdults + (this.childrenAges?.length | 0);
     return guests > room.totalCapacity;
   }
 
