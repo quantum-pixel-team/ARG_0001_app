@@ -57,7 +57,7 @@ export class HotelTableRoomComponent implements OnInit {
   isRoomCapacityNotEnough(room: HotelRoom) {
     const guests =
       this.numberOfAdults +
-      (this.childrenAges?.filter((age) => age > 6).length | 0);
+      (this.childrenAges?.length | 0);
     return guests > room.totalCapacity;
   }
 

@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { EventHttpService } from '../../../features/events/services/event-http.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home-events',
@@ -32,19 +32,28 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class HomeEventsComponent implements AfterViewInit {
   events: AppEvent[] = [];
+  private languageCode = 'en';
 
   constructor(
     private homeHttpService: EventHttpService,
     private breakpointObserver: BreakpointObserver,
+    readonly translateService: TranslateService,
   ) {}
+
   isDesktopWidth$: Observable<boolean> = this.breakpointObserver
     .observe(['(min-width: 1000px)'])
     .pipe(
       map((result) => result.matches),
       shareReplay(),
     );
+
   ngAfterViewInit(): void {
     this.fetchEvents();
+
+    this.translateService.onLangChange.subscribe((event) => {
+      this.languageCode = event.lang;
+      this.fetchEvents();
+    });
   }
 
   private initializeSwiper() {
@@ -73,7 +82,7 @@ export class HomeEventsComponent implements AfterViewInit {
   }
 
   private fetchEvents() {
-    this.homeHttpService.fetchTopEvents().subscribe({
+    this.homeHttpService.fetchTopEvents(this.languageCode).subscribe({
       next: (value) => {
         this.events = value.content;
         this.initializeSwiper();
