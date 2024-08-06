@@ -49,7 +49,6 @@ export class HomeEventsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.fetchEvents();
-    this.initializeSwiper();
 
     this.translateService.onLangChange.subscribe((event) => {
       this.languageCode = event.lang;
@@ -84,7 +83,10 @@ export class HomeEventsComponent implements AfterViewInit {
 
   private fetchEvents() {
     this.homeHttpService.fetchTopEvents(this.languageCode).subscribe({
-      next: (value) => (this.events = value.content),
+      next: (value) => {
+        this.events = value.content;
+        this.initializeSwiper();
+      },
       error: (err) => console.log(err),
     });
   }

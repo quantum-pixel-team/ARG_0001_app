@@ -13,8 +13,11 @@ $primary-50: map-get($light-theme, primary, 50);
   --color-primary-100-color: #{$primary-100};
   --color-primary-50-color: #{$primary-50};
   --dvh: calc(100dvh - var(--navbar-height));
+  --mdc-dialog-container-color: rgba(0, 0, 0, 0);
 }
-
+div.mat-mdc-dialog-surface.mdc-dialog__surface{
+  box-shadow: none;
+}
 $reference-width: 1920px;
 
 @font-face {
@@ -46,6 +49,7 @@ $reference-width: 1920px;
   font-family: "italiana";
   src: url("./assets/fonts/Italiana-Regular.ttf") format("truetype");
 }
+
 *,
 *::before,
 *::after {
