@@ -1,4 +1,8 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+} from '@angular/core';
 import { AppEvent } from '../../../features/events/interfaces/app-event';
 import { AsyncPipe, NgClass, NgForOf } from '@angular/common';
 import { HomeEventsCardComponent } from '../home-events-card/home-events-card.component';
@@ -7,7 +11,7 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { EventHttpService } from '../../../features/events/services/event-http.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home-events',
@@ -26,22 +30,30 @@ import { TranslateModule } from '@ngx-translate/core';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomeEventsComponent implements OnInit {
+export class HomeEventsComponent implements AfterViewInit {
   events: AppEvent[] = [];
+  private languageCode = 'en';
 
   constructor(
     private homeHttpService: EventHttpService,
     private breakpointObserver: BreakpointObserver,
+    readonly translateService: TranslateService,
   ) {}
+
   isDesktopWidth$: Observable<boolean> = this.breakpointObserver
     .observe(['(min-width: 1000px)'])
     .pipe(
       map((result) => result.matches),
       shareReplay(),
     );
-  ngOnInit(): void {
+
+  ngAfterViewInit(): void {
     this.fetchEvents();
-    this.initializeSwiper();
+
+    this.translateService.onLangChange.subscribe((event) => {
+      this.languageCode = event.lang;
+      this.fetchEvents();
+    });
   }
 
   private initializeSwiper() {
@@ -70,8 +82,11 @@ export class HomeEventsComponent implements OnInit {
   }
 
   private fetchEvents() {
-    this.homeHttpService.fetchTopEvents().subscribe({
-      next: (value) => (this.events = value.content),
+    this.homeHttpService.fetchTopEvents(this.languageCode).subscribe({
+      next: (value) => {
+        this.events = value.content;
+        this.initializeSwiper();
+      },
       error: (err) => console.log(err),
     });
   }

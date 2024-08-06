@@ -14,3 +14,17 @@ $reference-width: 1920px;
     border: none;
   }
 }
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: var(--color-primary-color);
+}

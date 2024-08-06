@@ -13,4 +13,6 @@ export class HotelRoomCardComponent {
   @Input() roomNotAvailable = true;
   @Input() roomCapacityNotEnough = false;
   @Input() notAvailableLabel: string | undefined;
+  @Output() viewMoreClicked  = new EventEmitter();
+
 }
