@@ -9,8 +9,22 @@ $reference-width: 1920px;
   gap: calc(50px * (100vw / $reference-width));
   max-width: 90vw;
   // Tablet s
-  @media screen  and (max-width: 570px) {
+  @media screen and (max-width: 570px) {
     padding: 0;
     border: none;
   }
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: fit-content;
+  height: fit-content;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  color: var(--color-primary-color);
 }

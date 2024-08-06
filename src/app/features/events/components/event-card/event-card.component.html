@@ -1,6 +1,14 @@
 <mat-card>
   <div class="img-container">
-    <img [src]="event.featureImageUrl" alt="Event Name" />
+    <img
+      [ngSrc]="event.featureImageUrl"
+      [alt]="event.title"
+      loading="lazy"
+      sizes="50vw"
+      ngSrcset=" 300w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w, 1500w,1700w,1980w"
+      [width]="630"
+      [height]="500"
+    />
   </div>
   <div class="content">
     <mat-card-header>
@@ -17,8 +25,8 @@
       <p>{{ event.startDate | date: "dd/MM/yyyy" }}</p>
       <p *ngIf="event.endDate">- {{ event.endDate | date: "dd/MM/yyyy" }}</p>
       <mat-icon class="start-time-icon" *ngIf="event.startTime"
-        >schedule</mat-icon
-      >
+        >schedule
+      </mat-icon>
       <p class="start-time" *ngIf="event.startTime">{{ event.startTime }}</p>
     </div>
     <div class="spacer"></div>

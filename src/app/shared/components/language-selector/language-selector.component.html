@@ -1,15 +1,25 @@
 <mat-form-field
   [class.mobile]="mobile"
-  appearance="outline" color="primary" class="language-selector">
-  <img class="lang-icon"
-       src="assets/icons/navbar/language.svg" alt="language button icon">
+  appearance="outline"
+  color="primary"
+  class="language-selector"
+>
+  <img
+    class="lang-icon"
+    src="assets/icons/navbar/language.svg"
+    alt="language button icon"
+  />
   <mat-select
     id="language"
     (selectionChange)="onLanguageChange($event.value)"
     [ngClass]="{ 'white-color': whiteColor }"
     [(ngModel)]="selectedLanguage"
   >
-    <mat-option class="lang-option" *ngFor="let lang of languages" [value]="lang">
+    <mat-option
+      class="lang-option"
+      *ngFor="let lang of languages"
+      [value]="lang"
+    >
       {{ mobile ? lang.code.toUpperCase() : lang.name }}
     </mat-option>
   </mat-select>

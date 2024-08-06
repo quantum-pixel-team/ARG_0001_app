@@ -1,5 +1,4 @@
 <div class="full-screen-dialog">
-
   <app-hotel-filters
     [filters]="queryParam"
     [mobile]="true"
@@ -9,6 +8,8 @@
   ></app-hotel-filters>
   <div mat-dialog-actions>
     <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
-    <button mat-raised-button color="primary" (click)="onApplyClick()">Apply</button>
+    <button mat-raised-button color="primary" (click)="onApplyClick()">
+      Apply
+    </button>
   </div>
 </div>

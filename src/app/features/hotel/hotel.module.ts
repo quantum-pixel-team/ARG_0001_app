@@ -25,7 +25,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { HomeEventsCardComponent } from '../../home/components/home-events-card/home-events-card.component';
 import { HotelRoomCardImagesComponent } from './components/hotel-room-card-images/hotel-room-card-images.component';
-import { HotelBookNowDateComponent } from './components/hotel-book-now-date/hotel-book-now-date.component';
+import { HotelDateButtonComponent } from './components/hotel-date-button/hotel-date-button.component';
 import { HomeModule } from '../../home/components/home.module';
 import { MatDivider } from '@angular/material/divider';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -39,6 +39,8 @@ import {
 } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { HotelBookNowButtonMobileComponent } from './components/hotel-date-button-mobile/hotel-book-now-button-mobile.component';
+import { ChildAgeOptionRowComponent } from './components/hotel-child-age-row/child-age-option-row.component';
 
 const routes: Routes = [
   {
@@ -52,12 +54,14 @@ const routes: Routes = [
     HotelReservationContainerComponent,
     HotelOverviewComponent,
     HotelCheckInComponent,
-    HotelBookNowDateComponent,
+    HotelDateButtonComponent,
     HotelTableRoomComponent,
     HotelRoomCardComponent,
     HotelFiltersComponent,
     HotelRoomBookNowButtonComponent,
     HotelFiltersDialogComponent,
+    HotelBookNowButtonMobileComponent,
+    ChildAgeOptionRowComponent,
   ],
   imports: [
     CommonModule,

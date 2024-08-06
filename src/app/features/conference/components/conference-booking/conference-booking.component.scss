@@ -72,10 +72,12 @@ $comment-reference-height: 350px;
       width: 90%;
 
       margin: 3% 5% 0 5%;
+
       input:-webkit-autofill {
         -webkit-box-shadow: 0 0 0 1000px var(--color-primary-color) inset;
         -webkit-text-fill-color: white;
       }
+
       .mat-drawer-container {
         color: white;
       }

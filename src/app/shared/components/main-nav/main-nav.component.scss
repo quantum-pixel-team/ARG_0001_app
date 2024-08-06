@@ -20,14 +20,14 @@ $mobileHeight: 124px;
 }
 
 mat-toolbar.mat-toolbar {
-
   padding-left: 20px;
   height: $height;
   z-index: 10;
   top: 0;
   position: fixed;
-  transition: background-color 0.3s ease,
-  box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
 
   a {
     display: block;
@@ -81,7 +81,6 @@ mat-toolbar.mat-toolbar {
   }
 }
 
-
 mat-toolbar.mobile {
   display: block;
   height: $mobileHeight;
@@ -91,7 +90,7 @@ mat-toolbar.mobile {
   .logo {
     position: relative;
     height: 73px;
-    top:0;
+    top: 0;
 
     .home-link {
       padding: 0;
@@ -122,18 +121,17 @@ mat-toolbar.mobile {
       align-items: center;
       justify-content: flex-end;
 
-      a, app-language-selector {
+      a,
+      app-language-selector {
         padding: 5px;
         border-radius: 10px;
       }
 
       a {
         border-radius: 50%;
-
       }
     }
   }
-
 
   .navbar-buttons-container {
     padding: 0 12px;
@@ -167,7 +165,6 @@ mat-toolbar.mobile {
         font-size: $length;
       }
     }
-
   }
 
   @media (max-width: 400px) {
