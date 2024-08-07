@@ -1,0 +1,26 @@
+.hotel-room-availability {
+  background-color: white;
+  border-radius: 28px;
+
+  p {
+    font: 400 16px/28px Roboto, sans-serif;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 16px 0;
+  }
+  .demo-inline-calendar-card {
+    width: 300px;
+    font-size: var(--mat-datepicker-calendar-period-button-text-size);
+  }
+}
+
+button.room-not-available {
+  background: var(--color-primary-color);
+  border-radius: 100%;
+  * {
+    color: white;
+
+  }
+}

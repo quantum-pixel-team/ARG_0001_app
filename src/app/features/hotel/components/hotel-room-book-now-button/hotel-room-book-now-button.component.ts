@@ -20,7 +20,6 @@ export class HotelRoomBookNowButtonComponent {
     }
     if (!this.roomNotAvailable) {
       this.bookNowClicked.emit();
-      return;
     }
   }
 }

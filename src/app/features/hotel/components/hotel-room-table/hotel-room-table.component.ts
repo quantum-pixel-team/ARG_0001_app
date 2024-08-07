@@ -5,6 +5,7 @@ import { HotelRoomDetailsComponent } from '../hotel-room-details/hotel-room-deta
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import {HotelRoomAvailabilityComponent} from "../hotel-room-availability/hotel-room-availability.component";
 
 @Component({
   selector: 'app-hotel-room-table',
@@ -42,15 +43,12 @@ export class HotelTableRoomComponent implements OnInit {
     );
 
   onViewMoreClicked(room: HotelRoom) {
-    const dialogRef = this.dialog.open(HotelRoomDetailsComponent, {
+    this.dialog.open(HotelRoomDetailsComponent, {
       data: room,
       position: { bottom: this.isTablet ? '0' : undefined },
       maxWidth: '100vw',
       maxHeight: '100vh',
       panelClass: 'hotel-room-details-container',
-    });
-    dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(result);
     });
   }
 
@@ -75,5 +73,15 @@ export class HotelTableRoomComponent implements OnInit {
     if (this.isStayDurationBelowMinNights(room))
       return `Minimum nights ${room.minimumNights}`;
     return undefined;
+  }
+
+  onCheckDatesClicked(room: HotelRoom) {
+    this.dialog.open(HotelRoomAvailabilityComponent, {
+      data: room,
+      position: { bottom: this.isTablet ? '0' : undefined },
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      panelClass: 'hotel-room-availability',
+    });
   }
 }
