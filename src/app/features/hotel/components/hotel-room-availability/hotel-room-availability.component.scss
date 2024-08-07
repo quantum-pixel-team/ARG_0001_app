@@ -5,26 +5,33 @@
   p {
     font: 400 16px/28px Roboto, sans-serif;
   }
+
   h2 {
     font-size: 2rem;
     font-weight: 400;
     margin: 16px 0;
   }
+
   .demo-inline-calendar-card {
     width: 300px;
     max-width: 100%;
     font-size: var(--mat-datepicker-calendar-period-button-text-size);
   }
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 425px) {
 
     border-radius: 10px;
+    width: 100%;
+    .demo-inline-calendar-card {
+      width: 100%
+    }
   }
 }
 
 button.room-not-available {
   background: var(--mdc-icon-button-disabled-icon-color);
   border-radius: 100%;
+
   * {
     color: white;
   }
