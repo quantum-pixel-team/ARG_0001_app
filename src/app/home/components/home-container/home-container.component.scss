@@ -4,7 +4,7 @@ $bookNowHeight: var(--home-book-now-height);
 
 app-home-image {
   display: block;
-  margin-top: calc(var(--navbar-height) * -1);
+  margin-top: calc(var(--navbar-height) * -2);
 }
 
 img {
@@ -12,8 +12,8 @@ img {
 }
 
 .book-now {
-  margin-top: calc(var(--home-book-now-half-height) * -1);
-  transform: translateY(-50%);
+  margin-top: calc(var(--home-book-now-half-height) * -2);
+
   display: block;
   height: $bookNowHeight;
 }
