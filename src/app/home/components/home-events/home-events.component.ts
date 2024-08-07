@@ -2,16 +2,21 @@ import {
   AfterViewInit,
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
+  OnDestroy,
+  ViewChild,
 } from '@angular/core';
 import { AppEvent } from '../../../features/events/interfaces/app-event';
 import { AsyncPipe, NgClass, NgForOf } from '@angular/common';
 import { HomeEventsCardComponent } from '../home-events-card/home-events-card.component';
 import { MatCard, MatCardHeader, MatCardImage } from '@angular/material/card';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { EventHttpService } from '../../../features/events/services/event-http.service';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { SwiperContainer } from 'swiper/swiper-element';
+import {LanguageService} from "../../../shared/services/language.service";
 
 @Component({
   selector: 'app-home-events',
@@ -30,15 +35,19 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomeEventsComponent implements AfterViewInit {
+export class HomeEventsComponent implements AfterViewInit, OnDestroy {
   events: AppEvent[] = [];
-  private languageCode = 'en';
+  private languageCode: string;
+  @ViewChild('swiper') swiperRef!: ElementRef<SwiperContainer>;
+  private langChangeSubscription: Subscription | null = null;
 
   constructor(
     private homeHttpService: EventHttpService,
     private breakpointObserver: BreakpointObserver,
-    readonly translateService: TranslateService,
-  ) {}
+    readonly languageService: LanguageService,
+  ) {
+    this.languageCode = this.languageService.currentLang;
+  }
 
   isDesktopWidth$: Observable<boolean> = this.breakpointObserver
     .observe(['(min-width: 1000px)'])
@@ -49,17 +58,18 @@ export class HomeEventsComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.fetchEvents();
+    this.initializeSwiper();
 
-    this.translateService.onLangChange.subscribe((event) => {
-      this.languageCode = event.lang;
-      this.fetchEvents();
-    });
+    this.langChangeSubscription = this.languageService.onLangChange.subscribe(
+      (event) => {
+        this.languageCode = event.code;
+        this.fetchEvents();
+      },
+    );
   }
 
   private initializeSwiper() {
-    const swiperEl = document.querySelector('swiper-container');
-    if (swiperEl === null) return;
-    Object.assign(swiperEl, {
+    const swiperParams = {
       slidesPerView: 1.5,
       spaceBetween: 10,
       grabCursor: true,
@@ -77,15 +87,22 @@ export class HomeEventsComponent implements AfterViewInit {
           spaceBetween: 40,
         },
       },
-    });
-    swiperEl.initialize();
+    };
+    Object.assign(this.swiperRef.nativeElement, swiperParams);
+    this.swiperRef.nativeElement.initialize();
+    this.swiperRef.nativeElement.swiper.slideTo(1);
+  }
+
+  ngOnDestroy() {
+    if (this.langChangeSubscription) {
+      this.langChangeSubscription.unsubscribe();
+    }
   }
 
   private fetchEvents() {
     this.homeHttpService.fetchTopEvents(this.languageCode).subscribe({
       next: (value) => {
         this.events = value.content;
-        this.initializeSwiper();
       },
       error: (err) => console.log(err),
     });

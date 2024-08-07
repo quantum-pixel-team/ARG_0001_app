@@ -12,6 +12,7 @@ import { map } from 'rxjs/operators';
 import { Page } from '../../../../shared/interfaces/page';
 import { PageEvent } from '@angular/material/paginator';
 import { TranslateService } from '@ngx-translate/core';
+import {LanguageService} from "../../../../shared/services/language.service";
 
 @Component({
   selector: 'app-events-cotainer',
@@ -26,16 +27,18 @@ export class EventsContainerComponent implements AfterViewInit {
   pageSize = 5;
   @ViewChild('events', { static: false }) scrollTarget!: ElementRef;
 
+  languageCode: string;
+
   constructor(
     private service: EventHttpService,
-    readonly translateService: TranslateService,
-  ) {}
-
-  languageCode = 'en';
+    private languageService: LanguageService,
+  ) {
+    this.languageCode = this.languageService.currentLang;
+  }
 
   ngAfterViewInit(): void {
-    this.translateService.onLangChange.subscribe((event) => {
-      this.languageCode = event.lang;
+    this.languageService.onLangChange.subscribe((event) => {
+      this.languageCode = event.code;
       this.fetchEvents();
     });
     this.fetchEvents();

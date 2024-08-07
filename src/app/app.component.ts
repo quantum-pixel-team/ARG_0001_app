@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Language } from './shared/interfaces/Language';
+import { LanguageService } from './shared/services/language.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'aragosta-app';
+
+  constructor(private languageService: LanguageService) {}
+
+  onLanguageChanged(language: Language) {
+    this.languageService.setLanguage(language);
+  }
 }
