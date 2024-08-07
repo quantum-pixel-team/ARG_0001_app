@@ -11,6 +11,8 @@ import { EventHttpService } from '../../services/event-http.service';
 import { map } from 'rxjs/operators';
 import { Page } from '../../../../shared/interfaces/page';
 import { PageEvent } from '@angular/material/paginator';
+import { TranslateService } from '@ngx-translate/core';
+import {LanguageService} from "../../../../shared/services/language.service";
 
 @Component({
   selector: 'app-events-cotainer',
@@ -25,11 +27,25 @@ export class EventsContainerComponent implements AfterViewInit {
   pageSize = 5;
   @ViewChild('events', { static: false }) scrollTarget!: ElementRef;
 
-  constructor(private service: EventHttpService) {}
+  languageCode: string;
+
+  constructor(
+    private service: EventHttpService,
+    private languageService: LanguageService,
+  ) {
+    this.languageCode = this.languageService.currentLang;
+  }
 
   ngAfterViewInit(): void {
-    const query = `pageIndex=0&pageSize=${this.pageSize}`;
+    this.languageService.onLangChange.subscribe((event) => {
+      this.languageCode = event.code;
+      this.fetchEvents();
+    });
+    this.fetchEvents();
+  }
 
+  private fetchEvents() {
+    const query = `pageIndex=0&pageSize=${this.pageSize}&language=${this.languageCode}`;
     this.fetchUpcomingEvents(query);
     this.fetchRecentEvents(query);
   }
@@ -81,13 +97,13 @@ export class EventsContainerComponent implements AfterViewInit {
 
   OnRecentPageChanged($event: PageEvent) {
     this.pageSize = $event.pageSize;
-    const query = `pageIndex=${$event.pageIndex}&pageSize=${$event.pageSize}`;
+    const query = `pageIndex=${$event.pageIndex}&pageSize=${$event.pageSize}&language=${this.languageCode}`;
     this.fetchRecentEvents(query);
   }
 
   OnUpcomingPageChanged($event: PageEvent) {
     this.pageSize = $event.pageSize;
-    const query = `pageIndex=${$event.pageIndex}&pageSize=${$event.pageSize}`;
+    const query = `pageIndex=${$event.pageIndex}&pageSize=${$event.pageSize}&language=${this.languageCode}`;
     this.fetchUpcomingEvents(query);
   }
 }

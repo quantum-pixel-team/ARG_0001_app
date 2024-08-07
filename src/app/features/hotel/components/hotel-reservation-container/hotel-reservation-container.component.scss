@@ -3,15 +3,13 @@ $reference-width: 1920px;
   display: grid;
   grid-template-columns: 1fr 4fr;
   gap: clamp(8px, 35px, 1.7vw);
-  padding: calc(50px * (100vw / $reference-width)) calc(100px * (100vw / $reference-width));
-
-
+  padding: calc(50px * (100vw / $reference-width))
+    calc(100px * (100vw / $reference-width));
 }
 
 .filters-rooms.mobile {
   display: block;
   gap: 0;
-
 }
 
 .mobile-filter-header {

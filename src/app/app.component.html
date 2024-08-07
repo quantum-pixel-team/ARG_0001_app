@@ -1,6 +1,7 @@
-<app-main-nav></app-main-nav>
+<app-main-nav
+(languageChanged)="onLanguageChanged($event)"
+></app-main-nav>
 <div class="content">
-
   <router-outlet></router-outlet>
 </div>
 <app-footer></app-footer>

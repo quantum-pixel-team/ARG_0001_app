@@ -25,7 +25,11 @@ import { TranslateModule } from '@ngx-translate/core';
     ServerErrorComponent,
     FooterComponent,
   ],
-  exports: [MainNavComponent, ServerErrorComponent, FooterComponent],
+  exports: [
+    MainNavComponent,
+    ServerErrorComponent,
+    FooterComponent,
+  ],
   imports: [
     CommonModule,
     MatFormFieldModule,
