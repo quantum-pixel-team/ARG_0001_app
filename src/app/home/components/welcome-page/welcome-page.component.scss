@@ -5,9 +5,9 @@ $content-height-mobile: 414px;
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  //grid-template-rows: 0.7fr 0.9fr;
+
   grid-column-gap: 5%;
-  //height: calc(980px * (100vw / $content-height-desktop));
+
 
   img {
     width: 100%;
@@ -64,7 +64,7 @@ $content-height-mobile: 414px;
   }
 
 
-  .img-2 {
+  .image-container {
 
     padding: 15px 0;
 
@@ -90,11 +90,10 @@ $content-height-mobile: 414px;
   }
 
 
-  .img-2 {
+  .image-container {
     max-height:354px;
 
     padding: 15px ;
-    //grid-row: 2/4;
-    //grid-column: 1/3;
+
   }
 }

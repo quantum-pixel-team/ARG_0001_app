@@ -3,7 +3,7 @@ $card-reference-height: 200px;
 
 .service-container {
   width: 100%;
-  //height: auto;
+
   background-color: var(--color-primary-color);
   display: grid;
   grid-template-columns: repeat(6, 1.2fr);
@@ -46,9 +46,7 @@ $card-reference-height: 200px;
     margin-top: 5px;
     margin-bottom: 0;
     text-align:center;
-    //margin-left: 24%;
-    //width: calc(110px * (155vw / $reference-width));
-    //height: calc(100px * (40vw / $card-reference-height));
+
     font-size: clamp(0.7rem, 1.5vw, 1.4rem);
   }
 }
@@ -93,9 +91,7 @@ $card-reference-height: 200px;
     font-size: clamp(0.5rem, 2vw, 2rem);
     align-self: end;
     justify-self: start;
-    //margin-left: 20%;
-    //width: calc(110px * (155vw / $reference-width));
-    //height: calc(100px * (40vw / $card-reference-height));
+
     text-align:unset;
   }
 
