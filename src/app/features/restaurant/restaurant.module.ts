@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule, NgOptimizedImage} from '@angular/common';
 import { RestaurantContainerComponent } from './components/restaurant-container/restaurant-container.component';
 import { RestaurantInfoComponent } from './components/restaurant-info/restaurant-info.component';
 import { RestaurantStafComponent } from './components/restaurant-staf/restaurant-staf.component';
@@ -47,6 +47,7 @@ import { RestaurantRoutingModule } from './restaurant-routing.module';
     MatIconModule,
     RestaurantRoutingModule,
     TranslateModule,
+    NgOptimizedImage,
   ],
 })
 export class RestaurantModule {}
