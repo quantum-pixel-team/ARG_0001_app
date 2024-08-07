@@ -12,15 +12,20 @@
   }
   .demo-inline-calendar-card {
     width: 300px;
+    max-width: 100%;
     font-size: var(--mat-datepicker-calendar-period-button-text-size);
+  }
+
+  @media screen and (max-width: 768px) {
+
+    border-radius: 10px;
   }
 }
 
 button.room-not-available {
-  background: var(--color-primary-color);
+  background: var(--mdc-icon-button-disabled-icon-color);
   border-radius: 100%;
   * {
     color: white;
-
   }
 }
