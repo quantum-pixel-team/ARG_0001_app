@@ -1,8 +1,10 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
   EventEmitter,
   inject,
+  OnDestroy,
   OnInit,
   ViewChild,
 } from '@angular/core';
@@ -13,30 +15,33 @@ import {
   HotelFilters,
   HotelQueryParams,
 } from '../../interfaces/HotelFilters';
-import { TranslateService } from '@ngx-translate/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { debounceTime, Observable } from 'rxjs';
+import { debounceTime, Observable, Subject, takeUntil } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { HotelFiltersDialogComponent } from '../hotel-filters-dialog/hotel-filters-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { getDifferenceInDays } from '../../../../shared/utils/DateTime';
 import { Page } from '../../../../shared/interfaces/page';
 import { PageEvent } from '@angular/material/paginator';
-import { ErrorResponse } from '../../../../shared/interfaces/ErrorResponse';
-import { Error } from '../../../../shared/interfaces/Error';
+import { LanguageService } from '../../../../shared/services/language.service';
 
 @Component({
   selector: 'app-hotel-reservation-container',
   templateUrl: './hotel-reservation-container.component.html',
   styleUrl: './hotel-reservation-container.component.scss',
 })
-export class HotelReservationContainerComponent implements OnInit {
+export class HotelReservationContainerComponent
+  implements OnInit, AfterViewInit, OnDestroy
+{
   queryParams: HotelQueryParams;
   roomsPage: Page<HotelRoom> | undefined;
   @ViewChild('bookNow') bookNow!: ElementRef;
 
   readonly dialog = inject(MatDialog);
   error: any | undefined;
+
+  public unsubscribe$ = new Subject<void>();
+
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(['(max-width: 768px)'])
     .pipe(
@@ -44,7 +49,7 @@ export class HotelReservationContainerComponent implements OnInit {
       shareReplay(),
     );
 
-  options = [
+  filterOptions = [
     { name: 'Double room', value: false },
     { name: 'Twin room', value: false },
     { name: 'Single room', value: false },
@@ -56,7 +61,7 @@ export class HotelReservationContainerComponent implements OnInit {
 
   constructor(
     private httpService: HotelHttpService,
-    readonly translateService: TranslateService,
+    readonly languageService: LanguageService,
     private breakpointObserver: BreakpointObserver,
   ) {
     this.queryParams = {
@@ -67,7 +72,7 @@ export class HotelReservationContainerComponent implements OnInit {
       numberOfRooms: 1,
       numberOfAdults: 1,
       available: false,
-      language: 'en',
+      language: languageService.currentLang,
       childrenAges: [],
       roomTypes: [],
       minPrice: null,
@@ -79,14 +84,31 @@ export class HotelReservationContainerComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchRooms();
-    this.translateService.onLangChange.subscribe((event) => {
-      this.queryParams.language = event.lang;
-      this.fetchRooms();
-    });
-    this.filterChanged.pipe(debounceTime(1000)).subscribe((filters) => {
-      this.onFiltersChanged(filters);
-    });
-    this.updateOptions();
+
+    this.updateFilterOptions();
+  }
+
+  ngAfterViewInit() {
+    this.languageService.onLangChange
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((event) => {
+        this.queryParams.language = event.code;
+        console.log('Language changed');
+        this.fetchRooms();
+      });
+
+    this.filterChanged
+      .pipe(takeUntil(this.unsubscribe$))
+      .pipe(debounceTime(1000))
+      .subscribe((filters) => {
+        console.debug('Filters changed!');
+        this.onFiltersChanged(filters);
+      });
+  }
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
   }
 
   addDays(date: Date, days: number): Date {
@@ -98,14 +120,17 @@ export class HotelReservationContainerComponent implements OnInit {
     this.roomsPage = undefined;
     this.error = undefined;
 
-    this.httpService.fetchRooms(this.queryParams).subscribe({
-      next: (result) => {
-        this.roomsPage = result;
-      },
-      error: (error: any) => {
-        this.error = error;
-      },
-    });
+    this.httpService
+      .fetchRooms(this.queryParams)
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe({
+        next: (result) => {
+          this.roomsPage = result;
+        },
+        error: (error: any) => {
+          this.error = error;
+        },
+      });
   }
 
   onFiltersChanged(filters: HotelFilters) {
@@ -140,11 +165,14 @@ export class HotelReservationContainerComponent implements OnInit {
       panelClass: 'full-screen-dialog-panel',
     });
 
-    dialogRef.afterClosed().subscribe((result: HotelQueryParams) => {
-      if (result !== undefined) {
-        this.onFiltersChanged(result);
-      }
-    });
+    dialogRef
+      .afterClosed()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((result: HotelQueryParams) => {
+        if (result !== undefined) {
+          this.onFiltersChanged(result);
+        }
+      });
   }
 
   openSortDialog(): void {
@@ -160,15 +188,18 @@ export class HotelReservationContainerComponent implements OnInit {
       panelClass: 'full-screen-dialog-panel',
     });
 
-    dialogRef.afterClosed().subscribe((result: HotelQueryParams) => {
-      if (result !== undefined) {
-        this.onFiltersChanged(result);
-      }
-    });
+    dialogRef
+      .afterClosed()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((result: HotelQueryParams) => {
+        if (result !== undefined) {
+          this.onFiltersChanged(result);
+        }
+      });
   }
 
-  private updateOptions() {
-    this.options = this.options.map((el) => {
+  private updateFilterOptions() {
+    this.filterOptions = this.filterOptions.map((el) => {
       el.value = this.queryParams.roomTypes.indexOf(el.name) !== -1;
       return el;
     });

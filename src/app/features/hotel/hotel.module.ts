@@ -35,12 +35,13 @@ import { HotelFiltersDialogComponent } from './components/hotel-filters-dialog/h
 import {
   MatDialogActions,
   MatDialogClose,
-  MatDialogContent,
+  MatDialogContent, MatDialogTitle,
 } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HotelBookNowButtonMobileComponent } from './components/hotel-date-button-mobile/hotel-book-now-button-mobile.component';
 import { ChildAgeOptionRowComponent } from './components/hotel-child-age-row/child-age-option-row.component';
+import { HotelRoomAvailabilityComponent } from './components/hotel-room-availability/hotel-room-availability.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,7 @@ const routes: Routes = [
     HotelFiltersDialogComponent,
     HotelBookNowButtonMobileComponent,
     ChildAgeOptionRowComponent,
+    HotelRoomAvailabilityComponent,
   ],
   imports: [
     CommonModule,
@@ -100,6 +102,7 @@ const routes: Routes = [
     MatDialogContent,
     MatPaginator,
     MatProgressSpinnerModule,
+    MatDialogTitle,
   ],
 })
 export class HotelModule {}

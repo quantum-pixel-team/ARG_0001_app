@@ -7,6 +7,7 @@ import {
 } from '@angular/core';
 import { Language } from '../../interfaces/Language';
 import { TranslateService } from '@ngx-translate/core';
+import {LanguageService} from "../../services/language.service";
 
 @Component({
   selector: 'app-language-selector',
@@ -20,15 +21,18 @@ export class LanguageSelectorComponent {
     { code: 'sq', name: 'Shqip' },
     { code: 'it', name: 'Italian' },
   ];
-  selectedLanguage: Language = this.languages[0];
+  selectedLanguage: Language;
   @Input() whiteColor = false;
   @Output() languageChanged = new EventEmitter<Language>();
   @Input() mobile!: boolean;
 
-  constructor(readonly translateService: TranslateService) {}
+  constructor(readonly languageService: LanguageService) {
+    this.selectedLanguage =
+      this.languages.find((lan) => lan.code === languageService.currentLang) ??
+      this.languages[0];
+  }
 
   onLanguageChange(selectedLanguage: Language) {
     this.languageChanged.emit(selectedLanguage);
-    this.translateService.use(selectedLanguage.code);
   }
 }
