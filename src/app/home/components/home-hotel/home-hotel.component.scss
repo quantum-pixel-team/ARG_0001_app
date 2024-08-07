@@ -6,6 +6,7 @@ $reference-width: 1920px;
   margin: 0 auto;
   padding: calc(50px * (100vw / $reference-width));
 
+
   .header {
     display: flex;
     align-items: center;
@@ -19,8 +20,8 @@ $reference-width: 1920px;
     }
 
     div {
-      height: calc(160px * (100vw / $reference-width));
-      width: calc(160px * (100vw / $reference-width));
+      height: calc(70px * (100vw / $reference-width));
+      width: calc(70px * (100vw / $reference-width));
       border: solid $border-size var(--color-primary-color);
       border-bottom: none;
     }
@@ -35,8 +36,9 @@ $reference-width: 1920px;
   }
 
   .card-container {
-    min-height: clamp(417px, 85vw, 1200px);
-    max-height: 1200px;
+    min-height: clamp(217px, 85vw, 900px);
+    max-height: 800px;
+    max-width: 500px;
     position: relative;
     margin: auto;
     width: 53%;
@@ -44,6 +46,25 @@ $reference-width: 1920px;
     display: flex;
     align-items: center;
     justify-content: center;
+
+
+    @media screen and (max-width:600px) {
+      max-width: 495px;
+      min-width:220px;
+      width: calc(350px * (200vw / $reference-width));
+      height: 100%;
+
+      min-height: 400px;
+
+    }
+    @media screen and (max-width:400px) {
+      max-width: 495px;
+
+      min-width: 180px;
+      width: calc(500px * (200vw / $reference-width));
+      min-height: 400px;
+
+    }
   }
 
   .card-item {
@@ -78,7 +99,7 @@ $reference-width: 1920px;
 
     &.prev-card {
       z-index: 1;
-      transform: translateX(-40%) scale(0.8);
+      transform: translateX(-40%) scale(0.6);
       transition: transform 1000ms cubic-bezier(0.17, 0.67, 0.55, 1.43);
 
       .slider-card {
@@ -90,7 +111,7 @@ $reference-width: 1920px;
 
     &.selected-card {
       z-index: 2;
-      transform: translateX(0%) scale(1);
+      transform: translateX(0%) scale(0.8);
       transition: transform 1000ms cubic-bezier(0.17, 0.67, 0.55, 1.43);
 
       .slider-card {
@@ -103,7 +124,7 @@ $reference-width: 1920px;
 
     &.next-card {
       z-index: 1;
-      transform: translateX(40%) scale(0.8);
+      transform: translateX(40%) scale(0.6);
       transition: transform 1000ms cubic-bezier(0.17, 0.67, 0.55, 1.43);
 
       .slider-card {
@@ -122,6 +143,35 @@ $reference-width: 1920px;
         will-change: transform, opacity;
       }
     }
+
+    @media screen and (max-width:600px) {
+      &.prev-card {
+        transform: translateX(-40%) scale(0.8);
+
+      }
+      &.selected-card {
+        transform: translateX(0%) scale(1);
+      }
+
+      &.next-card {
+        transform: translateX(40%) scale(0.8);
+      }
+    }
+
+    @media screen and (min-width:1600px) {
+      &.prev-card {
+        transform: translateX(-40%) scale(0.85);
+
+      }
+      &.selected-card {
+        transform: translateX(0%) scale(1);
+      }
+
+      &.next-card {
+        transform: translateX(40%) scale(0.85);
+      }
+    }
+
   }
 
 }
