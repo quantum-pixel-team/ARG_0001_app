@@ -14,7 +14,23 @@ $primary-50: map-get($light-theme, primary, 50);
   --color-primary-50-color: #{$primary-50};
   --dvh: calc(100dvh - var(--navbar-height));
   --mdc-dialog-container-color: rgba(0, 0, 0, 0);
+
+  --mat-datepicker-calendar-container-background-color: #e9e8ec;
+  --mat-datepicker-calendar-container-text-color: #1a1b1f;
+  --mat-datepicker-calendar-text-font: Roboto, sans-serif;
+  --mat-datepicker-calendar-text-size: 1rem;
+  --mat-datepicker-calendar-body-label-text-size: .875rem;
+  --mat-datepicker-calendar-body-label-text-weight: 500;
+  --mat-datepicker-calendar-period-button-text-size: .875rem;
+  --mat-datepicker-calendar-period-button-text-weight: 500;
+  --mat-datepicker-calendar-header-text-size: .875rem;
+  --mat-datepicker-calendar-header-text-weight: 500;
+  --mat-datepicker-calendar-container-shape: 16px;
+  --mat-datepicker-calendar-container-touch-shape: 28px;
+  --mat-datepicker-calendar-container-elevation-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .2), 0px 0px 0px 0px rgba(0, 0, 0, .14), 0px 0px 0px 0px rgba(0, 0, 0, .12);
 }
+
+
 div.mat-mdc-dialog-surface.mdc-dialog__surface {
   box-shadow: none;
 }

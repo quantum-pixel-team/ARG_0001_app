@@ -4,7 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { HotelRoomDetailsComponent } from '../hotel-room-details/hotel-room-details.component';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { BreakpointObserver } from '@angular/cdk/layout';
+import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
+import {HotelRoomAvailabilityComponent} from "../hotel-room-availability/hotel-room-availability.component";
 
 @Component({
   selector: 'app-hotel-room-table',
@@ -18,6 +19,7 @@ export class HotelTableRoomComponent implements OnInit {
   @Input() numberOfRequestedNights!: number;
   @Input() childrenAges: number[] = [];
   private isTablet = false;
+  private isMobileS = false;
 
   constructor(
     private dialog: MatDialog,
@@ -27,6 +29,9 @@ export class HotelTableRoomComponent implements OnInit {
   ngOnInit(): void {
     this.isTabletWidth.subscribe((isTablet) => {
       this.isTablet = isTablet;
+    });
+    this.isMobileStWidth.subscribe((isMobileS) => {
+      this.isMobileS = isMobileS;
     });
   }
 
@@ -40,17 +45,19 @@ export class HotelTableRoomComponent implements OnInit {
       map((result) => result.matches),
       shareReplay(),
     );
-
+  isMobileStWidth: Observable<boolean> = this.breakpointObserver
+    .observe(['(max-width: 425px)'])
+    .pipe(
+      map((result) => result.matches),
+      shareReplay(),
+    );
   onViewMoreClicked(room: HotelRoom) {
-    const dialogRef = this.dialog.open(HotelRoomDetailsComponent, {
+    this.dialog.open(HotelRoomDetailsComponent, {
       data: room,
       position: { bottom: this.isTablet ? '0' : undefined },
       maxWidth: '100vw',
       maxHeight: '100vh',
       panelClass: 'hotel-room-details-container',
-    });
-    dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(result);
     });
   }
 
@@ -75,5 +82,15 @@ export class HotelTableRoomComponent implements OnInit {
     if (this.isStayDurationBelowMinNights(room))
       return `Minimum nights ${room.minimumNights}`;
     return undefined;
+  }
+
+  onCheckDatesClicked(room: HotelRoom) {
+    this.dialog.open(HotelRoomAvailabilityComponent, {
+      data: room,
+      position: { bottom: this.isMobileS ? '0' : undefined },
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      panelClass: 'hotel-room-availability',
+    });
   }
 }
