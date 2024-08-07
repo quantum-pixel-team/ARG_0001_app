@@ -1,22 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import { HomeHttpService } from '../../services/home-http.service';
-import { HotelRoom } from '../../interfaces/hotel-room';
+
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import {Observable, Subject, takeUntil} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import {HotelRoom} from "../../../features/hotel/interfaces/room";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home-hotel',
   templateUrl: './home-hotel.component.html',
   styleUrl: './home-hotel.component.scss',
 })
-export class HomeHotelComponent implements OnInit {
+export class HomeHotelComponent implements OnInit, OnDestroy {
   rooms: HotelRoom[] = [];
-
+  unsubscribe$ = new Subject<void>();
   constructor(
     private homeHttpService: HomeHttpService,
     private breakpointObserver: BreakpointObserver,
+    private router:Router
   ) {}
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
 
   isXSmallWidth$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.XSmall)
@@ -27,7 +35,14 @@ export class HomeHotelComponent implements OnInit {
 
   selectedCard = 0;
   ngOnInit(): void {
-    this.rooms = this.homeHttpService.getRooms();
+    this.homeHttpService
+      .fetchTopRooms()
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe({
+        next: (value) => {
+          return (this.rooms = value.content);
+        },
+      });
   }
   showPrevCard(i: number) {
     if (this.selectedCard > 0) {
@@ -39,21 +54,10 @@ export class HomeHotelComponent implements OnInit {
       this.selectedCard = i + 1;
     }
   }
-  getRoomOnLeft() {
-    return this.rooms ? this.rooms[0] : undefined;
-  }
-
-  getRoomOnFocus() {
-    return this.rooms ? this.rooms[1] : undefined;
-  }
-
-  getRoomOnRight() {
-    return this.rooms ? this.rooms[2] : undefined;
-  }
 
   onBookNowClicked() {
-    open(
-      'https://app.inn-connect.com/book/properties/Aragosta%20Hotel%26Restaurant',
+    this.router.navigateByUrl(
+      '/hotel',
     );
   }
 }

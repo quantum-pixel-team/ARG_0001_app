@@ -1,10 +1,15 @@
 <div class="restaurant-info-container">
-  <img src="assets/restaurant/arg_restaurant.png" alt="restaurant image" />
+  <img [ngSrc]="'A18.jpg?format=compress'"
+       height="1966"
+       width="1616"
+       [priority]="true"
+       sizes="50vw"
+       ngSrcset=" 128w, 256w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w" alt="restaurant image"/>
   <div class="restaurant-info-c-1">
     <div class="restaurant-info">
       <h1>{{ "RESTAURANT.Restaurant" | translate }}</h1>
       <p>
-        {{ "RESTAURANT.Resdesc-1" | translate }} <br />
+        {{ "RESTAURANT.Resdesc-1" | translate }} <br/>
         {{ "RESTAURANT.Resdesc-2" | translate }}
       </p>
       <app-restaurant-info-devider></app-restaurant-info-devider>

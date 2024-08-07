@@ -1,7 +1,9 @@
 <mat-card color="primary" class="hotel-room">
   <img
     mat-card-image
-    [src]="room!.featureImageUrl"
+    [ngSrc]="room!.imagesUrl[0]"
+    height="500"
+    width="500"
     loading="lazy"
     alt="Photo of a hotel room"
   />
@@ -9,9 +11,9 @@
     <mat-card-title>{{ room?.name }}</mat-card-title>
     <hr />
     <mat-card-content class="facilities">
-      <div class="facility" *ngFor="let facility of room?.facilities">
-        <mat-icon>check</mat-icon>
-        {{ facility }}
+      <div class="facility" *ngFor="let facility of room?.facilities | slice:0:3">
+        <mat-icon>{{ facility.iconName }}</mat-icon>
+        {{ facility.name }}
       </div>
     </mat-card-content>
     <mat-card-actions>
