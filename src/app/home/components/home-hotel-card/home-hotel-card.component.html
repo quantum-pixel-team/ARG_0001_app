@@ -2,8 +2,10 @@
   <img
     mat-card-image
     [ngSrc]="room!.imagesUrl[0]"
-    height="500"
-    width="500"
+    height="200"
+    width="200"
+    sizes="50vw"
+    ngSrcset=" 128w, 256w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w"
     loading="lazy"
     alt="Photo of a hotel room"
   />

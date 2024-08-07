@@ -8,7 +8,9 @@ $reference-width: 1920px;
   $border-size: clamp(1px, calc(5px * (100vw / $reference-width)), 2px);
 
   img {
-    height: 44%;
+    //height: 44%;
+    height: auto;
+    width: auto;
     object-fit: cover;
   }
 
