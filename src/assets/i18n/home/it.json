@@ -1,8 +1,7 @@
 {
-  "Book_Now": "Prenota Ora",
-  "Welcome": "Benvenuti all",
+  "Welcome": "Benvenuti al",
   "Welcome_Restaurant": "Ristorante",
-  "WelDesc": "L'Aragosta Hotel & Restaurant si trova a Durazzo, proprio accanto a una spiaggia privata. Le camere sono modernamente arredate e climatizzate, mentre alcune offrono una vista sul mare. L'hotel dispone anche di un ristorante e wine bar con terrazza solarium. Sono inoltre disponibili la connessione Wi-Fi e il parcheggio gratuiti.",
+  "WelDesc": "Benvenuti all'Aragosta Hotel & Restaurant\nFondata nel 1995, la nostra missione è quella di offrire agli ospiti un rifugio armonioso in cui la bellezza della natura e i comfort dell'ospitalità moderna convergono. Come rifugio fronte spiaggia con vista sul mare, ci impegniamo a preservare e proteggere l'ambiente naturale che circonda la spiaggia di Durazzo, offrendo al contempo esperienze senza pari che nutrono la mente, il corpo e lo spirito. Ciò include la promozione di visite ai ricchi siti archeologici della città di Durazzo. Attraverso pratiche sostenibili, attività immersive e ospitalità genuina, miriamo a creare ricordi duraturi e ispirare un legame più profondo con il mondo naturale e storico.\n\nCi impegniamo a essere riconosciuti come leader nell'ospitalità di lusso sostenibile in Albania. Aspiriamo a stabilire nuovi standard per il turismo eco-consapevole, dimostrando che la gestione responsabile dell'ambiente può coesistere armoniosamente con esperienze eccezionali per gli ospiti.",
   "Services": {
     "Wifi": "Wifi",
     "Parking": "Parcheggio",
@@ -11,13 +10,20 @@
     "ATM": "ATM",
     "CashCard": "Pagamento Contanti & Carta"
   },
+  "Book_Now": {
+    "Book_Now": "Prenota Ora",
+    "Persons": "Personi",
+    "Adults": "Adulti",
+    "Children": "Bambini",
+    "Rooms": "Stanze"
+  },
+  "Book_Room": "Prenota Stanza",
   "Restaurant": "RISTORANTE",
   "Dessert": "Dessert",
   "ViewMore": "Scopri di più",
   "Confhome": "Sala Conferenze",
-  "ConfDesc": "Una sala conferenze o riunioni è anche disponibile, così come apparecchiature audio e video. È possibile organizzare un servizio di lavanderia e stiratura. La spiaggia privata è attrezzata con ombrelloni e lettini.",
+  "ConfDesc": "La sala conferenze dell'Aragosta è perfetta per incontri e collaborazioni produttive. È dotato di comodi posti a sedere, tecnologia AV, Internet ad alta velocità e arredamento moderno e può ospitare fino a 35 persone.",
   "LearnMore": "Scopri di più",
   "EventsHome": "Eventi",
-
   "locfooter": "Strada Taulantia, Durazzo"
 }

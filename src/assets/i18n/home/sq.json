@@ -1,8 +1,8 @@
 {
-  "Book_Now": "Rezervo Tani",
+
   "Welcome": "Mirëserdhet në ",
   "Welcome_Restaurant": "Restorant",
-  "WelDesc": "Aragosta Hotel & Restaurant ndodhet në Durrës, pranë një plazhi privat. Dhomat janë të mobiluara në mënyrë moderne dhe me ajër të kondicionuar, ndërsa disa ofrojnë pamje nga deti. Hoteli gjithashtu përmban një restorant dhe bar verë me një tarracë dielli. WiFi dhe parkim falas janë gjithashtu në dispozicion.",
+  "WelDesc": "Mirësevini në Hotel & Restaurant Aragosta\nI themeluar në vitin 1995, misioni ynë është t'u ofrojmë mysafirëve një vendqendrim harmonik ku bashkohen bukuria e natyrës dhe komoditetet e mikpritjes moderne. Si një plazh i përparmë, vendqendrim me pamje nga deti, ne jemi të përkushtuar të ruajmë dhe mbrojmë mjedisin natyror që rrethon plazhin e Durrësit, duke ofruar njëkohësisht eksperienca të pashembullta që ushqejnë mendjen, trupin dhe shpirtin. Kjo përfshin promovimin e vizitave në zonat e pasura arkeologjike të qytetit të Durrësit. Nëpërmjet praktikave të qëndrueshme, aktiviteteve zhytëse dhe mikpritjes së vërtetë, ne synojmë të krijojmë kujtime të qëndrueshme dhe të frymëzojmë një lidhje më të thellë me botën natyrore dhe historike.\n\nNe përpiqemi të njihemi si lider në mikpritjen e qëndrueshme luksoze në Shqipëri. Ne aspirojmë të vendosim standarde të reja për turizmin e ndërgjegjshëm për mjedisin, duke demonstruar se kujdesi i përgjegjshëm i mjedisit mund të bashkëjetojë në mënyrë harmonike me përvojat e jashtëzakonshme të mysafirëve.",
   "Services": {
     "Wifi": "Wifi",
     "Parking": "Parkimi",
@@ -11,12 +11,19 @@
     "ATM": "ATM",
     "CashCard": "Kesh & Pagese me Karte"
   },
-
+  "Book_Now": {
+    "Book_Now": "REZERVONI TANI",
+    "Persons": "Persona",
+    "Adults": "Adult",
+    "Children": "Femijë",
+    "Rooms": "Dhoma"
+  },
+  "Book_Room": "Rezervoni Dhomë",
   "Restaurant": "RESTORANT",
   "Dessert": "Embelsira",
   "ViewMore": "Shiko më shumë",
   "Confhome": "Salla e Konferencës",
-  "ConfDesc": "Një sallë konferencash ose mbledhjesh është gjithashtu e disponueshme,si dhe pajisje audio dhe video. Mund të organizohet shërbimi i lavanderisë dhe hekurosjes. Plazhi privat është i pajisur me çadra dhe shezlongë.",
+  "ConfDesc": "Salla e konferencave në Aragosta është e përkryer për takime dhe bashkëpunime produktive. Ai përmban ndenjëse të rehatshme, teknologji AV, internet me shpejtësi të lartë dhe dekor modern, që strehon deri në 35 persona.",
   "LearnMore": "Shiko më shumë",
   "EventsHome": "Evente",
 

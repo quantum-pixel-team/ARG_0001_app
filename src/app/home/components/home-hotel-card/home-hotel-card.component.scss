@@ -4,11 +4,13 @@ $reference-width: 1920px;
   height: 100%;
   width: 100%;
   border-radius: clamp(15px, calc(30px * (100vw / $reference-width)), 30px);
-  font-size: clamp(15px, 24px, 2vw);
+  font-size: clamp(10px, 24px, 2vw);
   $border-size: clamp(1px, calc(5px * (100vw / $reference-width)), 2px);
 
   img {
-    height: 44%;
+    //height: 44%;
+    height: auto;
+    width: auto;
     object-fit: cover;
   }
 

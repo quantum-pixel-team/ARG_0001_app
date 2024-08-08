@@ -1,8 +1,8 @@
 {
-  "Book_Now": "BOOK NOW",
+
   "Welcome": "Welcome to",
   "Welcome_Restaurant": "Restaurant",
-  "WelDesc": "Aragosta Hotel & Restaurant is located in Durres, right next to a private beach. Rooms are modernly furnished and air-conditioned, while some offer a view of the sea. The hotel also features a restaurant and wine bar with a sun terrace. Free WiFi and parking are also available.",
+  "WelDesc": "Welcome to Aragosta Hotel & Restaurant\nEstablished in 1995, our mission is to provide guests with a harmonious retreat where the beauty of nature and the comforts of modern hospitality converge. As a front beach, sea view retreat, we are committed to preserving and protecting the natural environment that surrounds Durrës beach, while offering unparalleled experiences that nurture the mind, body, and spirit. This includes promoting visits to the rich archaeological sites in Durrës city. Through sustainable practices, immersive activities, and genuine hospitality, we aim to create lasting memories and inspire a deeper connection with the natural and historical world.\n\nWe strive to be recognized as a leader in sustainable luxury hospitality in Albania. We aspire to set new standards for eco-conscious tourism, demonstrating that responsible stewardship of the environment can coexist harmoniously with exceptional guest experiences.",
   "Services": {
     "Wifi": "Wifi",
     "Parking": "Parking",
@@ -11,14 +11,20 @@
     "ATM": "ATM",
     "CashCard": "Cash & Card Payment"
   },
-
+  "Book_Now": {
+    "Book_Now": "BOOK NOW",
+    "Persons": "Persons",
+    "Adults": "Adults",
+    "Children": "Children",
+    "Rooms": "Rooms"
+  },
+  "Book_Room": "Book Room",
   "Restaurant": "RESTAURANT",
   "Dessert": "Dessert",
   "ViewMore": "View More",
   "Confhome": "Conference Room",
-  "ConfDesc": "A conference or meeting room is also available, as well as audio and video equipment. Laundry and ironing service can be arranged. The private beach is fitted with parasols and sun loungers",
+  "ConfDesc": "Aragosta's conference room is perfect for productive meetings and collaborations. It features comfortable seating, AV technology, high-speed internet, and modern decor, accommodating up to 35 people.",
   "LearnMore": "LEARN MORE",
   "EventsHome": "Events",
-
   "locfooter": "Taulantia Street, Durres"
 }

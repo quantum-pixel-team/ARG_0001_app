@@ -1,23 +1,25 @@
-$reference-width: 1980px;
-$card-reference-height: 500px;
+$reference-width: 1920px;
+$card-reference-height: 200px;
 
 .service-container {
   width: 100%;
-  height: calc($card-reference-height * (100vw / $reference-width));
+
   background-color: var(--color-primary-color);
   display: grid;
   grid-template-columns: repeat(6, 1.2fr);
-  grid-template-rows: repeat(2, 1.2fr);
+  grid-template-rows: repeat(2, 1fr);
   grid-auto-flow: column;
   justify-items: center;
   align-items: end;
+  padding: calc(40px * (100vw /$reference-width ));
+
 
   .icons {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: calc(100px * (140vw / $reference-width));
-    height: calc(100px * (35vw / $card-reference-height));
+    width: calc(75px * (100vw / $reference-width));
+    height: calc(75px * (12vw / $card-reference-height));
     background-color: white;
     border-radius: 50% 50% 50% 0;
     margin: 0;
@@ -26,7 +28,7 @@ $card-reference-height: 500px;
   mat-icon {
     color: var(--color-primary-color);
     transform-origin: center;
-    font-size: clamp(1.5rem, 3.5vw, 5rem);
+    font-size: clamp(1rem, 2.5vw, 4rem);
     height: auto;
     width: 100%;
   }
@@ -43,10 +45,9 @@ $card-reference-height: 500px;
     font-weight: 300;
     margin-top: 5px;
     margin-bottom: 0;
-    margin-left: 7%;
-    width: calc(110px * (155vw / $reference-width));
-    height: calc(100px * (40vw / $card-reference-height));
-    font-size: clamp(0.7rem, 2vw, 2rem);
+    text-align:center;
+
+    font-size: clamp(0.7rem, 1.5vw, 1.4rem);
   }
 }
 
@@ -55,9 +56,16 @@ $card-reference-height: 500px;
   align-items: center;
   justify-content: start;
   column-gap: 1.5%;
-  row-gap: 4%;
+  row-gap: calc(16px*(100vw / 414px));
+  padding: 12px 22px;
 
-  padding: 0 4% 3% 4%;
+  @media screen and (max-width:340px) {
+    grid-template-rows: 0.7fr 1fr;
+    row-gap:0;
+    padding:6px 11px;
+
+
+  }
 
   .container {
     justify-self: end;
@@ -65,8 +73,8 @@ $card-reference-height: 500px;
 
   .icons {
     border-radius: 50% 50% 0 50%;
-    width: calc(120px * (140vw / $reference-width));
-    height: calc(120px * (35vw / $card-reference-height));
+    width: calc(100px * (110vw / $reference-width));
+    height: calc(100px * (12vw / $card-reference-height));
     justify-self: end;
     align-self: end;
   }
@@ -83,6 +91,8 @@ $card-reference-height: 500px;
     font-size: clamp(0.5rem, 2vw, 2rem);
     align-self: end;
     justify-self: start;
+
+    text-align:unset;
   }
 
   .title.revers {

@@ -16,7 +16,7 @@ import {
   NgForOf,
   NgIf,
   NgOptimizedImage,
-  provideImgixLoader,
+  provideImgixLoader, SlicePipe,
 } from '@angular/common';
 import { MatMenuModule } from '@angular/material/menu';
 import { BookNowOptionRowComponent } from './book-now-option-row/book-now-option-row.component';
@@ -79,6 +79,7 @@ import { HammerModule } from '@angular/platform-browser';
     HomeEventsComponent,
     TranslateModule,
     HammerModule,
+    SlicePipe,
   ],
   exports: [BookNowOptionRowComponent],
 })
