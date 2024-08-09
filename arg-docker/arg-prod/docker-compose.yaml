@@ -1,0 +1,15 @@
+services:
+  app:
+    image: blou5/arg-app:latest
+    volumes:
+      - ${PUBLIC_KEY}:/etc/ssl/cert.pem:r
+      - ${PRIVATE_KEY}:/etc/ssl/key.pem:r
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - arg
+
+networks:
+  arg:
+    driver: bridge
