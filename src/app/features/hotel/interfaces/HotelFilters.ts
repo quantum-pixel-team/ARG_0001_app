@@ -3,8 +3,9 @@ export interface HotelFilters {
   available: boolean;
   minPrice: number | null;
   maxPrice: number | null;
-  sort: 'ASC' | 'DESC';
+  sort: 'ASC' | 'DESC' | null;
 }
+
 export interface HotelQueryParams {
   pageIndex: number;
   pageSize: number;
@@ -19,8 +20,9 @@ export interface HotelQueryParams {
   minPrice: number | null;
   maxPrice: number | null;
   roomFacilities: string[];
-  sort: 'ASC' | 'DESC';
+  sort: 'ASC' | 'DESC' | null;
 }
+
 export interface BookNowFilters {
   numberOfRooms: number;
   numberOfAdults: number;
