@@ -1,0 +1,54 @@
+.hotel-room-policy {
+  background: white;
+  padding: 50px;
+  border-radius: 15px;
+  border: var(--color-primary-color) 2px solid;
+  max-width: 80vw;
+  position: relative;
+
+  p, li {
+    font-size: clamp(12px, 20px, 2vw);
+  }
+
+  ul {
+    padding: 15px;
+  }
+
+  .close-container {
+    height: 0;
+    position: sticky;
+    top: 10px;
+    width: fit-content;
+    margin-left: auto;
+  }
+  .close {
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+
+    mat-icon {
+      color: var(--color-primary-color)
+    }
+  }
+  // tablet
+  @media screen and (max-width: 768px) {
+    padding: 25px;
+    border-radius: 10px;
+    border-width: 1px;
+    max-width: 90vw;
+    .close {
+      padding: 5px;
+    }
+  }
+  @media screen and (max-width: 375px) {
+    padding: 10px;
+    max-width: 100vw;
+    .close {
+      padding: 2px;
+    }
+  }
+
+}

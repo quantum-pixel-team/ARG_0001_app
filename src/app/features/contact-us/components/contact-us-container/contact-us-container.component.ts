@@ -62,19 +62,21 @@ export class ContactUsContainerComponent {
   }
 
   private createContactUs() {
-    return (this.contactUs = {
+    this.contactUs = {
       fullNameOrCompanyName: this.contactUsForm.controls.fullName.value,
       email: this.contactUsForm.controls.email.value,
       message: this.contactUsForm.controls.messageUs.value,
-    });
+    };
+    return this.contactUs;
   }
 
   protected sendMessage() {
     this.contactUsService
       .sendContactUsMessage(this.createContactUs())
-      .subscribe({ error: (err) => console.log(err) });
+      .subscribe({ error: (err) => console.debug(err) });
     this.resetContactUsForm();
   }
+
   private resetContactUsForm() {
     this.contactUsForm.reset();
     this.contactUsForm.controls.fullName.setErrors(null);

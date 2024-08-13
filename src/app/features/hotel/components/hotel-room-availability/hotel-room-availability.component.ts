@@ -1,13 +1,6 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  model,
-  OnInit,
-  ViewEncapsulation,
-} from '@angular/core';
+import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
-import { HttpClient } from '@angular/common/http';
+import { HttpParams } from '@angular/common/http';
 import { HotelHttpService } from '../../services/hotel-http.service';
 import { Subject, takeUntil } from 'rxjs';
 import { RoomAvailability } from '../../interfaces/RoomAvailability';
@@ -37,15 +30,22 @@ export class HotelRoomAvailabilityComponent implements OnInit {
     startDate.setDate(1);
 
     const endDate = this.addMonths(startDate, 12);
-    const queryParam = `room-id=${this.room.id}&start-date=${this.formatDate(startDate)}&end-date=${this.formatDate(endDate)}`;
 
     this.httpService
-      .fetchRoomAvailimility(queryParam)
+      .fetchRoomAvailimility(
+        new HttpParams()
+          .append('room-id', this.room.id)
+          .append('start-date', startDate.toISOString())
+          .append('end-date', endDate.toISOString()),
+      )
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
         next: (value: RoomAvailability[]) => {
           this.roomAvailabiliesMap = new Map(
-            value.map((room) => [this.formatDate(new Date(room.date)), room]),
+            value.map((room) => {
+              const date = new Date(room.date).toLocaleDateString();
+              return [date, room];
+            }),
           );
         },
         error: (err) => console.debug(err),
@@ -58,15 +58,18 @@ export class HotelRoomAvailabilityComponent implements OnInit {
     return result;
   }
 
-
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     if (view === 'month') {
-      const formattedCellDate = this.formatDate(cellDate);
-      const availability = this.roomAvailabiliesMap?.get(formattedCellDate);
-      return availability && availability.availableRooms === 0 ? 'room-not-available' : '';
+      const dateString = cellDate.toLocaleDateString();
+      const availability = this.roomAvailabiliesMap?.get(dateString);
+      const isPastDate = cellDate < new Date();
+      return isPastDate || (availability && availability.availableRooms === 0)
+        ? 'room-not-available'
+        : '';
     }
     return '';
   };
+
   formatDate(date: Date): string {
     return this.datePipe.transform(date, 'yyyy-MM-dd') ?? '';
   }

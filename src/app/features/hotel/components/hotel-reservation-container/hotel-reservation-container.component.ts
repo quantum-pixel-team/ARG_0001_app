@@ -16,7 +16,13 @@ import {
   HotelQueryParams,
 } from '../../interfaces/HotelFilters';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { debounceTime, Observable, Subject, takeUntil } from 'rxjs';
+import {
+  debounceTime,
+  distinctUntilChanged,
+  Observable,
+  Subject,
+  takeUntil,
+} from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { HotelFiltersDialogComponent } from '../hotel-filters-dialog/hotel-filters-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
@@ -98,8 +104,11 @@ export class HotelReservationContainerComponent
       });
 
     this.filterChanged
-      .pipe(takeUntil(this.unsubscribe$))
-      .pipe(debounceTime(1000))
+      .pipe(
+        takeUntil(this.unsubscribe$),
+        debounceTime(1000),
+        distinctUntilChanged(),
+      )
       .subscribe((filters) => {
         console.debug('Filters changed!');
         this.onFiltersChanged(filters);
@@ -120,7 +129,7 @@ export class HotelReservationContainerComponent
     this.roomsPage = undefined;
     this.error = undefined;
 
-    this.httpService
+    return this.httpService
       .fetchRooms(this.queryParams)
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe({
