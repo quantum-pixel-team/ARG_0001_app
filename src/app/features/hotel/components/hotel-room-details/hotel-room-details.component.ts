@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import {Component, EventEmitter, inject, Output} from '@angular/core';
 import { HotelRoom } from '../../interfaces/room';
 import {
   MAT_DIALOG_DATA,
@@ -31,6 +31,7 @@ import { HotelRoomDetailsImagesComponent } from '../hotel-room-details-images/ho
 export class HotelRoomDetailsComponent {
   room = inject<HotelRoom>(MAT_DIALOG_DATA);
   readonly dialogRef = inject(MatDialogRef<HotelRoomDetailsComponent>);
+  @Output() policyClicked = new EventEmitter<HotelRoom>();
 
   onNoClick() {
     this.dialogRef.close();

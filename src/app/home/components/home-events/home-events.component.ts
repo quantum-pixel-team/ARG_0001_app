@@ -14,9 +14,9 @@ import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { EventHttpService } from '../../../features/events/services/event-http.service';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { SwiperContainer } from 'swiper/swiper-element';
-import {LanguageService} from "../../../shared/services/language.service";
+import { LanguageService } from '../../../shared/services/language.service';
 
 @Component({
   selector: 'app-home-events',
@@ -104,7 +104,7 @@ export class HomeEventsComponent implements AfterViewInit, OnDestroy {
       next: (value) => {
         this.events = value.content;
       },
-      error: (err) => console.log(err),
+      error: (err) => console.debug(err),
     });
   }
 }

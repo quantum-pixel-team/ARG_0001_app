@@ -30,12 +30,7 @@ export class ConferenceBookingComponent implements OnInit {
 
   protected currentDate: Date = new Date();
 
-  private conference: ConferenceDateReservation = {
-    endTime: null,
-    numberOfAttenders: null,
-    reservationDate: null,
-    startTime: null,
-  };
+  private conference?: ConferenceDateReservation;
   protected conferenceAppointment?: ConferenceReservation;
 
   ngOnInit(): void {
@@ -74,12 +69,12 @@ export class ConferenceBookingComponent implements OnInit {
     { validators: [appointmentTimeValidator, startTimeValidator] },
   );
 
-  private createReservation(conference: ConferenceDateReservation) {
+  private createReservation(conference?: ConferenceDateReservation) {
     return this.fb.nonNullable.group({
-      reservationDate: conference.reservationDate,
-      numberOfAttenders: conference.numberOfAttenders,
-      startTime: conference.startTime,
-      endTime: conference.endTime,
+      reservationDate: conference?.reservationDate,
+      numberOfAttenders: conference?.numberOfAttenders,
+      startTime: conference?.startTime,
+      endTime: conference?.endTime,
     });
   }
 
@@ -94,21 +89,22 @@ export class ConferenceBookingComponent implements OnInit {
     this.conferenceService
       .saveConferenceReservation(this.createConferenceAppointment())
       .subscribe({
-        error: (err) => console.log(err),
+        error: (err) => console.debug(err),
       });
     this.resetConferenceAppointment();
   }
 
   protected createConferenceAppointment() {
-    return (this.conferenceAppointment = {
+    this.conferenceAppointment = {
       fullNameOrCompanyName:
         this.conferenceForm.controls.fullNameOrCompanyName.value,
       email: this.conferenceForm.controls.email.value,
       phoneNumber: this.conferenceForm.controls.phoneNumber.value,
       emailContent: this.conferenceForm.controls.emailContent.value,
-      conferenceReservations:
-        this.conferenceForm.controls.conferenceReservations.getRawValue(),
-    });
+      conferenceReservations: this.createReservationAppointment(),
+    };
+
+    return this.conferenceAppointment;
   }
 
   protected primary: NgxMaterialTimepickerTheme = {
@@ -132,10 +128,10 @@ export class ConferenceBookingComponent implements OnInit {
 
   protected addReservationDate() {
     this.conference = {
-      reservationDate: this.conferenceForm.controls.reservationDate.value,
-      numberOfAttenders: this.conferenceForm.controls.numberOfAttenders.value,
-      startTime: this.conferenceForm.controls.startTime.value,
-      endTime: this.conferenceForm.controls.endTime.value,
+      reservationDate: this.conferenceForm.controls.reservationDate.value!,
+      numberOfAttenders: this.conferenceForm.controls.numberOfAttenders.value!,
+      startTime: this.conferenceForm.controls.startTime.value!,
+      endTime: this.conferenceForm.controls.endTime.value!,
     };
     this.conferenceForm.controls.conferenceReservations.push(
       this.createReservation(this.conference),
@@ -170,7 +166,6 @@ export class ConferenceBookingComponent implements OnInit {
   }
 
   protected isValid() {
-    console.log(this.conferenceForm.controls.fullNameOrCompanyName.valid);
     return (
       this.conferenceForm.controls.conferenceReservations.length >= 1 &&
       this.conferenceForm.controls.fullNameOrCompanyName.valid &&
@@ -181,5 +176,33 @@ export class ConferenceBookingComponent implements OnInit {
 
   private isTimeRangeValid() {
     return this.conferenceForm.getError('timeNotValid') == null;
+  }
+
+  private createReservationAppointment(): ConferenceDateReservation[] {
+    return this.conferenceForm.controls.conferenceReservations
+      .getRawValue()
+      .map((el) => {
+        const startTime = this.combineDateAndTime(
+          el.reservationDate!.toISOString(),
+          el.startTime!,
+        );
+        const endTime = this.combineDateAndTime(
+          el.reservationDate!.toISOString(),
+          el.endTime!,
+        );
+        return {
+          reservationDate: el.reservationDate!,
+          numberOfAttenders: el.numberOfAttenders!,
+          startTime: startTime,
+          endTime: endTime,
+        };
+      });
+  }
+
+  private combineDateAndTime(dateString: string, timeString: any): Date {
+    const [hours, minutes] = timeString.split(':').map(Number);
+    const date = new Date(dateString);
+    date.setUTCHours(hours, minutes, 0, 0); // Set time to the date
+    return date;
   }
 }

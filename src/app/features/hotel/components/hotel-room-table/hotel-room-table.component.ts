@@ -1,18 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { HotelRoom } from '../../interfaces/room';
 import { MatDialog } from '@angular/material/dialog';
 import { HotelRoomDetailsComponent } from '../hotel-room-details/hotel-room-details.component';
-import { Observable } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import {BreakpointObserver, Breakpoints} from '@angular/cdk/layout';
-import {HotelRoomAvailabilityComponent} from "../hotel-room-availability/hotel-room-availability.component";
+import { BreakpointObserver } from '@angular/cdk/layout';
+import { HotelRoomAvailabilityComponent } from '../hotel-room-availability/hotel-room-availability.component';
+import { HotelRoomPolicyComponent } from '../hotel-room-policy/hotel-room-policy.component';
 
 @Component({
   selector: 'app-hotel-room-table',
   templateUrl: './hotel-room-table.component.html',
   styleUrl: './hotel-room-table.component.scss',
 })
-export class HotelTableRoomComponent implements OnInit {
+export class HotelTableRoomComponent implements OnInit, OnDestroy {
   @Input() hotelRooms!: HotelRoom[];
   @Input() numberOfAdults!: number;
   @Input() numberOfRequestedRooms!: number;
@@ -20,11 +21,17 @@ export class HotelTableRoomComponent implements OnInit {
   @Input() childrenAges: number[] = [];
   private isTablet = false;
   private isMobileS = false;
+  public unsubscribe$ = new Subject<void>();
 
   constructor(
     private dialog: MatDialog,
     private breakpointObserver: BreakpointObserver,
   ) {}
+
+  ngOnDestroy(): void {
+    this.unsubscribe$.next();
+    this.unsubscribe$.complete();
+  }
 
   ngOnInit(): void {
     this.isTabletWidth.subscribe((isTablet) => {
@@ -51,14 +58,18 @@ export class HotelTableRoomComponent implements OnInit {
       map((result) => result.matches),
       shareReplay(),
     );
+
   onViewMoreClicked(room: HotelRoom) {
-    this.dialog.open(HotelRoomDetailsComponent, {
+    const roomDetailsDialog = this.dialog.open(HotelRoomDetailsComponent, {
       data: room,
       position: { bottom: this.isTablet ? '0' : undefined },
       maxWidth: '100vw',
       maxHeight: '100vh',
       panelClass: 'hotel-room-details-container',
     });
+    roomDetailsDialog.componentInstance.policyClicked
+      .pipe(takeUntil(this.unsubscribe$))
+      .subscribe((room) => this.onPolicyClicked(room));
   }
 
   isRoomCapacityNotEnough(room: HotelRoom) {
@@ -91,6 +102,16 @@ export class HotelTableRoomComponent implements OnInit {
       maxWidth: '100vw',
       maxHeight: '100vh',
       panelClass: 'hotel-room-availability',
+    });
+  }
+
+  onPolicyClicked(room: HotelRoom) {
+    this.dialog.open(HotelRoomPolicyComponent, {
+      data: room,
+      position: { bottom: this.isMobileS ? '0' : undefined },
+      maxWidth: '100vw',
+      maxHeight: '100vh',
+      panelClass: 'hotel-room-policy',
     });
   }
 }

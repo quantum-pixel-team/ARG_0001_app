@@ -3,12 +3,12 @@ export interface ConferenceReservation {
   email: string;
   phoneNumber: string | null;
   emailContent: string | null;
-  conferenceReservations: Partial<ConferenceDateReservation[] | null>;
+  conferenceReservations: ConferenceDateReservation[];
 }
 
 export interface ConferenceDateReservation {
-  reservationDate: Date | null;
-  numberOfAttenders: bigint | null;
-  startTime: Date | null;
-  endTime: Date | null;
+  reservationDate: Date;
+  numberOfAttenders: bigint;
+  startTime: Date;
+  endTime: Date;
 }

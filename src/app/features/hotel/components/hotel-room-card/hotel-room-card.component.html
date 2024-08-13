@@ -11,19 +11,20 @@
       <mat-card-title (click)="viewMoreClicked.emit()" class="card-title">
         <h3>{{ room.name }}</h3>
       </mat-card-title>
-      <button mat-ripple class="policy">
+      <button mat-ripple class="policy"
+              (click)="policyClicked.emit()">
         <mat-icon>info</mat-icon>
         <p>Policy</p>
       </button>
       <mat-card-subtitle class="room-description"
-        >{{ room.shortDescription }}
+      >{{ room.shortDescription }}
       </mat-card-subtitle>
     </div>
 
     <mat-card-content>
       <div class="facilities">
         <mat-icon *ngFor="let facility of room.facilities"
-          >{{ facility.iconName }}
+        >{{ facility.iconName }}
         </mat-icon>
       </div>
       <button
@@ -34,12 +35,13 @@
         More Details
       </button>
 
-      <hr />
+      <hr/>
       <div class="room-capacity">
         {{ room.totalCapacity }}
         <mat-icon>person</mat-icon>
       </div>
-      <button mat-ripple class="policy">
+      <button mat-ripple class="policy"
+              (click)="policyClicked.emit()">
         <mat-icon>info</mat-icon>
         <p>Policy</p>
       </button>
