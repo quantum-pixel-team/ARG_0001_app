@@ -20,12 +20,14 @@
   </div>
   <div class="center">
     <img
-      ngSrc="A6.jpg?format=compress"
+      [ngSrc]="'A6.jpg?format=compress'"
       sizes="80vw"
-      fill
+      fill=""
       ngSrcset="300w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w, 1500w,1700w, 1980w"
       priority="true"
+      loading="eager"
       alt="Aragosta Hotel & Restaurant"
+      rel="preload"
     />
   </div>
 </div>
