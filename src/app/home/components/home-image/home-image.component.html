@@ -1,12 +1,14 @@
 <div class="container" [ngClass]="{ mobile: (isHandset$ | async) }">
   <img
     class="home-image"
-    [ngSrc]="'A1.jpg?format=compress'"
+    [ngSrc]="'A1.jpg'"
     alt="home-image"
     [height]="1016"
     [width]="1920"
     [priority]="true"
-    sizes="100vw"
+    loading="eager"
+    sizes="70vw"
+    ngSrcset="128w, 256w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w"
   />
   <h1 class="text-overlay">
     Aragosta <br />
