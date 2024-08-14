@@ -108,6 +108,7 @@ export class RestaurantReservationComponent implements OnInit {
         })
         .subscribe({
           next: () => {
+
             this._snackBar.open('Reservation send successfully.', 'ok', {
               duration: 4_000,
             });
