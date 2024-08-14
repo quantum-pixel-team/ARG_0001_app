@@ -117,7 +117,6 @@ export class HotelReservationContainerComponent
       .pipe(takeUntil(this.unsubscribe$))
       .subscribe((event) => {
         this.queryParams.language = event.code;
-        console.log('Language changed');
         this.fetchRooms();
       });
 
@@ -128,7 +127,6 @@ export class HotelReservationContainerComponent
         distinctUntilChanged(),
       )
       .subscribe((filters) => {
-        console.debug('Filters changed!');
         this.onFiltersChanged(filters);
       });
   }

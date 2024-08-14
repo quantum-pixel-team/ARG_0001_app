@@ -32,7 +32,7 @@ export class HotelFiltersComponent implements OnInit {
     });
 
     this.sortForm = this.fb.group({
-      sortOrder: ['ASC'],
+      sortOrder: null,
     });
 
     this.priceForm.valueChanges.subscribe(() => this.onSelectionChange());
