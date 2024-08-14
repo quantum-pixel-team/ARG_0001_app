@@ -9,7 +9,7 @@ import {
 import { AppEvent } from '../../interfaces/app-event';
 
 import { EventHttpService } from '../../services/event-http.service';
-import { map, window } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Page } from '../../../../shared/interfaces/page';
 import { PageEvent } from '@angular/material/paginator';
 import { LanguageService } from '../../../../shared/services/language.service';
