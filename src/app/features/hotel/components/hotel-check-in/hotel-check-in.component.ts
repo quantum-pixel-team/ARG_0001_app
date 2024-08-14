@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl } from '@angular/forms';
 import { BookNowFilters } from '../../interfaces/HotelFilters';
 import { Observable } from 'rxjs';
@@ -10,25 +10,25 @@ import { map, shareReplay } from 'rxjs/operators';
   templateUrl: './hotel-check-in.component.html',
   styleUrl: './hotel-check-in.component.scss',
 })
-export class HotelCheckInComponent {
+export class HotelCheckInComponent implements OnInit {
   @Output() $bookNowFiltersEvent = new EventEmitter<BookNowFilters>();
-  protected isCheckInDateNull = true;
-  bookNowFiltersEvent: BookNowFilters;
+  bookNowFiltersEvent!: BookNowFilters;
+  @Input() bookNowFiltersEventInput!: BookNowFilters;
+
   bookingForm = this.fb.group({
     age: this.fb.array([]),
   });
+
   constructor(
     private breakpointObserver: BreakpointObserver,
     private fb: FormBuilder,
-  ) {
-    this.bookNowFiltersEvent = {
-      numberOfRooms: 1,
-      numberOfAdults: 1,
-      numberOfChildren: 0,
-      checkInDate: new Date(),
-      checkOutDate: new Date(),
-      childrenAge: [],
-    };
+  ) {}
+
+  ngOnInit(): void {
+    this.bookNowFiltersEvent = structuredClone(this.bookNowFiltersEventInput);
+    for (let i = 0; i < this.bookNowFiltersEventInput.numberOfChildren; i++) {
+      this.addChild();
+    }
   }
 
   get age(): FormArray {
@@ -39,9 +39,11 @@ export class HotelCheckInComponent {
     this.bookNowFiltersEvent.childrenAge.push(0);
     this.bookingForm.controls.age.push(new FormControl(0));
   }
+
   addAge(index: number, age: number) {
     this.bookNowFiltersEvent.childrenAge[index] = age;
   }
+
   removeChild(index: number) {
     this.age.removeAt(index);
   }
@@ -70,17 +72,19 @@ export class HotelCheckInComponent {
       this.addAge(index, quantity);
     }
   }
+
   onCheckInClicked() {
-    this.$bookNowFiltersEvent.emit(this.bookNowFiltersEvent);
+    this.$bookNowFiltersEvent.emit(structuredClone(this.bookNowFiltersEvent));
   }
+
   onCheckInChanged($event: Date) {
-    this.isCheckInDateNull = false;
     this.bookNowFiltersEvent.checkInDate = $event;
   }
+
   onCHeckOutChanged($event: Date) {
-    this.isCheckInDateNull = false;
     this.bookNowFiltersEvent.checkOutDate = $event;
   }
+
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe([Breakpoints.XSmall, '(max-width: 700px)'])
     .pipe(

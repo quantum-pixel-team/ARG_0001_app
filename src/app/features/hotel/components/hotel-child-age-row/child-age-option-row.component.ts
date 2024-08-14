@@ -12,7 +12,6 @@ export class ChildAgeOptionRowComponent {
 
   decrementQuantity() {
     this.quantity -= 1;
-    console.log('somes');
     this.quantityChange.emit(this.quantity);
   }
 

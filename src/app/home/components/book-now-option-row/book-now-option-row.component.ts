@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-book-now-option-row',
@@ -6,8 +6,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './book-now-option-row.component.scss',
 })
 export class BookNowOptionRowComponent {
-  quantity = 0;
+  @Input() quantity = 0;
+
   @Input() label!: string;
+  @Input() minQuantity!: number;
   @Output() quantityChange = new EventEmitter<number>();
 
   decrementQuantity() {

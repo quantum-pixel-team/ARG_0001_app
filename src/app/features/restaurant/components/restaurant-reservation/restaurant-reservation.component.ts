@@ -114,7 +114,7 @@ export class RestaurantReservationComponent implements OnInit {
             this._snackBar.open('Something went wrong.', 'ok', {
               duration: 4_000,
             });
-            console.log(error);
+            console.debug(error);
           },
         });
     } else {

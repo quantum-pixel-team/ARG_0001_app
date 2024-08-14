@@ -1,5 +1,5 @@
 <swiper-container init="false" #swiper>
-  <swiper-slide *ngFor="let image of room.imagesUrl">
+  <swiper-slide lazy="true"  *ngFor="let image of room.imagesUrl">
     <img
       loading="lazy"
       [alt]="room.name"

@@ -19,7 +19,8 @@
         <mat-icon>person</mat-icon>
       </div>
       <div class="policy">
-        <button mat-button color="primary">
+        <button mat-button color="primary"
+        (click)="policyClicked.emit(room)">
           Policy
           <mat-icon iconPositionEnd>info</mat-icon>
         </button>

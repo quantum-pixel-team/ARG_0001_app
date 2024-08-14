@@ -4,7 +4,7 @@
     mat-icon-button
     color="primary"
     class="option-remove"
-    [disabled]="quantity <= 0"
+    [disabled]="quantity <= minQuantity"
     (click)="decrementQuantity()"
   >
     <mat-icon>remove_circle</mat-icon>
