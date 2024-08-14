@@ -1,6 +1,6 @@
 import {
   Component,
-  EventEmitter,
+  EventEmitter, Input,
   OnInit,
   Output,
   ViewEncapsulation,
@@ -24,19 +24,20 @@ export class HotelBookNowButtonMobileComponent implements OnInit {
 
   @Output() checkInDateMobile = new EventEmitter<Date>();
   @Output() checkOutDateMobile = new EventEmitter<Date>();
+  @Input() checkInDate!: Date;
+  @Input() checkOutDate?: Date;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.dateRangeForms = this.fb.group({
-      checkInDateMobile: [null, [Validators.required]],
-      checkOutDateMobile: [null, [Validators.required]],
+      checkInDateMobile: [this.checkInDate, [Validators.required]],
+      checkOutDateMobile: [this.checkOutDate, [Validators.required]],
     });
 
     this.dateRangeForms
       .get('checkInDateMobile')
       ?.valueChanges.subscribe((value) => {
-        console.log(value);
 
         if (value) {
           this.checkInDateMobile.emit(value);

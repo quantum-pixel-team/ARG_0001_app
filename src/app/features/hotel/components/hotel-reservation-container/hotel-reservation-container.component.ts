@@ -26,10 +26,17 @@ import {
 import { map, shareReplay } from 'rxjs/operators';
 import { HotelFiltersDialogComponent } from '../hotel-filters-dialog/hotel-filters-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-import { getDifferenceInDays } from '../../../../shared/utils/DateTime';
+import {
+  addDays,
+  getDifferenceInDays,
+} from '../../../../shared/utils/DateTime';
 import { Page } from '../../../../shared/interfaces/page';
 import { PageEvent } from '@angular/material/paginator';
 import { LanguageService } from '../../../../shared/services/language.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../../states/app.state';
+import * as HotelSelector from '../../store/hotel.selector';
+import * as HotelAction from '../../store/hotel.action';
 
 @Component({
   selector: 'app-hotel-reservation-container',
@@ -64,17 +71,19 @@ export class HotelReservationContainerComponent
     { name: 'Available', value: false },
   ];
   filterChanged = new EventEmitter<HotelFilters>();
+  bookNowFilters$: Observable<BookNowFilters>;
 
   constructor(
     private httpService: HotelHttpService,
     readonly languageService: LanguageService,
     private breakpointObserver: BreakpointObserver,
+    private store: Store<AppState>,
   ) {
     this.queryParams = {
       pageIndex: 0,
       pageSize: 5,
-      checkInDate: this.addDays(new Date(), 1),
-      checkOutDate: this.addDays(new Date(), 2),
+      checkInDate: addDays(new Date(), 1),
+      checkOutDate: addDays(new Date(), 2),
       numberOfRooms: 1,
       numberOfAdults: 1,
       available: false,
@@ -86,6 +95,15 @@ export class HotelReservationContainerComponent
       roomFacilities: [],
       sort: null,
     };
+
+    this.bookNowFilters$ = this.store.select(HotelSelector.selectHotelFilters);
+
+    this.bookNowFilters$.pipe(takeUntil(this.unsubscribe$)).subscribe({
+      next: (value) => {
+        this.queryParams = { ...this.queryParams, ...value };
+        this.fetchRooms();
+      },
+    });
   }
 
   ngOnInit(): void {
@@ -118,11 +136,6 @@ export class HotelReservationContainerComponent
     this.unsubscribe$.complete();
   }
 
-  addDays(date: Date, days: number): Date {
-    date.setDate(date.getDate() + days);
-    return date;
-  }
-
   private fetchRooms() {
     this.roomsPage = undefined;
     this.error = undefined;
@@ -150,13 +163,8 @@ export class HotelReservationContainerComponent
     this.fetchRooms();
   }
 
-  onPersonFilterChanged(filter: BookNowFilters) {
-    this.queryParams.checkInDate = filter.checkInDate;
-    this.queryParams.checkOutDate = filter.checkOutDate;
-    this.queryParams.numberOfAdults = filter.numberOfAdults;
-    this.queryParams.numberOfRooms = filter.numberOfRooms;
-    this.queryParams.childrenAges = filter.childrenAge;
-    this.fetchRooms();
+  onPersonFilterChanged(bookNowFilters: BookNowFilters) {
+    this.store.dispatch(HotelAction.changeBookNowFilter({ bookNowFilters }));
   }
 
   openFilterDialog(): void {

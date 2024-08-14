@@ -10,16 +10,17 @@
       <app-home-book-now-date-picker
         label="Check-in"
         [minDate]="currentDate"
-        [selectedDate]="checkinDate"
-        (dateChange)="onCheckinDateChanged()"
+        [selectedDate]="filters.checkInDate"
+        (dateChange)="onCheckinDateChanged($event)"
         [isMobileWidth$]="isMobileWidth$"
       ></app-home-book-now-date-picker>
       <div class="vl"></div>
 
       <app-home-book-now-date-picker
         label="Check-out"
-        [minDate]="addDays(checkinDate, 1)"
+        [minDate]="addDays(filters.checkInDate, 1)"
         [selectedDate]="checkoutDate"
+        (dateChange)="onCheckinOutChanged($event)"
         [isMobileWidth$]="isMobileWidth$"
       ></app-home-book-now-date-picker>
 
@@ -28,13 +29,14 @@
         <button [matMenuTriggerFor]="menu">
           <div class="option-persons-container">
             <div class="option-persons-label">{{ "HOME.Book_Now.Persons" | translate }}</div>
-            <div class="option-persons-number">{{ children + adults }}</div>
+            <div class="option-persons-number">{{ filters.numberOfChildren + filters.numberOfAdults }}</div>
             <mat-icon class="option-persons-drop-down"
-              >arrow_drop_down</mat-icon
+            >arrow_drop_down
+            </mat-icon
             >
             <mat-icon class="option-persons-icon">person</mat-icon>
           </div>
-          <div class="rooms">{{ rooms }} Room</div>
+          <div class="rooms">{{ filters.numberOfRooms }} Room</div>
         </button>
         <mat-menu #menu="matMenu">
           <mat-card-content
@@ -42,17 +44,23 @@
             (click)="$event.stopPropagation()"
           >
             <app-book-now-option-row
-              (quantityChange)="onQuantityChange($event, 'adults')"
+              (quantityChange)="onAdultsChanged($event)"
+              [minQuantity]="1"
+              [quantity]="filters.numberOfAdults"
               label="Adults"
             ></app-book-now-option-row>
             <mat-divider></mat-divider>
             <app-book-now-option-row
-              (quantityChange)="onQuantityChange($event, 'children')"
+              (quantityChange)="onChildrenChanged($event)"
+              [minQuantity]="0"
+              [quantity]="filters.numberOfChildren"
               label="Children"
             ></app-book-now-option-row>
             <mat-divider></mat-divider>
             <app-book-now-option-row
-              (quantityChange)="onQuantityChange($event, 'rooms')"
+              (quantityChange)="onRoomsChanged($event)"
+              [minQuantity]="1"
+              [quantity]="filters.numberOfRooms"
               label="Rooms"
             ></app-book-now-option-row>
           </mat-card-content>

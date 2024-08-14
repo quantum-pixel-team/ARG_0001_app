@@ -3,6 +3,7 @@
 <div #bookNow>
   <app-hotel-check-in
     ($bookNowFiltersEvent)="onPersonFilterChanged($event)"
+    [bookNowFiltersEventInput]="$any(bookNowFilters$ | async)"
   ></app-hotel-check-in>
 </div>
 

@@ -1,6 +1,6 @@
 import {
   Component,
-  EventEmitter,
+  EventEmitter, Input,
   OnInit,
   Output,
   ViewEncapsulation,
@@ -22,15 +22,17 @@ export class HotelDateButtonComponent implements OnInit {
     this.today.getDate() + 1,
   );
 
-  @Output() checkInDate = new EventEmitter<Date>();
-  @Output() checkOutDate = new EventEmitter<Date>();
+  @Output() checkInDateChange = new EventEmitter<Date>();
+  @Output() checkOutDateChange = new EventEmitter<Date>();
+  @Input() checkInDate!: Date;
+  @Input() checkOutDate!: Date;
 
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.dateRangeFormDesktop = this.fb.group({
-      checkInDateDesktop: [null, [Validators.required]],
-      checkOutDateDesktop: [null, [Validators.required]],
+      checkInDateDesktop: [this.checkInDate, [Validators.required]],
+      checkOutDateDesktop: [this.checkOutDate, [Validators.required]],
     });
 
     this.dateRangeFormDesktop
@@ -38,7 +40,7 @@ export class HotelDateButtonComponent implements OnInit {
       ?.valueChanges.subscribe((value) => {
         if (value) {
           this.today = new Date(value);
-          this.checkInDate.emit(value);
+          this.checkInDateChange.emit(value);
         }
       });
 
@@ -46,7 +48,7 @@ export class HotelDateButtonComponent implements OnInit {
       .get('checkOutDateDesktop')
       ?.valueChanges.subscribe((value) => {
         if (value) {
-          this.checkOutDate.emit(value);
+          this.checkOutDateChange.emit(value);
         }
       });
   }
