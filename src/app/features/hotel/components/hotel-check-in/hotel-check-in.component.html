@@ -4,8 +4,10 @@
       <div class="check-in-range">
         <h6>Check-in - Check-out</h6>
         <app-hotel-date-button
-          (checkInDate)="onCheckInChanged($event)"
-          (checkOutDate)="onCHeckOutChanged($event)"
+          (checkInDateChange)="onCheckInChanged($event)"
+          (checkOutDateChange)="onCHeckOutChanged($event)"
+          [checkInDate]="bookNowFiltersEventInput.checkInDate"
+          [checkOutDate]="bookNowFiltersEventInput.checkOutDate"
         ></app-hotel-date-button>
       </div>
 
@@ -64,8 +66,6 @@
           mat-button
           (click)="onCheckInClicked()"
           class="booking-button"
-          [disabled]="isCheckInDateNull"
-          [class.book-now-disabled]="isCheckInDateNull"
         >
           Check
         </button>
@@ -76,6 +76,8 @@
         <app-hotel-date-button-mobile
           (checkInDateMobile)="onCheckInChanged($event)"
           (checkOutDateMobile)="onCHeckOutChanged($event)"
+          [checkInDate]="bookNowFiltersEventInput.checkInDate"
+          [checkOutDate]="bookNowFiltersEventInput.checkOutDate"
         ></app-hotel-date-button-mobile>
       </div>
 
@@ -132,8 +134,6 @@
           mat-button
           (click)="onCheckInClicked()"
           class="booking-button"
-          [disabled]="isCheckInDateNull"
-          [class.book-now-disabled]="isCheckInDateNull"
         >
           Check
         </button>

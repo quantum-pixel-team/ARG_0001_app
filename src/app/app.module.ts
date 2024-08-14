@@ -1,4 +1,4 @@
-import { NgModule, OnDestroy } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,13 +8,11 @@ import { NgOptimizedImage } from '@angular/common';
 
 import { HomeModule } from './home/components/home.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  TranslateLoader,
-  TranslateModule,
-  TranslateService,
-} from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { moduleHttpLoaderFactory } from './core/config/translate-http-loader-factory';
 import { SharedModule } from './shared/modules/shared.module';
+import { StoreModule } from '@ngrx/store';
+import { hotelReducer } from './features/hotel/store/hotel.reducer';
 
 const app_modules = [CoreModule, SharedModule, HomeModule];
 
@@ -35,9 +33,9 @@ const app_modules = [CoreModule, SharedModule, HomeModule];
       },
       isolate: false,
     }),
+    StoreModule.forRoot({ hotel: hotelReducer }, {}),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
