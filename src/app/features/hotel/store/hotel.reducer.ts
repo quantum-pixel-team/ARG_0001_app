@@ -14,7 +14,7 @@ export const initialHotelState: HotelState = {
     numberOfChildren: 0,
     checkInDate: addDays(new Date(), 1),
     checkOutDate: addDays(new Date(), 2),
-    childrenAge: [],
+    childrenAges: [],
   },
 };
 export const hotelReducer = createReducer(

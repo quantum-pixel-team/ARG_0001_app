@@ -36,12 +36,12 @@ export class HotelCheckInComponent implements OnInit {
   }
 
   addChild() {
-    this.bookNowFiltersEvent.childrenAge.push(0);
+    this.bookNowFiltersEvent.childrenAges.push(0);
     this.bookingForm.controls.age.push(new FormControl(0));
   }
 
   addAge(index: number, age: number) {
-    this.bookNowFiltersEvent.childrenAge[index] = age;
+    this.bookNowFiltersEvent.childrenAges[index] = age;
   }
 
   removeChild(index: number) {
