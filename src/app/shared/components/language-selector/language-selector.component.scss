@@ -81,5 +81,5 @@ mat-option.lang-option {
   }
 }
 #cdk-overlay-0.cdk-overlay-pane:has(> #language-panel) {
-  width: 80px !important;
+  width: fit-content !important;
 }
