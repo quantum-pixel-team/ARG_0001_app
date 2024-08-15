@@ -37,6 +37,7 @@ import { Store } from '@ngrx/store';
 import { AppState } from '../../../../states/app.state';
 import * as HotelSelector from '../../store/hotel.selector';
 import * as HotelAction from '../../store/hotel.action';
+import { Meta, Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-hotel-reservation-container',
@@ -78,6 +79,8 @@ export class HotelReservationContainerComponent
     readonly languageService: LanguageService,
     private breakpointObserver: BreakpointObserver,
     private store: Store<AppState>,
+    private titleService: Title,
+    private metaTagService: Meta,
   ) {
     this.queryParams = {
       pageIndex: 0,
@@ -107,9 +110,37 @@ export class HotelReservationContainerComponent
   }
 
   ngOnInit(): void {
+
+    const title = 'Aragosta Hotel & Restaurant - Book Now';
+    const ogTitle = 'Welcome to Aragosta Hotel & Restaurant in Durres  - Book Now';
+    this.titleService.setTitle(title);
+
+    const keywords =
+      'hotel, reservation, luxury accommodations, Durres,durres, booking, travel, vacation, hotel deals, hotel near me, ' +
+      'Hotel, Serives, book, free parking, private beach, modern amenities, hotels, beach, hotel durres, booking, hotels near me,' +
+      ' cheap hotels, aragosta hotel, hotel rooms, booking hotel, hotels in durres, hotel near beach';
+    const description =
+      "Experience luxury and comfort at Hotel Aragosta Hotel & Restaurant with our elegantly designed rooms and effortless reservation process." +
+      " Book your stay today for a perfect blend of relaxation and sophistication.";
+    const ogDescription = 'Discover Aragosta Hotel & Restaurant and experience top-notch accommodations and service.' +
+      ' Explore our rooms, amenities, and special offers to plan your next stay. Book now for a memorable and luxurious stay in Durres.';
+    this.metaTagService.addTags([
+      { name: 'keywords', content: keywords },
+      { name: 'description', content: description },
+      { property: 'og:title', content: ogTitle },
+      { property: 'og:description', content: ogDescription },
+      {
+        property: 'og:image',
+        content: 'https://aragosta-test.imgix.net/A6.jpg?format=compress&auto=format&w=1700',
+      },
+      { property: 'og:url', content: 'aragosta.al/hotel' },
+    ]);
+
     this.fetchRooms();
 
     this.updateFilterOptions();
+
+
   }
 
   ngAfterViewInit() {
