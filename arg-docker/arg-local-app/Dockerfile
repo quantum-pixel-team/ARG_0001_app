@@ -1,6 +1,6 @@
 FROM nginx:alpine
-COPY ../../config/dev/nginx.conf /etc/nginx/conf.d/default.conf
-
+COPY ../../config/dev/nginx.conf /etc/nginx/nginx.conf
+COPY ../../config/dev/default.conf /etc/nginx/conf.d/default.conf
 
 
 # Use the following commands to build the image and run the container (run from the root folder)
