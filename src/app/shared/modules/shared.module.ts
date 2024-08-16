@@ -17,7 +17,6 @@ import { FooterComponent } from '../components/footer/footer.component';
 
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { TranslateModule } from '@ngx-translate/core';
-import { SetPriorityOnViewDirective } from '../directives/set-priority-on-view.directive';
 
 @NgModule({
   declarations: [
@@ -25,13 +24,11 @@ import { SetPriorityOnViewDirective } from '../directives/set-priority-on-view.d
     LanguageSelectorComponent,
     ServerErrorComponent,
     FooterComponent,
-    SetPriorityOnViewDirective,
   ],
   exports: [
     MainNavComponent,
     ServerErrorComponent,
     FooterComponent,
-    SetPriorityOnViewDirective,
   ],
   imports: [
     CommonModule,

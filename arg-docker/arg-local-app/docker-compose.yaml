@@ -5,11 +5,32 @@ services:
       dockerfile: arg-docker/arg-local-app/Dockerfile
     volumes:
       - ../../dist/aragosta-app:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - /etc/ssl/cert.pem:/etc/nginx/certs/dhparam.pem
+      - /etc/ssl/key.pem:/etc/nginx/certs/default.key
+      - ./nginx/vhost:/etc/nginx/vhost.d
+    environment:
+      VIRTUAL_HOST: aragosta.al,www.aragosta.al
+      LETSENCRYPT_HOST: aragosta.al,www.aragosta.al
     ports:
       - "80:80"
       - "443:443"
     networks:
       - arg
+
+  acme-companion:
+    container_name: acme-companion
+    image: nginxproxy/acme-companion
+    restart: unless-stopped
+    volumes_from:
+      - app
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./nginx/acme:/etc/acme.sh
+    #    env_file:
+    #      - .env
+    environment:
+      DEFAULT_EMAIL: certbot@aragosta.al
 
   postgres:
     image: "postgres:16.1-alpine"
