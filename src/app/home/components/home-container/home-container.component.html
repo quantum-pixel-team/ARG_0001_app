@@ -6,8 +6,12 @@
 ></app-home-book-now>
 <app-welcome-page></app-welcome-page>
 <app-home-service></app-home-service>
-<app-home-hotel></app-home-hotel>
+<app-home-hotel
+  [rooms]="rooms"
+></app-home-hotel>
 <app-home-restaurant></app-home-restaurant>
 <app-home-conference></app-home-conference>
-<app-home-events></app-home-events>
+<app-home-events
+  [events]="events"
+></app-home-events>
 <app-home-location (locationClicked)="onLocationClicked()"></app-home-location>

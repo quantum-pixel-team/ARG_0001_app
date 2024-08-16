@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  afterNextRender, afterRender,
+  AfterRenderRef,
+  AfterViewInit,
+  Component,
+  OnInit,
+} from '@angular/core';
 import { MenuItem } from '../../interfaces/menu-item';
 import { HomeHttpService } from '../../services/home-http.service';
 import { Observable } from 'rxjs';
