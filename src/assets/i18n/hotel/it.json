@@ -1,0 +1,46 @@
+{
+  "Adult": "Adulto",
+  "Adults": "Adulti",
+  "Children": "Bambini",
+  "Child": "Bambino",
+  "Age": "Età",
+  "Rooms": "Camere",
+  "Check": "Verifica",
+  "Filters" : {
+    "Filter_by": "Filtra per",
+    "Top_Filters": "Filtri principali",
+    "Double_room": "Camera doppia",
+    "Twin_room": "Camera twin",
+    "Single_room": "Camera singola",
+    "Sea_view": "Vista mare",
+    "Balcony": "Balcone",
+    "Available": "Disponibile",
+    "Budget": "Budget"
+  },
+  "Sorting": {
+    "Sort_by": "Ordina per",
+    "Price_High_to_Low": "Prezzo dal più alto al più basso",
+    "Price_Low_to_High": "Prezzo dal più basso al più alto"
+  },
+  "No_more_rooms": "Non ci sono più camere",
+  "Room_capacity": "LA CAPACITÀ DELLA CAMERA NON È SUFFICIENTE PER TUTTI GLI OSPITI",
+  "Minimum_nights": "Richiede un soggiorno minimo di 2 notti",
+  "UNAVALIABLE": "NON DISPONIBILE",
+  "Policy": {
+    "Policy": "Politica",
+    "Privacy_Policy": "Politica sulla privacy",
+    "Cancellation": "Cancellazione",
+    "Cancellation_Desc": "15 giorni prima della data prevista di check-in: Nessuna penale di cancellazione verrà addebitata. Entro 15 giorni dalla data prevista di check-in: Il 50% del costo totale della prenotazione verrà addebitato come penale di cancellazione. Entro 7 giorni dalla data prevista di check-in: Il 100% del costo totale della prenotazione verrà addebitato come penale di cancellazione.",
+    "Group_Bookings": "Prenotazioni di gruppo",
+    "Group_Bookings_Desc": "Per prenotazioni di gruppo di 5 camere o più, potrebbe essere applicata una politica di cancellazione separata. Si prega di contattare il nostro team di prenotazioni per ulteriori informazioni.",
+    "Early_Departure": "Partenza anticipata",
+    "Early_Departure_Desc": "In caso di partenza anticipata, gli ospiti saranno addebitati per l'intero soggiorno prenotato come originariamente previsto.",
+    "Policy_Modifications_NoShows": "Politica per modifiche e mancata presentazione",
+    "Modifications": "Modifiche",
+    "Modifications_Desc": "Qualsiasi modifica alla prenotazione, come cambiamenti alle date di check-in o check-out, tipo di camera o numero di ospiti, è soggetta a disponibilità e potrebbe comportare costi aggiuntivi. Si consiglia agli ospiti di informare l'hotel il prima possibile per qualsiasi modifica alla prenotazione.",
+    "NoShow": "Mancata presentazione",
+    "NoShow_Desc": "Una 'mancata presentazione' è definita come un ospite che non arriva nella data prevista di check-in senza preavviso di cancellazione o modifica. In caso di mancata presentazione, l'hotel si riserva il diritto di addebitare l'intero importo della prenotazione o applicare le penali di cancellazione come da politica di cancellazione.",
+    "Please_note": "Si prega di notare",
+    "Please_note_Desc": "La politica di cancellazione e modifica può variare in base al piano tariffario o all'offerta promozionale selezionata al momento della prenotazione. È importante rivedere la politica specifica applicabile alla vostra prenotazione prima di confermare. Qualsiasi cancellazione o modifica deve essere richiesta direttamente all'hotel tramite le informazioni di contatto fornite o il sistema di gestione delle prenotazioni online. L'hotel si riserva il diritto di modificare i termini e le condizioni della politica di cancellazione senza preavviso. Se avete domande o necessitate di ulteriori chiarimenti riguardo alla nostra politica di cancellazione, non esitate a contattare il nostro team di prenotazioni."
+  }
+}

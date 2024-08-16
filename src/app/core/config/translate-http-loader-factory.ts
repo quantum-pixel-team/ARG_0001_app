@@ -15,6 +15,7 @@ export function moduleHttpLoaderFactory(http: HttpClient) {
       // final url: ./assets/i18n/en.json
       { baseTranslateUrl },
       { baseTranslateUrl, moduleName: 'home' },
+      { baseTranslateUrl, moduleName: 'hotel' },
       { baseTranslateUrl, moduleName: 'contact-us' },
       { baseTranslateUrl, moduleName: 'conference' },
       { baseTranslateUrl, moduleName: 'restaurant' },
