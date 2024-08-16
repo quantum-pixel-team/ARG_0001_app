@@ -21,8 +21,4 @@ import {SharedModule} from "../../../../shared/modules/shared.module";
 export class HotelRoomCardImagesComponent {
   @Input() room!: HotelRoom;
   @Output() imageClicked = new EventEmitter();
-
-  onElementVisible($event: boolean) {
-
-  }
 }
