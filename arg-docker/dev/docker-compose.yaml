@@ -6,7 +6,9 @@ services:
       - "4201:443"
     networks:
       - arg
-
+    volumes:
+      - ${PUBLIC_KEY}:/etc/ssl/aragosta.crt:r
+      - ${PRIVATE_KEY}:/etc/ssl/aragosta.key:r
 networks:
   arg:
     driver: bridge
