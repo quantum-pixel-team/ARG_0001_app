@@ -2,8 +2,8 @@ services:
   app:
     image: blou5/arg-app:latest
     ports:
-      - "4200:80"
-      - "4201:443"
+      - "80:80"
+      - "443:443"
     networks:
       - arg
     volumes:
