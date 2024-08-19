@@ -38,7 +38,7 @@ jobs:
       deploy-script: "
         cd /home/arg/app &&
         docker compose pull &&
-        docker compose up -d  "
+        docker compose up app -d  "
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
@@ -59,7 +59,7 @@ jobs:
       deploy-script: "
         cd /home/arg/app &&
         docker compose pull &&
-        docker compose up -d  "
+        docker compose up app -d  "
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
