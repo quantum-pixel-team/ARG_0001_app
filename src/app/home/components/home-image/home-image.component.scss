@@ -3,8 +3,6 @@ $bookNowHalfHeight: var(--home-book-now-half-height);
   position: relative;
   height: 100vh;
 
-  font-family: times, Hero New, serif, Helvetica Neue, sans-serif;
-
   .spacer {
     height: $bookNowHalfHeight;
   }
@@ -29,7 +27,7 @@ $bookNowHalfHeight: var(--home-book-now-half-height);
     top: 50%;
     transform: translateY(-100%);
     width: 100%;
-    font-family: Inria_Serif, fantasy;
+    font-family: times, Hero New, serif, Helvetica Neue, sans-serif;
   }
 }
 
