@@ -19,6 +19,7 @@ import {
 import { RestaurantHttpService } from '../../services/restaurant-http.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { minDateRequired } from '../../../conference/validators/date-format.validators';
+import {environment} from "../../../../../environments/environment";
 
 @Component({
   selector: 'app-restaurant-reservation',
@@ -104,7 +105,7 @@ export class RestaurantReservationComponent implements OnInit {
           time: time.toISOString().split('T')[1],
           message: formValue.message,
           languageCode: 'sq',
-          to: `+355676923049`,
+          to: environment.contactPhoneNumber,
         })
         .subscribe({
           next: () => {
