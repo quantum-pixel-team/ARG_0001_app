@@ -2,11 +2,20 @@ services:
   app:
     image: blou5/arg-app:latest
     volumes:
-      - ../certbot/conf:/etc/letsencrypt
-      - ../certbot/www:/var/www/certbot
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
     ports:
       - "80:80"
       - "443:443"
+    networks:
+      - arg
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    command: certonly --webroot -w /var/www/certbot --email quantum.pixel2025@gmail.com -d aragosta.al --agree-tos
     networks:
       - arg
 

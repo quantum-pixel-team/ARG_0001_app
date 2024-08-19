@@ -21,4 +21,5 @@ interface EnvironmentBase {
   api: string;
   envName: string;
   version?: string;
+  contactPhoneNumber: string
 }

@@ -56,6 +56,11 @@ export class MainNavComponent implements OnInit {
 
   mobileNavigationLinks = [
     {
+      label: 'Home',
+      routerLink: 'home',
+      icon: 'assets/icons/navbar/home.svg',
+    },
+    {
       label: 'Hotel',
       routerLink: 'hotel',
       icon: 'assets/icons/navbar/hotel.svg',
