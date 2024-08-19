@@ -44,6 +44,7 @@ $content-height-mobile: 414px;
       font-family: Kaushan, serif;
       font-weight: 400;
       font-size: clamp(1rem, 3.5vw, 3.3rem);
+      font-style: italic;
 
       &:after {
         content: "";

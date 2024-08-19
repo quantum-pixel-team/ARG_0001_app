@@ -3,6 +3,8 @@ $bookNowHalfHeight: var(--home-book-now-half-height);
   position: relative;
   height: 100vh;
 
+  font-family: times, Hero New, serif, Helvetica Neue, sans-serif;
+
   .spacer {
     height: $bookNowHalfHeight;
   }
