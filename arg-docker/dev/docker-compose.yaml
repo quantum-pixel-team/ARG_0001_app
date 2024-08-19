@@ -1,12 +1,6 @@
 services:
   app:
     image: blou5/arg-app:latest
-    volumes:
-      - /etc/ssl/aragosta.al.csr:/etc/ssl/aragosta.al.csr
-      - /etc/ssl/aragosta.al.key:/etc/ssl/aragosta.al.key
-    environment:
-      VIRTUAL_HOST: aragosta.al,www.aragosta.al
-      LETSENCRYPT_HOST: aragosta.al,www.aragosta.al
     ports:
       - "80:80"
       - "443:443"

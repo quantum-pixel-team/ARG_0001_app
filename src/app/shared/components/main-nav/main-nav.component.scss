@@ -156,7 +156,9 @@ mat-toolbar.mobile {
     img {
       height: 15px;
     }
-
+    a.active.highlight-color {
+      color: white;
+    }
     @media (min-width: 450px) {
       $length: clamp(15px, 22px, 3.5vw);
       justify-content: center;
