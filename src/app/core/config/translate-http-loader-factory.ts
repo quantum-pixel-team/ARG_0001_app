@@ -9,12 +9,16 @@ export function moduleHttpLoaderFactory(http: HttpClient) {
 
   const options: IModuleTranslationOptions = {
     translateError: (error, path) => {
-      console.error('Oops! an error occurred during reading the translations: ', { error, path });
+      console.error(
+        'Oops! an error occurred during reading the translations: ',
+        { error, path },
+      );
     },
     modules: [
       // final url: ./assets/i18n/en.json
       { baseTranslateUrl },
       // { baseTranslateUrl, moduleName: 'home' },
+      // { baseTranslateUrl, moduleName: 'hotel' },
       // { baseTranslateUrl, moduleName: 'contact-us' },
       // { baseTranslateUrl, moduleName: 'conference' },
       // { baseTranslateUrl, moduleName: 'restaurant' },

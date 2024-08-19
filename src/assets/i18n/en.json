@@ -93,6 +93,56 @@
     "EventsHome": "Events",
     "locfooter": "Taulantia Street, Durres"
   },
+  "HOTEL": {
+    "Adult": "Adult",
+    "Adults":"Adults",
+    "Children":"Children",
+    "Child":"Child",
+    "Age":"Age",
+    "Rooms":"Rooms",
+    "Check":"Check",
+    "Filters": {
+      "Filter_by": "Filter by",
+      "Top_Filters": "Top Filters",
+      "Double_room": "Double Room",
+      "Twin_room": "Twin Room",
+      "Single_room": "Single Room",
+      "Sea_view": "Sea view",
+      "Balcony": "Balcony",
+      "Available": "Available",
+      "Budget": "Budget"
+    },
+    "Sorting": {
+      "Sort_by":"Sort by",
+      "Price_High_to_Low":"Price High to Low",
+      "Price_Low_to_High":"Price Low to High"
+    },
+    "No_more_rooms":"No more rooms",
+    "Room_capacity": "THE ROOM CAPACITY IS NOT ENOUGH FOR ALL GUESTS",
+    "Minimum_nights": "Requires a minimum stay of 2 nights",
+    "UNAVALIABLE": "UNAVALIABLE",
+    "Policy":
+    {
+      "Policy":"Policy",
+      "Privacy_Policy": "Privacy & Policy",
+      "Cancellation":  "Cancellation",
+      "Cancellation_Desc": "15 days prior to the scheduled check-in date: No cancellation fees will be charged.Within 15 days of the scheduled check-in date: 50% of the total reservation cost will be charged as a cancellation fee. Within 7 days of the scheduled check-in date: 100% of the total reservation cost will be charged as a cancellation fee.",
+
+      "Group_Bookings":"Group_Bookings",
+
+      "Group_Bookings_Desc": "For group bookings of 5 rooms or up, a separate cancellation policy may apply. Please contact our reservations team for more information.",
+
+      "Early_Departure":"Early_Departure",
+      "Early_Departure_Desc": "In, the event of early departure, guests will be charged for the full reserved stay as originally booked.",
+      "Policy_Modifications_NoShows": "Policy for Modifications and No-Shows",
+      "Modifications":"Modifications",
+      "Modifications_Desc":"Any changes or modifications to the reservation, such as changes to the check-in or check-out dates, room type, or number of guests, are subject to availability and may result in additional charges. Guests are advised to notify the hotel as soon as possible for any modifications to their reservation.",
+      "NoShow":"NoShow",
+      "NoShow_Desc":"A, 'no-show' is defined as a guest who fails to arrive on the scheduled check-in date without prior notice of cancellation or modification. In the case of a no-show, the hotel reserves the right to charge the full amount of the reservation or apply cancellation fees as per the cancellation policy.",
+      "Please_note":"Please note",
+      "Please_note_Desc": "The cancellation and modification policy may vary depending on the rate plan or promotional offer selected at the time of booking. It is important to review the specific policy applicable to your reservation before confirming. Any cancellations or modifications should be requested directly with the hotel through the provided contact information or online reservation management system. The hotel reserves the right to amend the cancellation and policy terms and conditions without prior notice. If you have any questions or need further clarification regarding our cancellation and policy, please feel free to contact our reservations team."
+    }
+  },
   "RESTAURANT": {
     "Restaurant": "Restaurant",
     "Resdesc-1": "Since 1995, savor the finest fish and Italian cuisine ",
