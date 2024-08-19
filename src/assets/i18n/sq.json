@@ -93,6 +93,52 @@
     "EventsHome": "Evente",
     "locfooter": "Rruga Taulantia, Durres"
   },
+  "HOTEL": {
+    "Adult": "I rritur",
+    "Adults": "Të rritur",
+    "Children": "Fëmijë",
+    "Child": "Fëmijë",
+    "Age": "Mosha",
+    "Rooms": "Dhoma",
+    "Check": "Kontrollo",
+    "Filters": {
+      "Filter_by": "Filtro sipas",
+      "Top_Filters": "Filtra kryesore",
+      "Double_room": "Dhoma dyshe",
+      "Twin_room": "Dhoma binjake",
+      "Single_room": "Dhoma teke",
+      "Sea_view": "Pamje nga deti",
+      "Balcony": "Ballkon",
+      "Available": "Në dispozicion",
+      "Budget": "Buxheti"
+    },
+    "Sorting": {
+      "Sort_by": "Rendit sipas",
+      "Price_High_to_Low": "Çmimi nga i larti në të ulëtin",
+      "Price_Low_to_High": "Çmimi nga i ulti në të lartin"
+    },
+    "No_more_rooms": "Nuk ka më dhoma",
+    "Room_capacity": "KAPACITETI I DHOMËS NUK MJAFTON PËR TË GJITHË MYSAFIRËT",
+    "Minimum_nights": "Kërkohet një qëndrim minimal prej 2 netësh",
+    "UNAVALIABLE": "E PADISPONUESHME",
+    "Policy": {
+      "Policy": "Politikë",
+      "Privacy_Policy": "Politika e Privatësisë",
+      "Cancellation": "Anullimi",
+      "Cancellation_Desc": "15 ditë para datës së parashikuar të regjistrimit: Nuk do të aplikohen tarifa për anulim. Brenda 15 ditëve nga data e parashikuar e regjistrimit: 50% e kostos totale të rezervimit do të aplikohet si tarifë anulimi. Brenda 7 ditëve nga data e parashikuar e regjistrimit: 100% e kostos totale të rezervimit do të aplikohet si tarifë anulimi.",
+      "Group_Bookings": "Rezervime në Grup",
+      "Group_Bookings_Desc": "Për rezervime në grup prej 5 dhomash ose më shumë, mund të aplikohet një politikë e veçantë anulimi. Ju lutemi kontaktoni ekipin tonë të rezervimeve për më shumë informacion.",
+      "Early_Departure": "Largimi i Hershëm",
+      "Early_Departure_Desc": "Në rast largimi të hershëm, mysafirët do të tarifohen për qëndrimin e plotë të rezervuar siç është rezervuar fillimisht.",
+      "Policy_Modifications_NoShows": "Politika për Modifikime dhe Mosparaqitje",
+      "Modifications": "Modifikimet",
+      "Modifications_Desc": "Çdo ndryshim ose modifikim në rezervim, si ndryshimi i datave të regjistrimit ose çregjistrimit, lloji i dhomës, ose numri i mysafirëve, janë subjekt i disponueshmërisë dhe mund të rezultojnë në tarifa shtesë. Mysafirët këshillohen të njoftojnë hotelin sa më shpejt të jetë e mundur për çdo modifikim të rezervimit të tyre.",
+      "NoShow": "Mosparaqitje",
+      "NoShow_Desc": "Një 'mosparaqitje' përcaktohet si një mysafir që dështon të arrijë në datën e caktuar të regjistrimit pa njoftim paraprak për anulim ose modifikim. Në rastin e një mosparaqitjeje, hoteli rezervon të drejtën të tarifojë shumën e plotë të rezervimit ose të aplikojë tarifat e anulimit sipas politikës së anulimit.",
+      "Please_note": "Ju lutem vini re",
+      "Please_note_Desc": "Politika e anulimit dhe modifikimit mund të ndryshojë në varësi të planit të tarifës ose ofertës promovuese të zgjedhur në momentin e rezervimit. Është e rëndësishme të rishikoni politikën specifike që zbatohet për rezervimin tuaj përpara se të konfirmoni. Çdo anulim ose modifikim duhet të kërkohet drejtpërdrejt me hotelin përmes informacionit të dhënë të kontaktit ose sistemit të menaxhimit të rezervimeve online. Hoteli rezervon të drejtën të ndryshojë termat dhe kushtet e politikës së anulimit pa njoftim paraprak. Nëse keni ndonjë pyetje ose keni nevojë për sqarime të mëtejshme në lidhje me politikën tonë të anulimit, ju lutemi mos ngurroni të kontaktoni ekipin tonë të rezervimeve."
+    }
+  },
   "RESTAURANT": {
     "Restaurant": "Restorant",
     "Resdesc-1": "Që nga viti 1995, shijoni peshkun dhe kuzhinën  ",
