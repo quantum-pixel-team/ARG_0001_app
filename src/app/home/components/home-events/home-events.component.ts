@@ -3,6 +3,7 @@ import {
   Component,
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
+  Input,
   OnDestroy,
   ViewChild,
 } from '@angular/core';
@@ -13,10 +14,8 @@ import { MatCard, MatCardHeader, MatCardImage } from '@angular/material/card';
 import { Observable, Subscription } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
-import { EventHttpService } from '../../../features/events/services/event-http.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { SwiperContainer } from 'swiper/swiper-element';
-import { LanguageService } from '../../../shared/services/language.service';
 
 @Component({
   selector: 'app-home-events',
@@ -36,18 +35,11 @@ import { LanguageService } from '../../../shared/services/language.service';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeEventsComponent implements AfterViewInit, OnDestroy {
-  events: AppEvent[] = [];
-  private languageCode: string;
+  @Input() events!: AppEvent[];
   @ViewChild('swiper') swiperRef!: ElementRef<SwiperContainer>;
   private langChangeSubscription: Subscription | null = null;
 
-  constructor(
-    private homeHttpService: EventHttpService,
-    private breakpointObserver: BreakpointObserver,
-    readonly languageService: LanguageService,
-  ) {
-    this.languageCode = this.languageService.currentLang;
-  }
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
   isDesktopWidth$: Observable<boolean> = this.breakpointObserver
     .observe(['(min-width: 1000px)'])
@@ -57,15 +49,7 @@ export class HomeEventsComponent implements AfterViewInit, OnDestroy {
     );
 
   ngAfterViewInit(): void {
-    this.fetchEvents();
     this.initializeSwiper();
-
-    this.langChangeSubscription = this.languageService.onLangChange.subscribe(
-      (event) => {
-        this.languageCode = event.code;
-        this.fetchEvents();
-      },
-    );
   }
 
   private initializeSwiper() {
@@ -97,14 +81,5 @@ export class HomeEventsComponent implements AfterViewInit, OnDestroy {
     if (this.langChangeSubscription) {
       this.langChangeSubscription.unsubscribe();
     }
-  }
-
-  private fetchEvents() {
-    this.homeHttpService.fetchTopEvents(this.languageCode).subscribe({
-      next: (value) => {
-        this.events = value.content;
-      },
-      error: (err) => console.debug(err),
-    });
   }
 }

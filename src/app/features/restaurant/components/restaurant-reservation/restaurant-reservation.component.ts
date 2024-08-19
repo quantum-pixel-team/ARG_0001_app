@@ -19,6 +19,7 @@ import {
 import { RestaurantHttpService } from '../../services/restaurant-http.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { minDateRequired } from '../../../conference/validators/date-format.validators';
+import {environment} from "../../../../../environments/environment";
 
 @Component({
   selector: 'app-restaurant-reservation',
@@ -91,20 +92,24 @@ export class RestaurantReservationComponent implements OnInit {
   bookTable() {
     if (this.reservationForm.valid) {
       const formValue = this.reservationForm.value;
-
+      const [hours, minutes] = formValue.time.split(':');
+      const time = new Date(formValue.date);
+      time.setHours(hours);
+      time.setMinutes(minutes);
       this.restaurantHttpService
         .sendMessage({
           name: formValue.name,
           phoneNumber: formValue.phoneNumber,
           guests: formValue.guests,
           date: formValue.date,
-          time: formValue.time,
+          time: time.toISOString().split('T')[1],
           message: formValue.message,
           languageCode: 'sq',
-          to: `+355676923049`,
+          to: environment.contactPhoneNumber,
         })
         .subscribe({
           next: () => {
+
             this._snackBar.open('Reservation send successfully.', 'ok', {
               duration: 4_000,
             });
