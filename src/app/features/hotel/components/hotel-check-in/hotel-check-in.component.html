@@ -32,23 +32,26 @@
               class="options-container"
               (click)="$event.stopPropagation()"
             >
-              <app-child-age-now-option-row
+              <app-book-now-option-row
                 (quantityChange)="onQuantityChange($event, 'adults')"
                 label="Adults"
                 [quantity]="bookNowFiltersEvent.numberOfAdults"
-              ></app-child-age-now-option-row>
+                [minQuantity]="1"
+              ></app-book-now-option-row>
               <mat-divider></mat-divider>
-              <app-child-age-now-option-row
+              <app-book-now-option-row
                 (quantityChange)="onQuantityChange($event, 'children')"
                 label="Children"
                 [quantity]="bookNowFiltersEvent.numberOfChildren"
-              ></app-child-age-now-option-row>
+                [minQuantity]="0"
+              ></app-book-now-option-row>
               <mat-divider></mat-divider>
-              <app-child-age-now-option-row
+              <app-book-now-option-row
                 (quantityChange)="onQuantityChange($event, 'rooms')"
                 label="Rooms"
                 [quantity]="bookNowFiltersEvent.numberOfRooms"
-              ></app-child-age-now-option-row>
+                [minQuantity]="1"
+              ></app-book-now-option-row>
               <div *ngFor="let child of age.controls; let i = index">
                 <app-child-age-now-option-row
                   (quantityChange)="onQuantityChange($event, 'ages' + i)"
