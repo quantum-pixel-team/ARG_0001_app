@@ -11,9 +11,8 @@ import { map, shareReplay } from 'rxjs/operators';
 export class HomeImageComponent {
   private breakpointObserver = inject(BreakpointObserver);
 
-  srcSet = '640w, 750w, 828w, 1080w,1200w,1980w';
   isHandset$: Observable<boolean> = this.breakpointObserver
-    .observe(['(max-width: 1000px)'])
+    .observe(['(max-width: 920px)'])
     .pipe(
       map((result) => result.matches),
       shareReplay(),
