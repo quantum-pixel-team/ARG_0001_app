@@ -46,6 +46,7 @@ export class HotelCheckInComponent implements OnInit {
 
   removeChild(index: number) {
     this.age.removeAt(index);
+    this.bookNowFiltersEvent.childrenAges =  this.bookNowFiltersEvent.childrenAges.filter((_,i)=>i !== index)
   }
 
   onQuantityChange(quantity: number, type: string) {
