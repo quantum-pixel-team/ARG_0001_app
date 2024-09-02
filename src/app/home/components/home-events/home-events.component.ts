@@ -4,14 +4,13 @@ import {
   CUSTOM_ELEMENTS_SCHEMA,
   ElementRef,
   Input,
-  OnDestroy,
   ViewChild,
 } from '@angular/core';
 import { AppEvent } from '../../../features/events/interfaces/app-event';
 import { AsyncPipe, NgClass, NgForOf } from '@angular/common';
 import { HomeEventsCardComponent } from '../home-events-card/home-events-card.component';
 import { MatCard, MatCardHeader, MatCardImage } from '@angular/material/card';
-import { Observable, Subscription } from 'rxjs';
+import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { TranslateModule } from '@ngx-translate/core';
@@ -34,10 +33,9 @@ import { SwiperContainer } from 'swiper/swiper-element';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomeEventsComponent implements AfterViewInit, OnDestroy {
+export class HomeEventsComponent implements AfterViewInit {
   @Input() events!: AppEvent[];
   @ViewChild('swiper') swiperRef!: ElementRef<SwiperContainer>;
-  private langChangeSubscription: Subscription | null = null;
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
@@ -77,9 +75,4 @@ export class HomeEventsComponent implements AfterViewInit, OnDestroy {
     this.swiperRef.nativeElement.swiper.slideTo(1);
   }
 
-  ngOnDestroy() {
-    if (this.langChangeSubscription) {
-      this.langChangeSubscription.unsubscribe();
-    }
-  }
 }
