@@ -15,7 +15,7 @@
         ? "THE ROOM CAPACITY IS NOT ENOUGH FOR ALL GUESTS"
         : roomNotAvailable
           ? "UNAVAILABLE"
-          : "Available"
+          : "Available" | translate
     }}
   </div>
   <div
@@ -26,6 +26,6 @@
     {{ notAvailableLabel }}
   </div>
   <div class="book-now-label">
-    {{ roomNotAvailable ? "Check Dates" : "Book Now" }}
+    {{ roomNotAvailable ? "Check Dates" : "Book Now"  | translate }}
   </div>
 </button>

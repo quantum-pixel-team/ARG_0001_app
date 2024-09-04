@@ -1,12 +1,10 @@
 {
   "Adult": "Adulto",
-  "Adults": "Adulti",
-  "Children": "Bambini",
+  "Adults_Children_Rooms": "Adulti - Bambini - Camere",
   "Child": "Bambino",
   "Age": "Età",
-  "Rooms": "Camere",
   "Check": "Verifica",
-  "Filters" : {
+  "Filters": {
     "Filter_by": "Filtra per",
     "Top_Filters": "Filtri principali",
     "Double_room": "Camera doppia",

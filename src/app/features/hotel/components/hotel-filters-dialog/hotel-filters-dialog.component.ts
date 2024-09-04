@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { HotelFilters } from '../../interfaces/HotelFilters';
+import { translate } from "@angular/localize/tools";
 
 @Component({
   selector: 'app-hotel-filters-dialog',
@@ -30,4 +31,6 @@ export class HotelFiltersDialogComponent {
   onFilterChanged(filters: HotelFilters): void {
     this.queryParam = filters;
   }
+
+  protected readonly translate = translate;
 }

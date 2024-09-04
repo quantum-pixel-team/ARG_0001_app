@@ -3,7 +3,7 @@
   <hr *ngIf="!sortOnly" />
   <div class="filters">
     <section class="filter-section">
-      <h4 class="subheader" style="margin: 0">Top Filters</h4>
+      <h4 class="subheader" style="margin: 0">{{ "HOTEL.Filters.Top_Filters" | translate }}</h4>
       <div *ngFor="let checkbox of checkboxes">
         <mat-checkbox
           color="primary"
@@ -27,7 +27,7 @@
   <hr *ngIf="!sortOnly" />
   <div class="filters">
     <section class="budget" [formGroup]="priceForm">
-      <h4 class="subheader">Budget</h4>
+      <h4 class="subheader">{{ "HOTEL.Filters.Budget" | translate }}</h4>
       <div class="input-container">
         <input type="number" formControlName="minPrice" placeholder="0" />
         to
@@ -38,13 +38,13 @@
   <div *ngIf="!filtersOnly">
     <hr />
     <section class="sort-container" [formGroup]="sortForm">
-      <h4 class="subheader">Sort by:</h4>
+      <h4 class="subheader">{{ "HOTEL.Sorting.Sort_by" | translate }}:</h4>
       <mat-radio-group formControlName="sortOrder">
         <mat-radio-button value="DESC"
-          >Price - Highest to Lowest</mat-radio-button
+          >{{ "HOTEL.Sorting.Price_High_to_Low" | translate }}</mat-radio-button
         >
         <mat-radio-button value="ASC"
-          >Price - Lowest to Highest</mat-radio-button
+          >{{ "HOTEL.Sorting.Price_Low_to_High" | translate }}</mat-radio-button
         >
       </mat-radio-group>
     </section>

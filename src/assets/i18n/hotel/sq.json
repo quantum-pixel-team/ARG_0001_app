@@ -1,12 +1,10 @@
 {
   "Adult": "I rritur",
-  "Adults": "Të rritur",
-  "Children": "Fëmijë",
+  "Adults_Children_Rooms": "Të rritur - Fëmijë - Dhoma",
   "Child": "Fëmijë",
   "Age": "Mosha",
-  "Rooms": "Dhoma",
   "Check": "Kontrollo",
-  "Filters" : {
+  "Filters": {
     "Filter_by": "Filtro sipas",
     "Top_Filters": "Filtra kryesore",
     "Double_room": "Dhoma dyshe",

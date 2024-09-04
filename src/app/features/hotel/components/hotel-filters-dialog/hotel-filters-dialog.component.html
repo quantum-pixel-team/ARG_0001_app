@@ -7,7 +7,7 @@
     (filterChanged)="onFilterChanged($event)"
   ></app-hotel-filters>
   <div mat-dialog-actions>
-    <button mat-raised-button color="warn" (click)="onNoClick()">Cancel</button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">{{ "HOTEL.Cancel" || translate }}</button>
     <button mat-raised-button color="primary" (click)="onApplyClick()">
       Apply
     </button>
