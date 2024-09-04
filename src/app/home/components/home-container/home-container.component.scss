@@ -3,7 +3,7 @@ $bookNowHeight: var(--home-book-now-height);
 app-home-image {
   display: block;
   margin-top: calc(var(--navbar-height) * -2);
-  @media screen and (max-width:1000px) {
+  @media screen and (max-width:920px) {
     margin-top:0;
 
   }
