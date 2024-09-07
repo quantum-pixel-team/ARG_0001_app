@@ -27,6 +27,7 @@ $reference-width: 1920px;
       align-items: center;
 
       .swiper-zoom-container {
+        width: 100%;
         height: calc(1100px * (100vw / $reference-width));
 
         img {
@@ -36,13 +37,16 @@ $reference-width: 1920px;
         }
       }
       @media screen and (max-width: 950px) {
+        img {
+          position: unset !important;
+        }
         .swiper-zoom-container {
           height: calc(1800px * (100vw / $reference-width));
         }
       }
       @media screen and (max-width: 550px) {
         .swiper-zoom-container {
-          height: auto;
+          height: fit-content;
         }
       }
     }

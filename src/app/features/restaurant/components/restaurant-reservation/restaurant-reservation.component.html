@@ -91,6 +91,9 @@
       <mat-error *ngIf="reservationForm.get('time')?.hasError('required')"
         >{{ "RESTAURANT.ReqTime" | translate }}
       </mat-error>
+      <mat-error *ngIf="reservationForm.get('time')?.hasError('minMax')"
+        >Reservation can be made only between 12:00 to 22:00 (Europe/Tirane timezone)
+      </mat-error>
       <ngx-material-timepicker
         #time
         [theme]="primary"
