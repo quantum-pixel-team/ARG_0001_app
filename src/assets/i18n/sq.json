@@ -95,6 +95,7 @@
   },
   "HOTEL": {
     "Adult": "I rritur",
+    "Adults": "Të rritur",
     "Adults_Children_Rooms": "Të rritur-Fëmijë-Dhoma",
     "Children": "Fëmijë",
     "Child": "Fëmijë",
@@ -113,7 +114,8 @@
       "Sea_view": "Pamje nga deti",
       "Balcony": "Ballkon",
       "Available": "Në dispozicion",
-      "Budget": "Buxheti"
+      "Budget": "Buxheti",
+      "to": "në"
     },
     "Sorting": {
       "Sort_by": "Rendit sipas",
@@ -121,7 +123,8 @@
       "Price_Low_to_High": "Çmimi nga i ulti në të lartin"
     },
     "No_more_rooms": "Nuk ka më dhoma",
-    "Room_capacity": "KAPACITETI I DHOMËS NUK MJAFTON PËR TË GJITHË MYSAFIRËT",
+    "Not_enought_cap": "KAPACITETI I DHOMËS NUK MJAFTON PËR TË GJITHË MYSAFIRËT",
+    "Room_capacity": "Kapaciteti i dhomës",
     "Minimum_nights": "Kërkohet një qëndrim minimal prej 2 netësh",
     "UNAVAILABLE": "E PADISPONUESHME",
     "No_available_rooms_with_filter": "Nuk ka dhoma të disponueshme me filtrat e aplikuar.",
@@ -142,6 +145,7 @@
       "Policy_Modifications_NoShows": "Politika për Modifikime dhe Mosparaqitje:",
       "Modifications": "Modifikimet",
       "Modifications_Desc": "Çdo ndryshim ose modifikim në rezervim, si ndryshimi i datave të regjistrimit ose çregjistrimit, lloji i dhomës, ose numri i mysafirëve, janë subjekt i disponueshmërisë dhe mund të rezultojnë në tarifa shtesë. Mysafirët këshillohen të njoftojnë hotelin sa më shpejt të jetë e mundur për çdo modifikim të rezervimit të tyre.",
+      "NoShow": "Pa shfaqje",
       "NoShow_Desc": "'No-show' përkufizohet si një mysafir që nuk arrin në datën e planifikuar të check-in-it pa njoftim paraprak për anulim ose modifikim.",
       "NoShow_Desc1": "Në rastin e një no-show, hoteli rezervon të drejtën të ngarkojë shumën e plotë të rezervimit ose të aplikojë tarifa anulimi sipas politikës së anulimit.",
       "Please_note": "Ju lutemi vini re:",

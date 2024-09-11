@@ -11,10 +11,10 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
 export class HotelFiltersComponent implements OnInit {
   availableCheckBox = { label: 'Available', checked: false };
   checkboxes = [
-    { label: 'Double room', checked: false },
-    { label: 'Twin room', checked: false },
-    { label: 'Single room', checked: false },
-    { label: 'Sea view', checked: false },
+    { label: 'Double_room', checked: false },
+    { label: 'Twin_room', checked: false },
+    { label: 'Single_room', checked: false },
+    { label: 'Sea_view', checked: false },
     { label: 'Balcony', checked: false },
   ];
   priceForm: FormGroup;

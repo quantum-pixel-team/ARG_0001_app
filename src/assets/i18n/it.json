@@ -95,13 +95,16 @@
   },
   "HOTEL": {
     "Adult": "Adulto",
+    "Adults": "Adulti",
     "Adults_Children_Rooms": "Adulti-Bambini-Camere",
+    "Children": "Bambini",
     "Child": "Bambino",
     "Age": "Età",
     "Rooms": "Camere",
     "Check": "Verifica",
     "Cancel": "Cancella",
     "Check_Dates": "Controlla le date",
+    "Available": "Disponibile",
     "Book_Now": "Prenota Ora",
     "Filters": {
       "Filter_by": "Filtra per",
@@ -111,8 +114,8 @@
       "Single_room": "Camera singola",
       "Sea_view": "Vista mare",
       "Balcony": "Balcone",
-      "Available": "Disponibile",
-      "Budget": "Budget"
+      "Budget": "Budget",
+      "to": "a"
     },
     "Sorting": {
       "Sort_by": "Ordina per",
@@ -120,7 +123,8 @@
       "Price_Low_to_High": "Prezzo dal più basso al più alto"
     },
     "No_more_rooms": "Non ci sono più camere",
-    "Room_capacity": "LA CAPACITÀ DELLA CAMERA NON È SUFFICIENTE PER TUTTI GLI OSPITI",
+    "Not_enought_cap": "LA CAPACITÀ DELLA CAMERA NON È SUFFICIENTE PER TUTTI GLI OSPITI",
+    "Room_capacity": "Capacità della camera",
     "Minimum_nights": "Richiede un soggiorno minimo di 2 notti",
     "UNAVAILABLE": "NON DISPONIBILE",
     "No_available_rooms_with_filter": "Nessuna stanza disponibile con i filtri applicati.",
@@ -142,6 +146,7 @@
       "Modifications": "Modifiche",
       "Modifications_Desc": "Qualsiasi modifica alla prenotazione, come il cambio delle date di check-in o check-out, del tipo di camera, o del numero di ospiti, è soggetta a disponibilità e può comportare costi aggiuntivi.",
       "Modifications_Desc1": "Si consiglia agli ospiti di informare l'hotel il prima possibile per qualsiasi modifica alla loro prenotazione.",
+      "NoShow": "Nessuna presentazione",
       "NoShow_Desc": "Un 'no-show' è definito come un ospite che non si presenta alla data di check-in programmata senza preavviso di cancellazione o modifica.",
       "NoShow_Desc1": "In caso di no-show, l'hotel si riserva il diritto di addebitare l'intero importo della prenotazione o di applicare penali di cancellazione in conformità con la politica di cancellazione.",
       "Please_note": "Si prega di notare:",

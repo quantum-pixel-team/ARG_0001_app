@@ -1,5 +1,5 @@
 <div class="container" [class.mobile]="mobile" [class.sort-only]="sortOnly">
-  <div class="header">Filter by:</div>
+  <div class="header">{{ "HOTEL.Filters.Filter_by" | translate }}:</div>
   <hr *ngIf="!sortOnly" />
   <div class="filters">
     <section class="filter-section">
@@ -10,7 +10,7 @@
           [checked]="checkbox.checked"
           (change)="onCheckboxChange(checkbox, $event)"
         >
-          {{ checkbox.label }}
+          {{ "HOTEL.Filters." + checkbox.label | translate }}
         </mat-checkbox>
       </div>
       <div>
@@ -19,7 +19,7 @@
           [checked]="availableCheckBox.checked"
           (change)="onCheckboxChange(availableCheckBox, $event)"
         >
-          {{ availableCheckBox.label }}
+          {{ "HOTEL." +availableCheckBox.label | translate }}
         </mat-checkbox>
       </div>
     </section>
@@ -30,7 +30,7 @@
       <h4 class="subheader">{{ "HOTEL.Filters.Budget" | translate }}</h4>
       <div class="input-container">
         <input type="number" formControlName="minPrice" placeholder="0" />
-        to
+        {{ 'HOTEL.Filters.to' | translate }}
         <input type="number" formControlName="maxPrice" placeholder="70" />
       </div>
     </section>
@@ -41,10 +41,12 @@
       <h4 class="subheader">{{ "HOTEL.Sorting.Sort_by" | translate }}:</h4>
       <mat-radio-group formControlName="sortOrder">
         <mat-radio-button value="DESC"
-          >{{ "HOTEL.Sorting.Price_High_to_Low" | translate }}</mat-radio-button
+        >{{ "HOTEL.Sorting.Price_High_to_Low" | translate }}
+        </mat-radio-button
         >
         <mat-radio-button value="ASC"
-          >{{ "HOTEL.Sorting.Price_Low_to_High" | translate }}</mat-radio-button
+        >{{ "HOTEL.Sorting.Price_Low_to_High" | translate }}
+        </mat-radio-button
         >
       </mat-radio-group>
     </section>

@@ -14,14 +14,14 @@
     <p class="description">{{ room.description }}</p>
     <div class="capacity-policy">
       <div class="capacity">
-        <p>Room capacity:</p>
+        <p>{{ "HOTEL.Room_capacity" | translate}}:</p>
         <p>{{ room.totalCapacity }}</p>
         <mat-icon>person</mat-icon>
       </div>
       <div class="policy">
         <button mat-button color="primary"
         (click)="policyClicked.emit(room)">
-          Policy
+          {{ "HOTEL.Policy.Policy" | translate}}
           <mat-icon iconPositionEnd>info</mat-icon>
         </button>
       </div>
