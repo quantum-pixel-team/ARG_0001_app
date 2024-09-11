@@ -7,36 +7,36 @@
   >
     <mat-form-field>
       <mat-label>{{ "RESTAURANT.Name" | translate }}</mat-label>
-      <input matInput formControlName="name" />
+      <input matInput formControlName="name"/>
       <mat-error *ngIf="reservationForm.get('name')?.hasError('required')"
-        >{{ "RESTAURANT.ReqName" | translate }}
+      >{{ "RESTAURANT.ReqName" | translate }}
       </mat-error>
       <mat-error *ngIf="reservationForm.get('name')?.hasError('pattern')"
-        >{{ "RESTAURANT.LetterReqName" | translate }}
+      >{{ "RESTAURANT.LetterReqName" | translate }}
       </mat-error>
       <mat-error *ngIf="reservationForm.get('name')?.hasError('minlength')"
-        >{{ "RESTAURANT.CharReqName" | translate }}
+      >{{ "RESTAURANT.CharReqName" | translate }}
       </mat-error>
       <mat-error *ngIf="reservationForm.get('name')?.hasError('maxlength')"
-        >{{ "RESTAURANT.MaxCharReqName" | translate }}
+      >{{ "RESTAURANT.MaxCharReqName" | translate }}
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>{{ "RESTAURANT.phone_number" | translate }}</mat-label>
-      <input matInput type="text" formControlName="phoneNumber" required />
+      <input matInput type="text" formControlName="phoneNumber" required/>
       <mat-error
         *ngIf="reservationForm.get('phoneNumber')?.hasError('required')"
-        >{{ "RESTAURANT.phone_number_required" | translate }}
+      >{{ "RESTAURANT.phone_number_required" | translate }}
       </mat-error>
       <mat-error *ngIf="reservationForm.get('phoneNumber')?.hasError('pattern')"
-        >{{ "RESTAURANT.invalid_phone_no" | translate }}
+      >{{ "RESTAURANT.invalid_phone_no" | translate }}
       </mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>{{ "RESTAURANT.Guest" | translate }}</mat-label>
-      <input matInput formControlName="guests" required />
+      <input matInput formControlName="guests" required/>
       <mat-error *ngIf="reservationForm.get('guests')?.hasError('required')">
         {{ "RESTAURANT.ReqGuest" | translate }}
       </mat-error>
@@ -63,7 +63,7 @@
       </mat-datepicker-toggle>
       <mat-datepicker color="primary" #picker></mat-datepicker>
       <mat-error *ngIf="reservationForm.get('date')?.hasError('required')"
-        >{{ "RESTAURANT.ReqDate" | translate }}
+      >{{ "RESTAURANT.ReqDate" | translate }}
       </mat-error>
 
       <mat-error
@@ -71,7 +71,7 @@
           reservationForm.get('date')?.hasError('minDate') &&
           !reservationForm.get('date')?.hasError('required')
         "
-        >{{ "RESTAURANT.PastDateErr" | translate }}
+      >{{ "RESTAURANT.PastDateErr" | translate }}
       </mat-error>
     </mat-form-field>
 
@@ -89,7 +89,10 @@
         <mat-icon>schedule</mat-icon>
       </div>
       <mat-error *ngIf="reservationForm.get('time')?.hasError('required')"
-        >{{ "RESTAURANT.ReqTime" | translate }}
+      >{{ "RESTAURANT.ReqTime" | translate }}
+      </mat-error>
+      <mat-error *ngIf="reservationForm.get('time')?.hasError('minMax')"
+      >{{ 'RESTAURANT.reservation_time_restriction' | translate }}
       </mat-error>
       <ngx-material-timepicker
         #time
@@ -99,7 +102,7 @@
     <mat-error
       class="past-date-time"
       *ngIf="reservationForm.hasError('pastDateTime')"
-      >{{ "RESTAURANT.Date&TimeErr" | translate }}
+    >{{ "RESTAURANT.Date&TimeErr" | translate }}
     </mat-error>
 
     <mat-form-field appearance="outline">
