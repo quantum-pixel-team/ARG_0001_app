@@ -9,7 +9,12 @@
   >
     <swiper-slide *ngFor="let menuImgUrl of menuList" lazy="true">
       <div class="swiper-zoom-container">
-        <img [src]="menuImgUrl" loading="lazy" />
+        <img [ngSrc]="menuImgUrl"
+             loading="lazy"
+             sizes="(max-width: 550px) 100vw, (max-width: 950px) 80vw, 65vw"
+             ngSrcset="300w, 440w, 500w, 640w, 750w, 828w, 1080w, 1500w, 1600w,1700w, 1980w"
+             alt="Menu"
+             fill/>
       </div>
     </swiper-slide>
   </swiper-container>

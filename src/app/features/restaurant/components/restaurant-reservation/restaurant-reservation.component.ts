@@ -14,7 +14,7 @@ import {
 import { NgxMaterialTimepickerTheme } from 'ngx-material-timepicker';
 import {
   futureDateValidator,
-  futureTimeValidator,
+  futureTimeValidator, minMaxTimeValidator,
 } from '../validators/restaurant-date-validators';
 import { RestaurantHttpService } from '../../services/restaurant-http.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -61,7 +61,7 @@ export class RestaurantReservationComponent implements OnInit {
         ],
         guests: ['', [Validators.min(1), Validators.pattern('^[0-9]*$')]],
         date: ['', [Validators.required, futureDateValidator, minDateRequired]],
-        time: ['', [Validators.required, futureTimeValidator]],
+        time: ['', [Validators.required, futureTimeValidator, minMaxTimeValidator]],
         message: ['', Validators.maxLength(1500)],
       },
       {

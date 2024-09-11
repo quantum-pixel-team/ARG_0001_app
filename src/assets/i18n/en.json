@@ -191,7 +191,8 @@
     "Book_table": "Book Table",
     "invalid_phone_no": "Phone number is not valid",
     "phone_number": "Phone Number",
-    "phone_number_required": "Phone number is required"
+    "phone_number_required": "Phone number is required",
+    "reservation_time_restriction": "Reservation can be made only between 12:00 to 22:00 (Europe/Tirane timezone)"
   },
   "NavBar": {
     "Home": "Home",

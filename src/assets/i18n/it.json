@@ -190,7 +190,8 @@
     "invalid_phone_no": "Phone number is not valid",
     "phone_number": "Numero di telefono",
     "phone_number_required": "Il numero di telefono è obbligatorio"
-  },
+  },"reservation_time_restriction": "La prenotazione può essere effettuata solo tra le 12:00 e le 22:00 (fuso orario Europa/Tirana)",
+
   "NavBar": {
     "Home": "Home",
     "Hotel": "Hotel",

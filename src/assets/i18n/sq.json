@@ -189,7 +189,8 @@
     "Book_table": "Rezervoni Tavolinë",
     "invalid_phone_no": "Numri I celularit nuk eshte I sakte",
     "phone_number": "Numri i celularit",
-    "phone_number_required": "Numri i celularit eshte i detyrueshem"
+    "phone_number_required": "Numri i celularit eshte i detyrueshem",
+    "reservation_time_restriction": "Rezervimi mund të bëhet vetëm midis orës 12:00 deri në 22:00 (zona e kohës Evropë/Tiranë)"
   },
   "NavBar": {
     "Home": "Home",
