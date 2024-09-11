@@ -95,6 +95,7 @@
   },
   "HOTEL": {
     "Adult": "Adult",
+    "Adults": "Adults",
     "Adults_Children_Rooms": "Adults-Children-Rooms",
     "Children": "Children",
     "Child": "Child",
@@ -113,7 +114,8 @@
       "Sea_view": "Sea view",
       "Balcony": "Balcony",
       "Available": "Available",
-      "Budget": "Budget"
+      "Budget": "Budget",
+      "to": "to"
     },
     "Sorting": {
       "Sort_by": "Sort by",
@@ -121,7 +123,8 @@
       "Price_Low_to_High": "Price Low to High"
     },
     "No_more_rooms": "No more rooms",
-    "Room_capacity": "THE ROOM CAPACITY IS NOT ENOUGH FOR ALL GUESTS",
+    "Not_enought_cap": "THE ROOM CAPACITY IS NOT ENOUGH FOR ALL GUESTS",
+    "Room_capacity": "Room Capacity",
     "Minimum_nights": "Requires a minimum stay of 2 nights",
     "UNAVAILABLE": "UNAVAILABLE",
     "No_available_rooms_with_filter": "No available Rooms with the applied filters.",
@@ -143,7 +146,7 @@
       "Modifications": "Modifications",
       "Modifications_Desc": "Any changes or modifications to the reservation, such as changes to the check-in or check-out dates, room type, or number of guests, are subject to availability and may result in additional charges.",
       "Modifications_Desc1": "Guests are advised to notify the hotel as soon as possible for any modifications to their reservation.",
-      "NoShow": "NoShow",
+      "NoShow": "No Show",
       "NoShow_Desc": "A, 'no-show' is defined as a guest who fails to arrive on the scheduled check-in date without prior notice of cancellation or modification.",
       "NoShow_Desc1": "In the case of a no-show, the hotel reserves the right to charge the full amount of the reservation or apply cancellation fees as per the cancellation policy.",
       "Please_note": "Please note:",

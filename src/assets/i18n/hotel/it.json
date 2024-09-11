@@ -21,7 +21,7 @@
     "Price_Low_to_High": "Prezzo dal più basso al più alto"
   },
   "No_more_rooms": "Non ci sono più camere",
-  "Room_capacity": "LA CAPACITÀ DELLA CAMERA NON È SUFFICIENTE PER TUTTI GLI OSPITI",
+  "Not_enought_cap": "LA CAPACITÀ DELLA CAMERA NON È SUFFICIENTE PER TUTTI GLI OSPITI",
   "Minimum_nights": "Richiede un soggiorno minimo di 2 notti",
   "UNAVALIABLE": "NON DISPONIBILE",
   "Policy": {

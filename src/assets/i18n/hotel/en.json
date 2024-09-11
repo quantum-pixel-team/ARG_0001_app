@@ -21,7 +21,7 @@
     "Price_Low_to_High": "Price Low to High"
   },
   "No_more_rooms": "No more rooms",
-  "Room_capacity": "THE ROOM CAPACITY IS NOT ENOUGH FOR ALL GUESTS",
+  "Not_enought_cap": "THE ROOM CAPACITY IS NOT ENOUGH FOR ALL GUESTS",
   "Minimum_nights": "Requires a minimum stay of 2 nights",
   "UNAVALIABLE": "UNAVALIABLE",
   "Policy": {

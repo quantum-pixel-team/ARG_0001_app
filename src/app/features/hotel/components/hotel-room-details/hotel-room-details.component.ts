@@ -11,6 +11,7 @@ import { MatButton, MatFabButton } from '@angular/material/button';
 import { NgForOf } from '@angular/common';
 import { MatRipple } from '@angular/material/core';
 import { HotelRoomDetailsImagesComponent } from '../hotel-room-details-images/hotel-room-details-images.component';
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-hotel-room-details',
@@ -24,6 +25,7 @@ import { HotelRoomDetailsImagesComponent } from '../hotel-room-details-images/ho
     HotelRoomDetailsImagesComponent,
     MatDialogActions,
     MatDialogClose,
+    TranslateModule,
   ],
   templateUrl: './hotel-room-details.component.html',
   styleUrl: './hotel-room-details.component.scss',
