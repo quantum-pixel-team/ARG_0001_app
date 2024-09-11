@@ -42,6 +42,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HotelBookNowButtonMobileComponent } from './components/hotel-date-button-mobile/hotel-book-now-button-mobile.component';
 import { ChildAgeOptionRowComponent } from './components/hotel-child-age-row/child-age-option-row.component';
 import { HotelRoomAvailabilityComponent } from './components/hotel-room-availability/hotel-room-availability.component';
+import { TranslateModule } from "@ngx-translate/core";
 
 const routes: Routes = [
   {
@@ -103,6 +104,7 @@ const routes: Routes = [
     MatPaginator,
     MatProgressSpinnerModule,
     MatDialogTitle,
+    TranslateModule,
   ],
 })
 export class HotelModule {}

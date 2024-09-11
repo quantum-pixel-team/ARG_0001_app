@@ -1,12 +1,10 @@
 {
   "Adult": "I rritur",
-  "Adults": "Të rritur",
-  "Children": "Fëmijë",
+  "Adults_Children_Rooms": "Të rritur - Fëmijë - Dhoma",
   "Child": "Fëmijë",
   "Age": "Mosha",
-  "Rooms": "Dhoma",
   "Check": "Kontrollo",
-  "Filters" : {
+  "Filters": {
     "Filter_by": "Filtro sipas",
     "Top_Filters": "Filtra kryesore",
     "Double_room": "Dhoma dyshe",
@@ -23,7 +21,7 @@
     "Price_Low_to_High": "Çmimi nga i ulti në të lartin"
   },
   "No_more_rooms": "Nuk ka më dhoma",
-  "Room_capacity": "KAPACITETI I DHOMËS NUK MJAFTON PËR TË GJITHË MYSAFIRËT",
+  "Not_enought_cap": "KAPACITETI I DHOMËS NUK MJAFTON PËR TË GJITHË MYSAFIRËT",
   "Minimum_nights": "Kërkohet një qëndrim minimal prej 2 netësh",
   "UNAVALIABLE": "E PADISPONUESHME",
   "Policy": {

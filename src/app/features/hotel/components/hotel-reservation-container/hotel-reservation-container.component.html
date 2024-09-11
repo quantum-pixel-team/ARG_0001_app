@@ -37,7 +37,7 @@
   ></app-hotel-room-table>
   <mat-spinner *ngIf="!roomsPage && !error"></mat-spinner>
   <div class="error" *ngIf="error?.status === 404">
-    No available Rooms with the applied filters.
+    {{ "HOTEL.No_available_rooms_with_filter" | translate }}
   </div>
   <div class="error" *ngIf="error?.status === 400">
     Bad request, please check if all required filters are set

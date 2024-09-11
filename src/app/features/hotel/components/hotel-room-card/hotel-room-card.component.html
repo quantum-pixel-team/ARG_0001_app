@@ -14,7 +14,7 @@
       <button mat-ripple class="policy"
               (click)="policyClicked.emit()">
         <mat-icon>info</mat-icon>
-        <p>Policy</p>
+        <p>{{ "HOTEL.Policy.Policy" | translate }}</p>
       </button>
       <mat-card-subtitle class="room-description"
       >{{ room.shortDescription }}
@@ -32,7 +32,7 @@
         (click)="viewMoreClicked.emit()"
         mat-stroked-button
       >
-        More Details
+        {{ "HOTEL.More_Details" | translate }}
       </button>
 
       <hr/>
@@ -43,10 +43,10 @@
       <button mat-ripple class="policy"
               (click)="policyClicked.emit()">
         <mat-icon>info</mat-icon>
-        <p>Policy</p>
+        <p>{{ "HOTEL.Policy.Policy" | translate }}</p>
       </button>
       <div class="total-price">
-        <h3>{{ room.totalPrice }} €/total</h3>
+        <h3>{{ room.totalPrice }} €/{{ "HOTEL.Total" |translate }}</h3>
       </div>
       <app-hotel-room-book-now-button
         class="book-now-button"

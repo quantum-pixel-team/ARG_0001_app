@@ -12,13 +12,13 @@
       </div>
 
       <div class="select-person-options">
-        <h6>Adults - Children - Rooms</h6>
+        <h6>{{ "HOTEL.Adults_Children_Rooms" | translate }}</h6>
         <button style="padding: 0" [matMenuTriggerFor]="menu">
           <div class="select-option-persons-container">
             <div class="select-option-persons-label">
-              {{ bookNowFiltersEvent.numberOfAdults }} Adults -
-              {{ bookNowFiltersEvent.numberOfChildren }} Children -
-              {{ bookNowFiltersEvent.numberOfRooms }} Rooms
+              {{ bookNowFiltersEvent.numberOfAdults }} {{ "HOTEL.Adults" | translate }} -
+              {{ bookNowFiltersEvent.numberOfChildren }} {{ "HOTEL.Children" | translate }} -
+              {{ bookNowFiltersEvent.numberOfRooms }} {{ "HOTEL.Rooms"  | translate }}
             </div>
             <div class="select-option-persons-icon">
               <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
@@ -55,7 +55,7 @@
               <div *ngFor="let child of age.controls; let i = index">
                 <app-child-age-now-option-row
                   (quantityChange)="onQuantityChange($event, 'ages' + i)"
-                  label="Child {{ i + 1 }} Age"
+                  [label]="('HOTEL.Child' | translate) + ' ' + (i + 1) + ' ' + ('HOTEL.Age' | translate)"
                   [quantity]="0"
                 ></app-child-age-now-option-row>
               </div>
@@ -70,7 +70,7 @@
           (click)="onCheckInClicked()"
           class="booking-button"
         >
-          Check
+          {{ "HOTEL.Check" | translate}}
         </button>
       </div>
     </ng-container>
