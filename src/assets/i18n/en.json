@@ -102,6 +102,8 @@
     "Rooms": "Rooms",
     "Check": "Check",
     "Cancel": "Cancel",
+    "Check_Dates": "Check Dates",
+    "Book_Now": "BOOK NOW",
     "Filters": {
       "Filter_by": "Filter by",
       "Top_Filters": "Top Filters",
@@ -121,7 +123,7 @@
     "No_more_rooms": "No more rooms",
     "Room_capacity": "THE ROOM CAPACITY IS NOT ENOUGH FOR ALL GUESTS",
     "Minimum_nights": "Requires a minimum stay of 2 nights",
-    "UNAVALIABLE": "UNAVALIABLE",
+    "UNAVAILABLE": "UNAVAILABLE",
     "No_available_rooms_with_filter": "No available Rooms with the applied filters.",
     "Not_available_dates_highlighted": "All not available dates are highlighted.",
     "Total": "total",

@@ -101,6 +101,8 @@
     "Rooms": "Camere",
     "Check": "Verifica",
     "Cancel": "Cancella",
+    "Check_Dates": "Controlla le date",
+    "Book_Now": "Prenota Ora",
     "Filters": {
       "Filter_by": "Filtra per",
       "Top_Filters": "Filtri principali",
@@ -120,7 +122,7 @@
     "No_more_rooms": "Non ci sono più camere",
     "Room_capacity": "LA CAPACITÀ DELLA CAMERA NON È SUFFICIENTE PER TUTTI GLI OSPITI",
     "Minimum_nights": "Richiede un soggiorno minimo di 2 notti",
-    "UNAVALIABLE": "NON DISPONIBILE",
+    "UNAVAILABLE": "NON DISPONIBILE",
     "No_available_rooms_with_filter": "Nessuna stanza disponibile con i filtri applicati.",
     "Not_available_dates_highlighted": "Tutte le date non disponibili sono evidenziate.",
     "Total": "totale",
