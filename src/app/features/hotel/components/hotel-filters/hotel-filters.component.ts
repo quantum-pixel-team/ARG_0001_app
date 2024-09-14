@@ -72,10 +72,7 @@ export class HotelFiltersComponent implements OnInit {
     const options = this.checkboxes
       .filter((option) => option.checked)
       .map((el) => el.label);
-    this.priceForm.value.minPrice =
-      this.priceForm.value.minPrice?.value < 0
-        ? 0
-        : this.priceForm.value.minPrice?.value;
+
     const minPrice = this.priceForm.value.minPrice;
     const maxPrice = this.priceForm.value.maxPrice;
     const sortOrder = this.sortForm.value.sortOrder;
