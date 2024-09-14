@@ -69,12 +69,13 @@ $line-width: 800px;
       .card-header {
         margin-top: 10%;
         padding-bottom: 4%;
+        max-width: 80px;
 
         mat-icon {
           height: auto;
           width: auto;
           color: var(--color-primary-color);
-          font-size: clamp(1rem, 7vw, 5rem);
+          font-size: clamp(1rem, 7vw, 3rem);
         }
       }
 
