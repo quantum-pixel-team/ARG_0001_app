@@ -19,7 +19,7 @@
           [checked]="availableCheckBox.checked"
           (change)="onCheckboxChange(availableCheckBox, $event)"
         >
-          {{ "HOTEL." +availableCheckBox.label | translate }}
+          {{ "HOTEL." + availableCheckBox.label | translate }}
         </mat-checkbox>
       </div>
     </section>
@@ -29,10 +29,11 @@
     <section class="budget" [formGroup]="priceForm">
       <h4 class="subheader">{{ "HOTEL.Filters.Budget" | translate }}</h4>
       <div class="input-container">
-        <input type="number" formControlName="minPrice" placeholder="0" />
+        <input type="number" formControlName="minPrice" min="0" placeholder="0" />
         {{ 'HOTEL.Filters.to' | translate }}
         <input type="number" formControlName="maxPrice" placeholder="70" />
       </div>
+      <mat-error *ngIf="priceForm.get('minPrice')?.hasError('min')">{{ 'HOTEL.minPriceError' | translate }}</mat-error>
     </section>
   </div>
   <div *ngIf="!filtersOnly">

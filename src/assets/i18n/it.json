@@ -97,6 +97,7 @@
     "Adult": "Adulto",
     "Adults": "Adulti",
     "Adults_Children_Rooms": "Adulti-Bambini-Camere",
+    "minPriceError": "Il prezzo deve essere maggiore di 0",
     "Children": "Bambini",
     "Child": "Bambino",
     "Age": "Età",
