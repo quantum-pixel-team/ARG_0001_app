@@ -1,20 +1,52 @@
-import { Component, HostListener, Renderer2 } from '@angular/core';
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { Language } from './shared/interfaces/Language';
 import { LanguageService } from './shared/services/language.service';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   private scriptAdded = false;
   title = 'aragosta-app';
 
   constructor(
     private languageService: LanguageService,
     private renderer: Renderer2,
+    private iconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer,
   ) {}
+
+  ngOnInit(): void {
+    this.iconRegistry
+      .addSvgIcon(
+        'instagram',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'assets/icons/instagram.svg',
+        ),
+      )
+      .addSvgIcon(
+        'whatsapp',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'assets/icons/whatsapp.svg',
+        ),
+      )
+      .addSvgIcon(
+        'facebook',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'assets/icons/facebook.svg',
+        ),
+      )
+      .addSvgIcon(
+        'tiktok',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(
+          'assets/icons/tiktok.svg',
+        ),
+      );
+  }
 
   onLanguageChanged(language: Language) {
     this.languageService.setLanguage(language);

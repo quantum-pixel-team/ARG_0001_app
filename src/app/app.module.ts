@@ -13,6 +13,7 @@ import { moduleHttpLoaderFactory } from './core/config/translate-http-loader-fac
 import { SharedModule } from './shared/modules/shared.module';
 import { StoreModule } from '@ngrx/store';
 import { hotelReducer } from './features/hotel/store/hotel.reducer';
+import { MatIcon } from "@angular/material/icon";
 
 const app_modules = [CoreModule, SharedModule, HomeModule];
 
@@ -34,6 +35,7 @@ const app_modules = [CoreModule, SharedModule, HomeModule];
       isolate: false,
     }),
     StoreModule.forRoot({ hotel: hotelReducer }, {}),
+    MatIcon,
   ],
   providers: [],
   bootstrap: [AppComponent],
