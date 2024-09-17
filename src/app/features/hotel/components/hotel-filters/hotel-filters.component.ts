@@ -35,14 +35,15 @@ export class HotelFiltersComponent implements OnInit {
       sortOrder: null,
     });
 
-    this.priceForm.valueChanges.subscribe(() => this.onSelectionChange());
+    this.priceForm.valueChanges.subscribe(() => {
+      if (this.priceForm.invalid) return;
+      this.onSelectionChange();
+    });
 
     this.sortForm.valueChanges.subscribe(() => this.onSelectionChange());
   }
 
   ngOnInit() {
-    console.log(this.filters);
-
     this.checkboxes = this.checkboxes
       .map((el) => {
         el.checked = this.filters.roomTypes.indexOf(el.label) !== -1;
@@ -71,6 +72,7 @@ export class HotelFiltersComponent implements OnInit {
     const options = this.checkboxes
       .filter((option) => option.checked)
       .map((el) => el.label);
+
     const minPrice = this.priceForm.value.minPrice;
     const maxPrice = this.priceForm.value.maxPrice;
     const sortOrder = this.sortForm.value.sortOrder;
