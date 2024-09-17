@@ -105,6 +105,7 @@
     "Check": "Check",
     "Cancel": "Cancel",
     "Check_Dates": "Check Dates",
+    "Available": "Available",
     "Book_Now": "BOOK NOW",
     "Filters": {
       "Filter_by": "Filter by",
@@ -114,7 +115,6 @@
       "Single_room": "Single Room",
       "Sea_view": "Sea view",
       "Balcony": "Balcony",
-      "Available": "Available",
       "Budget": "Budget",
       "to": "to"
     },

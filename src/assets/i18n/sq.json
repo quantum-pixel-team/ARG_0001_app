@@ -105,6 +105,7 @@
     "Check": "Kontrollo",
     "Cancel": "Kancelo",
     "Check_Dates": "Kontrolloni datat",
+    "Available": "Në dispozicion",
     "Book_Now": "Reservoni tani",
     "Filters": {
       "Filter_by": "Filtro sipas",
@@ -114,7 +115,6 @@
       "Single_room": "Dhoma teke",
       "Sea_view": "Pamje nga deti",
       "Balcony": "Ballkon",
-      "Available": "Në dispozicion",
       "Budget": "Buxheti",
       "to": "në"
     },
