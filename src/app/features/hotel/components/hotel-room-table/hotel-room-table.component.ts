@@ -89,7 +89,7 @@ export class HotelTableRoomComponent implements OnInit, OnDestroy {
   }
 
   getNotAvailableLabel(room: HotelRoom) {
-    if (this.isRoomNotAvailable(room)) return 'No more rooms';
+    if (this.isRoomNotAvailable(room)) return 'HOTEL.No_more_rooms';
     if (this.isStayDurationBelowMinNights(room))
       return `Minimum nights ${room.minimumNights}`;
     return undefined;
