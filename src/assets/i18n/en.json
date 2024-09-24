@@ -97,6 +97,7 @@
     "Adult": "Adult",
     "Adults": "Adults",
     "Adults_Children_Rooms": "Adults-Children-Rooms",
+    "minPriceError": "Price must be greater than 0",
     "Children": "Children",
     "Child": "Child",
     "Age": "Age",

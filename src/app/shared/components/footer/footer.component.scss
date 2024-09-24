@@ -38,9 +38,8 @@ $card-reference-height: 510px;
         height: auto;
         width: auto;
 
-        i {
+        mat-icon {
           color: white;
-          font-size: clamp(1.5rem, 3vw, 3rem);
           margin-left: 2%;
         }
       }
@@ -170,9 +169,8 @@ $card-reference-height: 510px;
         margin-left: 11%;
       }
 
-      i {
+      mat-icon {
         color: white;
-        font-size: clamp(0.5rem, 6vw, 4rem);
         margin-left: 2%;
         padding-top: 3%;
       }

@@ -97,6 +97,7 @@
     "Adult": "I rritur",
     "Adults": "Të rritur",
     "Adults_Children_Rooms": "Të rritur-Fëmijë-Dhoma",
+    "minPriceError": "Çmimi duhet të jetë më i madh se 0",
     "Children": "Fëmijë",
     "Child": "Fëmijë",
     "Age": "Mosha",
