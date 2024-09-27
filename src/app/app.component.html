@@ -1,8 +1,9 @@
-
 <app-main-nav
-(languageChanged)="onLanguageChanged($event)"
+  (languageChanged)="onLanguageChanged($event)"
 ></app-main-nav>
 <div class="content">
   <router-outlet></router-outlet>
 </div>
-<app-footer></app-footer>
+@if (isContentLoaded) {
+  <app-footer></app-footer>
+}

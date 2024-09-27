@@ -3,8 +3,7 @@ $reference-width: 1920px;
   display: grid;
   grid-template-columns: 1fr 4fr;
   gap: clamp(8px, 35px, 1.7vw);
-  padding: calc(50px * (100vw / $reference-width))
-    calc(100px * (100vw / $reference-width));
+  padding: calc(50px * (100vw / $reference-width)) calc(100px * (100vw / $reference-width));
 }
 
 .filters-rooms.mobile {
@@ -27,4 +26,14 @@ mat-paginator {
   font-size: clamp(13px, 50px, calc(48px * (100vw / $reference-width)));
   padding: 15px;
   margin: 0 auto;
+}
+
+.check-in {
+  position: relative;
+  margin-top: -70px;
+  z-index: 1;
+
+  @media screen and (max-width: 700px) {
+    margin-top: -20px;
+  }
 }

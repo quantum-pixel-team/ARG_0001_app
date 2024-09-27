@@ -1,13 +1,45 @@
-<swiper-container class="mySwiper" navigation="true">
-  <swiper-slide lazy="true" *ngFor="let image of room.imagesUrl">
-    <img
-      loading="lazy"
-      [alt]="room.name"
-      [ngSrc]="image"
-      (click)="imageClicked.emit()"
-      sizes="40vw"
-      ngSrcset=" 256w, 440w, 500w,640w, 750w, 828w, 1080w, 1200w, 1500w,1700w,1980w"
-      fill
-    />
+<swiper-container navigation="true">
+  <swiper-slide lazy="true" *ngFor="let image of room.imagesUrl"
+                (click)="imageClicked.emit()"
+  >
+
+    @if (isInView) {
+      <img
+        #imageElement
+        [alt]="room.name"
+        [ngSrc]="getSmallImage(image)"
+        sizes="(min-width: 1200px) 15vw,
+         (min-width: 1024px) 20vw,
+         (min-width: 769px) 21vw,
+         (min-width: 700px) 27vw,
+         (min-width: 600px) 31vw,
+         (min-width: 550px) 34vw,
+         (min-width: 425px) 44vw,
+         42vw"
+        ngSrcset="80w, 160w, 200w, 256w, 280w, 300w, 350w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w"
+        height="450"
+        width="400"
+        priority
+      />
+    } @else {
+      <img
+        #imageElement
+        loading="lazy"
+        [alt]="room.name"
+        [ngSrc]="getSmallImage(image)"
+        sizes="(min-width: 1200px) 15vw,
+         (min-width: 1024px) 20vw,
+         (min-width: 769px) 21vw,
+         (min-width: 700px) 27vw,
+         (min-width: 600px) 31vw,
+         (min-width: 550px) 34vw,
+         (min-width: 425px) 44vw,
+         42vw"
+        ngSrcset="80w, 160w, 200w, 256w, 280w, 300w, 350w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w"
+        height="450"
+        width="400"
+      />
+    }
+
   </swiper-slide>
 </swiper-container>
