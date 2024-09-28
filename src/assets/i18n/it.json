@@ -79,6 +79,7 @@
     "Book_Now": {
       "Book_Now": "Prenota Ora",
       "Persons": "Personi",
+      "Guests": "Ospiti",
       "Adults": "Adulti",
       "Children": "Bambini",
       "Rooms": "Stanze"
@@ -87,6 +88,7 @@
     "Restaurant": "RISTORANTE",
     "Dessert": "Dessert",
     "ViewMore": "Scopri di più",
+    "Reserve": "Prenotare",
     "Confhome": "Sala Conferenze",
     "ConfDesc": "La sala conferenze dell'Aragosta è perfetta per incontri e collaborazioni produttive. È dotato di comodi posti a sedere, tecnologia AV, Internet ad alta velocità e arredamento moderno e può ospitare fino a 35 persone.",
     "LearnMore": "Scopri di più",

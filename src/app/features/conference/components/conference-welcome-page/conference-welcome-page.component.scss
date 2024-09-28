@@ -4,11 +4,12 @@ $text_heigth: 134px;
 .conference-container {
   width: auto;
   height: auto;
-
+  padding-bottom: 80px;
   img {
     position: absolute;
     width: 100%;
     height: calc($image_height * (90vw / $image_width));
+    min-height: 400px;
     -webkit-filter: blur(5px);
     object-fit: cover;
   }
@@ -16,7 +17,6 @@ $text_heigth: 134px;
   .conference-image-container {
     position: relative;
     width: 100%;
-    height: calc($image_height * (90vw / $image_width));
 
     h2 {
       display: flex;
@@ -38,9 +38,9 @@ $text_heigth: 134px;
       margin: 0 14% calc(100px * (90vw / $image_width));
       color: white;
       font-weight: 400;
-      font-size: clamp(0.4rem, 2vw, 2rem);
+      font-size: clamp(14px, 2vw, 2rem);
       padding: 0;
-      line-height: clamp(0.5rem, 3vw, 4rem);
+      line-height: clamp(14px, 3vw, 4rem);
     }
   }
 }

@@ -79,6 +79,7 @@
     "Book_Now": {
       "Book_Now": "REZERVONI TANI",
       "Persons": "Persona",
+      "Guests": "Të ftuarit",
       "Adults": "Adult",
       "Children": "Femijë",
       "Rooms": "Dhoma"
@@ -87,6 +88,7 @@
     "Restaurant": "RESTORANT",
     "Dessert": "Embelsira",
     "ViewMore": "Shiko më shumë",
+    "Reserve": "Rezervo",
     "Confhome": "Salla e Konferencës",
     "ConfDesc": "Salla e konferencave në Aragosta është e përkryer për takime dhe bashkëpunime produktive. Ai përmban ndenjëse të rehatshme, teknologji AV, internet me shpejtësi të lartë dhe dekor modern, që strehon deri në 35 persona.",
     "LearnMore": "Shiko më shumë",
