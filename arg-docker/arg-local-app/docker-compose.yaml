@@ -5,15 +5,12 @@ services:
       dockerfile: arg-docker/arg-local-app/Dockerfile
     volumes:
       - ../../dist/aragosta-app:/usr/share/nginx/html
+      - ../arg-prod/certbot/conf:/etc/letsencrypt:ro
+      - ../arg-prod/certbot/www:/var/www/certbot
       - /var/run/docker.sock:/tmp/docker.sock:ro
-      - /etc/ssl/cert.pem:/etc/nginx/certs/dhparam.pem
-      - /etc/ssl/key.pem:/etc/nginx/certs/default.key
       - ./nginx/vhost:/etc/nginx/vhost.d
-    environment:
-      VIRTUAL_HOST: aragosta.al,www.aragosta.al
-      LETSENCRYPT_HOST: aragosta.al,www.aragosta.al
     ports:
-      - "80:80"
+      - "4200:80"
       - "443:443"
     networks:
       - arg

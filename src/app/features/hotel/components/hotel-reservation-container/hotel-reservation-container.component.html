@@ -1,6 +1,6 @@
 <app-hotel-overview></app-hotel-overview>
 
-<div #bookNow>
+<div #bookNow class="check-in">
   <app-hotel-check-in
     ($bookNowFiltersEvent)="onPersonFilterChanged($event)"
     [bookNowFiltersEventInput]="$any(bookNowFilters$ | async)"

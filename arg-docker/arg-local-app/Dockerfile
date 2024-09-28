@@ -1,6 +1,6 @@
-FROM nginx:alpine
-COPY ../../config/prod/nginx.conf /etc/nginx/nginx.conf
+FROM ghcr.io/macbre/nginx-http3:latest
 COPY ../../config/prod/default.conf /etc/nginx/conf.d/default.conf
+COPY ../../config/prod/compression.conf /etc/nginx/conf.d/compression.conf
 
 
 # Use the following commands to build the image and run the container (run from the root folder)

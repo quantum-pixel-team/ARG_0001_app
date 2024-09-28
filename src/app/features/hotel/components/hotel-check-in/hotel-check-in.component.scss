@@ -21,6 +21,7 @@ $check-in-size: 1980px;
     color: var(--color-primary-color);
     align-items: center;
     justify-items: center;
+    padding-bottom: 50px;
 
     .check-in-range {
       margin-left: calc(50px * (100vw / $check-in-size));
@@ -140,7 +141,6 @@ $check-in-size: 1980px;
     .check-in-button {
       grid-row-start: 3;
       grid-row-end: 4;
-      overflow: scroll;
       height: 57px;
       align-self: start;
 

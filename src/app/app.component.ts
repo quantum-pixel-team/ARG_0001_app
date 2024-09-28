@@ -1,4 +1,10 @@
-import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  HostListener,
+  OnInit,
+  Renderer2,
+} from '@angular/core';
 import { Language } from './shared/interfaces/Language';
 import { LanguageService } from './shared/services/language.service';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -10,8 +16,8 @@ import { MatIconRegistry } from '@angular/material/icon';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  private scriptAdded = false;
   title = 'aragosta-app';
+  isContentLoaded = false;
 
   constructor(
     private languageService: LanguageService,
@@ -54,10 +60,14 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
-    if (!this.scriptAdded) {
-      this.addGtagScripts();
-      this.scriptAdded = true;
+    if (!this.isContentLoaded) {
+      this.contentLoaded();
     }
+  }
+
+  private contentLoaded() {
+    this.isContentLoaded = true;
+    this.addGtagScripts();
   }
 
   private addGtagScripts(): void {
@@ -79,4 +89,6 @@ export class AppComponent implements OnInit {
     `;
     this.renderer.appendChild(document.head, inlineScript);
   }
+
+
 }

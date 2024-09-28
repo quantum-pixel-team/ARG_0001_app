@@ -87,7 +87,7 @@ export class EventsContainerComponent implements OnInit,AfterViewInit {
   }
 
   private sliceDescriptionIfSmallWidth(events: Page<AppEvent>) {
-    if (window.innerWidth < 600) {
+    if (events.content && window.innerWidth < 600) {
       events.content = events.content.map((event) => {
         event.shortDescription =
           event.shortDescription.substring(0, 200) + '...';

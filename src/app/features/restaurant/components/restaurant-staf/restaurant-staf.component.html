@@ -1,13 +1,27 @@
 <div class="restaurant-staff-container">
   <img
-    [src]="'assets/restaurant/arg_staff_1.png'"
+    ngSrc="restaurant/arg_staff_1.png"
     alt="Staff image"
     loading="lazy"
+    height="750"
+    width="500"
+    ngSrcset="128w, 256w, 300w, 350w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w, 1300w, 1400w"
+    sizes="(min-width: 2000px) 15vw,
+            (min-width: 1920px) 20vw,
+            (min-width: 1440px) 27vw,
+             35vw"
   />
   <img
-    [src]="'assets/restaurant/arg_staff_2.png'"
+    ngSrc="restaurant/arg_staff_2_.png"
     alt="Staff image"
     loading="lazy"
+    height="750"
+    width="500"
+    ngSrcset="128w, 256w, 300w, 350w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w, 1300w, 1400w"
+    sizes="(min-width: 2000px) 15vw,
+            (min-width: 1920px) 20vw,
+            (min-width: 1440px) 27vw,
+             35vw"
   />
   <div class="staff-description">
     <h3>{{ "RESTAURANT.Staff" | translate }}</h3>

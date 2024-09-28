@@ -2,8 +2,11 @@
   <img [ngSrc]="'A18.jpg?format=compress'"
        height="1966"
        width="1616"
-       [priority]="true"
-       sizes="50vw"
+       priority
+       sizes="(min-width: 1200px) 100vw,
+              (min-width: 1024px) 80vw,
+              (min-width: 992px) 70vw,
+              55vw"
        ngSrcset=" 128w, 256w, 440w, 500w, 640w, 750w, 828w, 1080w, 1200w" alt="restaurant image"/>
   <div class="restaurant-info-c-1">
     <div class="restaurant-info">
