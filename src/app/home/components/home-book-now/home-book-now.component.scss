@@ -1,4 +1,4 @@
-$primary-font-size: clamp(12px, 2rem, 3vw);
+$primary-font-size: clamp(12px, 1.9rem, 3vw);
 $label-font-size: clamp(12px, 20px, 3vw);
 $reference-width: 1920px;
 :root {
@@ -18,8 +18,8 @@ $reference-width: 1920px;
     display: grid;
     grid-template-columns: 3fr 1fr;
     align-items: center;
-    max-width: 1080px;
-    max-height: 165px;
+    max-width: 1020px;
+    max-height: 140px;
     height: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -68,7 +68,7 @@ $reference-width: 1920px;
             .option-persons-drop-down,
             .option-persons-icon {
               font-size: $primary-font-size;
-
+              white-space: nowrap;
               padding: 12px 0;
               width: 100%;
               height: auto;
@@ -176,7 +176,7 @@ $reference-width: 1920px;
 
     button.submit {
       border-radius: 10px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
   }
 }

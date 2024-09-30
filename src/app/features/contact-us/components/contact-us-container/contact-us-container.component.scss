@@ -4,10 +4,9 @@ $card-top-height: -140px;
 $line-width: 800px;
 .contact-us-container {
   width: 100%;
-
   .container-header {
     background-color: var(--color-primary-color);
-    height: calc($header-height * (100vw / $reference-width));
+    padding-bottom: calc($card-top-height * (100vw / $reference-width) * -1 + 30px);
 
     .header-text {
       padding-top: 3%;
@@ -51,10 +50,12 @@ $line-width: 800px;
       align-items: center;
       justify-content: space-around;
       text-align: center;
+      padding: 10px 20px;
 
       h4 {
         color: var(--color-primary-color);
-        font-size: clamp(1rem, 2vw, 2rem);
+        font-size: clamp(20px, 2vw, 2rem);
+        margin: 20px 0;
       }
 
       a:-webkit-any-link {
@@ -63,11 +64,11 @@ $line-width: 800px;
 
       p {
         color: var(--color-primary-color);
-        font-size: clamp(0.5rem, 1vw, 1.5rem);
+        font-size: clamp(14px, 1vw, 1.5rem);
       }
 
       .card-header {
-        margin-top: 10%;
+        margin-top: 30px;
         padding-bottom: 4%;
         max-width: 80px;
 
@@ -84,7 +85,7 @@ $line-width: 800px;
         padding-bottom: 2%;
 
         button {
-          font-size: clamp(1rem, 2vw, 2rem);
+          font-size: clamp(24px, 2vw, 2rem);
           padding: clamp(1rem, 2vw, 2.3rem);
           color: white;
           background-color: var(--color-primary-color);
@@ -140,14 +141,19 @@ $line-width: 800px;
       margin-bottom: 7%;
 
       p {
-        font-size: clamp(0.6rem, 2.2vw, 2rem);
+        font-size: clamp(14px, 2.2vw, 2rem);
+        color: black;
       }
     }
   }
 
   .second-line {
     display: grid;
-    grid-template-columns: 6% 26% 36% 26% 6%;
+    grid-template-columns: 6% 24% auto 24% 6%;
+
+    @media screen and (max-width: 550px) {
+      grid-template-columns: 5% 15% auto 15% 5%;
+    }
     justify-items: center;
     color: var(--color-primary-color);
     margin-top: 5%;
@@ -163,7 +169,7 @@ $line-width: 800px;
       grid-column-start: 3;
       grid-column-end: 4;
       margin: 0;
-      font-size: clamp(0.6rem, 2.5vw, 2rem);
+      font-size: clamp(16px, 2.5vw, 2rem);
     }
 
     .line-b {
@@ -188,9 +194,13 @@ $line-width: 800px;
 
 .contact-us-container.mobile {
   .contact-us-card {
-    grid-template-rows: 48% 4% 48%;
+    //grid-template-rows: 48% 4% 48%;
     grid-template-columns: 6% 88% 6%;
     top: calc($card-top-height * (65vw / $reference-width));
+
+    .base-card-design {
+      height: fit-content;
+    }
 
     .card-a {
       grid-row-start: 1;
@@ -234,7 +244,7 @@ $line-width: 800px;
   .location-base {
     .location {
       grid-template-columns: 6% 88% 6%;
-      grid-template-rows: 50% 50%;
+      //grid-template-rows: 50% 50%;
       top: 0;
 
       .location-img-card {

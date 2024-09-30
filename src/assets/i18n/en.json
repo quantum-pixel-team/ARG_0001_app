@@ -78,7 +78,7 @@
     },
     "Book_Now": {
       "Book_Now": "BOOK NOW",
-      "Persons": "Persons",
+      "Guests": "Guests",
       "Adults": "Adults",
       "Children": "Children",
       "Rooms": "Rooms"
@@ -87,6 +87,7 @@
     "Restaurant": "RESTAURANT",
     "Dessert": "Dessert",
     "ViewMore": "View More",
+    "Reserve": "Reserve",
     "Confhome": "Conference Room",
     "ConfDesc": "Aragosta's conference room is perfect for productive meetings and collaborations. It features comfortable seating, AV technology, high-speed internet, and modern decor, accommodating up to 35 people.",
     "LearnMore": "LEARN MORE",
