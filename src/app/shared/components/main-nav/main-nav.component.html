@@ -42,6 +42,8 @@
         <img
           src="assets/icons/navbar/contact-us.svg"
           alt="Contact Us button icon"
+          height="20"
+          width="20"
         />
       </a>
 
@@ -60,7 +62,6 @@
       <a
         mat-ripple
         [routerLink]="link.routerLink"
-        color="primary"
         routerLinkActive="active"
         class="router-link"
         [ngClass]="{
@@ -86,7 +87,11 @@
           'border-bottom': hasScrolled || !isHomePage,
         }"
       >
-        <img [src]="link.icon" alt="" />
+        <img [src]="link.icon"
+             [alt]="link.label + 'icone'"
+             [height]="link.height"
+             [width]="link.width"
+        />
         {{ "NavBar." + link.label | translate }}</a
       >
     </ng-container>

@@ -1,5 +1,5 @@
 <p class="not-available-label" *ngIf="notAvailableLabel">
-  {{ notAvailableLabel | translate}}
+  {{ notAvailableLabel | translate }}
 </p>
 <button
   (click)="buttonCLicked()"
@@ -23,7 +23,7 @@
     class="outside-not-available-label"
     [class.not-available]="roomNotAvailable"
   >
-    {{ notAvailableLabel }}
+    {{ notAvailableLabel | translate }}
   </div>
   <div class="book-now-label">
     {{ (roomNotAvailable ? "HOTEL.Check_Dates" : "HOTEL.Book_Now")  | translate }}

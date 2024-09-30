@@ -6,8 +6,7 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { Language } from '../../interfaces/Language';
-import { TranslateService } from '@ngx-translate/core';
-import {LanguageService} from "../../services/language.service";
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-language-selector',

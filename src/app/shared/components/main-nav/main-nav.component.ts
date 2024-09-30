@@ -57,26 +57,36 @@ export class MainNavComponent implements OnInit {
   mobileNavigationLinks = [
     {
       label: 'Home',
+      width: '16',
+      height: '18',
       routerLink: 'home',
       icon: 'assets/icons/navbar/home.svg',
     },
     {
       label: 'Hotel',
+      width: '25',
+      height: '15',
       routerLink: 'hotel',
       icon: 'assets/icons/navbar/hotel.svg',
     },
     {
       label: 'Restaurant',
+      width: '15',
+      height: '15',
       routerLink: 'restaurant',
       icon: 'assets/icons/navbar/restaurant.svg',
     },
     {
       label: 'Conference',
+      width: '30',
+      height: '15',
       routerLink: 'conference',
       icon: 'assets/icons/navbar/conference.svg',
     },
     {
       label: 'Events',
+      width: '14',
+      height: '15',
       routerLink: 'events',
       icon: 'assets/icons/navbar/events.svg',
     },

@@ -70,7 +70,7 @@
           (click)="onCheckInClicked()"
           class="booking-button"
         >
-          {{ "HOTEL.Check" | translate}}
+          {{ "HOTEL.Check" | translate }}
         </button>
       </div>
     </ng-container>
@@ -88,9 +88,9 @@
         <button style="padding: 0" [matMenuTriggerFor]="menue">
           <div class="select-option-persons-container">
             <div class="select-option-persons-label">
-              {{ bookNowFiltersEvent.numberOfAdults }} Adults -
-              {{ bookNowFiltersEvent.numberOfChildren }} Children -
-              {{ bookNowFiltersEvent.numberOfRooms }} Rooms
+              {{ bookNowFiltersEvent.numberOfAdults }} {{ "HOTEL.Adults" | translate }} -
+              {{ bookNowFiltersEvent.numberOfChildren }} {{ "HOTEL.Children" | translate }} -
+              {{ bookNowFiltersEvent.numberOfRooms }} {{ "HOTEL.Rooms"  | translate }}
             </div>
             <div class="select-option-persons-icon">
               <mat-icon matDatepickerToggleIcon>person</mat-icon>
@@ -106,25 +106,25 @@
             >
               <app-child-age-now-option-row
                 (quantityChange)="onQuantityChange($event, 'adults')"
-                label="Adults"
+                [label]="'HOTEL.Adults' | translate"
                 [quantity]="bookNowFiltersEvent.numberOfAdults"
               ></app-child-age-now-option-row>
               <mat-divider></mat-divider>
               <app-child-age-now-option-row
                 (quantityChange)="onQuantityChange($event, 'children')"
-                label="Children"
+                [label]="'HOTEL.Children' | translate"
                 [quantity]="bookNowFiltersEvent.numberOfChildren"
               ></app-child-age-now-option-row>
               <mat-divider></mat-divider>
               <app-child-age-now-option-row
                 (quantityChange)="onQuantityChange($event, 'rooms')"
-                label="Rooms"
+                [label]="'HOTEL.Rooms' | translate"
                 [quantity]="bookNowFiltersEvent.numberOfRooms"
               ></app-child-age-now-option-row>
               <div *ngFor="let child of age.controls; let i = index">
                 <app-child-age-now-option-row
                   (quantityChange)="onQuantityChange($event, 'ages' + i)"
-                  label="Child {{ i + 1 }} Age"
+                  [label]="('HOTEL.Child' | translate) + ' ' + (i + 1) + ' ' + ('HOTEL.Age' | translate)"
                   [quantity]="0"
                 ></app-child-age-now-option-row>
               </div>
