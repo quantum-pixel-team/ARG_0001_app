@@ -4,7 +4,6 @@ $card-top-height: -140px;
 $line-width: 800px;
 .contact-us-container {
   width: 100%;
-
   .container-header {
     background-color: var(--color-primary-color);
     padding-bottom: calc($card-top-height * (100vw / $reference-width) * -1 + 30px);
@@ -150,7 +149,11 @@ $line-width: 800px;
 
   .second-line {
     display: grid;
-    grid-template-columns: 6% 26% 36% 26% 6%;
+    grid-template-columns: 6% 24% auto 24% 6%;
+
+    @media screen and (max-width: 550px) {
+      grid-template-columns: 5% 15% auto 15% 5%;
+    }
     justify-items: center;
     color: var(--color-primary-color);
     margin-top: 5%;
@@ -166,7 +169,7 @@ $line-width: 800px;
       grid-column-start: 3;
       grid-column-end: 4;
       margin: 0;
-      font-size: clamp(0.6rem, 2.5vw, 2rem);
+      font-size: clamp(16px, 2.5vw, 2rem);
     }
 
     .line-b {
@@ -191,7 +194,7 @@ $line-width: 800px;
 
 .contact-us-container.mobile {
   .contact-us-card {
-    grid-template-rows: 48% 4% 48%;
+    //grid-template-rows: 48% 4% 48%;
     grid-template-columns: 6% 88% 6%;
     top: calc($card-top-height * (65vw / $reference-width));
 
@@ -241,7 +244,7 @@ $line-width: 800px;
   .location-base {
     .location {
       grid-template-columns: 6% 88% 6%;
-      grid-template-rows: 50% 50%;
+      //grid-template-rows: 50% 50%;
       top: 0;
 
       .location-img-card {
