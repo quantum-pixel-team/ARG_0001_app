@@ -64,7 +64,7 @@ export class HotelTableRoomComponent implements OnInit, OnDestroy {
       data: room,
       position: { bottom: this.isTablet ? '0' : undefined },
       maxWidth: '100vw',
-      maxHeight: '100vh',
+      maxHeight: '100svh',
       panelClass: 'hotel-room-details-container',
     });
     roomDetailsDialog.componentInstance.policyClicked
