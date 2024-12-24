@@ -15,7 +15,7 @@ import { MatIconRegistry } from '@angular/material/icon';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'aragosta-app';
   isContentLoaded = false;
 
@@ -66,29 +66,49 @@ export class AppComponent implements OnInit {
   }
 
   private contentLoaded() {
+    if (this.isContentLoaded) { return; }
     this.isContentLoaded = true;
-    this.addGtagScripts();
+    this.addGtmScript();
+    this.addGtmNoscript();
   }
 
-  private addGtagScripts(): void {
-    // Add the async Google Tag Manager script
-    const gtagScript = this.renderer.createElement('script');
-    gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-FT7XLT2T0D';
-    gtagScript.async = true;
-    this.renderer.appendChild(document.head, gtagScript);
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      this.contentLoaded();
+    }, 1000);
+  }
+  addGtmScript(): void {
 
-    // Add the inline script for gtag configuration
-    const inlineScript = this.renderer.createElement('script');
-    inlineScript.text = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'G-FT7XLT2T0D');
+    const scriptContent = `
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-M5KC45GC');
     `;
-    this.renderer.appendChild(document.head, inlineScript);
+
+    const head = document.head || document.getElementsByTagName('head')[0];
+    const scriptElement = document.createElement('script');
+    scriptElement.type = 'text/javascript';
+    scriptElement.innerHTML = scriptContent;
+    head.insertBefore(scriptElement, head.firstChild);
+
   }
 
 
+  private addGtmNoscript(): void {
+    const noscript = this.renderer.createElement('noscript');
+    const iframe = this.renderer.createElement('iframe');
+    this.renderer.setAttribute(
+      iframe,
+      'src',
+      'https://www.googletagmanager.com/ns.html?id=GTM-M5KC45GC',
+    );
+    this.renderer.setAttribute(iframe, 'height', '0');
+    this.renderer.setAttribute(iframe, 'width', '0');
+    this.renderer.setStyle(iframe, 'display', 'none');
+    this.renderer.setStyle(iframe, 'visibility', 'hidden');
+    this.renderer.appendChild(noscript, iframe);
+    this.renderer.insertBefore(document.body, noscript, document.body.firstChild);
+  }
 }
