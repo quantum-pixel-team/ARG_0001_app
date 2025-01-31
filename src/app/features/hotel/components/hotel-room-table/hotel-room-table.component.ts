@@ -43,7 +43,7 @@ export class HotelTableRoomComponent implements OnInit, OnDestroy {
   }
 
   onBookNowClick(room: HotelRoom) {
-    open(room.bookNowUrl, '_BLANK');
+    window.open(room.bookNowUrl, '_blank', 'noopener,noreferrer');
   }
 
   isTabletWidth: Observable<boolean> = this.breakpointObserver
