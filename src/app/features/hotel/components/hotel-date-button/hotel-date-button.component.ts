@@ -1,6 +1,7 @@
 import {
   Component,
-  EventEmitter, Input,
+  EventEmitter,
+  Input,
   OnInit,
   Output,
   ViewEncapsulation,
@@ -39,8 +40,10 @@ export class HotelDateButtonComponent implements OnInit {
       .get('checkInDateDesktop')
       ?.valueChanges.subscribe((value) => {
         if (value) {
-          this.today = new Date(value);
-          this.checkInDateChange.emit(value);
+          const date = new Date(value);
+          date.setHours(10);
+          this.today = date;
+          this.checkInDateChange.emit(date);
         }
       });
 
@@ -48,7 +51,9 @@ export class HotelDateButtonComponent implements OnInit {
       .get('checkOutDateDesktop')
       ?.valueChanges.subscribe((value) => {
         if (value) {
-          this.checkOutDateChange.emit(value);
+          const date = new Date(value);
+          date.setHours(10);
+          this.checkOutDateChange.emit(date);
         }
       });
   }

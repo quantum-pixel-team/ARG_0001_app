@@ -40,7 +40,9 @@ export class HotelBookNowButtonMobileComponent implements OnInit {
       ?.valueChanges.subscribe((value) => {
 
         if (value) {
-          this.checkInDateMobile.emit(value);
+          const date = new Date(value);
+          date.setHours(10);
+          this.checkInDateMobile.emit(date);
         }
       });
 
@@ -48,7 +50,9 @@ export class HotelBookNowButtonMobileComponent implements OnInit {
       .get('checkOutDateMobile')
       ?.valueChanges.subscribe((value) => {
         if (value) {
-          this.checkOutDateMobile.emit(value);
+          const date = new Date(value);
+          date.setHours(10);
+          this.checkOutDateMobile.emit(date);
         }
       });
   }
