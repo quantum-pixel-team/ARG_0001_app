@@ -4,8 +4,7 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { lPad } from '../../../../shared/utils/numbers';
-import {NgForOf, NgOptimizedImage} from '@angular/common';
+import { NgForOf, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-restaurant-menu',
@@ -20,8 +19,8 @@ export class RestaurantMenuComponent implements OnInit {
   menuList: string[] = [];
 
   ngOnInit(): void {
-    const baseUrl = 'menu_rest';
-    for (let i = 1; i <= 5; i++) {
+    const baseUrl = 'restaurant/menu/menu_restoranti_2025';
+    for (let i = 2; i <= 6; i++) {
       this.menuList.push(`${baseUrl}-${i}.png`);
     }
   }
