@@ -9,6 +9,6 @@ export class CommonServices {
   }
 
   openWhatsapp() {
-    open('whatsapp://send?text=Hello World!&phone=355682510985');
+    open('whatsapp://send?phone=355683337050');
   }
 }
