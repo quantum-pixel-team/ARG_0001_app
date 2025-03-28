@@ -89,7 +89,7 @@ export class HotelReservationContainerComponent
       checkOutDate: addDays(new Date(), 2),
       numberOfRooms: 1,
       numberOfAdults: 1,
-      available: false,
+      available: true,
       language: languageService.currentLang,
       childrenAges: [],
       roomTypes: [],
@@ -154,7 +154,7 @@ export class HotelReservationContainerComponent
     this.filterChanged
       .pipe(
         takeUntil(this.unsubscribe$),
-        debounceTime(1000),
+        debounceTime(500),
         distinctUntilChanged(),
       )
       .subscribe((filters) => {

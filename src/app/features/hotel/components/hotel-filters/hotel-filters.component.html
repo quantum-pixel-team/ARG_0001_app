@@ -13,15 +13,6 @@
           {{ "HOTEL.Filters." + checkbox.label | translate }}
         </mat-checkbox>
       </div>
-      <div>
-        <mat-checkbox
-          color="primary"
-          [checked]="availableCheckBox.checked"
-          (change)="onCheckboxChange(availableCheckBox, $event)"
-        >
-          {{ "HOTEL." + availableCheckBox.label | translate }}
-        </mat-checkbox>
-      </div>
     </section>
   </div>
   <hr *ngIf="!sortOnly" />

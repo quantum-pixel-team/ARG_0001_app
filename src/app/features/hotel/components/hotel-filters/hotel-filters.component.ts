@@ -9,7 +9,6 @@ import { MatCheckboxChange } from '@angular/material/checkbox';
   styleUrl: './hotel-filters.component.scss',
 })
 export class HotelFiltersComponent implements OnInit {
-  availableCheckBox = { label: 'Available', checked: false };
   checkboxes = [
     { label: 'Double_room', checked: false },
     { label: 'Twin_room', checked: false },
@@ -51,8 +50,6 @@ export class HotelFiltersComponent implements OnInit {
       })
       .map((checkbox) => ({ ...checkbox }));
 
-    this.availableCheckBox.checked = this.filters.available;
-
     this.priceForm.setValue({
       minPrice: this.filters.minPrice,
       maxPrice: this.filters.maxPrice,
@@ -76,7 +73,7 @@ export class HotelFiltersComponent implements OnInit {
     const minPrice = this.priceForm.value.minPrice;
     const maxPrice = this.priceForm.value.maxPrice;
     const sortOrder = this.sortForm.value.sortOrder;
-    const available = this.availableCheckBox.checked;
+    const available = true;
 
     this.filterChanged.emit({
       roomTypes: options,
